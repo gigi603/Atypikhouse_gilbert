@@ -1,0 +1,468 @@
+/* Infos : Commenter bien votre code afin qu'il soit plus lisible, merci. */
+/* Générale */
+html, body {
+	font-family: 'Archivo', sans-serif;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.padding10 {
+	padding: 0 10px;
+}
+
+.button2 {
+	display: flex;
+}
+.btn-danger {
+	background-color:#b30000;
+	border-color: #b30000;
+}
+
+.btn-danger:hover {
+	background-color:#b30000;
+	border-color: #b30000;
+}
+.button2 input {
+	height: 50px;
+	font-size: 18px;
+	width: 270px;
+}
+
+.cadre {
+	background: rgba(0, 0, 0, 0.6);
+	padding: 20px 0;
+	border-radius: 20px;
+}
+.title-intro {
+	color: #eee;
+}
+
+.price {
+	font-weight: 500;
+	font-size: 22px;
+	color: #000;
+	margin: 0;
+}
+
+.price_reservation {
+	padding: 10px;
+}
+
+.note {
+	padding: 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+hr {
+	margin: 10px 0;
+	border-top: 1px solid grey;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	color: black;
+	line-height: 1.4;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.text-center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.rouge {
+	color: #a94442;
+}
+
+.rigth {
+	float: right;
+}
+
+#block {
+	margin-top: 100px;
+}
+
+#logo {
+	height: 50px;
+	width: 50px;
+}
+
+#logo img {
+	height: 137px;
+	width: 100px;
+}
+
+.btn-color {
+	background-color: darkgreen;
+	border-color: darkgreen;
+	color: #fff;
+}
+
+.btn-color:hover {
+	background-color: darkgreen;
+	border-color: darkgreen;
+	color: #fff;
+}
+
+.btn_reserve {
+	color: white;
+	background-color: darkgreen;
+	border-color: darkgreen;
+	border: none;
+	margin: 0 20px 30px 20px;
+	padding: 10px 25px;
+	font-size: 16px;
+}
+
+.btn_reserve:hover {
+	color: white;
+	background-color: darkgreen;
+	border-color: darkgreen;
+	border: none;
+	margin: 0 20px 30px 20px;
+	padding: 10px 25px;
+	font-size: 16px;
+}
+
+.img_house {
+	margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+	border-bottom: none;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 17px;
+}
+
+.navbar-static-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
+    color: #FFF;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-texta {
+   /* text-decoration: underline; */
+   color: #FFF;
+}
+
+/* HomePage */
+.banner {
+	background: url("/img/carte_monde_2.jpg") no-repeat center bottom scroll;
+	background-size: cover;
+	display: table;
+	height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.intro-body {
+	display: table-cell;
+    vertical-align: middle;
+    height: 500px;
+    text-align: center;
+    /*width: 100%;*/
+     z-index: 10;
+
+}
+
+.search-bar {
+	width: 50%;
+}
+
+#select_category_home{
+	height: 50px;
+	font-size: 18px;
+	width: 270px;
+}
+
+.btn-searchbar{
+	background-color: darkgreen;
+	color: #fff;
+	border-color: darkgreen;
+}
+.btn-searchbar:hover {
+	background-color: darkgreen;
+	color: #fff;
+	border-color: darkgreen;
+}
+.annonces-block {
+	margin-top: 120px;
+}
+.list-annonces-title {
+    margin-bottom: 50px;
+}
+#hebergements {
+	text-align: center;
+	margin: 60px;
+}
+
+.list-category h2{
+	text-align: center;
+	/* margin: 60px; */
+}
+
+.space-block {
+	margin: 22px;
+}
+
+.card-houses {
+	position: relative;
+	background-color: #fff;
+	transition: transform .2s;
+}
+
+.card-houses:hover {
+	transform: scale(1.1);
+}
+
+.card-block {
+	padding: 15px 15px;
+}
+
+.card-center {
+	display: block;
+	text-align: center;
+}
+
+.card-body {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0;
+	color: #000;
+}
+
+.card-hebergement {
+	display: block;
+	padding: 5px;
+	color: #000;
+	height: 500px;
+}
+
+.card-show {
+	display: block;
+	padding: 5px;
+	color: #000;
+	word-wrap: break-word;
+}
+
+.card-show p, .card-show h3, .card-show h4 {
+	padding: 5px 0;
+}
+
+
+.card-text {
+	padding: 15px 0px;
+}
+
+.card-title a{
+	color: #000;
+}
+
+
+/* #3f4b30 */
+#block_home_2 {
+	position: relative;
+	background-color: white;
+	color: #3f4b30;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+.block_home_2_child {
+	width: 350px;
+	text-align: center;
+	margin: 0 20px;
+	padding: 20px;
+}
+
+.block_home_2_child i,
+.block_home_2_child h3,
+.block_home_2_child p {
+	margin: 15px 0;
+	color: #3f4b30;
+}
+
+/* FAQ */
+#faq {
+	/* background-color: white; */
+}
+
+#faq * {
+	padding: 10px;
+}
+
+#faq h3, #faq h2 {
+	text-align: center;
+}
+
+/* Registration */
+.panel, .block {
+	margin: 100px;
+}
+
+/* Footer */
+footer {
+	background-color: #fff;
+	padding: 20px;
+	bottom: 0;
+	width: 100%;
+	margin-top: 80px;
+}
+
+
+
+footer li {
+	list-style: none;
+}
+
+footer li a{
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+.footer_absolute {
+	position: absolute;
+}
+footer li a:hover{
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+
+/* Réseaux sociaux */
+#reseaux div {
+	display: inline-block;
+}
+#reseaux div li a {
+	color:#3f4b30;
+	margin: 5px;
+}
+
+
+/* Description produit */
+.calendar {
+	width: 400px;
+	height: 400px; 
+	/* background-color: #9C0038; */
+	margin: 0 20px;
+}
+
+/* Mes hébergmeents */
+.btn_modif_and_delete {
+	display: inline-block;
+	margin: 10px 5px;
+}
+
+/* Formulaire */
+ .contact-checkbox {
+	width:50px;
+ }
+#form {
+	margin: 100px auto;
+	width: 570px;
+}
+
+input[type=text],
+input[type=textarea] {
+	width: 100%;
+}
+
+#input_comment {
+	height: 43px;
+}
+.form-horizontal .form-group {
+	margin: 0;
+	padding: 10px;
+}
+
+.container-profile {
+	margin-top: 150px;
+}
+
+.rating {
+	float:left;
+	width: 250px;
+  }
+
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+	follow these rules. Every browser that supports :checked also supports :not(), so
+	it doesn’t make the test unnecessarily selective */
+  .rating:not(:checked) > input {
+	  position:absolute;
+	  top:-9999px;
+	  clip:rect(0,0,0,0);
+  }
+
+  .rating:not(:checked) > label {
+	  float:right;
+	  width:1em;
+	  /* padding:0 .1em; */
+	  overflow:hidden;
+	  white-space:nowrap;
+	  cursor:pointer;
+	  font-size:150%;
+	  /* line-height:1.2; */
+	  color:#ddd;
+  }
+
+  .rating:not(:checked) > label:before {
+	  content: '★';
+	  width:5px;
+	  height:5px;
+  }
+
+  .rating > input:checked ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating > label:active {
+	  position:relative;
+	  top:2px;
+	  left:2px;
+  }
+
+/* ====================== */
+/* +++++ RESPONSIVE +++++ */
+/* ====================== */
+
+@media only screen and (max-width: 600px) {
+	.button2 {
+		display: block;
+	}
+}

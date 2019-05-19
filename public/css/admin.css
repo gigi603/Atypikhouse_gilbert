@@ -1,0 +1,204 @@
+/* Ce fichier concerne le css liés à l'administration */
+/* Couleur principale : #2A3E51 #36414A #485864 */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* padding-top: 50px; */
+    font-size: 16px;
+    font-family: Open-sans, sans-serif;
+}
+
+.panel-body {
+    margin: 0 10px;
+    padding: 0 20px;
+}
+
+td, th {
+    width: 300px;
+}
+
+.right {
+	float: right;
+}
+.button-profiluser {
+    margin-bottom:5%;
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+
+#reservation, #utilisateur, #avis, #proprietes {
+    display: none;
+}
+
+.navbar {
+    height: 80px;
+    position: fixed;
+}
+
+.navbar ul, #titre {
+    display: inline-block;
+    line-height: 1;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+#menu {
+    float: right;
+    line-height: 5;
+}
+
+.sidebar {
+    background-color: #36414A;
+    position: fixed;
+    top: 79px;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+}
+
+.main {
+    padding: 100px 50px 0 50px;
+}
+
+.admin-user-profil {
+    margin-top:5%;
+}
+
+.card-admin {
+    height: 700px;
+    margin: 5px;
+}
+
+.card-message {
+    padding: 20px;
+}
+
+.list-category {
+	padding-left: 50px; 
+}
+
+@media (max-width: 768px) {
+
+    h2 {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .sidebar {
+        top: 70px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+    }
+    .navbar {
+        height: 60px;
+        display: block;
+        text-align: center;
+        position: relative;
+    }
+    #menu {
+        float: none;
+    }
+    .main {
+        padding: 120px 50px 0 50px;
+    }
+}
+
+/* Properties section page */
+
+.block-properties {
+    display: none;
+}
+.create_properties {
+    margin-top: 5%;
+}
+
+
+/* Formulaire */
+
+#form {
+	margin: 100px auto;
+	width: 570px;
+}
+
+input[type=text],
+input[type=textarea] {
+	width: 100%;
+}
+
+#input_comment {
+	height: 43px;
+}
+.form-horizontal .form-group {
+	margin: 0;
+	padding: 10px;
+}
+
+.container-profile {
+	margin-top: 150px;
+}
+
+.rating {
+	float:left;
+	width: 250px;
+  }
+
+  /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+	follow these rules. Every browser that supports :checked also supports :not(), so
+	it doesn’t make the test unnecessarily selective */
+  .rating:not(:checked) > input {
+	  position:absolute;
+	  top:-9999px;
+	  clip:rect(0,0,0,0);
+  }
+
+  .rating:not(:checked) > label {
+	  float:right;
+	  width:1em;
+	  /* padding:0 .1em; */
+	  overflow:hidden;
+	  white-space:nowrap;
+	  cursor:pointer;
+	  font-size:150%;
+	  /* line-height:1.2; */
+	  color:#ddd;
+  }
+
+  .rating:not(:checked) > label:before {
+	  content: '★';
+	  width:5px;
+	  height:5px;
+  }
+
+  .rating > input:checked ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+	  color: dodgerblue;
+	  
+  }
+
+  .rating > label:active {
+	  position:relative;
+	  top:2px;
+	  left:2px;
+  }
