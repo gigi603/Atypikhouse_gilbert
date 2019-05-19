@@ -15,7 +15,7 @@
                             <p class="card-text">Vous pouvez consulter votre réservation dans la rubrique "mes réservations" ou cliquez directement sur le bouton en dessous</p>
                             <p class="card-text">Notre équipe vous remercie</p>
                             <div>
-                                <a class="btn btn-success btn_reserve" href="{{ route('houses') }}">Consulter mes réservations</a>
+                                <a class="btn btn-success btn_reserve" href="{{ route('user.reservations') }}">Consulter mes réservations</a>
                             </div> 
                         <div>
                     </div>   
