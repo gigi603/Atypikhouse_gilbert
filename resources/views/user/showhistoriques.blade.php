@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card-show h-100">
-                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$historique->house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
+                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$historique->house->photo) }}" alt="Hébergement insolite - {{$historique->house->title}}"></a>
                                 <div class="card-center">
                                     <h4 class="title card-title text-center">
                                         <a href="#">{{$historique->house->title}}</a>
@@ -30,6 +30,7 @@
                                     <p> Pays: {{$historique->house->pays}}</p>
                                     <p> Ville: {{$historique->house->ville}}</p>
                                     <p> Adresse: {{$historique->house->adresse}}</p>
+                                    <p> Téléphone: {{$historique->house->telephone}}</p>
                                 </div>
                             </div>
                         </div>

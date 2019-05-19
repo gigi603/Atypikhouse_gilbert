@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card-show h-100">
-                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$reservation->house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
+                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$reservation->house->photo) }}" alt="Hébergement insolite - {{$reservation->house->title}}"></a>
                                 <div class="card-center">
                                     <h4 class="title card-title text-center">
                                         <a href="#">{{$reservation->house->title}}</a>
@@ -26,8 +26,10 @@
                                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                                     <p class="card-text">{{$reservation->house->description}}</p>
                                     <p>Annulation gratuite !</p>
-                                    <p> {{$reservation->house->ville}}</p>
-                                    <p> {{$reservation->house->adresse}}</p>
+                                    <p> Pays: {{$reservation->house->pays}}</p>
+                                    <p> Ville: {{$reservation->house->ville}}</p>
+                                    <p> Adresse: {{$reservation->house->adresse}}</p>
+                                    <p> Téléphone: {{$reservation->house->telephone}}</p>
                                 </div>
                             </div>
                         </div>
