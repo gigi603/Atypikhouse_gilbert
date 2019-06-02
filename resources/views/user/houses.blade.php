@@ -5,7 +5,7 @@
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container annonces-block" role="annonces">
-    <h2 class="text-center list-annonces-title">Mes hébergements</h2>
+    <h2 class="text-center h2-title">Mes hébergements</h2>
     <div class="row">
         @if (\Session::has('success'))
             <div class="alert alert-success">

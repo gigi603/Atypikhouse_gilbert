@@ -3,8 +3,8 @@
 @section('link')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
-<div class="container list-category" role="historiques">
-    <h2>Mes historiques</h2>
+<div class="container list-category margin-top" role="historiques">
+    <h2 class="h2-title">Mes historiques</h2>
     <div class="row">
     @foreach ($historiques as $historique)
         <div class="col-lg-4 col-md-4">
