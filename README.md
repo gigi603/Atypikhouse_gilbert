@@ -62,15 +62,3 @@ Vous pouvez dès à présent lancer le site
 1. php artisan serve
 2. (Si problème) Si après avoir fait toutes les manipulations décrite au-dessus php artisan serve ne marche pas faites un composer install puis composer update puis refaites un php artisan serve
 3. Aller sur le lien : http://127.0.0.1:8000/ de votre navigateur
-
-# Installer les tests fonctionnels : 
-    php artisan dusk:install
-
-# Lancer les tests fonctionnels : (seulement sur mac et linux)
-    télécharger : https://chromedriver.storage.googleapis.com/index.html?path=2.40/
-    lancer chromedriver.exe 
-    php artisan dusk
-
-# Lancer les tests unitaires : 
-    ./vendor/bin/phpunit
-
