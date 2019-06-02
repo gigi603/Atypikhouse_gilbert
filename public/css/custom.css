@@ -215,6 +215,11 @@ p {
 .h2-title {
     margin-bottom: 50px;
 }
+
+.cgv-size {
+	width: 800px;
+	text-align: center;
+}
 #hebergements {
 	text-align: center;
 	margin: 60px;

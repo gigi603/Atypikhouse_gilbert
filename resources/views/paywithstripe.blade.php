@@ -117,6 +117,16 @@
                                 <input type="hidden" value="<?php echo($days);?>" name="days"/>
                                 <input type="hidden" value="<?php echo($house_id);?>" name="house_id"/>
                                 <input type="hidden" value="<?php echo($user_id);?>" name="user_id"/>
+                                <li><a href="{{ route('cgv') }}">Voir les conditions générales de ventes</a></li>
+                                <div class="form-check{{ $errors->has('agree') ? ' has-error' : '' }}">
+                                    <input type="checkbox" class="form-check-input" name="agree" value="true" {{ !old('agree') ?: 'checked' }}>
+                                    <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales de vente</label>
+                                    @if ($errors->has('agree'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('agree') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                                 <button class="btn btn-success btn_reserve">Payer</button>
                         </form>
                     </div>

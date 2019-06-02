@@ -3,20 +3,22 @@ $(function () {
     var disableddates = ["05-3-2018", "05-11-2018", "05-25-2018", "05-20-2018"];
         from = $("#from")
             .datepicker({
-                defaultDate: "+1w",
+                defaultDate: null,
                 changeMonth: true,
                 numberOfMonths: 2,
-                dateFormat: 'dd/mm/yy'
+                dateFormat: 'dd/mm/yy',
+                minDate: 0
                 // beforeShowDay: DisableSpecificDates            
             })
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this));
             }),
         to = $("#to").datepicker({
-            defaultDate: "+1w",
+            defaultDate: null,
             changeMonth: true,
             numberOfMonths: 2,
-            dateFormat: 'dd/mm/yy'
+            dateFormat: 'dd/mm/yy',
+            minDate: 0
         })
         .on("change", function () {
             from.datepicker("option", "maxDate", getDate(this));

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests\PaymentRequest;
 use Validator;
 use URL;
 use Session;
@@ -33,7 +34,12 @@ class AddMoneyController extends Controller
                                     ->with('house_id', $house_id);
     }
 
-    public function postPaymentWithStripe(Request $request)
+    public function cgv()
+    {
+        return view('cgv');
+    }
+
+    public function postPaymentWithStripe(PaymentRequest $request)
     {
         $prix = $_POST['price'];
         $startdate = $_POST['start'];
