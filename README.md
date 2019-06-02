@@ -7,6 +7,7 @@
 4. Ensuite récupérer le projet sur github en faisant dans la console (utiliser gitbash si vous êtes sur windows) un git clone https://github.com/gigi603/Atypikhouse_gilbert.git dans le dossier htdocs du dossier xampp, ah et pensez d'abord à supprimer tous les fichiers qui se trouvent dans htdocs avant d'importer le projet
 5. Une fois le projet importé
 6. Créer dans la racine du projet un fichier .env et coller tout ça
+
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:XvT4076FErsFxaBNVLkd3nF+8Wlz1o99oPmWfH6ncTc=
