@@ -179,7 +179,7 @@ class UsersController extends Controller
     public function historiques(Request $request)
     {
         $today = Date::now()->format('Y-m-d');
-        $historiques = reservation::with('house')->where('start_date', '<', $today)->where('end_date', '<', $today)->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $historiques = reservation::with('house')->where('start_date', '<=', $today)->where('end_date', '<=', $today)->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
         return view('user.historiques', compact('historiques'));
     }
 

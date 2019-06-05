@@ -28,7 +28,7 @@ class EditHouseRequest extends FormRequest
             'pays' => 'required|max:50|alpha', 
             'ville' => 'required|max:100|alpha',
             'price' => 'required|max:100000|numeric',
-            'adresse' => 'required|max:50|regex:/^[a-zA-Z0-9\s]+$/',
+            'adresse' => 'required|max:50|regex:/^[a-zA-Z0-9\s\-]+$/',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
             'description' => 'required|max:1000',
             'propriete' => 'required|max:500'

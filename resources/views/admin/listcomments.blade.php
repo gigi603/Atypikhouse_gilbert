@@ -19,9 +19,9 @@
                 <tr>
                     <td>{{$comment->comment}} </td>
                     <td>Note: {{$comment->note}}/5</td>
-                    <td>{{$comment->house->title}}
+                    <td>{{$comment->title}}
                     <td>
-                        <h3 class="price">{{$comment->house->price}}€</h3>
+                        <h3 class="price">{{$comment->price}}€</h3>
                     </td>
                     <td>
                         <input type="hidden" name="_method" value="DELETE">

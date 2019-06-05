@@ -29,6 +29,7 @@
                                         <p> Pays: {{$historique->house->pays}}</p>
                                         <p> Ville: {{$historique->house->ville}}</p>
                                         <p> Adresse: {{$historique->house->adresse}}</p>
+                                        <p> Téléphone: {{$historique->house->telephone}}</p>
                                     </div>
                                 </div>
                             </div>

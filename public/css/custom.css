@@ -7,7 +7,8 @@ html, body {
 	font-size: 16px;
 	max-width: 100%;
     overflow-x: hidden;
-    height: 100%;
+	height: 100%;
+	background-color: #F2F2F2;
 }
 
 .padding10 {
@@ -110,17 +111,17 @@ p {
 .btn-color {
 	background-color: darkgreen;
 	border-color: darkgreen;
-	color: #fff;
+	color:#FFFBFC;
 }
 
 .btn-color:hover {
 	background-color: darkgreen;
 	border-color: darkgreen;
-	color: #fff;
+	color:#FFFBFC;
 }
 
 .btn_reserve {
-	color: white;
+	color: #FFFBFC;
 	background-color: darkgreen;
 	border-color: darkgreen;
 	border: none;
@@ -130,7 +131,7 @@ p {
 }
 
 .btn_reserve:hover {
-	color: white;
+	color: #FFFBFC;
 	background-color: darkgreen;
 	border-color: darkgreen;
 	border: none;
@@ -201,12 +202,12 @@ p {
 
 .btn-searchbar{
 	background-color: darkgreen;
-	color: #fff;
+	color: #FFFBFC;
 	border-color: darkgreen;
 }
 .btn-searchbar:hover {
 	background-color: darkgreen;
-	color: #fff;
+	color: #FFFBFC;
 	border-color: darkgreen;
 }
 .annonces-block {
@@ -246,6 +247,7 @@ p {
 
 .card-block {
 	padding: 15px 15px;
+	background-color: #FFFFFF;
 }
 
 .card-center {

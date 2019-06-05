@@ -29,7 +29,8 @@
                                 <p>Annulation gratuite !</p>
                                 <p> Pays: {{$reservation->house->pays}}</p>
                                 <p> Ville: {{$reservation->house->ville}}</p>
-                                <p> Adresse: {{$reservation->house->ville}}</p>
+                                <p> Adresse: {{$reservation->house->adresse}}</p>
+                                <p> Téléphone: {{$reservation->house->telephone}}</p>
                             <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
                             <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                             <h3 class="price">{{$reservation->house->price}}€</h3>

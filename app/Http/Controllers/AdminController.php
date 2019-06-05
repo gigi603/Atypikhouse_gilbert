@@ -395,7 +395,10 @@ class AdminController extends Controller
 
     public function listcomments(Comment $comments, $id)
     {
-        $comments = comment::where('user_id', $id)->get();
+        $comments = DB::table('comments')->join('houses', 'houses.id', '=', 'comments.house_id')
+                                         ->join('users', 'users.id', '=', 'comments.user_id')
+                                                ->where('comments.user_id','=', $id)
+                                                ->get();
         return view('admin.listcomments')->with('comments', $comments);
     }
 

@@ -30,6 +30,7 @@
                                 <p> Pays: {{$historique->house->pays}}</p>
                                 <p> Ville: {{$historique->house->ville}}</p>
                                 <p> Adresse: {{$historique->house->adresse}}</p>
+                                <p> Téléphone: {{$historique->house->telephone}}</p>
                             <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
                             <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                             <h3 class="price">{{$historique->house->price}}€</h3>

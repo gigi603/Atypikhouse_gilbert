@@ -28,6 +28,7 @@
                                     <p> Pays: {{$reservation->house->pays}}</p>
                                     <p> Ville: {{$reservation->house->ville}}</p>
                                     <p> Adresse: {{$reservation->house->adresse}}</p>
+                                    <p> Téléphone: {{$reservation->house->telephone}}</p>
                                 </div>
                             </div>
                         </div>

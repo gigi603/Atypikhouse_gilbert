@@ -152,6 +152,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Vue de détails de la reservation de l'utilisateur
     Route::get('/showreservations/{id}', 'UsersController@showreservations')->name('user.showreservations');
+
+    //Conditions générales de vente
     Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
 
     //User historiques
