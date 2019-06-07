@@ -25,3 +25,6 @@ Une fois dans le repertoire atypikhouse_gilbert dans le terminal lancer la comma
 1. php artisan serve
 2. (Si problème) Si après avoir fait toutes les manipulations décrite au-dessus php artisan serve ne marche pas faites un composer install puis composer update puis refaites un php artisan serve
 3. Aller sur le lien : http://127.0.0.1:8000/ de votre navigateur
+Pour vous connecter en admin c'est http://127.0.0.1:8000/admin
+un profil utilisateur gilbert.trinidad1@gmail.com et en mot de passe kronos603
+un profil admin admin@gmail.com et en mot de passe kronos603
