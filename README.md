@@ -52,8 +52,6 @@ NOCAPTCHA_SITEKEY=6Lfc4XUUAAAAAIImE0jHdcjmv4Z87O_XzkJIMlvA
 
 8. Maintenant télécharger visualstudiocode ouvrez-le puis cliquez sur terminal, new terminal ça va créé un terminal en dessous du projet, aller dans le terminal et aller dans le repertoire atypikhouse_gilbert dans le terminal.
 
-Une fois dans le repertoire atypikhouse_gilbert dans le terminal lancer la commande
-
 
 Vous pouvez dès à présent lancer le site
 
