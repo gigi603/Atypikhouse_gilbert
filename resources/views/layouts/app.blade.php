@@ -134,6 +134,7 @@
                         <ul>
                             <li><a href="{{ route('apropos') }}">A propos</a></li>
                             <li><a href="{{ route('faq') }}">FAQ</a></li>
+                            <li><a href="{{ route('cgv') }}">Conditions générales de vente</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
