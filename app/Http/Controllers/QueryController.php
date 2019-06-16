@@ -18,7 +18,7 @@ class QueryController extends Controller
      */
     public function index(Request $request)
     {
-        $ville = \Request::get('search');
+        $ville = \Request::get('ville');
         $category = \Request::get('category_id');
         $categories = category::all();
         $houses = House::with('category')->where([['ville', 'LIKE', '%' . $ville . '%'],['category_id', 'LIKE','%'. $category . '%'],['statut', '=', 'Validé']])->get();

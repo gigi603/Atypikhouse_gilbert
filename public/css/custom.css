@@ -15,6 +15,25 @@ html, body {
 	padding: 0 10px;
 }
 
+.reservation-search {
+	display:block;
+}
+
+.field-home {
+	width: 200px;
+	height: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+	margin-bottom: 20px !important;
+}
+
+.date-field-home {
+	width: 50% !important;
+	height: 50px;
+	border-radius: 5px;
+	margin-bottom: 20px !important;
+}
+
 .margin-top {
 	margin-top: 100px;
 }
@@ -34,16 +53,16 @@ html, body {
 .button2 input {
 	height: 50px;
 	font-size: 18px;
-	width: 270px;
 }
 
 .cadre {
-	background: rgba(0, 0, 0, 0.6);
+	background-color: #FFF;
 	padding: 20px 0;
-	border-radius: 20px;
+	border-radius: 4px !important;
 }
 .title-intro {
-	color: #eee;
+	color: #000;
+	font-size: 30px;
 }
 
 .price {
@@ -194,16 +213,12 @@ p {
 	width: 50%;
 }
 
-#select_category_home{
-	height: 50px;
-	font-size: 18px;
-	width: 270px;
-}
-
 .btn-searchbar{
 	background-color: darkgreen;
 	color: #FFFBFC;
 	border-color: darkgreen;
+	padding: 12px 24px;
+	font-size: 18px;
 }
 .btn-searchbar:hover {
 	background-color: darkgreen;
@@ -239,6 +254,7 @@ p {
 	position: relative;
 	background-color: #fff;
 	transition: transform .2s;
+	margin-bottom: 40px;
 }
 
 .card-houses:hover {
