@@ -30,6 +30,9 @@ class HousesTableSeeder extends Seeder
                 Plus de 25 sites touristiques majeurs à moins de15 km, et les activités de loisirs voisines (canoë, accrobranche, escalade, spéléo, montgolfières, rando, VTT).
 
                 Rien de plus reposant que de passer un peu de temps au calme avec sa famille ou ses amies dans un logement insolite et remarquable de part sa verdure et sa tranquillité.",
+                'start_date' => '2019-06-10',
+                'end_date' => '2019-08-30',
+                'nb_personnes' => 4,
                 'telephone' => '0623216792',
                 'price' => 345.00,
                 'photo' => '1558108054.jpg',
@@ -47,6 +50,9 @@ class HousesTableSeeder extends Seeder
                 Aux alentours, canyoning escalade balades à cheval ou encore via ferrata et accrobranche sont possibles et un peu plus loin vous trouverez les gorges de l'Ardèche ( canoë, spéléo, la grotte Chauvet).
                 Et n'oublions pas les nombreuses propositions culturelles ainsi que les bonnes adresses des producteurs locaux.
                 Le tableau ne serait pas complet sans les moutons les ânes et les poules, un petit côté camping à la ferme.",
+                'start_date' => '2019-06-10',
+                'end_date' => '2019-08-30',
+                'nb_personnes' => 10,
                 'telephone' => '0709431264',
                 'price' => 400.00,
                 'photo' => '1558110140.jpg',
@@ -60,6 +66,9 @@ class HousesTableSeeder extends Seeder
                 'ville' => 'PYRENEES-ATLANTIQUE',
                 'adresse' => 'PLATEAU DE BEZOU GOURETTE 64440',
                 'description' => "Ils sont trois, passionnés de montagne et de voyages, débordant d’idées lumineuses qu’ils finalisent eux-mêmes avec enthousiasme. Basés à Gourette, station de sports d’hiver située dans les Pyrénées, ils ont mis au point, conçu et réalisé, avec la complicité du directeur de la station, une déclinaison de dôme version luxe où passer la nuit, combinée avec de séduisantes activités : bain nordique à 38°, balade nocturne en raquettes (tout public), dîner gastronomique au champagne, etc., le tout à 1600 m d’altitude. Une offre qui séduit les visiteurs désireux de varier les plaisirs et rompre la monotonie des pentes neigeuses, notamment les accompagnants des skieurs, souvent délaissés. A tort ! Car leur nombre n’est pas négligeable : pour 1 skieur, 2 accompagnants qui veulent eux aussi, à juste titre, être chouchoutés ! Ils ne seront pas déçus tant le décor naturel se marie harmonieusement avec l’élégance de la structure du dôme, toute de bois et métal simulant les flocons de neige et le confort intérieur, inespéré dans cet environnement grandiose et blanc à perte de vue. Toilettes, douche, lavabo, poêle à bois, réfrigérateur, micro-ondes, une vraie suite de luxe ! Main d’oeuvre et matériaux locaux, souci de préserver l’environnement, recyclage des déchets, tout a été pensé en amont et scrupuleusement mis en œuvre. Dans votre « wild dome », vous serez complètement autonomes, sous l’oeil prévenant et attentif de votre accompagnateur installé un peu plus loin. Une expérience inédite et précieuse, riche de sensations… vertigineuses !",
+                'start_date' => '2019-06-10',
+                'end_date' => '2019-08-30',
+                'nb_personnes' => 2,
                 'telephone' => "0123455667",
                 'price' => 30.00,
                 'photo' => '1558110612.jpg',
@@ -83,6 +92,9 @@ class HousesTableSeeder extends Seeder
                 Plus de 25 sites touristiques majeurs à moins de15 km, et les activités de loisirs voisines (canoë, accrobranche, escalade, spéléo, montgolfières, rando, VTT).
 
                 Rien de plus reposant que de passer un peu de temps au calme avec sa famille ou ses amies dans un logement insolite et remarquable de part sa verdure et sa tranquillité.",
+                'start_date' => '2019-06-20',
+                'end_date' => '2019-06-22',
+                'nb_personnes' => 3,
                 'telephone' => '0623216792',
                 'price' => 345.00,
                 'photo' => '1558108054.jpg',
@@ -100,6 +112,9 @@ class HousesTableSeeder extends Seeder
                 Aux alentours, canyoning escalade balades à cheval ou encore via ferrata et accrobranche sont possibles et un peu plus loin vous trouverez les gorges de l'Ardèche ( canoë, spéléo, la grotte Chauvet).
                 Et n'oublions pas les nombreuses propositions culturelles ainsi que les bonnes adresses des producteurs locaux.
                 Le tableau ne serait pas complet sans les moutons les ânes et les poules, un petit côté camping à la ferme.",
+                'start_date' => '2019-06-30',
+                'end_date' => '2019-07-01',
+                'nb_personnes' => 6,
                 'telephone' => '0709431264',
                 'price' => 400.00,
                 'photo' => '1558110140.jpg',
@@ -113,6 +128,9 @@ class HousesTableSeeder extends Seeder
                 'ville' => 'PYRENEES-ATLANTIQUE',
                 'adresse' => 'PLATEAU DE BEZOU GOURETTE 64440',
                 'description' => "Ils sont trois, passionnés de montagne et de voyages, débordant d’idées lumineuses qu’ils finalisent eux-mêmes avec enthousiasme. Basés à Gourette, station de sports d’hiver située dans les Pyrénées, ils ont mis au point, conçu et réalisé, avec la complicité du directeur de la station, une déclinaison de dôme version luxe où passer la nuit, combinée avec de séduisantes activités : bain nordique à 38°, balade nocturne en raquettes (tout public), dîner gastronomique au champagne, etc., le tout à 1600 m d’altitude. Une offre qui séduit les visiteurs désireux de varier les plaisirs et rompre la monotonie des pentes neigeuses, notamment les accompagnants des skieurs, souvent délaissés. A tort ! Car leur nombre n’est pas négligeable : pour 1 skieur, 2 accompagnants qui veulent eux aussi, à juste titre, être chouchoutés ! Ils ne seront pas déçus tant le décor naturel se marie harmonieusement avec l’élégance de la structure du dôme, toute de bois et métal simulant les flocons de neige et le confort intérieur, inespéré dans cet environnement grandiose et blanc à perte de vue. Toilettes, douche, lavabo, poêle à bois, réfrigérateur, micro-ondes, une vraie suite de luxe ! Main d’oeuvre et matériaux locaux, souci de préserver l’environnement, recyclage des déchets, tout a été pensé en amont et scrupuleusement mis en œuvre. Dans votre « wild dome », vous serez complètement autonomes, sous l’oeil prévenant et attentif de votre accompagnateur installé un peu plus loin. Une expérience inédite et précieuse, riche de sensations… vertigineuses !",
+                'start_date' => '2019-07-10',
+                'end_date' => '2019-07-15',
+                'nb_personnes' => 8,
                 'telephone' => "0123455667",
                 'price' => 30.00,
                 'photo' => '1558110612.jpg',
