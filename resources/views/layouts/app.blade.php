@@ -31,7 +31,7 @@
     </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <!-- Collapsed Hamburger -->
