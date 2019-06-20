@@ -16,17 +16,28 @@ use App\Category;
 use App\Valuecatpropriete;
 use App\Propriete;
 use Illuminate\Http\Request;
+use App\Http\Requests\SearchRequest;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')->orderBy('id', 'desc')->get();
         $categories = category::all();
 
         return view('home')->with('houses', $houses)
                            ->with('categories', $categories);
+    }
+
+    public function searchHouses(SearchRequest $request)
+    {
+        $houses = house::with('valuecatproprietes', 'proprietes', 'category')->orderBy('id', 'desc')->get();
+        $categories = category::all();
+        //$datas = $request->flashOnly(['ville', 'category_id', 'start_date', 'end_date', 'nb_personnes']);
+        return view('houses.index')->with('houses', $houses)
+                           ->with('categories', $categories);
+                           //->with('datas', $datas);
     }
     public function apropos() {
         $categories = category::all();

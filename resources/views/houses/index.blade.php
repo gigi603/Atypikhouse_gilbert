@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid" role="annonces">
     <h2 id="hebergements">Nos hébergements</h2>
-    <div class="intro-body">
+    <div class="text-center">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
