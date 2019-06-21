@@ -3,9 +3,9 @@ $(function () {
     var disableddates = ["05-3-2018", "05-11-2018", "05-25-2018", "05-20-2018"];
         from = $("#from")
             .datepicker({
-                
                 defaultDate: null,
                 changeMonth: true,
+                changeYear: true,
                 numberOfMonths: 1,
                 dateFormat: 'dd/mm/yy',
                 minDate: 0,
@@ -31,6 +31,7 @@ $(function () {
         to = $("#to").datepicker({
             defaultDate: null,
             changeMonth: true,
+            changeYear: true,
             numberOfMonths: 1,
             dateFormat: 'dd/mm/yy',
             minDate: 0,
@@ -90,6 +91,14 @@ $(function () {
             diffDays = Math.round(Math.abs((a - b)/(c)));
         console.log(diffDays); //show difference
     }
+
+    $("#from").keydown(function(event) { 
+        return false;
+    });
+
+    $("#to").keydown(function(event) { 
+        return false;
+    });
     
 
 });

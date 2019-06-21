@@ -118,13 +118,13 @@ p {
 }
 
 #logo {
-	height: 50px;
-	width: 50px;
+	height: 70px;
+	padding: 0;
 }
 
 #logo img {
-	height: 137px;
-	width: 100px;
+	height: 60px;
+	width: 60px;
 }
 
 .btn-color {
@@ -162,31 +162,27 @@ p {
 .img_house {
 	margin: 0 auto;
 }
-
+nav.navbar.navbar-default {
+	margin: 0;
+}
 /* Navbar */
 .navbar {
 	border-bottom: none;
-	background: rgba(0, 0, 0, 0.6);
+	background-color: #FFF;
 	font-size: 17px;
 }
 
-.navbar-static-top {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-}
-
 .navbar-default .navbar-brand {
-    color: #FFF;
+	color: #3f4b30;
+	margin: 0 !important;
 }
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
-    color: #FFF;
+    color: #3f4b30;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-texta {
    /* text-decoration: underline; */
-   color: #FFF;
+   color: #3f4b30;
 }
 
 /* HomePage */
@@ -202,11 +198,7 @@ p {
 .intro-body {
 	display: table-cell;
     vertical-align: middle;
-    height: 500px;
     text-align: center;
-    /*width: 100%;*/
-     z-index: 10;
-
 }
 
 .search-bar {
@@ -214,16 +206,16 @@ p {
 }
 
 .btn-searchbar{
-	background-color: darkgreen;
+	background-color: #3f4b30;
 	color: #FFFBFC;
-	border-color: darkgreen;
+	border-color: #3f4b30;
 	padding: 12px 24px;
 	font-size: 18px;
 }
 .btn-searchbar:hover {
-	background-color: darkgreen;
+	background-color: #3f4b30;
 	color: #FFFBFC;
-	border-color: darkgreen;
+	border-color: #3f4b30;
 }
 .annonces-block {
 	margin-top: 120px;

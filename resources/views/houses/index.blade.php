@@ -1,7 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Nos Hébergements')
-@section('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de loccation tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore')
-{{-- @section('footer', 'footer_absolute') --}}
+@section('title', 'Nos hébergements')
+@section('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de locations tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore')
 @section('content')
 <div class="container-fluid" role="annonces">
     <h2 id="hebergements">Nos hébergements</h2>
@@ -42,3 +41,9 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/calendar.js') }}"></script>
+@endsection
