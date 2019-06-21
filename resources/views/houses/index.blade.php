@@ -17,7 +17,7 @@
                                         @include('search',['url'=>'search','link'=>'search'])
                                     </div>
                                 </div>
-                                @foreach($houses as $house)
+                                @forelse($houses as $house)
                                     @if($house->statut == "Validé")
                                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                             <div class="card-houses h-100">       
@@ -30,8 +30,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endif  
-                                @endforeach
+                                    @endif 
+                                    @empty 
+                                        <div class="col-lg-9 col-md-9 col-sm-9">
+                                            <p style="color: #000;">Désolé aucun hébérgements ne correspond à vos critères</p>
+                                        </div>
+                                @endforelse
                             </div>
                         </form>
                     </div>
