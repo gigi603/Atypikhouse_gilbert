@@ -34,6 +34,7 @@ Route::get('/mentions_legales', 'HomeController@mentions_legales')->name('mentio
 Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/politique_de_confidentialite', 'HomeController@politique_de_confidentialite')->name('politique_de_confidentialite');
 Route::get('/cgu', 'HomeController@cgu')->name('cgu');
+Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
 
 // admin route for our multi-auth system
 Route::get('/search', 'QueryController@index');
@@ -152,9 +153,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Vue de détails de la reservation de l'utilisateur
     Route::get('/showreservations/{id}', 'UsersController@showreservations')->name('user.showreservations');
-
-    //Conditions générales de vente
-    Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
 
     //User historiques
     Route::get('/user/historiques', 'UsersController@historiques')->name('user.historiques');
