@@ -27,7 +27,7 @@
                         <div class="form-group{{ $errors->has('ville') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Ville, département ou région</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="ville" onkeyup="this.value=this.value.toUpperCase()" placeholder="Saisir la ville" autofocus value="{{ old('ville') }}">
+                                <input type="text" class="form-control" id="autocompleteville" name="ville" placeholder="Saisir la ville" autofocus value="{{ old('ville') }}">
                                 @if ($errors->has('ville'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('ville') }}</strong>
@@ -38,7 +38,7 @@
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="adresse" onkeyup="this.value=this.value.toUpperCase()" placeholder="Saisir l'adresse" autofocus value="{{ old('adresse') }}">
+                                <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" autofocus value="{{ old('adresse') }}">
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>
@@ -75,5 +75,7 @@
 </div>
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/create_house.js') }}"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&callback=initAutocomplete"></script>
+<script src="{{ asset('js/autocomplete_address.js') }}"></script>
 <!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
 
