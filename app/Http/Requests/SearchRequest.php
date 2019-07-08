@@ -24,7 +24,6 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
-            "ville" => "required",
             "category_id" => "required|not_in:0",
             "start_date" => "required",
             "end_date" => "required",
@@ -40,7 +39,6 @@ class SearchRequest extends FormRequest
     public function messages()
     {
         return [
-            "ville.required" => "Vous devez saisir une ville",
             "category_id.required" => "Vous devez choisir un type d'hebergement",
             "start_date.required" => "Vous devez choisir votre date de départ",
             "end_date.required" => "Vous devez choisir une date de retour",

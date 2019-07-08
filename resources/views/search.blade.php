@@ -1,12 +1,4 @@
 {!! Form::open(['method'=>'GET','url'=>$url,'class'=>'form','role'=>'search'])  !!}
-        <div class="form-group{{ $errors->has('ville') ? ' has-error' : '' }}">
-                <input type="text" class="form-control field-home" name="ville" placeholder="Où voulez-vous aller?" value="{{ old('ville') }}"/>
-                @if ($errors->has('ville'))
-                        <span class="help-block">
-                                <strong>{{ $errors->first('ville') }}</strong>
-                        </span>
-                @endif
-        </div>
         <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
                 <select id="select_category_home" name="category_id" class="form-control field-home">
                         <option id="" value="">Type d'hébergement</option>

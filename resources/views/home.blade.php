@@ -65,6 +65,8 @@
     @section('script')
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&callback=initAutocomplete"></script>
+        <script src="{{ asset('js/autocomplete_address.js') }}"></script>
         <script src="{{ asset('js/calendar.js') }}"></script>
     @endsection
 @endsection

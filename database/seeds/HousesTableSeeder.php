@@ -75,7 +75,7 @@ class HousesTableSeeder extends Seeder
                 'statut' => 'Validé'
             ],
             [
-                'title' => 'La cabane de sorcière',
+                'title' => 'La cabane dans les arbres',
                 'user_id' => 1,
                 'category_id' => 2,
                 'pays' => 'FRANCE',
