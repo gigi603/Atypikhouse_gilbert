@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Etape 1')
-@section('footer', 'footer_absolute')
+@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -12,18 +12,7 @@
                         {{ csrf_field() }}
                         
                         <p>1. Où se situe votre bien?</p>
-
-                        <div class="form-group{{ $errors->has('pays') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Pays</label>
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="pays" onkeyup="this.value=this.value.toUpperCase()" placeholder="Saisir le pays" autofocus value="{{ old('pays') }}">
-                                @if ($errors->has('pays'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('pays') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        <input type="hidden" name="pays" id="autocompletepays" value=""/>
                         <div class="form-group{{ $errors->has('ville') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Ville, département ou région</label>
                             <div class="col-md-6">
@@ -62,7 +51,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary btn-color">
+                                <button type="submit" class="btn btn-primary btn-color" id="create_annonce_step1" >
                                     Continuer
                                 </button>
                             </div>
@@ -73,9 +62,12 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/create_house.js') }}"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&callback=initAutocomplete"></script>
-<script src="{{ asset('js/autocomplete_address.js') }}"></script>
-<!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
-
+@endsection
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places"></script>
+    <script src="{{ asset('js/autocomplete_address.js') }}"></script>
+    <script src="{{ asset('js/create_house.js') }}"></script>
+    
+    <!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
+@endsection
