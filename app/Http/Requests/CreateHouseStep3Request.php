@@ -27,6 +27,8 @@ class CreateHouseStep3Request extends FormRequest
             'title' => 'required|regex:/^[\pL\s\-]+$/u|max:30',
             'category' => 'required_if:category_id,0',
             'nb_personnes' => 'required',
+            'start_date' => 'required|date|date_format:d/m/Y',
+            'end_date' => 'required|date|date_format:d/m/Y',
             'description' => 'required|regex:/^[0-9\pL\s\-\()\.\,]+$/u|max:500'
         ];
     }
@@ -44,6 +46,12 @@ class CreateHouseStep3Request extends FormRequest
             'title.regex'  => 'Votre titre doit contenir que des lettres ou des espaces',
             'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
+            'start_date.required' => "Veuillez sélectionner une date de départ",
+            'start_date.date' => "Veuillez mettre une date",
+            'start_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
+            'end_date.required' => "Veuillez sélectionner une date de retour",
+            'end_date.date' => "Veuillez mettre une date",
+            'end_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'description.required' => 'Veuillez saisir une description de votre annonce',
             'description.max' => 'Votre description ne doit contenir que 500 caractères max.',
             'description.regex' => 'Les caractères spéciaux autorisés sont: les parenthèses, virgules, points et les espaces'

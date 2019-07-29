@@ -25,9 +25,6 @@ $(function () {
                 }      
             })
             
-            // .on("change", function () {
-            //     to.datepicker("option", "minDate", getDate(this));
-            // }),
         to = $("#to").datepicker({
             defaultDate: null,
             changeMonth: true,
@@ -44,14 +41,7 @@ $(function () {
             dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
             dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
         })
-        .on("change", function () {
-            //from.datepicker("option", "maxDate", getDate(this));
-    //         var newDate = $(this).datepicker('from');
-    //    if (newDate) { // Not null
-    //            newDate.setDate(newDate.getDate() + 1);
-    //    }
-    //    $("#from").datepicker('setDate', newDate);
-    //    datepicker('option', 'minDate', newDate);     
+        .on("change", function () {  
         });
 
     function getDate(element) {
