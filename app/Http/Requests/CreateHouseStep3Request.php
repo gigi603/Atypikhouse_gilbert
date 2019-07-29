@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateHouseStep3Request extends FormRequest
+class CreateHouseStep2Request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class CreateHouseStep3Request extends FormRequest
     public function rules()
     {
         return [
-            'price' => 'required|regex:/^[0-9]+$/u|max:5'
+            'title' => 'required|regex:/^[\pL\s\-]+$/u|max:30',
+            'category' => 'required_if:category_id,0',
+            'description' => 'required'
         ];
     }
 
@@ -36,9 +38,11 @@ class CreateHouseStep3Request extends FormRequest
     public function messages()
     {
         return [
-            'price.required' => 'Veuillez saisir le prix par nuit',
-            'price.regex' => 'Veuillez saisir uniquement des chiffres',
-            'price.max' => 'Vous ne pouvez pas mettre un montant de plus de 5 chiffres',
+            'title.required' => 'Veuillez saisir le titre de votre annonce',
+            'title.max'  => 'Votre titre ne doit pas dépasser 40 caractères',
+            'title.regex'  => 'Votre titre doit contenir que des lettres et non des caractères spéciaux',
+            'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
+            'description.required' => 'Veuillez saisir une description de votre annonce',
         ];
     }
 }

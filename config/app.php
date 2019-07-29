@@ -187,6 +187,9 @@ return [
         Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
         Spatie\Sitemap\SitemapServiceProvider::class,
 
+        //Telephone
+        Propaganistas\LaravelPhone\PhoneServiceProvider::class,
+
         //JWT TOKEN
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
     ],

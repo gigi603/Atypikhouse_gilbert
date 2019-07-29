@@ -8,22 +8,12 @@
                 <div class="panel-heading">Créer un hébergement</div>
                 {!! Breadcrumbs::render('page1') !!}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step1')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step1')}}" onsubmit='return validate();' enctype="multipart/form-data">
                         {{ csrf_field() }}
                         
                         <p>1. Où se situe votre bien?</p>
-                        <input type="hidden" name="pays" id="autocompletepays" value=""/>
-                        <div class="form-group{{ $errors->has('ville') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Ville, département ou région</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="autocompleteville" name="ville" placeholder="Saisir la ville" autofocus value="{{ old('ville') }}">
-                                @if ($errors->has('ville'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('ville') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        <input type="hidden" class="form-control" id="autocompletepays" name="pays" autofocus value="{{ old('pays') }}">
+                        <input type="hidden" class="form-control" id="autocompleteville" name="ville" autofocus value="{{ old('ville') }}">
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
@@ -31,17 +21,6 @@
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Téléphone</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone" autofocus value="{{ old('telephone') }}">
-                                @if ($errors->has('telephone'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('telephone') }}</strong>
                                     </span>
                                 @endif
                             </div>

@@ -74,8 +74,6 @@ class HousesController extends Controller
         $houseAdresse = session('houseAdresse', $request->adresse);
         $request->session()->push('houseAdresse', $request->adresse);
         
-        $houseTelephone = session('houseTelephone', $request->telephone);
-        $request->session()->push('houseTelephone', $request->telephone);
 
         $houseUser = session('houseUser', $request->user_id);
         $request->session()->push('houseUser', $request->user_id);
@@ -91,7 +89,6 @@ class HousesController extends Controller
         $housePays = $request->session()->get('housePays');
         $houseVille = $request->session()->get('houseVille');
         $houseAdresse = $request->session()->get('houseAdresse');
-        $houseTelephone = $request->session()->get('houseTelephone');
 
         $ville = $request->old('ville');
         
@@ -100,11 +97,34 @@ class HousesController extends Controller
             'housePays' => $housePays,
             'houseVille' => $houseVille,
             'houseAdresse' => $houseAdresse,
-            'houseTelephone' => $houseTelephone
         ]);
     }
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
+        
+        $housePays = session('housePays', $request->pays);
+        $request->session()->push('housePays', $request->pays);
+
+        $houseVille = session('houseVille', $request->ville);
+        $request->session()->push('houseVille', $request->ville);
+
+        $houseAdresse = session('houseAdresse', $request->adresse);
+        $request->session()->push('houseAdresse', $request->adresse);
+        
+        $houseTelephone = session('houseTelephone', $request->telephone);
+        $request->session()->push('houseTelephone', $request->telephone);
+
+        $houseUser = session('houseUser', $request->user_id);
+        $request->session()->push('houseUser', $request->user_id);
+
+        return redirect('/house/create_step3');
+    }
+
+    public function create_step3(Request $request) {
+        return view('houses.create_step3');
+    }
+
+    public function postcreate_step3(CreateHouseStep3Request $request) {
         $ville = $request->old('ville');
         $categories = category::where('statut', '=', 1)->get();
         
@@ -139,15 +159,15 @@ class HousesController extends Controller
         $houseDescription = session('houseDescription', $request->description);
         $request->session()->push('houseDescription', $request->description);
 
-        return redirect('/house/create_step3');
-        
+        return redirect('/house/create_step4');
+    }
+    
+
+    public function create_step4(Request $request) {
+        return view('houses.create_step4');
     }
 
-    public function create_step3(Request $request) {
-        return view('houses.create_step3');
-    }
-
-    public function postcreate_step3(CreateHouseStep3Request $request) {
+    public function postcreate_step4(CreateHouseStep4Request $request) {
         $housePrix = session('housePrix', $request->price);
         $request->session()->push('housePrix', $request->price);
         
@@ -158,15 +178,14 @@ class HousesController extends Controller
         $houseTitle = $request->session()->get('houseTitle');
         $houseDescription = $request->session()->get('houseDescription');
         $housePrix = $request->session()->get('housePrix');
-        return redirect('/house/create_step4');
-    }
-    
-
-    public function create_step4(Request $request) {
-        return view('houses.create_step4');
+        return redirect('/house/create_step5');
     }
 
-    public function postcreate_step4(CreateHouseStep4Request $request) {
+    public function create_step5(Request $request) {
+        return view('houses.create_step5');
+    }
+
+    public function postcreate_step5(CreateHouseStep5Request $request) {
         $houseTitle = $request->session()->get('houseTitle');
         $houseUser = $request->session()->get('houseUser');
         $houseCategory = $request->session()->get('houseCategory');

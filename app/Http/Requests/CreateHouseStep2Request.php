@@ -4,7 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateHouseStep2Request extends FormRequest
+
+class CreateHouseStep1Request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +25,7 @@ class CreateHouseStep2Request extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|regex:/^[\pL\s\-]+$/u|max:30',
-            'category' => 'required_if:category_id,0',
-            'description' => 'required'
+            'telephone' =>'required|phone:FR',
         ];
     }
 
@@ -38,11 +37,8 @@ class CreateHouseStep2Request extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Veuillez saisir le titre de votre annonce',
-            'title.max'  => 'Votre titre ne doit pas dépasser 40 caractères',
-            'title.regex'  => 'Votre titre doit contenir que des lettres et non des caractères spéciaux',
-            'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
-            'description.required' => 'Veuillez saisir une description de votre annonce',
+            'telephone.required' => 'Veuillez saisir votre numéro de téléphone',
+            'telephone.phone' => 'Veuillez saisir un téléphone au bon format',
         ];
     }
 }

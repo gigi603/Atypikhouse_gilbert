@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateHouseStep4Request extends FormRequest
+class CreateHouseStep3Request extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class CreateHouseStep4Request extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'image|mimes:jpg,png,jpeg',
+            'price' => 'required|regex:/^[0-9]+$/u|max:5'
         ];
     }
 
@@ -36,8 +36,9 @@ class CreateHouseStep4Request extends FormRequest
     public function messages()
     {
         return [
-            'photo.required' => 'Veuillez mettre une photo de votre hebergement',
-            'photo.image' => 'Veuillez mettre une image'
+            'price.required' => 'Veuillez saisir le prix par nuit',
+            'price.regex' => 'Veuillez saisir uniquement des chiffres',
+            'price.max' => 'Vous ne pouvez pas mettre un montant de plus de 5 chiffres',
         ];
     }
 }

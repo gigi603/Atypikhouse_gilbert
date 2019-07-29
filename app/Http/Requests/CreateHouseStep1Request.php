@@ -27,7 +27,6 @@ class CreateHouseStep1Request extends FormRequest
         return [
             'ville' => 'required|max:30', 
             'adresse' => 'required|max:50',
-            'telephone' => 'required|regex:/(0)[0-9]{9}/|size:10'
         ];
     }
 
@@ -41,10 +40,6 @@ class CreateHouseStep1Request extends FormRequest
         return [
             'ville.required' => 'Veuillez saisir une ville',
             'adresse.required' => 'Veuillez saisir une adresse',
-            'adresse.max'  => 'Votre adresse ne doit pas dépasser 30 caractères',
-            'telephone.required' => 'Veuillez saisir votre numéro de téléphone',
-            'telephone.regex' => "Votre numéro de telephone doit contenir que des chiffres et commençant par un 0 et pas d'espaces",
-            'telephone.size' => "Votre numéro de telephone doit contenir uniquement 10 chiffres et commençant par un 0  et pas d'espaces"
         ];
     }
 }
