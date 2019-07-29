@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Créer un hébergement</div>
-                {!! Breadcrumbs::render('page1') !!}
+                {!! Breadcrumbs::render('page2') !!}
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step2')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -44,6 +44,5 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places"></script>
     <script src="{{ asset('js/autocomplete_address.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
-    
     <!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
 @endsection

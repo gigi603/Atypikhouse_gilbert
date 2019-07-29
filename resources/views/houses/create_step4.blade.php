@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Créer un hébergement</div>
-                {!! Breadcrumbs::render('page3') !!}
+                {!! Breadcrumbs::render('page4') !!}
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step3')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
