@@ -1,6 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Etape 2')
-@section('footer', 'footer_absolute')
+@section('title', 'Etape 3')
 @section('content')
 <div class="container">
     <div class="row">
@@ -118,6 +117,7 @@
         </div>
     </div>
 </div>
+@endsection
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
