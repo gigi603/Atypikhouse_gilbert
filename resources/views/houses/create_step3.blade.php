@@ -9,7 +9,7 @@
                 <div class="panel-heading">Créer un hébergement</div>
                 {!! Breadcrumbs::render('page3') !!}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step2')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step3')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <p>3. Décrivez nous votre bien et les disponibilités</p>                     
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -122,7 +122,7 @@
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/calendar.js') }}"></script>
+    <script src="{{ asset('js/create_house.js') }}"></script>
 @endsection
-<script src="{{ asset('js/create_house.js') }}"></script>
 
 
