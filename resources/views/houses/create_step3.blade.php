@@ -41,8 +41,8 @@
                             <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
                                 <div class="col-md-6">
-                                    <select id="select_category" name="nb_personnes" class="form-control">
-                                        <option id="" value="0" autofocus>Nombre de personnes</option>
+                                    <select id="select_nb_personnes" name="nb_personnes" class="form-control">
+                                        <option id="" value="" autofocus>Nombre de personnes</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -58,7 +58,7 @@
                                         <option value="13">13</option>
                                         <option value="14">14</option>
                                         <option value="15">15</option>
-                                        <option value="16">16</option>   
+                                        <option value="16">16</option>  
                                     </select>
                                     @if ($errors->has('nb_personnes'))
                                         <span class="help-block">
