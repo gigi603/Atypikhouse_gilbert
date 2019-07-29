@@ -81,19 +81,16 @@ class HousesController extends Controller
         return redirect('/house/create_step2');
     }
 
-    public function create_step2(Category $categories, Request $request) {
-        $categories = category::where('statut','=', 1)->get();
-        $request->session()->forget('houseProprietes');
-        $request->session()->forget('houseProprietesId');
+    public function create_step2(Request $request) {
 
         $housePays = $request->session()->get('housePays');
         $houseVille = $request->session()->get('houseVille');
         $houseAdresse = $request->session()->get('houseAdresse');
+        $houseTelephone = $request->session()->get('houseTelephone');
 
         $ville = $request->old('ville');
         
         return view('houses.create_step2', [
-            'categories' => $categories,
             'housePays' => $housePays,
             'houseVille' => $houseVille,
             'houseAdresse' => $houseAdresse,
@@ -101,16 +98,9 @@ class HousesController extends Controller
     }
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
-        
-        $housePays = session('housePays', $request->pays);
-        $request->session()->push('housePays', $request->pays);
-
-        $houseVille = session('houseVille', $request->ville);
-        $request->session()->push('houseVille', $request->ville);
-
-        $houseAdresse = session('houseAdresse', $request->adresse);
-        $request->session()->push('houseAdresse', $request->adresse);
-        
+        $housePays = $request->session()->get('housePays');
+        $houseVille = $request->session()->get('houseVille');
+        $houseAdresse = $request->session()->get('houseAdresse');
         $houseTelephone = session('houseTelephone', $request->telephone);
         $request->session()->push('houseTelephone', $request->telephone);
 
@@ -120,8 +110,14 @@ class HousesController extends Controller
         return redirect('/house/create_step3');
     }
 
-    public function create_step3(Request $request) {
-        return view('houses.create_step3');
+    public function create_step3(Category $categories, Request $request) {
+        $categories = category::where('statut','=', 1)->get();
+        $request->session()->forget('houseProprietes');
+        $request->session()->forget('houseProprietesId');
+
+        return view('houses.create_step3', [
+            'categories' => $categories
+        ]);
     }
 
     public function postcreate_step3(CreateHouseStep3Request $request) {

@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step2')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <p>2. Décrivez nous votre bien et les disponibilités</p>                     
+                        <p>3. Décrivez nous votre bien et les disponibilités</p>                     
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Titre de votre bien</label>
                                 <div class="col-md-6">
