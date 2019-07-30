@@ -38,6 +38,7 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="proprietes"></div>
                             <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
                                 <div class="col-md-6">
@@ -91,7 +92,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="proprietes"></div>
                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 control-label">Description</label>
 
