@@ -17,10 +17,12 @@ google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
 });
 function validate(){
     if(place)
-    if(ville.value == "" && pays.value == ""){
+    if(ville.value == "" || pays.value == "" 
+    || pays.value != place.address_components[5].long_name 
+    || ville.value != place.address_components[2].long_name){
       adresse.value = "";
       return true;
-    } 
+    }
     if(!place || adresse.value != place.formatted_address){
       adresse.value = "";
       return true;
