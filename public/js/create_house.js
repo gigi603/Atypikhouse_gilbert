@@ -19,8 +19,7 @@ $(document).ready(function(){
                                 ${data.proprietes[i].propriete}
                             </label>
                             <div class="col-md-6">
-                                <input type="checkbox" required name="propriete[]" autofocus value="" />
-                                <input type="hidden" name="propriete_id[]" value="${data.proprietes[i].id}"/>
+                                <input type="checkbox" name="propriete[]" autofocus value="" />
                             </div>
                         </div>`);
                     }
@@ -36,3 +35,4 @@ $(document).ready(function(){
     });
    
 });
+/*<input type="hidden" name="propriete_id[]" value="${data.proprietes[i].id}"/>*/

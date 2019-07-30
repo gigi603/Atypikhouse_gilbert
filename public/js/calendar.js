@@ -17,8 +17,10 @@ $(function () {
                 dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
                 dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
                 dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+                autoclose: true,
                 onSelect: function(dateText, inst){
-                    var endDate = new Date($("#from").datepicker("getDate"));
+                    let startDate = new Date($("#from").datepicker("getDate"));
+                    let endDate = new Date($("#from").datepicker("getDate"));
                     endDate.setDate(endDate.getDate() + 1);
                     $("#to").datepicker("option","minDate",
                     endDate);

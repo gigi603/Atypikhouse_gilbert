@@ -71,7 +71,7 @@
                             <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Date de début</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="" />
+                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="{{ old('start_date') }}" />
                                     {{-- <input id="name" type="text" class="form-control" name="start_date" maxlength="40" autofocus value="{{ old('start_date') }}"> --}}
                                     @if ($errors->has('start_date'))
                                         <span class="help-block">
@@ -83,7 +83,7 @@
                             <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Date de fin</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="" />
+                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="{{ old('end_date') }}" />
                                     {{-- <input id="name" type="text" class="form-control" name="end_date" maxlength="40" autofocus value="{{ old('end_date') }}"> --}}
                                     @if ($errors->has('end_date'))
                                         <span class="help-block">

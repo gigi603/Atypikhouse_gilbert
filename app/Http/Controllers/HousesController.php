@@ -123,6 +123,8 @@ class HousesController extends Controller
     public function postcreate_step3(CreateHouseStep3Request $request) {
         $ville = $request->old('ville');
         $categories = category::where('statut', '=', 1)->get();
+        $houseStartDate = session('houseStartDate', $request->start_date);
+        $request->session()->push('houseStartDate', $request->start_date);
         
         $proprietes = $request->input('propriete');
         $proprietes_id = $request->input('propriete_id');
