@@ -129,18 +129,21 @@ class HousesController extends Controller
         $proprietes_id = $request->input('propriete_id');
 
         $housePropriete = session('houseProprietes', $proprietes);
-        // $houseProprieteId = session('houseProprietesId', $proprietes_id);
+        var_dump($proprietes);
+        //var_dump($housePropriete);
+        $houseProprieteId = session('houseProprietesId', $proprietes_id);
 
-        // if ($proprietes == null) {
-
-        // } else {
-        //     foreach ($proprietes as $valuePropriete){
-        //         $request->session()->push('houseProprietes', $valuePropriete);
-        //     }
-        //     foreach ($proprietes_id as $keyId => $id){
-        //         $request->session()->push('houseProprietesId', $id);
-        //     }
-        // }
+        if ($proprietes == null) {
+            var_dump('pas de checkbox selectionnées');
+        } else {
+            foreach ($proprietes as $valuePropriete){
+                var_dump($valuePropriete);
+                $request->session()->push('houseProprietes', $valuePropriete);
+            }
+            foreach ($proprietes_id as $keyId => $id){
+                $request->session()->push('houseProprietesId', $id);
+            }
+        }
 
         $housePays = $request->session()->get('housePays');
         $houseVille = $request->session()->get('houseVille');

@@ -20,6 +20,7 @@ $(document).ready(function(){
                             </label>
                             <div class="col-md-6">
                                 <input type="checkbox" class="checkbox_propertie" name="propriete[]" autofocus value="" />
+                                <input type="hidden" name="propriete_id[]" value="${data.proprietes[i].id}"/>
                             </div>
                         </div>`);
                     }
