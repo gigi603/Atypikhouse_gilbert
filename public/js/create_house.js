@@ -19,20 +19,33 @@ $(document).ready(function(){
                                 ${data.proprietes[i].propriete}
                             </label>
                             <div class="col-md-6">
-                                <input type="checkbox" name="propriete[]" autofocus value="" />
+                                <input type="checkbox" class="checkbox_propertie" name="propriete[]" autofocus value="" />
                             </div>
                         </div>`);
                     }
-                    $('input[name="propriete[]"]').bind('keypress', function(e){
-                        var keyCode = (e.which)?e.which:event.keyCode
-                        return !(keyCode>31 && (keyCode<48 || keyCode>57)|| keyCod); 
-                    });
+                    // $('input[name="propriete[]"]').bind('keypress', function(e){
+                    //     var keyCode = (e.which)?e.which:event.keyCode
+                    //     return !(keyCode>31 && (keyCode<48 || keyCode>57)|| keyCod); 
+                    // });
+                    
                 },error: function (data){
                     $('.proprietes').empty();
                 }
             });
         })
+        
     });
+    
    
+});
+
+$(document).on("click", "input[name='propriete[]']", function(){
+    $("input[name='propriete[]']").each(function () {
+        if( $(this).is(':checked') ){
+            $(this).val("true");
+        } else {
+            $(this).val("false");
+        }
+    });
 });
 /*<input type="hidden" name="propriete_id[]" value="${data.proprietes[i].id}"/>*/
