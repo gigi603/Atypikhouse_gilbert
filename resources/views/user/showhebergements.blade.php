@@ -18,7 +18,7 @@
                                 <h3 class="price">{{$house->price}}€ / nuit</h3>
                                 <p>Type de bien : {{$house->category->category}}</p>
                                 @foreach($house->valuecatproprietes as $valuecatpropriete)
-                                    <p>{{$valuecatpropriete->propriete->propriete}}</p>
+                                    <span>{{$valuecatpropriete->propriete->propriete}} </span>
                                 @endforeach
                                 <p class="card-text">{{$house->description}}</p>
                                 <p>Annulation gratuite !</p>
