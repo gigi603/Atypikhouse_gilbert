@@ -129,13 +129,9 @@ class HousesController extends Controller
         $proprietes_id = $request->input('propriete_id');
 
         $housePropriete = session('houseProprietes', $proprietes);
-        var_dump($proprietes);
-        //var_dump($housePropriete);
         $houseProprieteId = session('houseProprietesId', $proprietes_id);
 
-        if ($proprietes == null) {
-            var_dump('pas de checkbox selectionnées');
-        } else {
+        if ($proprietes != null) {
             foreach ($proprietes as $valuePropriete){
                 var_dump($valuePropriete);
                 $request->session()->push('houseProprietes', $valuePropriete);
