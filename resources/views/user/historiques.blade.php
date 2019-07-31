@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nos Historiques')
-@section('link')
+@section('content')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container list-category margin-top" role="historiques">
@@ -33,6 +33,7 @@
     @endforeach
     </div>
 </div>
+@endsection
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Nos Réservation')
-@section('link')
+@section('title', 'Nos Réservations')
+@section('content')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container list-category margin-top" role="reservations">
@@ -49,6 +49,7 @@
     @endforeach
 </div>
 </div>
+@endsection
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

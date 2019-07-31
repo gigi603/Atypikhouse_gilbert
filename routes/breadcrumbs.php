@@ -30,7 +30,6 @@ Breadcrumbs::register('page4', function($breadcrumbs) {
     $breadcrumbs->push("2. Numéro de téléphone à contacter pour l'annonce", route('house.create_step2'));
     $breadcrumbs->push('3. Décrivez-nous votre bien', route('house.create_step3'));
     $breadcrumbs->push('4. Quel est le montant de votre bien ?', route('house.create_step4'));
-    $breadcrumbs->push('4. Passons aux photos et vidéos', route('house.create_step4'));
 });
 
 Breadcrumbs::register('page5', function($breadcrumbs) {
@@ -38,5 +37,5 @@ Breadcrumbs::register('page5', function($breadcrumbs) {
     $breadcrumbs->push("2. Numéro de téléphone à contacter pour l'annonce", route('house.create_step2'));
     $breadcrumbs->push('3. Décrivez-nous votre bien', route('house.create_step3'));
     $breadcrumbs->push('4. Quel est le montant de votre bien ?', route('house.create_step4'));
-    $breadcrumbs->push('5. Passons aux photos et vidéos', route('house.create_step5'));
+    $breadcrumbs->push('5. Passons aux photos', route('house.create_step5'));
 });

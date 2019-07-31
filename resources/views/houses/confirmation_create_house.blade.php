@@ -20,5 +20,8 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/create_house.js') }}"></script>
+@endsection
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/create_house.js') }}"></script>
+@endsection

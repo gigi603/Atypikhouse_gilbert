@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Détail de l"annonde')
-@section('footer', 'footer_absolute')
 @section('content')
 <div class="admin-user-profil"> 
     <div class="container list-category" role="details-historique">
@@ -40,6 +39,7 @@
         </div>
     </div>
 </div>
+@endsection
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nos Hébergements')
-{{-- @section('footer', 'footer_absolute') --}}
-@section('link')
+@section('content')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container annonces-block" role="annonces">
@@ -45,6 +44,7 @@
     @endforeach
     </div>
 </div>
+@endsection
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

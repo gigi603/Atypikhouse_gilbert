@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Mes notifications')
-@section('link')
+@section('content')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container list-category" role="notifications">
@@ -28,3 +28,4 @@
         </div>
     </div>
 </div>
+@endsection
