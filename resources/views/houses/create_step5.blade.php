@@ -9,7 +9,7 @@
                 <div class="panel-heading">Créer un hébergement</div>
                 {!! Breadcrumbs::render('page5') !!}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step4')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step5')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Photo</label>

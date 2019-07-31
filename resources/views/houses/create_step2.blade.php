@@ -39,6 +39,7 @@
     </div>
 </div>
 @endsection
+@section('footer', 'footer_absolute')
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places"></script>

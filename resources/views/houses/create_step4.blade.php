@@ -8,10 +8,10 @@
                 <div class="panel-heading">Créer un hébergement</div>
                 {!! Breadcrumbs::render('page4') !!}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step3')}}" enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step4')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
-                        <p>3. Quel est le montant de votre bien ?</p>
+                        <p>4. Quel est le montant de votre bien ?</p>
                             
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Prix la nuit</label>

@@ -16,12 +16,13 @@ use App\Http\Requests\CreateHouseStep1Request;
 use App\Http\Requests\CreateHouseStep2Request;
 use App\Http\Requests\CreateHouseStep3Request;
 use App\Http\Requests\CreateHouseStep4Request;
+use App\Http\Requests\CreateHouseStep5Request;
 use Illuminate\Http\Response;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use Carbon\Carbon;
 use Session;
 use Image;
 use View;
@@ -123,36 +124,39 @@ class HousesController extends Controller
     public function postcreate_step3(CreateHouseStep3Request $request) {
         $ville = $request->old('ville');
         $categories = category::where('statut', '=', 1)->get();
-        $houseStartDate = session('houseStartDate', $request->start_date);
-        $request->session()->push('houseStartDate', $request->start_date);
-        
+
         $proprietes = $request->input('propriete');
         $proprietes_id = $request->input('propriete_id');
 
         $housePropriete = session('houseProprietes', $proprietes);
-        $houseProprieteId = session('houseProprietesId', $proprietes_id);
+        // $houseProprieteId = session('houseProprietesId', $proprietes_id);
 
-        if ($proprietes == null) {
+        // if ($proprietes == null) {
 
-        } else {
-            foreach ($proprietes as $valuePropriete){
-                $request->session()->push('houseProprietes', $valuePropriete);
-            }
-            foreach ($proprietes_id as $keyId => $id){
-                $request->session()->push('houseProprietesId', $id);
-            }
-        }
+        // } else {
+        //     foreach ($proprietes as $valuePropriete){
+        //         $request->session()->push('houseProprietes', $valuePropriete);
+        //     }
+        //     foreach ($proprietes_id as $keyId => $id){
+        //         $request->session()->push('houseProprietesId', $id);
+        //     }
+        // }
 
         $housePays = $request->session()->get('housePays');
         $houseVille = $request->session()->get('houseVille');
         $houseAdresse = $request->session()->get('houseAdresse');
         $houseTelephone = $request->session()->get('houseTelephone');
 
-        $houseCategory = session('houseCategory', $request->category_id);
-        $request->session()->push('houseCategory', $request->category_id);
-
         $houseTitle = session('houseTitle', $request->title);
         $request->session()->push('houseTitle', $request->title);
+        $houseCategory = session('houseCategory', $request->category_id);
+        $request->session()->push('houseCategory', $request->category_id);
+        $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
+        $request->session()->push('houseNbPersonnes', $request->nb_personnes);
+        $houseStartDate = session('houseStartDate', $request->start_date);
+        $request->session()->push('houseStartDate', $request->start_date);
+        $houseEndDate = session('houseEndDate', $request->end_date);
+        $request->session()->push('houseEndDate', $request->end_date);
 
         $houseDescription = session('houseDescription', $request->description);
         $request->session()->push('houseDescription', $request->description);
@@ -174,6 +178,9 @@ class HousesController extends Controller
         $houseAdresse = $request->session()->get('houseAdresse');
         $houseTelephone = $request->session()->get('houseTelephone');
         $houseTitle = $request->session()->get('houseTitle');
+        $houseNbPersonnes = $request->session()->get('houseNbPersonnes');
+        $houseStartDate = $request->session()->get('houseStartDate');
+        $houseEndDate = $request->session()->get('houseEndDate');
         $houseDescription = $request->session()->get('houseDescription');
         $housePrix = $request->session()->get('housePrix');
         return redirect('/house/create_step5');
@@ -184,13 +191,16 @@ class HousesController extends Controller
     }
 
     public function postcreate_step5(CreateHouseStep5Request $request) {
-        $houseTitle = $request->session()->get('houseTitle');
-        $houseUser = $request->session()->get('houseUser');
-        $houseCategory = $request->session()->get('houseCategory');
         $housePays = $request->session()->get('housePays');
         $houseVille = $request->session()->get('houseVille');
         $houseAdresse = $request->session()->get('houseAdresse');
+        $houseTitle = $request->session()->get('houseTitle');
+        $houseUser = $request->session()->get('houseUser');
+        $houseCategory = $request->session()->get('houseCategory');
         $houseTelephone = $request->session()->get('houseTelephone');
+        $houseNbPersonnes = $request->session()->get('houseNbPersonnes');
+        $houseStartDate = $request->session()->get('houseStartDate');
+        $houseEndDate = $request->session()->get('houseEndDate');
         $houseDescription = $request->session()->get('houseDescription');
         $housePrix = $request->session()->get('housePrix');
         
@@ -198,13 +208,25 @@ class HousesController extends Controller
         $request->session()->push('housePhoto', $request->photo);
         
         $house = new house;
-        $house->title = last($houseTitle);
-        $house->user_id = last($houseUser);
-        $house->category_id = last($houseCategory);
         $house->pays = last($housePays);
         $house->ville = last($houseVille);
         $house->adresse = last($houseAdresse);
+        $house->user_id = last($houseUser);
+        $house->title = last($houseTitle);
+        $house->category_id = last($houseCategory);
         $house->telephone = last($houseTelephone);
+        $house->nb_personnes = last($houseNbPersonnes);
+
+        $date = Carbon::createFromFormat('d/m/Y', last($houseStartDate));
+        $newFormat = Carbon::parse($date)->format('Y-m-d');
+        var_dump($newFormat);
+        $date2 = Carbon::createFromFormat('d/m/Y', last($houseEndDate));
+        $newFormat2 = Carbon::parse($date2)->format('Y-m-d');
+        //$end_date = Carbon::createFromFormat('Y-m-d', $newFormat2);
+        var_dump($newFormat);
+        var_dump($newFormat2);
+        $house->start_date = $newFormat;
+        $house->end_date = $newFormat2;
         $house->description = last($houseDescription);
         $house->price = last($housePrix);
         $house->statut = "En attente de validation";
