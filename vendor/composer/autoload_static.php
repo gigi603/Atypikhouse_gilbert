@@ -19,10 +19,10 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '017b24472353920ed42bb364f7653c43' => __DIR__ . '/..' . '/propaganistas/laravel-phone/src/helpers.php',
     );
@@ -109,6 +109,10 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Installer\\Console\\' => 26,
             'Laravel\\Dusk\\' => 13,
+        ),
+        'K' => 
+        array (
+            'Khsing\\World\\' => 13,
         ),
         'J' => 
         array (
@@ -359,6 +363,10 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
         array (
             0 => __DIR__ . '/..' . '/laravel/dusk/src',
         ),
+        'Khsing\\World\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/khsing/world/src',
+        ),
         'Jenssegers\\Date\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/date/src',
@@ -545,6 +553,7 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
         'App\\Jobs\\SendVerificationEmail' => __DIR__ . '/../..' . '/app/Jobs/SendVerificationEmail.php',
         'App\\Mail\\EmailVerification' => __DIR__ . '/../..' . '/app/Mail/EmailVerification.php',
         'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
+        'App\\Pays' => __DIR__ . '/../..' . '/app/Pays.php',
         'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Propriete' => __DIR__ . '/../..' . '/app/Propriete.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -2544,6 +2553,19 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
         'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
+        'Khsing\\World\\Console\\InitCommand' => __DIR__ . '/..' . '/khsing/world/src/Console/InitCommand.php',
+        'Khsing\\World\\Exceptions\\InvalidCodeException' => __DIR__ . '/..' . '/khsing/world/src/Exceptions/InvalidCodeException.php',
+        'Khsing\\World\\Models\\City' => __DIR__ . '/..' . '/khsing/world/src/Models/City.php',
+        'Khsing\\World\\Models\\CityLocale' => __DIR__ . '/..' . '/khsing/world/src/Models/CityLocale.php',
+        'Khsing\\World\\Models\\Continent' => __DIR__ . '/..' . '/khsing/world/src/Models/Continent.php',
+        'Khsing\\World\\Models\\ContinentLocale' => __DIR__ . '/..' . '/khsing/world/src/Models/ContinentLocale.php',
+        'Khsing\\World\\Models\\Country' => __DIR__ . '/..' . '/khsing/world/src/Models/Country.php',
+        'Khsing\\World\\Models\\CountryLocale' => __DIR__ . '/..' . '/khsing/world/src/Models/CountryLocale.php',
+        'Khsing\\World\\Models\\Division' => __DIR__ . '/..' . '/khsing/world/src/Models/Division.php',
+        'Khsing\\World\\Models\\DivisionLocale' => __DIR__ . '/..' . '/khsing/world/src/Models/DivisionLocale.php',
+        'Khsing\\World\\World' => __DIR__ . '/..' . '/khsing/world/src/World.php',
+        'Khsing\\World\\WorldServiceProvider' => __DIR__ . '/..' . '/khsing/world/src/WorldServiceProvider.php',
+        'Khsing\\World\\WorldTrait' => __DIR__ . '/..' . '/khsing/world/src/WorldTrait.php',
         'Laravel\\Dusk\\Browser' => __DIR__ . '/..' . '/laravel/dusk/src/Browser.php',
         'Laravel\\Dusk\\Concerns\\InteractsWithAuthentication' => __DIR__ . '/..' . '/laravel/dusk/src/Concerns/InteractsWithAuthentication.php',
         'Laravel\\Dusk\\Concerns\\InteractsWithCookies' => __DIR__ . '/..' . '/laravel/dusk/src/Concerns/InteractsWithCookies.php',
@@ -4697,6 +4719,15 @@ class ComposerStaticInit4ac818caae2f3e00298b2a1cbac633cf
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'VillesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/VillesTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
+        'WorldCitiesLocaleTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldCitiesLocaleTableSeeder.php',
+        'WorldCitiesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldCitiesTableSeeder.php',
+        'WorldContinentsLocaleTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldContinentsLocaleTableSeeder.php',
+        'WorldContinentsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldContinentsTableSeeder.php',
+        'WorldCountriesLocaleTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldCountriesLocaleTableSeeder.php',
+        'WorldCountriesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldCountriesTableSeeder.php',
+        'WorldDivisionsLocaleTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldDivisionsLocaleTableSeeder.php',
+        'WorldDivisionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldDivisionsTableSeeder.php',
+        'WorldTablesSeeder' => __DIR__ . '/../..' . '/database/seeds/WorldTablesSeeder.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'libphonenumber\\AlternateFormatsCountryCodeSet' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/AlternateFormatsCountryCodeSet.php',
         'libphonenumber\\AsYouTypeFormatter' => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src/AsYouTypeFormatter.php',

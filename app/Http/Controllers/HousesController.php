@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\House;
 use App\Ville;
 use App\Pays;
+use App\Country;
 use App\Category;
 use App\Comment;
 use App\Reservation;
@@ -70,8 +71,13 @@ class HousesController extends Controller
 
     public function postcreate_step1(CreateHouseStep1Request $request, Ville $villes, Pays $countries) {
         $countries = pays::all();
-        var_dump($countries);
+        //var_dump($countries);
         $villes = ville::all();
+        $france = Country::getByCode('fr');
+        // check has_division to determine next level is division or city.
+        $france->has_division; // true, otherwise is false
+        $regions = $france->children();
+        var_dump($regions);
         $housePays = session('housePays', $request->pays);
         $request->session()->push('housePays', $request->pays);
 
