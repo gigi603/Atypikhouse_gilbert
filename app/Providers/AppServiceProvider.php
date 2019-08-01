@@ -17,13 +17,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-            /*view()->composer(['houses.index'], function ($view) {
-
-            // Display houses in every views
-
-            $view->with('houses', $houses);*/
-            // $houses = house::all();
-            // view()->share('houses', $houses);
     }
 
     /**
