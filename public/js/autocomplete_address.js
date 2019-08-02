@@ -14,7 +14,6 @@ google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
   pays.value = place.address_components[5].long_name; 
   adresse.value = place.formatted_address;
   ville.value = place.address_components[2].long_name;
-  console.log(place);
 });
 function validate(){
     if(place)

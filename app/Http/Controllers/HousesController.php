@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\House;
 use App\Ville;
 use App\Pays;
-use App\Country;
 use App\Category;
 use App\Comment;
 use App\Reservation;
@@ -62,22 +61,12 @@ class HousesController extends Controller
         ]);
     }
 
-    public function create_step1(Request $request, Ville $villes, Pays $countries) {     
-        return view('houses.create_step1', [
-            'villes'=> $villes,
-            'countries' => $countries,
-        ]);
+    public function create_step1(Request $request) {     
+        return view('houses.create_step1');
     }
 
-    public function postcreate_step1(CreateHouseStep1Request $request, Ville $villes, Pays $countries) {
-        $countries = pays::all();
-        //var_dump($countries);
-        $villes = ville::all();
-        $france = Country::getByCode('fr');
-        // check has_division to determine next level is division or city.
-        $france->has_division; // true, otherwise is false
-        $regions = $france->children();
-        var_dump($regions);
+
+    public function postcreate_step1(CreateHouseStep1Request $request) {
         $housePays = session('housePays', $request->pays);
         $request->session()->push('housePays', $request->pays);
 
@@ -90,22 +79,8 @@ class HousesController extends Controller
 
         $houseUser = session('houseUser', $request->user_id);
         $request->session()->push('houseUser', $request->user_id);
-        foreach($countries as $country){
-            if($country->nom == $request->pays){
-                foreach($villes as $ville){
-                    if($ville->nom == $request->ville){
-                        return redirect('/house/create_step2');
-                    } else {
-                        $request->ville = "";
-                        return redirect()->back();
-                    }
-                }
-            } else {
-                $request->pays = "";
-                return redirect()->back();
-            }
-            
-        }
+
+        return redirect('/house/create_step2');
     }
 
     public function create_step2(Request $request) {
@@ -159,6 +134,7 @@ class HousesController extends Controller
 
         if ($proprietes != null) {
             foreach ($proprietes as $valuePropriete){
+                var_dump($valuePropriete);
                 $request->session()->push('houseProprietes', $valuePropriete);
             }
             foreach ($proprietes_id as $keyId => $id){
@@ -243,8 +219,12 @@ class HousesController extends Controller
 
         $date = Carbon::createFromFormat('d/m/Y', last($houseStartDate));
         $newFormat = Carbon::parse($date)->format('Y-m-d');
+        var_dump($newFormat);
         $date2 = Carbon::createFromFormat('d/m/Y', last($houseEndDate));
         $newFormat2 = Carbon::parse($date2)->format('Y-m-d');
+        //$end_date = Carbon::createFromFormat('Y-m-d', $newFormat2);
+        var_dump($newFormat);
+        var_dump($newFormat2);
         $house->start_date = $newFormat;
         $house->end_date = $newFormat2;
         $house->description = last($houseDescription);
