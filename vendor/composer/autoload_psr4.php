@@ -56,6 +56,7 @@ return array(
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'Laravel\\Installer\\Console\\' => array($vendorDir . '/laravel/installer/src'),
     'Laravel\\Dusk\\' => array($vendorDir . '/laravel/dusk/src'),
+    'Khsing\\World\\' => array($vendorDir . '/khsing/world/src'),
     'Jenssegers\\Date\\' => array($vendorDir . '/jenssegers/date/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
