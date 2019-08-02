@@ -11,7 +11,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Stripe
- * @version    2.2.1
+ * @version    2.2.10
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011-2019, Cartalyst LLC
@@ -118,11 +118,12 @@ class Invoices extends Api
      * Pays the given invoice.
      *
      * @param  string  $invoiceId
+     * @param  array  $parameters
      * @return array
      */
-    public function pay($invoiceId)
+    public function pay($invoiceId, array $parameters = [])
     {
-        return $this->_post("invoices/{$invoiceId}/pay");
+        return $this->_post("invoices/{$invoiceId}/pay", $parameters);
     }
 
     /**

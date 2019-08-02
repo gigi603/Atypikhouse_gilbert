@@ -11,7 +11,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Stripe
- * @version    2.2.1
+ * @version    2.2.10
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011-2019, Cartalyst LLC
@@ -22,6 +22,16 @@ namespace Cartalyst\Stripe\Api;
 
 class Radar extends Api
 {
+    /**
+     * Returns a radar early fraud warning api instance.
+     *
+     * @return \Cartalyst\Stripe\Api\Radar\Reviews
+     */
+    public function earlyFraudWarning()
+    {
+        return new Radar\EarlyFraudWarning($this->config);
+    }
+
     /**
      * Returns a radar reviews api instance.
      *

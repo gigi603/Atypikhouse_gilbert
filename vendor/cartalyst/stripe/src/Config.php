@@ -11,7 +11,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Stripe
- * @version    2.2.1
+ * @version    2.2.10
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011-2019, Cartalyst LLC
@@ -56,6 +56,13 @@ class Config implements ConfigInterface
      * @var string
      */
     protected $accountId;
+
+    /**
+     * The application's information.
+     *
+     * @var array|null
+     */
+    protected $appInfo;
 
     /**
      * Constructor.
@@ -170,6 +177,37 @@ class Config implements ConfigInterface
     public function setAccountId($accountId)
     {
         $this->accountId = $accountId;
+
+        return $this;
+    }
+
+    /**
+     * Returns the application's information.
+     *
+     * @return array|null
+     */
+    public function getAppInfo()
+    {
+        return $this->appInfo;
+    }
+
+    /**
+     * Sets the application's information.
+     *
+     * @param string $appName
+     * @param string $appVersion
+     * @param string $appUrl
+     * @param string $appPartnerId
+     * @return $this
+     */
+    public function setAppInfo($appName, $appVersion = null, $appUrl = null, $appPartnerId = null)
+    {
+        $this->appInfo = [
+            'name'       => $appName,
+            'version'    => $appVersion,
+            'url'        => $appUrl,
+            'partner_id' => $appPartnerId,
+        ];
 
         return $this;
     }
