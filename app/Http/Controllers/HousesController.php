@@ -65,6 +65,7 @@ class HousesController extends Controller
     }
 
     public function postcreate_step1(CreateHouseStep1Request $request) {
+        
         $housePays = session('housePays', $request->pays);
         $request->session()->push('housePays', $request->pays);
 
