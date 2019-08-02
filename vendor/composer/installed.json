@@ -1484,6 +1484,55 @@
         ]
     },
     {
+        "name": "khsing/world",
+        "version": "v0.8",
+        "version_normalized": "0.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/khsing/laravel-world.git",
+            "reference": "f78451c3267acf88212f4b8f4b72fe1d1859bd27"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/khsing/laravel-world/zipball/f78451c3267acf88212f4b8f4b72fe1d1859bd27",
+            "reference": "f78451c3267acf88212f4b8f4b72fe1d1859bd27",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": ">=5.3.0",
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~5.0"
+        },
+        "time": "2019-02-09T09:06:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Khsing\\World\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Guixing Bai",
+                "email": "khsing.cn@gmail.com"
+            }
+        ],
+        "description": "Provide countries, states, and cities relations database.",
+        "keywords": [
+            "city",
+            "country",
+            "region",
+            "world"
+        ]
+    },
+    {
         "name": "laravel/dusk",
         "version": "v1.1.1",
         "version_normalized": "1.1.1.0",
