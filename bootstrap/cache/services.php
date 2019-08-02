@@ -37,7 +37,6 @@
     33 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     34 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
     35 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
-    36 => 'Khsing\\World\\WorldServiceProvider',
   ),
   'eager' => 
   array (
@@ -63,7 +62,6 @@
     19 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     20 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
     21 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
-    22 => 'Khsing\\World\\WorldServiceProvider',
   ),
   'deferred' => 
   array (

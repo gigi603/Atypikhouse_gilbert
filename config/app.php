@@ -192,9 +192,6 @@ return [
 
         //JWT TOKEN
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
-
-        //Get countries/city
-        Khsing\World\WorldServiceProvider::class,
     ],
 
     /*
