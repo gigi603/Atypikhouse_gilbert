@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\House;
 use App\Ville;
-use App\Pays;
 use App\Category;
 use App\Comment;
 use App\Reservation;
@@ -64,7 +63,6 @@ class HousesController extends Controller
     public function create_step1(Request $request) {     
         return view('houses.create_step1');
     }
-
 
     public function postcreate_step1(CreateHouseStep1Request $request) {
         $housePays = session('housePays', $request->pays);

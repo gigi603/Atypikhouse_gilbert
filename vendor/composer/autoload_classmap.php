@@ -175,7 +175,6 @@ return array(
     'CreateHousesTables' => $baseDir . '/database/migrations/2018_11_02_131326_create_houses_tables.php',
     'CreateJobsTable' => $baseDir . '/database/migrations/2018_05_27_171104_create_jobs_table.php',
     'CreateMessagesTable' => $baseDir . '/database/migrations/2019_04_06_201938_create_messages_table.php',
-    'CreatePaysTable' => $baseDir . '/database/migrations/2019_08_01_160939_create_pays_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2019_01_08_151530_create_posts_table.php',
     'CreateProprietesTable' => $baseDir . '/database/migrations/2018_04_25_195248_create_proprietes_table.php',
     'CreateReservationsTable' => $baseDir . '/database/migrations/2018_04_17_121052_create_reservations_table.php',
