@@ -1,35 +1,44 @@
-  let pays = document.getElementById('autocompletepays');
-  let ville = document.getElementById('autocompleteville');
+  let street_number = document.getElementById('street_number');
+  let route = document.getElementById('route');
+  let locality = document.getElementById('locality');
+  let country = document.getElementById('country');
   let adresse = document.getElementById('autocompleteadresse');
+
+  // google.load("elements", "1", {
+  //   packages: "transliteration"
+  // });
+  
   var optionsAdresse = {
-    componentRestrictions: {country: ['fr', 'be','es', 'it']},
-    types: ['address']
+    types: ['address'],
+    language: 'fr'
   };
 
 let place;
 
 autocompleteadresse = new google.maps.places.Autocomplete(adresse, optionsAdresse);
+
+autocompleteadresse.setComponentRestrictions(
+  {'country': ['fr', 'be','es', 'it']});
+
 google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
+  console.log(autocompleteadresse)
   place = autocompleteadresse.getPlace();
-  pays.value = place.address_components[5].long_name; 
-  adresse.value = place.formatted_address;
-  ville.value = place.address_components[2].long_name;
+  console.log(place)
+  for (var i in place.address_components) {    
+    var component = place.address_components[i];    
+    
+    for (var j in component.types) {  
+      var type_element = document.getElementById(component.types[j]);      
+      
+      if (type_element) {        
+        type_element.value = component.long_name;
+      }    
+    }  
+  }
 });
 function validate(){
-    if(place)
-    if(ville.value == "" || pays.value == "" 
-    || pays.value != place.address_components[5].long_name 
-    || ville.value != place.address_components[2].long_name){
-      adresse.value = "";
-      return true;
-    }
-    if(!place || adresse.value != place.formatted_address){
-      adresse.value = "";
-      return true;
-    } else {
-      pays.value = place.address_components[5].long_name;
-      ville.value = place.address_components[2].long_name;
-      adresse.value = place.formatted_address;
-      return true;
-    }
+  if(!place){
+    adresse.value = ""
+    return true;
+  }
 }

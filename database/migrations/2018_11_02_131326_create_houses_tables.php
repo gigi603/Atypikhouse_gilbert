@@ -18,8 +18,6 @@ class CreateHousesTables extends Migration
             $table->string('title');
             $table->integer('user_id');
             $table->integer('category_id');
-            $table->string('pays');
-            $table->string('ville');
             $table->string('adresse');
             $table->longText('description');
             $table->date('start_date');

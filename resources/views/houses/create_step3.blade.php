@@ -28,7 +28,7 @@
                                     <select id="select_category" name="category_id" class="form-control">
                                         <option id="" value="0" autofocus>Choisissez votre categorie</option>
                                         @foreach($categories as $category)
-                                            <option value="<?php echo($category->id);?>"><?php echo($category->category);?></option>
+                                            <option value="<?php echo($category->id);?>" @if (old('category_id') == $category->id) selected="selected" @endif><?php echo($category->category);?></option>
                                         @endforeach
                                     </select>
                                     @if ($errors->has('category'))
@@ -44,22 +44,9 @@
                                 <div class="col-md-6">
                                     <select id="select_nb_personnes" name="nb_personnes" class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>  
+                                        @for($i=1;$i<16;$i++)
+                                        <option value={{$i}} @if (old('nb_personnes') == $i) selected="selected" @endif>{{$i}}</option>
+                                        @endfor 
                                     </select>
                                     @if ($errors->has('nb_personnes'))
                                         <span class="help-block">

@@ -94,7 +94,7 @@ class AdminController extends Controller
         $category->save();
         foreach($users as $user){
             $message = new message;
-            $message->content = "L'adminitrateur a rajouté la catégorie ".$category->category." sur les type d'hébergement";
+            $message->content = "L'administrateur a rajouté la catégorie ".$category->category." sur les type d'hébergement";
             $message->user_id = $user->id;
             $message->admin_id = Auth::user()->id;
             $message->save();
@@ -110,7 +110,7 @@ class AdminController extends Controller
         $category->save();
         foreach($users as $user){
             $message = new message;
-            $message->content = "L'adminitrateur a ajouté la catégorie ".$category->category." sur les types d'hébergements";
+            $message->content = "L'administrateur a ajouté la catégorie ".$category->category." sur les types d'hébergements";
             $message->user_id = $user->id;
             $message->admin_id = Auth::user()->id;
             $message->save();
@@ -126,7 +126,7 @@ class AdminController extends Controller
         $category->save();
         foreach($users as $user){
             $message = new message;
-            $message->content = "L'adminitrateur a supprimé la catégorie ".$category->category.", lorsque vous créérez une nouvelle annonce la catégorie ".$category->category." ne sera plus disponible";
+            $message->content = "L'administrateur a supprimé la catégorie ".$category->category.", lorsque vous créérez une nouvelle annonce la catégorie ".$category->category." ne sera plus disponible";
             $message->user_id = $user->id;
             $message->admin_id = Auth::user()->id;
             $message->save();
@@ -236,8 +236,6 @@ class AdminController extends Controller
         }
         $house->title = $request->title;
         $house->category_id = intval($request->category_id);
-        $house->pays = $request->pays;
-        $house->ville = $request->ville;
         $house->adresse = $request->adresse;
         $house->price = $request->price;
         $house->description = $request->description;
@@ -247,7 +245,7 @@ class AdminController extends Controller
                 $house->statut = $request->statut;
                 $house->save();
                 $message = new message;
-                $message->content = "L'adminitrateur a mise en attente votre annonce ".$house->title.", il vous enverra un autre message concernant les modifications que vous devez effectuer afin qu'il valide par la suite votre annonce";
+                $message->content = "L'administrateur a mise en attente votre annonce ".$house->title.", il vous enverra un autre message concernant les modifications que vous devez effectuer afin qu'il valide par la suite votre annonce";
                 $message->user_id = $house->user_id;
                 $message->admin_id = Auth::user()->id;
                 $message->save();
@@ -256,7 +254,7 @@ class AdminController extends Controller
                 $house->statut = $request->statut;
                 $house->save();
                 $message = new message;
-                $message->content = "L'adminitrateur a validé votre annonce ".$house->title;
+                $message->content = "L'administrateur a validé votre annonce ".$house->title;
                 $message->user_id = $house->user_id;
                 $message->admin_id = Auth::user()->id;
                 $message->save();
@@ -384,9 +382,12 @@ class AdminController extends Controller
 
     public function deleteAnnonce($id) {
         $house = house::find($id);
+        foreach($house->valuecatproprietes as $valuecatpropriete){
+            $valuecatpropriete->delete();
+        }
         $house->delete();
         $message = new message;
-        $message->content = "L'adminitrateur a supprimé votre annonce ".$house->title;
+        $message->content = "L'administrateur a supprimé votre annonce ".$house->title;
         $message->user_id = $house->user_id;
         $message->admin_id = Auth::user()->id;
         $message->save();

@@ -29,8 +29,6 @@
                         @endforeach      
                             <p><?php echo(substr($reservation->house->description, 0, 40));?></p>   
                             <p>Annulation gratuite !</p>
-                            <p> Pays: {{$reservation->house->pays}}</p>
-                            <p> Ville: {{$reservation->house->ville}}</p>
                             <p> Adresse: {{$reservation->house->adresse}}</p>
                         <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>

@@ -36,7 +36,8 @@
     32 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
     33 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     34 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
-    35 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
+    35 => 'SKAgarwal\\GoogleApi\\ServiceProvider',
+    36 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
   ),
   'eager' => 
   array (
@@ -61,7 +62,8 @@
     18 => 'Cartalyst\\Stripe\\Laravel\\StripeServiceProvider',
     19 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     20 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
-    21 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
+    21 => 'SKAgarwal\\GoogleApi\\ServiceProvider',
+    22 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
   ),
   'deferred' => 
   array (

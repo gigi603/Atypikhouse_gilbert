@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card h-100 text-center">
-                            <p class="card-text">Vous avez bien réservé pour le <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> au <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
+                            <p class="card-text">Vous êtes sur le point de réserver pour le <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> au <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                             <p class="card-text"> à l'adresse: {{$house->adresse}}</p>
                             <p class="card-text">Voici le récapitulatif de l'hebergement que vous avez choisi : </p>
                             <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}"></a>
@@ -27,13 +27,14 @@
                                 <p class="card-">{{$house->description}}</p>
                                 <p>Annulation gratuite !</p>
                                 <p> {{$house->ville}}</p>
-                                <h3 class="price">{{$house->price}} € x {{$days}} jours</h3>
+                                <h3 class="price">{{$house->price}} € x {{$days}} jours pour {{$reservation->nb_personnes}} personne(s)</h3>
                                 <h3 class="price">Total à payer : {{$total}} €</h3>
                                 <p> Si vous voulez réserver cet hébergement veuillez continuer en cliquant sur le bouton ci-dessous</p>
                                 <a class="btn btn-success btn_reserve" href="{{action('AddMoneyController@payWithStripe', 
                                     ['prix' => $house->price,
                                     'start' => $reservation->start_date,
                                     'end' => $reservation->end_date,
+                                    'nb_personnes' => $reservation->nb_personnes,
                                     'days' => $days,
                                     'total' => $total,
                                     'user_id' => $reservation->user_id,

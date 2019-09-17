@@ -24,7 +24,7 @@ class CreateHouseStep4Request extends FormRequest
     public function rules()
     {
         return [
-            'price' => 'required|regex:/^[0-9]+$/u|max:5'
+            'price' => 'required|regex:/^[0-9]+$/u|max:4'
         ];
     }
 
@@ -38,7 +38,7 @@ class CreateHouseStep4Request extends FormRequest
         return [
             'price.required' => 'Veuillez saisir le prix par nuit',
             'price.regex' => 'Veuillez saisir uniquement des chiffres',
-            'price.max' => 'Vous ne pouvez pas mettre un montant de plus de 5 chiffres',
+            'price.max' => 'Vous ne pouvez pas mettre un montant à plus de 9999 euros pour la nuit',
         ];
     }
 }

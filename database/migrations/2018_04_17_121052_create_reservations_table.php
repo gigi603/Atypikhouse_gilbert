@@ -23,6 +23,7 @@ class CreateReservationsTable extends Migration
             $table->boolean('reserved');
             $table->date('start_date');
             $table->date('end_date');
+            $table->integer('nb_personnes');
             $table->timestamps();
         });
     }

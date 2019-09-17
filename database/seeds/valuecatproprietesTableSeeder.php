@@ -14,39 +14,15 @@ class valuecatproprietesTableSeeder extends Seeder
         $valuecatproprietes = [
             [
                 'value' => '2',
-                'category_id' => 1,
+                'category_id' => 2,
                 'propriete_id' => 1,
                 'house_id' => 1
             ],
             [
                 'value' => '1',
                 'category_id' => 2,
-                'propriete_id' => 2,
-                'house_id' => 2
-            ],
-            [
-                'value' => '3',
-                'category_id' => 3,
-                'propriete_id' => 3,
-                'house_id' => 3
-            ],
-            [
-                'value' => '2',
-                'category_id' => 1,
-                'propriete_id' => 4,
+                'propriete_id' => 8,
                 'house_id' => 1
-            ],
-            [
-                'value' => '1',
-                'category_id' => 2,
-                'propriete_id' => 5,
-                'house_id' => 2
-            ],
-            [
-                'value' => '3',
-                'category_id' => 3,
-                'propriete_id' => 6,
-                'house_id' => 3
             ]
         ];
         DB::table('valuecatProprietes')->insert($valuecatproprietes);

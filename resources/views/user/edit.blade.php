@@ -10,7 +10,7 @@
                 {{-- @foreach($houses as $house) --}}
                 <div class="panel-body">
                     @if ($success = Session::get('success'))
-                        <div class="alert alert-info">
+                        <div class="alert alert-success">
                             {{ $success }}
                         </div>
                     @endif
@@ -32,40 +32,33 @@
                             <label for="name" class="col-md-4 control-label">Categorie</label>
                             <div class="col-md-6">
                                 <select id="select_category" type="text" name="category_id" class="form-control">
-                                    <option id="" value="{{$house->category->id}}" selected="selected" required autofocus>{{$house->category->category}}</option>
                                     @foreach($categories as $category)
-                                        <option value="<?php echo($category->id);?>"><?php echo($category->category);?></option>
+                                        <option value="<?php echo($category->id);?>" @if($house->category->id  == $category->id) selected="selected" @endif><?php echo($category->category);?></option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('pays') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Pays</label>
+                        <div class="proprietes"></div>
+                        <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="pays" autofocus value="{{$house->pays}}">
-                                @if ($errors->has('pays'))
+                                <select id="select_nb_personnes" name="nb_personnes" class="form-control">
+                                    <option id="" value="{{$house->nb_personnes}}" selected="selected" required autofocus>{{$house->nb_personnes}}</option>
+                                    @for($i=1;$i<16;$i++)
+                                    <option value={{$i}} @if (old('nb_personnes') == $i) selected="selected" @endif>{{$i}}</option>
+                                    @endfor 
+                                </select>
+                                @if ($errors->has('nb_personnes'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('pays') }}</strong>
+                                        <strong>{{ $errors->first('nb_personnes') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('ville') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Ville</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="ville" autofocus value="{{$house->ville}}">
-                                @if ($errors->has('ville'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('ville') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div> 
-                        
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="adresse" autofocus value="{{$house->adresse}}">
+                                <input type="text" class="form-control" id="autocompleteadresse" name="adresse" autofocus value="{{$house->adresse}}">
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>
@@ -73,10 +66,13 @@
                                 @endif
                             </div>
                         </div>
-                        
+                        <input id="street_number" name="street_number" value="{{$house->street_number}}" hidden>
+                        <input id="route" name="route" value="{{$house->route}}" hidden>
+                        <input id="locality" name="ville" value="{{$house->ville}}" hidden>
+                        <input id="country" name="pays" value="{{$house->pays}}" hidden>
 
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Prix</label>
+                            <label for="name" class="col-md-4 control-label">Prix / la nuit</label>
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="price" autofocus value="{{$house->price}}">
                                 @if ($errors->has('price'))
@@ -119,9 +115,6 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name" class="text-center">Informations supplémentaires:</label>
-                        </div>
                         @foreach($house->valuecatproprietes as $valuecatproprietes)
                             <div class="form-group{{ $errors->has('propriete[]') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">{{$valuecatproprietes->propriete->propriete}}</label>
@@ -137,11 +130,6 @@
                                 </div>
                             </div>
                         @endforeach
-                        
-                        <div class="form-group">
-                            <p class="rouge">Pour les informations supplémentaires vous ne pouvez mettre que des chiffres. </p>
-                            <p class="rouge">mettez 0 losque vous n'avez pas ou si vous ne savez pas encore, la propriété ne sera pas afficher dans l'annonce</p>
-                        </div>
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-color">
@@ -157,5 +145,10 @@
     </div>
 </div>
 @endsection
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/edit_house.js') }}"></script>
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/create_house.js') }}"></script>
+    <script src="{{ asset('js/edit_house.js') }}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
+    <script src="{{ asset('js/autocomplete_address.js') }}"></script>
+@endsection

@@ -21,10 +21,12 @@
                                 @endforeach
                                 <p class="card-text">{{$house->description}}</p>
                                 <p>Annulation gratuite !</p>
-                                <p>Pays: {{$house->pays}}</p>
-                                <p>Ville, département ou région: {{$house->ville}}</p>
-                                <p>Adresse:  {{$house->adresse}}</p>
-                                <p> Téléphone de l'annonceur : {{$house->telephone}}</p>
+                                <p>Location :  {{$house->adresse}}</p>
+                                <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                            <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></p>
+                            <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>        
+                            <p>Téléphone de l'annonceur : {{$house->telephone}}</p>
+                            <p>Adresse mail de l'annonceur : {{$house->user->email}}</p>
                                 <a href="{{route('user.editHouse', $house['id']) }}" class="btn btn-primary btn-color">Modifier</a>
                             </div>
                         </div>
@@ -99,5 +101,5 @@
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
+<script src="{{ asset('js/calendarReservation.js') }}"></script>
 @endsection

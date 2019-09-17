@@ -25,8 +25,7 @@ class CreateHouseStep1Request extends FormRequest
     public function rules()
     {
         return [
-            'ville' => 'required|max:30', 
-            'adresse' => 'required|max:50',
+            'adresse' => 'required|regex:/^[0-9\pL\s\-\()\,]+$/u|max:80',
         ];
     }
 
@@ -38,8 +37,9 @@ class CreateHouseStep1Request extends FormRequest
     public function messages()
     {
         return [
-            'ville.required' => 'Veuillez saisir une ville',
-            'adresse.required' => 'Veuillez saisir une adresse',
+            'adresse.required' => 'Veuillez saisir une adresse valide',
+            'adresse.regex' => "Votre adresse n'est pas valide",
+            'adresse.max' => "Votre adresse n'est pas valide, elle est anormalement trop longue"
         ];
     }
 }

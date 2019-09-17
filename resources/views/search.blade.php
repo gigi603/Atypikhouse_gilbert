@@ -13,8 +13,8 @@
                 @endif
         </div>
         <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}{{ $errors->has('end_date') ? ' has-error' : '' }}">
-                <input type="text" class="form-control date-field-home" id="from" placeholder="Date de départ" name="start_date" value="{{ old('start_date') }}" />
-                <input type="text" class="form-control date-field-home" id="to" placeholder="Date de retour" name="end_date" value="{{ old('end_date') }}" />
+                <input type="text" class="form-control date-field-home" id="fromHome" placeholder="Date de départ" name="start_date" value="{{ old('start_date') }}" />
+                <input type="text" class="form-control date-field-home" id="toHome" placeholder="Date de retour" name="end_date" value="{{ old('end_date') }}" />
                 @if ($errors->has('start_date'))
                         <span class="help-block">
                                 <strong>{{ $errors->first('start_date') }}</strong>
@@ -55,3 +55,8 @@
         {!! Form::submit('Rechercher',array('class'=>'btn btn-searchbar')) !!}
                 
         {!! Form::close() !!}
+        @section('script')
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('js/calendarHome.js') }}"></script>
+    @endsection

@@ -18,12 +18,20 @@ use App\Propriete;
 use Illuminate\Http\Request;
 use App\Http\Requests\SearchRequest;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Jenssegers\Date\Date;
 
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $houses = house::with('valuecatproprietes', 'proprietes', 'category')->orderBy('id', 'desc')->get();
+        $today = Date::now()->format('Y-m-d');
+        $houses = house::with('valuecatproprietes', 'proprietes', 'category')
+        ->where('start_date', '>=', $today)
+        ->where('end_date', '>=', $today)
+        ->where('statut', '=', "Validé")
+        ->orderBy('id', 'desc')
+        ->get();
         $categories = category::all();
 
         return view('home')->with('houses', $houses)
@@ -32,7 +40,10 @@ class HomeController extends Controller
 
     public function searchHouses(SearchRequest $request)
     {
-        $houses = house::with('valuecatproprietes', 'proprietes', 'category')->orderBy('id', 'desc')->get();
+        $today = Date::now()->format('Y-m-d');
+        $houses = house::with('valuecatproprietes', 'proprietes', 'category')
+        ->orderBy('id', 'desc')
+        ->get();
         $categories = category::all();
         //$datas = $request->flashOnly(['ville', 'category_id', 'start_date', 'end_date', 'nb_personnes']);
         return view('houses.index')->with('houses', $houses)

@@ -52,7 +52,7 @@
                             <a href="{{action('UsersController@showHouse', $house['id'])}}"><img class="img-responsive" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h3 class="card-title"><a href="{{action('UsersController@showHouse', $house->id)}}"> <?php echo(substr($house->title, 0, 30));?> </a><br> - <?php echo(substr($house->ville, 0, 25));?> </h3>
+                                    <h3 class="card-title"><a href="{{action('UsersController@showHouse', $house->id)}}"> <?php echo(substr($house->title, 0, 30));?> </a></h3>
                                 </div>
                                 <p class="price"> {{$house->price}}€ / nuit</p>
                             </div>
@@ -65,6 +65,6 @@
     @section('script')
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-        <script src="{{ asset('js/calendar.js') }}"></script>
+        <script src="{{ asset('js/calendarHome.js') }}"></script>
     @endsection
 @endsection

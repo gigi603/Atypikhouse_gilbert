@@ -25,7 +25,7 @@ class CreateHouseStep2Request extends FormRequest
     public function rules()
     {
         return [
-            'telephone' =>'required|phone:FR',
+            'telephone' =>'required|phone:FR,BE,IT,ES|numeric|digits:10',
         ];
     }
 
@@ -38,7 +38,9 @@ class CreateHouseStep2Request extends FormRequest
     {
         return [
             'telephone.required' => 'Veuillez saisir votre numéro de téléphone',
-            'telephone.phone' => 'Veuillez saisir un téléphone au bon format',
+            'telephone.phone' => 'Veuillez saisir un numéro de telephone valide',
+            'telephone.digits' => 'Veuillez saisir un numéro de téléphone à 10 chiffres',
+            'telephone.numeric' => 'Veuillez saisir un numéro de téléphone valide',
         ];
     }
 }

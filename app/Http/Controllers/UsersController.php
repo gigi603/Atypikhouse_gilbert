@@ -13,6 +13,7 @@ use App\Ville;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\EditHouseRequest;
+use App\Http\Requests\ReservationRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -76,64 +77,85 @@ class UsersController extends Controller
     public function updateHouse(EditHouseRequest $request, $id)
     {
         $house = house::find($id);
-        $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
-
-        if($house->category_id != $request->category_id){
+        if($house->title != $request->title || $house->category_id != $request->category_id
+        || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
+        || $house->adresse != $request->adresse || $house->photo != $request->photo
+        || $house->description != $request->description){
+            $house->title = $request->title;
             $house->category_id = $request->category_id;
-            $house->save();
-            
-            
-            $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
-            if($valueproprietes->count() > 0){
-                $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
-                var_dump('bonjour');
-                foreach($proprietes_category as $propriete_category){
-                    $valuecatProprietesHouse = new valuecatPropriete;
-                    $valuecatProprietesHouse->value = 0;
-                    $valuecatProprietesHouse->category_id = $request->category_id;
-                    $valuecatProprietesHouse->house_id = $house->id;
-                    $valuecatProprietesHouse->propriete_id = $propriete_category->id;
-                    $valuecatProprietesHouse->save(); 
-                }         
-                $house->save();
+            $house->nb_personnes = $request->nb_personnes;
+            $house->price = $request->price;
+            $house->adresse = $request->adresse;
+            if($request->hasFile('photo')){
+                $picture = $request->file('photo');
+                $filename  = time() . '.' . $picture->getClientOriginalExtension();
+                $path = public_path('img/houses/' . $filename);
+                Image::make($picture->getRealPath())->resize(350, 225)->save($path);
+                $house->photo = $filename;
             }
+            $house->description = $request->description;
+            $house->statut = "En attente de validation";
             $house->save();
         }
-        $house->title = $request->title;
-        $house->category_id = intval($request->category_id);
-        $house->pays = $request->pays;
-        $house->ville = $request->ville;
-        $house->adresse = $request->adresse;
-        $house->price = $request->price;
-        $house->description = $request->description;
-        $house->save();
+        return redirect()->route('user.editHouse', ['id' => $id])->with('success', "L'hébergement de l'utilisateur a bien été modifié");
+        // $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
+
+        // if($house->category_id != $request->category_id){
+        //     $house->category_id = $request->category_id;
+        //     $house->save();
+            
+            
+        //     $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
+        //     if($valueproprietes->count() > 0){
+        //         $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
+        //         var_dump('bonjour');
+        //         foreach($proprietes_category as $propriete_category){
+        //             $valuecatProprietesHouse = new valuecatPropriete;
+        //             $valuecatProprietesHouse->value = 0;
+        //             $valuecatProprietesHouse->category_id = $request->category_id;
+        //             $valuecatProprietesHouse->house_id = $house->id;
+        //             $valuecatProprietesHouse->propriete_id = $propriete_category->id;
+        //             $valuecatProprietesHouse->save(); 
+        //         }         
+        //         $house->save();
+        //     }
+        //     $house->save();
+        // }
+        // $house->title = $request->title;
+        // $house->category_id = intval($request->category_id);
+        // $house->pays = $request->pays;
+        // $house->ville = $request->ville;
+        // $house->adresse = $request->adresse;
+        // $house->price = $request->price;
+        // $house->description = $request->description;
+        // //$house->save();
         
-        $i = 0;
-        foreach ($valueproprietes as $value) {
-            DB::table('valuecatproprietes')
-                ->leftJoin('houses', 'valuecatproprietes.house_id', '=', 'houses.id')
-                ->where('house_id','=', $id)
-                ->where('valuecatproprietes.id','=', $value->id)
-                ->update([
-                    'value' => $request->propriete[$i]
-            ]);
-            $i++;
-        }
-        $house->save();
+        // $i = 0;
+        // foreach ($valueproprietes as $value) {
+        //     DB::table('valuecatproprietes')
+        //         ->leftJoin('houses', 'valuecatproprietes.house_id', '=', 'houses.id')
+        //         ->where('house_id','=', $id)
+        //         ->where('valuecatproprietes.id','=', $value->id)
+        //         ->update([
+        //             'value' => $request->propriete[$i]
+        //     ]);
+        //     $i++;
+        // }
+        // $house->save();
     
-        if($request->photo == NULL){
-            $request->photo = $house->first()->photo;
-            $house->save();
-            return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
-        } else {
-            $picture = $request->file('photo');
-            $filename  = time() . '.' . $picture->getClientOriginalExtension();
-            $path = public_path('img/houses/' . $filename);
-            Image::make($picture->getRealPath())->resize(350, 200)->save($path);
-            $house->photo = $filename;
-            $house->save();
-            return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
-        }
+        // if($request->photo == NULL){
+        //     $request->photo = $house->first()->photo;
+        //     $house->save();
+        //     // return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
+        // } else {
+        //     $picture = $request->file('photo');
+        //     $filename  = time() . '.' . $picture->getClientOriginalExtension();
+        //     $path = public_path('img/houses/' . $filename);
+        //     Image::make($picture->getRealPath())->resize(350, 200)->save($path);
+        //     $house->photo = $filename;
+        //     $house->save();
+        //     // return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
+        // }
     }
 
     public function deleteHouse(Request $request, $id)
@@ -162,7 +184,21 @@ class UsersController extends Controller
     public function reservations(Request $request)
     {
         $today = Date::now()->format('Y-m-d');
-        $reservations = reservation::with('house')->where('start_date', '>=', $today)->where('end_date', '>=', $today)->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $reservations = reservation::with('house')->where('start_date', '>=', $today)
+        ->where('end_date', '>=', $today)
+        ->where('user_id', '=', Auth::user()->id)
+        ->orderBy('id', 'desc')
+        ->get();
+        //dd($reservations);
+        if(!$reservations){
+            var_dump('c vide');
+        }
+        
+        // if(count($reservations) > 0){
+        //     var_dump('hello');
+        // } else {
+        //     var_dump('ya rien');
+        // }
         return view('user.reservations', compact('reservations'));
     }
     

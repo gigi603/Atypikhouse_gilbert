@@ -25,13 +25,13 @@ class EditHouseRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
-            'pays' => 'required|max:50|alpha', 
-            'ville' => 'required|max:100|alpha',
-            'price' => 'required|max:100000|numeric',
-            'adresse' => 'required|max:50|regex:/^[a-zA-Z0-9\s\-]+$/',
+            'category' => 'required_if:category_id,0',
+            'nb_personnes' => 'required',
+            'price' => 'required|regex:/^[0-9]+$/u|max:4',
+            'adresse' => 'required|regex:/^[0-9\pL\s\-\,]+$/u|max:80',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
-            'description' => 'required|max:1000',
-            'propriete' => 'required|max:500'
+            'description' => 'required|max:3000',
+            // 'propriete' => 'required|max:500'
         ];
     }
 
@@ -45,24 +45,20 @@ class EditHouseRequest extends FormRequest
         return [
             'title.required' => 'Veuillez saisir votre titre',
             'title.max' => 'Votre titre ne doit pas dépasser 50 caractères',
-            'title.regex' => 'Votre titre doit contenir que des lettres et non des chiffres ou caractères spéciaux',
-            'pays.required' => 'Veuillez saisir votre pays',
-            'pays.max' => 'Votre pays ne doit pas dépasser 50 caractères',
-            'pays.alpha' => 'Votre pays doit contenir que des lettres',
-            'ville.required' => 'Veuillez saisir votre ville',
-            'ville.max' => 'Votre ville ne doit pas dépasser 50 caractères',
-            'ville.alpha' => 'Votre ville doit contenir que des lettres et non des chiffres ou caractères spéciaux',
+            'title.regex' => 'Votre titre peut contenir que des lettres, espaces et tirets',
+            'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
+            'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'adresse.required' => 'Veuillez saisir votre adresse',
-            'adresse.max' => 'Votre adresse ne doit pas dépasser 50 caractères',
+            'adresse.max' => 'Votre adresse ne doit pas dépasser 80 caractères',
             'adresse.regex' => 'Votre adresse ne doit pas contenir de caractères spéciaux',
             'price.required' => 'Veuillez saisir le prix par nuit',
-            'price.numeric' => 'Veuillez saisir uniquement des chiffres',
-            'price.max' => 'Vous ne pouvez pas mettre un montant au delà de 100000€',
+            'price.regex' => 'Veuillez saisir uniquement des chiffres',
+            'price.max' => 'Vous ne pouvez pas mettre un montant de plus de 4 chiffres',
             'photo.required' => 'Veuillez mettre une photo de votre hebergement',
             'photo.image' => 'Veuillez mettre une image',
             'description.required' => 'Veuillez detailler votre annonce',
             'description.max' => 'La description de votre annonce ne doit pas dépasser 1000 caractères',
-            'propriete.required' => 'Veuillez mettre une valeur ca doit être un chiffre',
+            // 'propriete.required' => 'Veuillez mettre une valeur ca doit être un chiffre',
         ];
     }
 }
