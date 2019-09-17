@@ -22,7 +22,7 @@
                                 <p>Prix / la nuit: <?php echo e($house->price); ?>€</p>
                                 <p>Type de bien : <?php echo e($house->category->category); ?></p>
                                 <?php $__currentLoopData = $house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatpropriete): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>                                  
-                                    <p><?php echo e($valuecatpropriete->propriete->propriete); ?>: <?php echo e($valuecatpropriete->value); ?></p>                     
+                                    <p><?php echo e($valuecatpropriete->propriete->propriete); ?></p>                     
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <p class="card-"><?php echo e($house->description); ?></p>
                                 <p>Annulation gratuite !</p>

@@ -33,7 +33,7 @@ class ReservationsController extends Controller
         $start = new Date($start_date);
         $end = new Date($end_date);
         $days = $start->diffInDays($end) + 1;
-        $total = $house->price * $days;
+        $total = ($house->price * $days) * $request->nb_personnes;
 
         $reservation = new Reservation;
         $reservation->start_date = $start_date;

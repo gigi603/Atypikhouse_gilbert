@@ -22,7 +22,7 @@
                                 <p>Prix / la nuit: {{$house->price}}€</p>
                                 <p>Type de bien : {{$house->category->category}}</p>
                                 @foreach($house->valuecatproprietes as $valuecatpropriete)                                  
-                                    <p>{{$valuecatpropriete->propriete->propriete}}: {{$valuecatpropriete->value}}</p>                     
+                                    <p>{{$valuecatpropriete->propriete->propriete}}</p>                     
                                 @endforeach
                                 <p class="card-">{{$house->description}}</p>
                                 <p>Annulation gratuite !</p>
