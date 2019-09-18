@@ -16,7 +16,7 @@
                         <div class="form-group<?php echo e($errors->has('adresse') ? ' has-error' : ''); ?>">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse (elle doit comporter un numéro)" autofocus value="<?php echo e(old('adresse')); ?>">
+                                <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" autofocus value="<?php echo e(old('adresse')); ?>">
                                 <?php if($errors->has('adresse')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('adresse')); ?></strong>

@@ -30,14 +30,15 @@ google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
     for (var j in component.types) {  
       var type_element = document.getElementById(component.types[j]);      
       
-      if (type_element) {        
+      if (type_element) {     
         type_element.value = component.long_name;
       }    
-    }  
+    }
   }
 });
 function validate(){
-  if(!place){
+  if(adresse.value != !place.formatted_address){
+    console.log('hello');
     adresse.value = ""
     return true;
   }

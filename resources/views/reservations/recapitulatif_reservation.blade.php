@@ -1,6 +1,5 @@
-@section('content')
-@section('title', 'Recapitulatif réservation')
 @extends('layouts.app')
+@section('title', 'Recapitulatif réservation')
 @section('link')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
@@ -19,7 +18,6 @@
                                 <h4 class="title card-title">
                                     <a href="#">{{$house->title}}</a>
                                 </h4>
-                                <p>Prix / la nuit: {{$house->price}}€</p>
                                 <p>Type de bien : {{$house->category->category}}</p>
                                 @foreach($house->valuecatproprietes as $valuecatpropriete)                                  
                                     <p>{{$valuecatpropriete->propriete->propriete}}</p>                     
@@ -27,7 +25,7 @@
                                 <p class="card-">{{$house->description}}</p>
                                 <p>Annulation gratuite !</p>
                                 <p> {{$house->ville}}</p>
-                                <h3 class="price">{{$house->price}} € x {{$days}} jours pour {{$reservation->nb_personnes}} personne(s)</h3>
+                                <h3 class="price">Prix: {{$house->price}} € x {{$days}} jours pour {{$reservation->nb_personnes}} personne(s)</h3>
                                 <h3 class="price">Total à payer : {{$total}} €</h3>
                                 <p> Si vous voulez réserver cet hébergement veuillez continuer en cliquant sur le bouton ci-dessous</p>
                                 <a class="btn btn-success btn_reserve" href="{{action('AddMoneyController@payWithStripe', 
@@ -40,21 +38,18 @@
                                     'user_id' => $reservation->user_id,
                                     'house_id' => $reservation->house_id
                                     ])}}">Aller au paiement</a>
-
-                            </div>
-                            
-                        <div>
-
-                    </div>   
+                                </div>
+                            <div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
 @section('script')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
-<!-- <script src="{{ asset('js/date_french.js') }}"></script> -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
 @endsection

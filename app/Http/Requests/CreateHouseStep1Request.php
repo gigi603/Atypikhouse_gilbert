@@ -25,7 +25,7 @@ class CreateHouseStep1Request extends FormRequest
     public function rules()
     {
         return [
-            'adresse' => 'required|regex:/^[0-9\pL\s\-\()\,]+$/u|max:80',
+            'adresse' => 'required|regex:/^[0-9\pL\s\-\,]+$/u|max:80',
         ];
     }
 
