@@ -9,11 +9,11 @@
                         <div class="col-lg-6 col-md-6 mb-4">
                             <div class="card h-100">
                                 <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}">
-                                <div class="card-body">
+                                <div class="card-center">
                                     <h4 class="title card-title text-center">
                                         {{$house->title}}
                                     </h4>
-                                    <h3 class="price">{{$house->price}}€</h3>
+                                    <h3 class="price">{{$house->price}}€ / nuit</h3>
                                     <p>Type de bien : {{$house->category->category}}</p>
                                     @foreach($house->valuecatproprietes as $valuecatpropriete)
                                         @if(count($valuecatpropriete) != 0)
@@ -22,7 +22,12 @@
                                     @endforeach
                                     <p class="card-text">{{$house->description}}</p>
                                     <p>Annulation gratuite !</p>
-                                    <p> Location : {{$house->adresse}}</p>
+                                    <p>Location :  {{$house->adresse}}</p>
+                                    <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                                    <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></p>
+                                    <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>        
+                                    <p>Téléphone de l'annonceur : {{$house->telephone}}</p>
+                                    <p>Adresse mail de l'annonceur : {{$house->user->email}}</p>
                                 </div>
                             </div>
                         </div>
