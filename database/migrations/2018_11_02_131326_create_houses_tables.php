@@ -27,6 +27,7 @@ class CreateHousesTables extends Migration
             $table->float('price');
             $table->string('photo');
             $table->string('statut');
+            $table->string('disponible');
             $table->timestamps();
         });
     }

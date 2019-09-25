@@ -14,7 +14,7 @@
                         <h4 class="title card-title text-center">
                             <a href="<?php echo e(route('user.showreservations', $reservation['id'])); ?>"><?php echo e($reservation->house->title); ?></a>
                         </h4>
-                        <p class="price"><?php echo e($reservation->house->price); ?>€ par nuit</p>
+                        <p class="price"><?php echo e($reservation->total); ?>€ par nuit</p>
                         <div class="card-infos">
                             <p>Type de bien : <?php echo e($reservation->house->category->category); ?></p>
                             <?php $__currentLoopData = $reservation->house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatpropriete): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

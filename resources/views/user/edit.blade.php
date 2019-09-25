@@ -66,10 +66,7 @@
                                 @endif
                             </div>
                         </div>
-                        <input id="street_number" name="street_number" value="{{$house->street_number}}" hidden>
-                        <input id="route" name="route" value="{{$house->route}}" hidden>
-                        <input id="locality" name="ville" value="{{$house->ville}}" hidden>
-                        <input id="country" name="pays" value="{{$house->pays}}" hidden>
+                        <input id="house_id" value="{{$house->id}}" hidden>
 
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Prix / la nuit</label>
@@ -115,21 +112,6 @@
                                 @endif
                             </div>
                         </div>
-                        @foreach($house->valuecatproprietes as $valuecatproprietes)
-                            <div class="form-group{{ $errors->has('propriete[]') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">{{$valuecatproprietes->propriete->propriete}}</label>
-                                <input type="hidden" id="propriete" class="form-control" name="propriete_id[]" autofocus value="{{$valuecatproprietes->propriete->id}}">
-                                
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="propriete[]" required autofocus value="{{$valuecatproprietes->value}}">
-                                    @if ($errors->has('propriete[]'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('propriete[]') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                            </div>
-                        @endforeach
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-color">
@@ -148,7 +130,6 @@
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
-    <script src="{{ asset('js/edit_house.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
     <script src="{{ asset('js/autocomplete_address.js') }}"></script>
 @endsection

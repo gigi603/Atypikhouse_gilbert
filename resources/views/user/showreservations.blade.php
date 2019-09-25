@@ -14,7 +14,7 @@
                                     <h4 class="title card-title text-center">
                                         <a href="#">{{$reservation->house->title}}</a>
                                     </h4>
-                                    <h3 class="price">{{$reservation->house->price}}€</h3>
+                                    <h3 class="price">{{$reservation->total}}€</h3>
                                     <p>Type de bien : {{$reservation->house->category->category}}</p>
                                     @foreach($reservation->house->valuecatproprietes as $valuecatpropriete)
                                         @if($valuecatpropriete->value == 0)
@@ -26,8 +26,6 @@
                                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                                     <p class="card-text">{{$reservation->house->description}}</p>
                                     <p>Annulation gratuite !</p>
-                                    <p> Pays: {{$reservation->house->pays}}</p>
-                                    <p> Ville: {{$reservation->house->ville}}</p>
                                     <p> Adresse: {{$reservation->house->adresse}}</p>
                                     <p> Téléphone: {{$reservation->house->telephone}}</p>
                                 </div>
@@ -39,6 +37,7 @@
         </div>
     </div>
 </div>
+@endsection
 @section('script')
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>

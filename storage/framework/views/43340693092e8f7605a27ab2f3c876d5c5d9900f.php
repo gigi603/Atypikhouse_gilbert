@@ -8,7 +8,7 @@
                 <?php echo Breadcrumbs::render('page1'); ?>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="<?php echo e(route('house.postcreate_step1')); ?>" onsubmit='return validate();' enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="<?php echo e(route('house.postcreate_step1')); ?>" enctype="multipart/form-data">
                         <?php echo e(csrf_field()); ?>
 
                         

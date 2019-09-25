@@ -115,20 +115,17 @@ class HousesController extends Controller
     public function postcreate_step3(CreateHouseStep3Request $request) {
         $ville = $request->old('ville');
         $categories = category::where('statut', '=', 1)->get();
+        $housePropriete = $request->session()->pull('houseProprietes');
+        $houseProprieteId = $request->session()->pull('houseProprietesId'); 
 
-        $proprietes = $request->input('propriete');
-        $proprietes_id = $request->input('propriete_id');
+        $proprietesChecked = $request->input('propriete');        
 
-        $housePropriete = session('houseProprietes', $proprietes);
-        $houseProprieteId = session('houseProprietesId', $proprietes_id);
-
-        if ($proprietes != null) {
-            foreach ($proprietes as $valuePropriete){
-                $request->session()->push('houseProprietes', $valuePropriete);
-            }
-            foreach ($proprietes_id as $keyId => $id){
-                $request->session()->push('houseProprietesId', $id);
-            }
+        $housePropriete = session('houseProprietes', $proprietesChecked);
+        //var_dump($proprietesChecked);
+        $i = 0;
+        for($i=0;$i < count($proprietesChecked); $i++){
+            var_dump($proprietesChecked[$i]);
+            $request->session()->push('houseProprietes', $proprietesChecked[$i]);
         }
 
         $houseAdresse = $request->session()->get('houseAdresse');
@@ -208,10 +205,9 @@ class HousesController extends Controller
         $house->description = last($houseDescription);
         $house->price = last($housePrix);
         $house->statut = "En attente de validation";
+        $house->disponible = "oui";
 
         $housePropriete = $request->session()->get('houseProprietes');
-        $houseProprieteId = $request->session()->get('houseProprietesId');  
-        $houseProprieteLabel = $request->session()->get('houseProprieteLabel');      
 
         $this->validate($request, [
             'photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20000',
@@ -226,16 +222,13 @@ class HousesController extends Controller
         if($housePropriete == null){
 
         } else {
-            $i = 0;
             foreach($housePropriete as $proprietes){
                 $valuecatProprietesHouse = new valuecatPropriete;
-                $valuecatProprietesHouse->value = $proprietes;
                 $valuecatProprietesHouse->category_id = $house->category_id;
-                $valuecatProprietesHouse->propriete_id = intval($houseProprieteId[$i]);
+                $valuecatProprietesHouse->propriete_id = intval($proprietes);
                 $valuecatProprietesHouse->house_id = $house->id;
                 
                 $valuecatProprietesHouse->save();
-                $i++;  
             }
         }
         $message = new message;
@@ -250,12 +243,26 @@ class HousesController extends Controller
         return view('houses.confirmation_create_house');
     }
 
-    public function json_propriete($id){
-        $category = category::find($id);
-        $proprietes = propriete::where('category_id', $category->id)->get();
+    public function json_propriete($id, $category){
+        $house = house::find($id);
+        
+        $proprietes = propriete::where('category_id', $category)->get();
+        $valuecatProprietesHouse = valuecatpropriete::where('category_id', $category) 
+        ->where('house_id', $id)
+        ->get();
 
+        $valArray = array();
+        foreach($proprietes as $propriete){
+            foreach($valuecatProprietesHouse as $val){
+                if($val->propriete_id == $propriete->id){
+                    array_push($valArray, $val);
+                }
+            }
+        }
+        //var_dump($valArray);
         return response()->json(["proprietes" => $proprietes,
-                                 "category_id" => $category->id], 200); 
+                                 "house" => $house,
+                                 "valArray" => $valArray]); 
     }
 
     /**

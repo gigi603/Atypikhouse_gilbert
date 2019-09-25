@@ -44,8 +44,6 @@
 <?php $__env->startSection('footer', 'footer_absolute'); ?>
 <?php $__env->startSection('script'); ?>
     <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places"></script>
-    <script src="<?php echo e(asset('js/autocomplete_address.js')); ?>"></script>
     <script src="<?php echo e(asset('js/create_house.js')); ?>"></script>
     <!--<script src="<?php echo e(asset('js/proprietes.js')); ?>"></script>-->
 <?php $__env->stopSection(); ?>

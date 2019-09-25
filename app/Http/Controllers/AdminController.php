@@ -162,12 +162,11 @@ class AdminController extends Controller
 
             $houses = house::where('category_id', '=', $request->category_id)->get();
             foreach($houses as $house){
-                $valuecatpropriete = new valuecatpropriete;
-                $valuecatpropriete->value = 0;
-                $valuecatpropriete->category_id = $request->category_id;
-                $valuecatpropriete->propriete_id = $propriete->id;
-                $valuecatpropriete->house_id = $house->id;
-                $valuecatpropriete->save();
+                // $valuecatpropriete = new valuecatpropriete;
+                // $valuecatpropriete->category_id = $request->category_id;
+                // $valuecatpropriete->propriete_id = $propriete->id;
+                // $valuecatpropriete->house_id = $house->id;
+                // $valuecatpropriete->save();
 
                 $message = new message;
                 $message->content = "L'administrateur a ajouté une propriété ".$propriete->propriete." sur vos annonces ayant comme catégorie ".$propriete->category->category;

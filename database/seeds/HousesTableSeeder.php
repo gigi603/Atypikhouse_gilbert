@@ -28,13 +28,14 @@ class HousesTableSeeder extends Seeder
                 Plus de 25 sites touristiques majeurs à moins de15 km, et les activités de loisirs voisines (canoë, accrobranche, escalade, spéléo, montgolfières, rando, VTT).
 
                 Rien de plus reposant que de passer un peu de temps au calme avec sa famille ou ses amies dans un logement insolite et remarquable de part sa verdure et sa tranquillité.",
-                'start_date' => '2019-06-10',
-                'end_date' => '2019-08-30',
+                'start_date' => '2019-10-10',
+                'end_date' => '2019-10-30',
                 'nb_personnes' => 4,
                 'telephone' => '0623216792',
                 'price' => 345.00,
                 'photo' => '1558108054.jpg',
-                'statut' => 'Validé'
+                'statut' => 'Validé',
+                'disponible' => 'oui'
             ],
             
         ];

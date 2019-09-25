@@ -116,6 +116,7 @@
                                 <input type="hidden" value="<?php echo($startdate);?>" name="start"/>
                                 <input type="hidden" value="<?php echo($enddate);?>" name="end"/>
                                 <input type="hidden" value="<?php echo($total);?>" name="total"/>
+                                <input type="hidden" value="<?php echo($nb_personnes);?>" name="nb_personnes"/>
                                 <input type="hidden" value="<?php echo($days);?>" name="days"/>
                                 <input type="hidden" value="<?php echo($house_id);?>" name="house_id"/>
                                 <input type="hidden" value="<?php echo($user_id);?>" name="user_id"/>

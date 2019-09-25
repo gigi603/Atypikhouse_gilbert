@@ -143,7 +143,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/users/updateHouse/{id}', 'UsersController@updateHouse')->name('user.updateHouse');
     Route::get('/users/deleteHouse/{id}', 'UsersController@deleteHouse')->name('user.deleteHouse');
     Route::post('/houses/store/{id}', 'HousesController@store');
-    Route::get('/json_propriete/{id}', 'HousesController@json_propriete')->name('json.proprietes');
+    Route::get('/json_propriete/{id}/{category}', 'HousesController@json_propriete')->name('json.proprietes');
     Route::post('/reservations', 'ReservationsController@store');
     Route::post('/comments', 'CommentsController@index');
     Route::post('note', 'HousesController@note');

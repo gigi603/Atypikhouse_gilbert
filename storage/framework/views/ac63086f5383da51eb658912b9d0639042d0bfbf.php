@@ -110,7 +110,7 @@
 <?php $__env->startSection('script'); ?>
     <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
     <script src="<?php echo e(asset('js/jquery-ui.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/calendar.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/calendarCreateAnnonce.js')); ?>"></script>
     <script src="<?php echo e(asset('js/create_house.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 

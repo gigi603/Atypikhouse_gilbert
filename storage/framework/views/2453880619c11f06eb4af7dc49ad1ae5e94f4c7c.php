@@ -67,10 +67,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <input id="street_number" name="street_number" value="<?php echo e($house->street_number); ?>" hidden>
-                        <input id="route" name="route" value="<?php echo e($house->route); ?>" hidden>
-                        <input id="locality" name="ville" value="<?php echo e($house->ville); ?>" hidden>
-                        <input id="country" name="pays" value="<?php echo e($house->pays); ?>" hidden>
+                        <input id="house_id" value="<?php echo e($house->id); ?>" hidden>
 
                         <div class="form-group<?php echo e($errors->has('price') ? ' has-error' : ''); ?>">
                             <label for="name" class="col-md-4 control-label">Prix / la nuit</label>
@@ -116,21 +113,6 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php $__currentLoopData = $house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatproprietes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="form-group<?php echo e($errors->has('propriete[]') ? ' has-error' : ''); ?>">
-                                <label for="name" class="col-md-4 control-label"><?php echo e($valuecatproprietes->propriete->propriete); ?></label>
-                                <input type="hidden" id="propriete" class="form-control" name="propriete_id[]" autofocus value="<?php echo e($valuecatproprietes->propriete->id); ?>">
-                                
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="propriete[]" required autofocus value="<?php echo e($valuecatproprietes->value); ?>">
-                                    <?php if($errors->has('propriete[]')): ?>
-                                    <span class="help-block">
-                                        <strong><?php echo e($errors->first('propriete[]')); ?></strong>
-                                    </span>
-                                <?php endif; ?>
-                                </div>
-                            </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <div class="form-group">
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-color">
@@ -149,7 +131,6 @@
 <?php $__env->startSection('script'); ?>
     <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
     <script src="<?php echo e(asset('js/create_house.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/edit_house.js')); ?>"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
     <script src="<?php echo e(asset('js/autocomplete_address.js')); ?>"></script>
 <?php $__env->stopSection(); ?>

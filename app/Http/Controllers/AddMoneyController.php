@@ -22,6 +22,7 @@ class AddMoneyController extends Controller
         $enddate = $_GET['end'];
         $days = $_GET['days'];
         $total = $_GET['total'];
+        $nb_personnes = $_GET['nb_personnes'];
         $user_id = $_GET['user_id'];
         $house_id = $_GET['house_id'];
 
@@ -30,6 +31,7 @@ class AddMoneyController extends Controller
                                     ->with('enddate', $enddate)
                                     ->with('days', $days)
                                     ->with('total', $total)
+                                    ->with('nb_personnes', $nb_personnes)
                                     ->with('user_id', $user_id)
                                     ->with('house_id', $house_id);
     }
@@ -46,6 +48,7 @@ class AddMoneyController extends Controller
         $enddate = $_POST['end'];
         $days = $_POST['days'];
         $total = $_POST['total'];
+        $nb_personnes = $_POST['nb_personnes'];
         $user_id = $_POST['user_id'];
         $house_id = $_POST['house_id'];
         $stripe_payment = $total * 100;
@@ -69,6 +72,7 @@ class AddMoneyController extends Controller
             $reservation->end_date = $enddate;
             $reservation->user_id = $user_id;
             $reservation->house_id = $house_id;
+            $reservation->nb_personnes = $nb_personnes;
             $reservation->price= $prix;
             $reservation->total= $total;
             $reservation->days= $days;

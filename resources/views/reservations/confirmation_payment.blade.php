@@ -1,12 +1,11 @@
-@section('content')
-@section('title', 'Confirmation payement')
 @extends('layouts.app')
+@section('title', 'Confirmation payement')
 @section('link')
 <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
-<div class="container list-category">
-    <div class="panel panel-default">
-        <div class="panel-heading text-center">Confirmation de votre paiement</div>
+    <div class="container list-category">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">Confirmation de votre paiement</div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -17,17 +16,17 @@
                             <div>
                                 <a class="btn btn-success btn_reserve" href="{{ route('user.reservations') }}">Consulter mes réservations</a>
                             </div> 
-                        <div>
+                        </div>
                     </div>   
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endsection
 @section('script')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
-<!-- <script src="{{ asset('js/date_french.js') }}"></script> -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="{{ asset('js/calendar.js') }}"></script>
+    <!-- <script src="{{ asset('js/date_french.js') }}"></script> -->
 @endsection

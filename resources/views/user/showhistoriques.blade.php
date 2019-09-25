@@ -14,7 +14,7 @@
                                     <h4 class="title card-title text-center">
                                         <a href="#">{{$historique->house->title}}</a>
                                     </h4>
-                                    <h3 class="price">{{$historique->house->price}}€</h3>
+                                    <h3 class="price">{{$historique->total}}€</h3>
                                     <p>Type de bien : {{$historique->house->category->category}}</p>
                                     @foreach($historique->house->valuecatproprietes as $valuecatpropriete)
                                         @if($valuecatpropriete->value == 0)

@@ -70,13 +70,17 @@ class UsersController extends Controller
     {
         $categories = category::all();
         $house = house::find($id);
+        $proprietes = propriete::where('category_id', $house->category->id)->get();
+        
         return view('user.edit')->with('house', $house)
-                                ->with('categories', $categories);
+                                ->with('categories', $categories)
+                                ->with('proprietes', $proprietes);
     }
 
     public function updateHouse(EditHouseRequest $request, $id)
     {
         $house = house::find($id);
+        // var_dump($request->propriete);
         if($house->title != $request->title || $house->category_id != $request->category_id
         || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
         || $house->adresse != $request->adresse || $house->photo != $request->photo
@@ -86,6 +90,7 @@ class UsersController extends Controller
             $house->nb_personnes = $request->nb_personnes;
             $house->price = $request->price;
             $house->adresse = $request->adresse;
+            
             if($request->hasFile('photo')){
                 $picture = $request->file('photo');
                 $filename  = time() . '.' . $picture->getClientOriginalExtension();
@@ -95,67 +100,32 @@ class UsersController extends Controller
             }
             $house->description = $request->description;
             $house->statut = "En attente de validation";
+            // foreach($house->valuecatproprietes as $val){
+            //     foreach($request->propriete as $propriete){
+            //         $val->category_id = $request->category_id;
+            //         $val->propriete_id = $propriete;
+            //         $val->save();
+            //     } 
+            // }
             $house->save();
         }
-        return redirect()->route('user.editHouse', ['id' => $id])->with('success', "L'hébergement de l'utilisateur a bien été modifié");
-        // $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
-
-        // if($house->category_id != $request->category_id){
-        //     $house->category_id = $request->category_id;
-        //     $house->save();
+        //return redirect()->route('user.editHouse', ['id' => $id])->with('success', "L'hébergement de l'utilisateur a bien été modifié");
+        $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
             
-            
-        //     $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
-        //     if($valueproprietes->count() > 0){
-        //         $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
-        //         var_dump('bonjour');
-        //         foreach($proprietes_category as $propriete_category){
-        //             $valuecatProprietesHouse = new valuecatPropriete;
-        //             $valuecatProprietesHouse->value = 0;
-        //             $valuecatProprietesHouse->category_id = $request->category_id;
-        //             $valuecatProprietesHouse->house_id = $house->id;
-        //             $valuecatProprietesHouse->propriete_id = $propriete_category->id;
-        //             $valuecatProprietesHouse->save(); 
-        //         }         
-        //         $house->save();
-        //     }
-        //     $house->save();
-        // }
-        // $house->title = $request->title;
-        // $house->category_id = intval($request->category_id);
-        // $house->pays = $request->pays;
-        // $house->ville = $request->ville;
-        // $house->adresse = $request->adresse;
-        // $house->price = $request->price;
-        // $house->description = $request->description;
-        // //$house->save();
+        $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
         
-        // $i = 0;
-        // foreach ($valueproprietes as $value) {
-        //     DB::table('valuecatproprietes')
-        //         ->leftJoin('houses', 'valuecatproprietes.house_id', '=', 'houses.id')
-        //         ->where('house_id','=', $id)
-        //         ->where('valuecatproprietes.id','=', $value->id)
-        //         ->update([
-        //             'value' => $request->propriete[$i]
-        //     ]);
-        //     $i++;
-        // }
-        // $house->save();
-    
-        // if($request->photo == NULL){
-        //     $request->photo = $house->first()->photo;
-        //     $house->save();
-        //     // return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
-        // } else {
-        //     $picture = $request->file('photo');
-        //     $filename  = time() . '.' . $picture->getClientOriginalExtension();
-        //     $path = public_path('img/houses/' . $filename);
-        //     Image::make($picture->getRealPath())->resize(350, 200)->save($path);
-        //     $house->photo = $filename;
-        //     $house->save();
-        //     // return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
-        // }
+        $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
+        if(count($request->propriete) > 0){
+            foreach($request->propriete as $proprietes) {
+                var_dump($proprietes);       
+                $valuecatProprietesHouse = new valuecatPropriete;
+                $valuecatProprietesHouse->category_id = $request->category_id;
+                $valuecatProprietesHouse->house_id = $house->id;
+                $valuecatProprietesHouse->propriete_id = $proprietes;
+                $valuecatProprietesHouse->save();
+            }   
+        }
+        return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
     }
 
     public function deleteHouse(Request $request, $id)
@@ -177,7 +147,7 @@ class UsersController extends Controller
             $post->email = $user->email;
             $post->content = "L'utilisateur ".$user->nom.' '.$user->prenom." veut supprimer l'annonce ".$house->title;
             $post->save();
-            return redirect()->back()->with('success', "Votre demande a bien été pris en compte, étant donné que votre annonce est en ligne, un message sera envoyé à l'administrateur qui supprimera votre annonce");
+            return redirect()->back()->with('success', "Votre demande a bien été pris en compte, étant donné que votre annonce est en ligne, un message sera envoyé à l'administrateur qui supprimera votre annonce. N'oubliez pas vérifier vos notifications");
         }
     }
 

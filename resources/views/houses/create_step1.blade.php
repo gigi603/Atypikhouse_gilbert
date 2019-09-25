@@ -8,7 +8,7 @@
                 <div class="panel-heading">Créer un hébergement</div>
                 {!! Breadcrumbs::render('page1') !!}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step1')}}" onsubmit='return validate();' enctype="multipart/form-data">
+                    <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step1')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         
                         <p>1. Où se situe votre bien?</p>

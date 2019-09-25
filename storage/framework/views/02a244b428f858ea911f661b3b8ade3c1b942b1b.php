@@ -13,7 +13,7 @@
                                     <h4 class="title card-title text-center">
                                         <a href="#"><?php echo e($reservation->house->title); ?></a>
                                     </h4>
-                                    <h3 class="price"><?php echo e($reservation->house->price); ?>€</h3>
+                                    <h3 class="price"><?php echo e($reservation->total); ?>€</h3>
                                     <p>Type de bien : <?php echo e($reservation->house->category->category); ?></p>
                                     <?php $__currentLoopData = $reservation->house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatpropriete): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($valuecatpropriete->value == 0): ?>
@@ -25,8 +25,6 @@
                                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                                     <p class="card-text"><?php echo e($reservation->house->description); ?></p>
                                     <p>Annulation gratuite !</p>
-                                    <p> Pays: <?php echo e($reservation->house->pays); ?></p>
-                                    <p> Ville: <?php echo e($reservation->house->ville); ?></p>
                                     <p> Adresse: <?php echo e($reservation->house->adresse); ?></p>
                                     <p> Téléphone: <?php echo e($reservation->house->telephone); ?></p>
                                 </div>
@@ -38,6 +36,7 @@
         </div>
     </div>
 </div>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
 <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
 <script src="<?php echo e(asset('js/jquery-ui.min.js')); ?>"></script>

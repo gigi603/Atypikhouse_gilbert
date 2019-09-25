@@ -104,6 +104,6 @@
 <?php $__env->startSection('script'); ?>
 <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
 <script src="<?php echo e(asset('js/jquery-ui.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/calendar.js')); ?>"></script>
+<script src="<?php echo e(asset('js/calendarReservation.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -15,7 +15,7 @@
                         <h4 class="title card-title text-center">
                             <a href="{{route('user.showreservations', $reservation['id']) }}">{{$reservation->house->title}}</a>
                         </h4>
-                        <p class="price">{{$reservation->house->price}}€ par nuit</p>
+                        <p class="price">{{$reservation->total}}€ par nuit</p>
                         <div class="card-infos">
                             <p>Type de bien : {{$reservation->house->category->category}}</p>
                             @foreach($reservation->house->valuecatproprietes as $valuecatpropriete)

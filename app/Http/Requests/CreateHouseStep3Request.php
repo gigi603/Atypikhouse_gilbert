@@ -24,12 +24,12 @@ class CreateHouseStep3Request extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|regex:/^[\pL\s\-]+$/u|max:30',
+            'title' => 'required|regex:/^[\pL\s\-\']+$/u|max:60',
             'category' => 'required_if:category_id,0',
             'nb_personnes' => 'required|numeric',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
-            'description' => 'required|regex:/^[0-9\pL\s\-\()\.\,]+$/u|max:1000'
+            'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,]+$/u|max:1000'
         ];
     }
 
@@ -42,8 +42,8 @@ class CreateHouseStep3Request extends FormRequest
     {
         return [
             'title.required' => 'Veuillez saisir le titre de votre annonce',
-            'title.max'  => 'Votre titre ne doit pas dépasser 40 caractères',
-            'title.regex'  => 'Votre titre peut contenir que des lettres, espaces et tirets',
+            'title.max'  => 'Votre titre ne doit pas dépasser 60 caractères',
+            'title.regex'  => 'Votre titre peut contenir que des lettres, espaces, tirets et les apostrophes',
             'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'nb_personnes.numeric' => "le nombre de personnes sélectionné doit être un chiffre/nombre",
@@ -54,7 +54,7 @@ class CreateHouseStep3Request extends FormRequest
             'end_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'description.required' => 'Veuillez saisir une description de votre annonce',
             'description.max' => 'Votre description ne doit contenir que 1000 caractères max.',
-            'description.regex' => 'Les caractères spéciaux autorisés sont: les parenthèses, virgules, points et les espaces'
+            'description.regex' => 'Les caractères spéciaux autorisés sont: les parenthèses, virgules, points, les espaces et les apostrophes'
         ];
     }
 }
