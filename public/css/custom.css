@@ -304,8 +304,14 @@ nav.navbar.navbar-default {
 .space-top p {
 	padding:20px 20px;
 }
+.breadcrumb {
+	color: #A9A9A9 !important;
+}
 
-
+.breadcrumb>.active {
+	color: #3f4b30 !important;
+	font-weight: bold;
+}
 /* #3f4b30 */
 #block_home_2 {
 	position: relative;
