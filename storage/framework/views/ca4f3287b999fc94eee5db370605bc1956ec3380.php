@@ -18,7 +18,7 @@
                         <p><i class="fas fa-bed"></i> : 2 lits - <i class="fas fa-users"></i> : pour 2 Personnes</p>
                         <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
-                        <p class="price"><?php echo e($historique->house->price); ?>€</p>
+                        <p class="price"><?php echo e($historique->total); ?>€</p>
                         <p class="card-text"><?php echo(substr($historique->house->description, 0, 40));?></p>
                         <?php if($historique->house->statut == "En attente de validation"): ?>
                             <p>Statut: <span style="color:red;"><?php echo($historique->house->statut);?></span></p>
