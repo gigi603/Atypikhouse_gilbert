@@ -101,7 +101,7 @@
                         <form action="{{route('addmoney.stripe')}}" method="post" id="payment-form">
                             <div class="form-row" style="padding-bottom:30px;">
                                 <label for="card-element">
-                                Credit or debit card
+                                Carte de crédit
                                 </label>
                                 <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
