@@ -30,7 +30,7 @@ class EditHouseRequest extends FormRequest
             'price' => 'required|regex:/^[0-9]+$/u|max:4',
             'adresse' => 'required|regex:/^[0-9\pL\s\-\,]+$/u|max:80',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
-            'description' => 'required|max:3000',
+            'description' => 'required|max:3000|regex:/^[0-9\pL\s\'\-\()\.\,\@]+$/u',
             // 'propriete' => 'required|max:500'
         ];
     }
@@ -58,7 +58,7 @@ class EditHouseRequest extends FormRequest
             'photo.image' => 'Veuillez mettre une image',
             'description.required' => 'Veuillez detailler votre annonce',
             'description.max' => 'La description de votre annonce ne doit pas dépasser 1000 caractères',
-            // 'propriete.required' => 'Veuillez mettre une valeur ca doit être un chiffre',
+            'description.regex' => 'Les caractères spéciaux permis sont : .,()\'-',
         ];
     }
 }

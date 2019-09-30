@@ -5,140 +5,120 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Modifier</div>
-                @foreach($houses as $house)
-                    <div class="panel-body">
-                        @if ($success = Session::get('success'))
-                            <div class="alert alert-info">
-                                {{ $success }}
-                            </div>
-                        @endif
-                        <form class="form-horizontal" method="POST" action="{{ route('admin.updateHouse', $house->id) }}" enctype="multipart/form-data">                      
-                            {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Titre</label>
+                <div class="panel-body">
+                    @if ($success = Session::get('success'))
+                        <div class="alert alert-info">
+                            {{ $success }}
+                        </div>
+                    @endif
+                    <form class="form-horizontal" method="POST" action="{{ route('admin.updateHouse', $house->id) }}" enctype="multipart/form-data">                      
+                        {{ csrf_field() }}
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Titre</label>
 
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="title" maxlength="47" autofocus value="{{$house->title}}">
-                                    @if ($errors->has('title'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('title') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Categorie</label>
-                                <div class="col-md-6">
-                                    <select id="select_category" type="text" name="category_id" class="form-control">
-                                        <option id="" value="{{$house->category->id}}" selected="selected" required autofocus>{{$house->category->category}}</option>
-                                        @foreach($categories as $category)
-                                            <option value="<?php echo($category->id);?>"><?php echo($category->category);?></option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Adresse</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="adresse" autofocus value="{{$house->adresse}}">
-                                    @if ($errors->has('adresse'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('adresse') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            
-
-                            <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Prix</label>
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="price" autofocus value="{{$house->price}}">
-                                    @if ($errors->has('price'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('price') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Photo</label>
-                                
-                                <div class="col-md-6">
-                                    <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
-                                <label class="col-md-4"></label>
-                                <div class="col-md-6">
-                                <input id="name" type="file" class="form-control" name="photo" autofocus value="{{$house->photo}}">
-                                @if ($errors->has('photo'))
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="title" maxlength="47" autofocus value="{{$house->title}}">
+                                @if ($errors->has('title'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('photo') }}</strong>
+                                        <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
-                                </div>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Categorie</label>
+                            <div class="col-md-6">
+                                <select id="select_category" type="text" name="category_id" class="form-control">
+                                    @foreach($categories as $category)
+                                        <option value="<?php echo($category->id);?>" @if($house->category->id  == $category->id) selected="selected" @endif><?php echo($category->category);?></option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="proprietes"></div>
+                        <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
+                            <div class="col-md-6">
+                                <select id="select_nb_personnes" name="nb_personnes" class="form-control">
+                                    <option id="" value="{{$house->nb_personnes}}" selected="selected" required autofocus>{{$house->nb_personnes}}</option>
+                                    @for($i=1;$i<16;$i++)
+                                    <option value={{$i}} @if (old('nb_personnes') == $i) selected="selected" @endif>{{$i}}</option>
+                                    @endfor 
+                                </select>
+                                @if ($errors->has('nb_personnes'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nb_personnes') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Adresse</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="autocompleteadresse" name="adresse" autofocus value="{{$house->adresse}}">
+                                @if ($errors->has('adresse'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <input id="house_id" value="{{$house->id}}" hidden>
 
-                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="description" class="col-md-4 control-label">Description</label>
+                        <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Prix / la nuit</label>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="price" autofocus value="{{$house->price}}">
+                                @if ($errors->has('price'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('price') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-                                <div class="col-md-6">
-                                    <textarea class="form-control" name="description" rows="5">{{$house->description}}</textarea>
-                                    @if ($errors->has('description'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('description') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="text-center">Informations supplémentaires:</label>
-                            </div>
-                            @foreach($house->valuecatproprietes as $valuecatproprietes)
-                                <div class="form-group{{ $errors->has('propriete[]') ? ' has-error' : '' }}">
-                                    <label for="name" class="col-md-4 control-label">{{$valuecatproprietes->propriete->propriete}}</label>
-                                    <input type="hidden" id="propriete" class="form-control" name="propriete_id[]" autofocus value="{{$valuecatproprietes->propriete->id}}">
-                                    
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="propriete[]" required autofocus value="{{$valuecatproprietes->value}}">
-                                        @if ($errors->has('propriete[]'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('propriete[]') }}</strong>
-                                        </span>
-                                    @endif
-                                    </div>
-                                </div>
-                            @endforeach
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label" style="display:none;">Statut</label>
-                                <div class="col-md-6">
-                                    <select id="select_category" type="text" name="statut" class="form-control" style="display:none;">
-                                        <option id="" value="{{$house->statut}}" selected="selected" required autofocus>{{$house->statut}}</option> 
-                                        <option value="En attente de validation">En attente de validation</option>
-                                        <option value="Validé">Validé</option>                       
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Photo</label>
                             
-                            <div class="form-group">
-                                <p class="rouge">Pour les informations supplémentaires vous ne pouvez mettre que des chiffres. </p>
-                                <p class="rouge">mettez 0 losque vous n'avez pas ou si vous ne savez pas encore, la propriété ne sera pas afficher dans l'annonce</p>
+                            <div class="col-md-6">
+                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}">
                             </div>
-                            <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Statut</label>
-                                <div class="col-md-6">
-                                    <select id="select_category" type="text" name="statut" class="form-control">
-                                        <option id="" value="{{$house->statut}}" selected="selected" required autofocus>{{$house->statut}}</option> 
-                                        <option value="En attente de validation">En attente de validation</option>
-                                        <option value="Validé">Validé</option>                       
-                                    </select>
-                                </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
+                            <label class="col-md-4"></label>
+                            <div class="col-md-6">
+                            <input id="name" type="file" class="form-control" name="photo" autofocus value="{{$house->photo}}">
+                            @if ($errors->has('photo'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('photo') }}</strong>
+                                </span>
+                            @endif
                             </div>
-                        @endforeach
+                        </div>
+
+                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">Description</label>
+
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="description" rows="5">{{$house->description}}</textarea>
+                                @if ($errors->has('description'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Statut</label>
+                            <div class="col-md-6">
+                                <select id="select_category" type="text" name="statut" class="form-control">
+                                    <option id="" value="{{$house->statut}}" selected="selected" required autofocus>{{$house->statut}}</option> 
+                                    <option value="En attente de validation">En attente de validation</option>
+                                    <option value="Validé">Validé</option>                       
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-color">
@@ -151,5 +131,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>    
+@endsection
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/admin_create_house.js') }}"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
+    <script src="{{ asset('js/autocomplete_address.js') }}"></script>
 @endsection

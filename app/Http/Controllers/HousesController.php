@@ -38,7 +38,7 @@ class HousesController extends Controller
      */
     public function index(House $house)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $categories = category::all();
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
         ->where('start_date', '>=', $today)

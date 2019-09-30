@@ -51,7 +51,7 @@ Route::get('/mylocations/{id}', function ($id) {
 });
 
 Route::get('/user/reservations/{id}', function ($id) {
-	$today = Date::now()->format('Y-m-d');
+	$today = Date::today()->format('Y-m-d');
 	$reservationProfil = reservation::with('house')->where('user_id', $id)->get()->toJson();
  	return response($reservationProfil,200)->header('Content-Type', 'application/json');
 });

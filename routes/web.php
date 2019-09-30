@@ -116,6 +116,8 @@ Route::prefix('admin')->group(function () {
 
     //Admin proprietes
     Route::post('/proprietes/store','AdminController@createproprietes');
+
+    Route::get('/json_propriete/{id}/{category}', 'AdminController@json_propriete')->name('admin.json.proprietes');
  });
 
 Route::group(['middleware' => 'auth'], function () {

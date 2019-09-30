@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use Session;
 use Image;
+use App\Http\Requests\EditHouseAdminRequest;
 use Jenssegers\Date\Date;
 
 class AdminController extends Controller
@@ -204,40 +205,73 @@ class AdminController extends Controller
     public function editHouse($id)
     { 
         $categories = category::all();
-        $houses = house::where('id','=', $id)->get();
-        return view('admin.editHouse')->with('houses', $houses)->with('categories', $categories);
+        $house = house::find($id);
+        $proprietes = propriete::where('category_id', $house->category->id)->get();
+        
+        return view('admin.editHouse')->with('house', $house)
+                                ->with('categories', $categories)
+                                ->with('proprietes', $proprietes);
     }
 
-    public function updateHouse(Request $request,Category $category, Ville $ville, House $house, $id)
+    public function json_propriete($id, $category){
+        $house = house::find($id);
+        
+        $proprietes = propriete::where('category_id', $category)->get();
+        $valuecatProprietesHouse = valuecatpropriete::where('category_id', $category) 
+        ->where('house_id', $id)
+        ->get();
+
+        $valArray = array();
+        foreach($proprietes as $propriete){
+            foreach($valuecatProprietesHouse as $val){
+                if($val->propriete_id == $propriete->id){
+                    array_push($valArray, $val);
+                }
+            }
+        }
+        //var_dump($valArray);
+        return response()->json(["proprietes" => $proprietes,
+                                 "house" => $house,
+                                 "valArray" => $valArray]); 
+    }
+
+    public function updateHouse(EditHouseAdminRequest $request,Category $category, Ville $ville, House $house, $id)
     {
         $house = house::find($id);
-        $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
-
-        if($house->category_id != $request->category_id){
+        if($house->title != $request->title || $house->category_id != $request->category_id
+        || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
+        || $house->adresse != $request->adresse || $house->photo != $request->photo
+        || $house->description != $request->description){
+            $house->title = $request->title;
             $house->category_id = $request->category_id;
-            $house->save();
+            $house->nb_personnes = $request->nb_personnes;
+            $house->price = $request->price;
+            $house->adresse = $request->adresse;
             
-            
-            $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
-            if($valueproprietes->count() > 0){
-                $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
-                foreach($proprietes_category as $propriete_category){
-                    $valuecatProprietesHouse = new valuecatPropriete;
-                    $valuecatProprietesHouse->value = 0;
-                    $valuecatProprietesHouse->category_id = $request->category_id;
-                    $valuecatProprietesHouse->house_id = $house->id;
-                    $valuecatProprietesHouse->propriete_id = $propriete_category->id;
-                    $valuecatProprietesHouse->save();
-                }    
-                $house->save();
+            if($request->hasFile('photo')){
+                $picture = $request->file('photo');
+                $filename  = time() . '.' . $picture->getClientOriginalExtension();
+                $path = public_path('img/houses/' . $filename);
+                Image::make($picture->getRealPath())->resize(350, 225)->save($path);
+                $house->photo = $filename;
             }
+            $house->description = $request->description;
+            $house->statut = "En attente de validation";
             $house->save();
         }
-        $house->title = $request->title;
-        $house->category_id = intval($request->category_id);
-        $house->adresse = $request->adresse;
-        $house->price = $request->price;
-        $house->description = $request->description;
+        $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
+        $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
+        $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
+        if(count($request->propriete) > 0){
+            foreach($request->propriete as $proprietes) {
+                var_dump($proprietes);       
+                $valuecatProprietesHouse = new valuecatPropriete;
+                $valuecatProprietesHouse->category_id = $request->category_id;
+                $valuecatProprietesHouse->house_id = $house->id;
+                $valuecatProprietesHouse->propriete_id = $proprietes;
+                $valuecatProprietesHouse->save();
+            }   
+        }
 
         if($house->statut != $request->statut){
             if($request->statut == "En attente de validation"){
@@ -260,20 +294,6 @@ class AdminController extends Controller
                 return redirect()->back()->with('success', "L'hébergement du propriétaire a bien été modifié, vous avez validé l'annonce, un message a été envoyé au propriétaire de cette annonce");
             }
         }
-        $house->save();
-        
-        $i = 0;
-        foreach ($valueproprietes as $value) {
-            DB::table('valuecatproprietes')
-                ->leftJoin('houses', 'valuecatproprietes.house_id', '=', 'houses.id')
-                ->where('house_id','=', $id)
-                ->where('valuecatproprietes.id','=', $value->id)
-                ->update([
-                    'value' => $request->propriete[$i]
-            ]);
-            $i++;
-        }
-        $house->save();
     
         if($request->photo == NULL){
             $request->photo = $house->first()->photo;
@@ -317,7 +337,7 @@ class AdminController extends Controller
     //Liste des reservations des utilisateurs
     public function listreservations($id)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $reservations = reservation::where('user_id','=', $id)->where('start_date', '>=', $today)->get();
         return view('admin.listreservations')->with('reservations', $reservations);
     }
@@ -336,13 +356,13 @@ class AdminController extends Controller
     //Liste des reservations des utilisateurs
     public function listhistoriques($id)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $historiques = DB::table('reservations')->join('houses', 'reservations.house_id', '=', 'houses.id')
                                                 ->where('reservations.user_id','=', $id)
                                                 ->where('reservations.start_date', '<', $today)
                                                 ->get();
 
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $historiques = Reservation::with('house')->where([
                                                     ['user_id', '=', $id],
                                                     ['start_date', '<', $today],

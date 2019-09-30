@@ -25,7 +25,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
         ->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function searchHouses(SearchRequest $request)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
         ->orderBy('id', 'desc')
         ->get();

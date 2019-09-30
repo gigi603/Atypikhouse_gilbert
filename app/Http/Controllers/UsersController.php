@@ -100,16 +100,8 @@ class UsersController extends Controller
             }
             $house->description = $request->description;
             $house->statut = "En attente de validation";
-            // foreach($house->valuecatproprietes as $val){
-            //     foreach($request->propriete as $propriete){
-            //         $val->category_id = $request->category_id;
-            //         $val->propriete_id = $propriete;
-            //         $val->save();
-            //     } 
-            // }
             $house->save();
         }
-        //return redirect()->route('user.editHouse', ['id' => $id])->with('success', "L'hébergement de l'utilisateur a bien été modifié");
         $valueproprietes = valuecatpropriete::where('house_id','=', $id)->get();
             
         $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
@@ -153,7 +145,7 @@ class UsersController extends Controller
 
     public function reservations(Request $request)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
@@ -184,7 +176,7 @@ class UsersController extends Controller
 
     public function historiques(Request $request)
     {
-        $today = Date::now()->format('Y-m-d');
+        $today = Date::today()->format('Y-m-d');
         $historiques = reservation::with('house')->where('start_date', '<=', $today)->where('end_date', '<=', $today)->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
         return view('user.historiques', compact('historiques'));
     }
