@@ -30,7 +30,9 @@ class EditHouseRequest extends FormRequest
             'price' => 'required|regex:/^[0-9]+$/u|max:4',
             'adresse' => 'required|regex:/^[0-9\pL\s\-\,]+$/u|max:80',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
-            'description' => 'required|max:3000|regex:/^[0-9\pL\s\'\-\()\.\,\@]+$/u',
+            'start_date' => 'required|date_format:d/m/Y',
+            'end_date' => 'required|date_format:d/m/Y',
+            'description' => 'required|max:3000|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u',
             // 'propriete' => 'required|max:500'
         ];
     }
@@ -56,9 +58,14 @@ class EditHouseRequest extends FormRequest
             'price.max' => 'Vous ne pouvez pas mettre un montant de plus de 4 chiffres',
             'photo.required' => 'Veuillez mettre une photo de votre hebergement',
             'photo.image' => 'Veuillez mettre une image',
+            'start_date.required' => "Veuillez sélectionner une date de départ",
+            'start_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
+            'end_date.required' => "Veuillez sélectionner une date de retour",
+            'end_date.date' => "Veuillez mettre une date",
+            'end_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'description.required' => 'Veuillez detailler votre annonce',
             'description.max' => 'La description de votre annonce ne doit pas dépasser 1000 caractères',
-            'description.regex' => 'Les caractères spéciaux permis sont : .,()\'-',
+            'description.regex' => 'Les caractères spéciaux permis sont : les ponctuations, apostrophes, accents, parenthèses, tirets et arobases'
         ];
     }
 }
