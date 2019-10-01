@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 use App\Http\Controllers\Controller;
 use App\Comment;
 use Auth;
@@ -15,12 +16,8 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(CommentRequest $request)
     {
-        $this->validate($request, [
-            'house_id' => 'exists:houses,id|numeric',
-            'comment' => 'required|max:255'
-        ]);
         $comment = new Comment;
         $comment->comment = $request->comment;
         if($request->note == null){

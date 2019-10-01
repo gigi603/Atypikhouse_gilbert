@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Détail de l"annonce'); ?>
+<?php $__env->startSection('title', "Détail de l'annonce"); ?>
 <?php $__env->startSection('content'); ?>
 <div class="admin-user-profil">
     <div class="container list-category" role="details-reservation">
