@@ -18,6 +18,8 @@ use Session;
 use Image;
 use App\Http\Requests\EditHouseAdminRequest;
 use Jenssegers\Date\Date;
+use Carbon\Carbon;
+
 
 class AdminController extends Controller
 {
@@ -241,7 +243,8 @@ class AdminController extends Controller
         if($house->title != $request->title || $house->category_id != $request->category_id
         || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
         || $house->adresse != $request->adresse || $house->photo != $request->photo
-        || $house->description != $request->description){
+        || $house->description != $request->description || $house->start_date != $request->start_date 
+        || $house->end_date != $request->end_date){
             $house->title = $request->title;
             $house->category_id = $request->category_id;
             $house->nb_personnes = $request->nb_personnes;
@@ -255,6 +258,14 @@ class AdminController extends Controller
                 Image::make($picture->getRealPath())->resize(350, 225)->save($path);
                 $house->photo = $filename;
             }
+
+            $start_date = Carbon::createFromFormat('d/m/Y', $request->start_date);
+            $start_date_date_format = Carbon::parse($start_date)->format('Y-m-d');
+            $house->start_date = $start_date_date_format;
+
+            $end_date = Carbon::createFromFormat('d/m/Y', $request->end_date);
+            $end_date_date_format = Carbon::parse($end_date)->format('Y-m-d');
+            $house->end_date = $end_date_date_format;
             $house->description = $request->description;
             $house->statut = "En attente de validation";
             $house->save();
