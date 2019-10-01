@@ -19,7 +19,7 @@ class PostsController extends Controller
         $this->validate($request, [ 
             'name' => 'required|max:100|regex:/^[a-zA-Z\s\-]+$/u', 
             'email' => 'required|max:50|email', 
-            'content' => 'required' 
+            'content' => 'required|max:3000|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u' 
         ]); 
         $post = new post;
         $post->name = $request->name;

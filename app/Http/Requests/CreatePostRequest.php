@@ -26,7 +26,7 @@ class CreatePostRequest extends FormRequest
         return [
             'name' => 'required|regex:/^[a-zA-Z\s\-]+$/u|max:50', 
             'email' => 'required|max:50|email', 
-            'content' => 'required|max:100',
+            'content' => 'required|max:3000|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u',
             'agree' => 'accepted'
         ];
     }
@@ -46,7 +46,8 @@ class CreatePostRequest extends FormRequest
             'email.email' => 'Veuillez mettre une adresse mail',
             'email.max' => 'Votre nom ne doit pas dépasser 50 caractères',
             'content.required' => 'Veuillez saisir votre message',
-            'content.max' => 'Votre message ne doit pas dépasser 1000 caractères',
+            'content.max' => 'Votre message ne doit pas dépasser 3000 caractères',
+            'content.regex' => 'Les caractères spéciaux permis sont : les ponctuations, apostrophes, accents, parenthèses, tirets et arobases',
             'agree.accepted' => 'Vous devez accepter les conditions'
         ];
     }
