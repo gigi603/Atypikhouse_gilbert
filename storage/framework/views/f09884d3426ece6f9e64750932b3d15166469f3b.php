@@ -13,7 +13,7 @@
                                         <?php echo e($reservation->house->title); ?>
 
                                     </h4>
-                                    <h3 class="price"><?php echo e($reservation->house->price); ?>€</h3>
+                                    <h3 class="price">Total payé: <?php echo e($reservation->total); ?>€ pour <?php echo e($reservation->nb_personnes); ?> personnes</h3>
                                     <p>Type de bien : <?php echo e($reservation->house->category->category); ?></p>
                                     <?php $__currentLoopData = $reservation->house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatpropriete): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($valuecatpropriete->value == 0): ?>
@@ -21,14 +21,13 @@
                                             <p><?php echo e($valuecatpropriete->propriete->propriete); ?>: <?php echo e($valuecatpropriete->value); ?></p> 
                                         <?php endif; ?>                                 
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
-                                        <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
+                                    <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                                        <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                                     <p class="card-text"><?php echo e($reservation->house->description); ?></p>
                                     <p>Annulation gratuite !</p>
-                                    <p> Pays: <?php echo e($reservation->house->pays); ?></p>
-                                    <p> Ville: <?php echo e($reservation->house->ville); ?></p>
                                     <p> Adresse: <?php echo e($reservation->house->adresse); ?></p>
-                                    <p> Téléphone: <?php echo e($reservation->house->telephone); ?></p>
+                                    <p>Téléphone de l'annonceur : <?php echo e($reservation->house->telephone); ?></p>
+                                    <p>Adresse mail de l'annonceur : <?php echo e($reservation->user->email); ?></p>
                                 </div>
                             </div>
                         </div>
