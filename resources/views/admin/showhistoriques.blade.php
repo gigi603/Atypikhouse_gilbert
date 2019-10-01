@@ -14,7 +14,7 @@
                                         <h4 class="title card-title text-center">
                                             {{$historique->house->title}}
                                         </h4>
-                                        <h3 class="price">{{$historique->house->price}}€</h3>
+                                        <h3 class="price">Total payé: {{$historique->total}}€ pour {{$historique->nb_personnes}} personnes</h3>
                                         <p>Type de bien : {{$historique->house->category->category}}</p>
                                         @foreach($historique->house->valuecatproprietes as $valuecatpropriete)
                                             @if($valuecatpropriete->value == 0)
@@ -22,14 +22,13 @@
                                                 <p>{{$valuecatpropriete->propriete->propriete}}: {{$valuecatpropriete->value}}</p> 
                                             @endif                                 
                                         @endforeach
-                                        <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
-                                        <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
+                                        <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                                            <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                                         <p class="card-text">{{$historique->house->description}}</p>
                                         <p>Annulation gratuite !</p>
-                                        <p> Pays: {{$historique->house->pays}}</p>
-                                        <p> Ville: {{$historique->house->ville}}</p>
                                         <p> Adresse: {{$historique->house->adresse}}</p>
-                                        <p> Téléphone: {{$historique->house->telephone}}</p>
+                                        <p>Téléphone de l'annonceur : {{$historique->house->telephone}}</p>
+                                        <p>Adresse mail de l'annonceur : {{$historique->user->email}}</p>
                                     </div>
                                 </div>
                             </div>

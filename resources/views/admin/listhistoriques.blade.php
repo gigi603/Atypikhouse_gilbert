@@ -13,7 +13,7 @@
                             <h4 class="title card-title text-center">
                                 <a href="{{route('admin.showhistoriques', $historique->id) }}">{{$historique->house->title}}</a>
                             </h4>
-                            <p class="price">{{$historique->house->price}}€ par nuit</p>
+                            <p class="price">Total payé: {{$historique->total}}€ pour {{$historique->nb_personnes}} personne(s)</p>
                             <div class="card-infos">
                                 <p>Type de bien : {{$historique->house->category->category}}</p>
                                 @foreach($historique->house->valuecatproprietes as $valuecatpropriete)
@@ -27,13 +27,9 @@
                             @endforeach      
                                 <p><?php echo(substr($historique->house->description, 0, 40));?></p>   
                                 <p>Annulation gratuite !</p>
-                                <p> Pays: {{$historique->house->pays}}</p>
-                                <p> Ville: {{$historique->house->ville}}</p>
                                 <p> Adresse: {{$historique->house->adresse}}</p>
-                                <p> Téléphone: {{$historique->house->telephone}}</p>
-                            <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
-                            <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
-                            <h3 class="price">{{$historique->house->price}}€</h3>
+                            <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                            <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                             <p class="card-text"><?php echo(substr($historique->house->description, 0, 40));?></p>
                             @if($historique->house->statut == "En attente de validation")
                                 <p>Statut: <span style="color:red;"><?php echo($historique->house->statut);?></span></p>

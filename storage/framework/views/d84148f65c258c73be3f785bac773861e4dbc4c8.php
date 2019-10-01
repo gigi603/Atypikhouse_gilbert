@@ -12,7 +12,7 @@
                             <h4 class="title card-title text-center">
                                 <a href="<?php echo e(route('admin.showhistoriques', $historique->id)); ?>"><?php echo e($historique->house->title); ?></a>
                             </h4>
-                            <p class="price"><?php echo e($historique->house->price); ?>€ par nuit</p>
+                            <p class="price">Total payé: <?php echo e($historique->total); ?>€ pour <?php echo e($historique->nb_personnes); ?> personne(s)</p>
                             <div class="card-infos">
                                 <p>Type de bien : <?php echo e($historique->house->category->category); ?></p>
                                 <?php $__currentLoopData = $historique->house->valuecatproprietes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $valuecatpropriete): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -26,13 +26,9 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>      
                                 <p><?php echo(substr($historique->house->description, 0, 40));?></p>   
                                 <p>Annulation gratuite !</p>
-                                <p> Pays: <?php echo e($historique->house->pays); ?></p>
-                                <p> Ville: <?php echo e($historique->house->ville); ?></p>
                                 <p> Adresse: <?php echo e($historique->house->adresse); ?></p>
-                                <p> Téléphone: <?php echo e($historique->house->telephone); ?></p>
-                            <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
-                            <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
-                            <h3 class="price"><?php echo e($historique->house->price); ?>€</h3>
+                            <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
+                            <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                             <p class="card-text"><?php echo(substr($historique->house->description, 0, 40));?></p>
                             <?php if($historique->house->statut == "En attente de validation"): ?>
                                 <p>Statut: <span style="color:red;"><?php echo($historique->house->statut);?></span></p>

@@ -368,12 +368,6 @@ class AdminController extends Controller
     public function listhistoriques($id)
     {
         $today = Date::today()->format('Y-m-d');
-        $historiques = DB::table('reservations')->join('houses', 'reservations.house_id', '=', 'houses.id')
-                                                ->where('reservations.user_id','=', $id)
-                                                ->where('reservations.start_date', '<', $today)
-                                                ->get();
-
-        $today = Date::today()->format('Y-m-d');
         $historiques = Reservation::with('house')->where([
                                                     ['user_id', '=', $id],
                                                     ['start_date', '<', $today],
@@ -385,11 +379,11 @@ class AdminController extends Controller
     //Vue de détails des historiques des utilisateurs
     public function showhistoriques($id)
     {
-        $users = User::where('id', $id)->get();
+        $user = User::where('id', $id)->get();
         $houses = House::where('user_id', $id)->get();
         $historique = reservation::find($id);
         return view('admin.showhistoriques')->with('houses', $houses)
-                                              ->with('users', $users)
+                                              ->with('user', $user)
                                               ->with('historique', $historique);
     }
 
