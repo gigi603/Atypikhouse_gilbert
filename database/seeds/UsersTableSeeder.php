@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('kronos603'),
                 'verified' => 0,
                 'email_token' => null,
+                'statut' => 1
             ],
             [
                 'nom' => 'test',
@@ -26,7 +27,8 @@ class UsersTableSeeder extends Seeder
                 'email' => 'test@gmail.com',
                 'password' => bcrypt('kronos603'),
                 'verified' => 0,
-                'email_token' => null
+                'email_token' => null,
+                'statut' => 1
             ]
         ];
         DB::table('users')->insert($users);

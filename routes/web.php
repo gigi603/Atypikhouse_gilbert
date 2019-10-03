@@ -19,11 +19,13 @@ Route::get('sitemap/generate', function () {
     SitemapGenerator::create('http://127.0.0.1:8000')->writeToFile('sitemap.xml');
     return 'sitemap created';
 });
+Auth::routes();
 Route::get('/houses', 'HousesController@index')->name('houses');
 Route::get('/register', 'RegistersController@create');
 Route::post('/register', 'RegistersController@register');
 Route::get('/users/confirmation{email_token}', 'Auth\RegisterController@confirmation');
-Route::post('/login', 'SessionsController@login');
+Route::post('/login', 'Auth\LoginController@login')->name('user.login');
+Route::get('/loginForm', 'Auth\LoginController@showLoginForm')->name('user.showLogin');
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/user/showHouse/{id}', 'UsersController@showHouse')->name('user.showHouse');
@@ -101,6 +103,9 @@ Route::prefix('admin')->group(function () {
     Route::post('/register/categorie', 'AdminController@registercategory')->name('admin.register_category');
     Route::get('/enable/categorie/{id}', 'AdminController@enableCategory')->name('admin.enable_category');
     Route::get('/disable/categorie/{id}', 'AdminController@disableCategory')->name('admin.disable_category');
+
+    //Désactiver compte utilisateur
+    Route::get('/disable/user/{id}', 'AdminController@disableUser')->name('admin.disable_user');
 
     //Propriétés de la catégorie
     Route::get('/proprietes/{id}', 'AdminController@proprietescategory')->name('admin.proprietes_category');

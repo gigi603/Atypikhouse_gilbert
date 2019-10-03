@@ -204,6 +204,21 @@ class AdminController extends Controller
         return redirect()->back()->with('danger', "Votre propriété ".$propriete->propriete." a bien été supprimée, un message a été envoyé aux propriétaires ayant dans leur annonce la catégorie ".$propriete->category->category);
     }
 
+    public function disableUser($id)
+    {
+        $user = user::find($id);
+        $user->statut = 0;
+        $user->save();
+        
+        $message = new message;
+        $message->content = "L'administrateur a supprimé la catégorie ".$category->category.", lorsque vous créérez une nouvelle annonce la catégorie ".$category->category." ne sera plus disponible";
+        $message->user_id = $user->id;
+        $message->admin_id = Auth::user()->id;
+        $message->save();
+
+        return redirect()->back()->with('danger', "Le compte de l'utilisateur ".$user->prenom." ".$user->nom." a bien été désactivé");
+    }
+
     public function editHouse($id)
     { 
         $categories = category::all();
