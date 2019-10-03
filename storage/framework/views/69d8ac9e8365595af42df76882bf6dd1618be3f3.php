@@ -8,9 +8,6 @@
                 <tr>
                     <td><a href="<?php echo e(action('AdminController@profilUser', $user['id'])); ?>"><?php echo e($user->nom); ?> <?php echo e($user->prenom); ?></a></td>
                     <td><?php echo e($user->email); ?></td>
-                    <td>
-                        <a href="#" class="delete-user btn btn-danger">Supprimer</a>
-                    </td>
                 </tr>
             </tbody>
         </table>

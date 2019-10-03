@@ -9,9 +9,6 @@
                 <tr>
                     <td><a href="{{action('AdminController@profilUser', $user['id'])}}">{{$user->nom}} {{$user->prenom}}</a></td>
                     <td>{{$user->email}}</td>
-                    <td>
-                        <a href="#" class="delete-user btn btn-danger">Supprimer</a>
-                    </td>
                 </tr>
             </tbody>
         </table>

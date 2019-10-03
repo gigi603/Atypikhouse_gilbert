@@ -36,7 +36,6 @@
         <div class="container-fluid">
             <h3 id="titre">Administration AtypikHouse</h3>
             <ul id="menu">
-                <li><a href="<?php echo e(url('/')); ?>" class="btn btn-success">Site Internet</a></li>
                 <li><a href="<?php echo e(route('admin.logout')); ?>" class="btn btn-danger">Déconnexion</a></li>
             </ul>
         </div>
