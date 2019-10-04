@@ -19,13 +19,11 @@ Route::get('sitemap/generate', function () {
     SitemapGenerator::create('http://127.0.0.1:8000')->writeToFile('sitemap.xml');
     return 'sitemap created';
 });
-Auth::routes();
 Route::get('/houses', 'HousesController@index')->name('houses');
 Route::get('/register', 'RegistersController@create');
 Route::post('/register', 'RegistersController@register');
 Route::get('/users/confirmation{email_token}', 'Auth\RegisterController@confirmation');
-Route::post('/login', 'Auth\LoginController@login')->name('user.login');
-Route::get('/loginForm', 'Auth\LoginController@showLoginForm')->name('user.showLogin');
+Route::post('/login', 'Auth/LoginController@login');
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::get('/user/showHouse/{id}', 'UsersController@showHouse')->name('user.showHouse');

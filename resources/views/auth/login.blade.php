@@ -17,7 +17,7 @@
                 @endif
 
 
-                    <form class="form-horizontal" method="POST" action="{{ route('user.login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

@@ -17,7 +17,7 @@
                 <?php endif; ?>
 
 
-                    <form class="form-horizontal" method="POST" action="<?php echo e(route('user.login')); ?>">
+                    <form class="form-horizontal" method="POST" action="<?php echo e(route('login')); ?>">
                         <?php echo e(csrf_field()); ?>
 
 
