@@ -219,6 +219,7 @@ nav.navbar.navbar-default {
 }
 .annonces-block {
 	margin-top: 120px;
+	min-height: 500px !important;
 }
 .h2-title {
     margin-bottom: 50px;
@@ -231,6 +232,10 @@ nav.navbar.navbar-default {
 #hebergements {
 	text-align: center;
 	margin: 60px;
+}
+
+.list-category {
+	min-height: 500px !important;
 }
 
 .list-category h2{
@@ -351,6 +356,7 @@ nav.navbar.navbar-default {
 /* Registration */
 .panel, .block {
 	margin: 100px;
+	min-height:500px !important;
 }
 
 /* Footer */
