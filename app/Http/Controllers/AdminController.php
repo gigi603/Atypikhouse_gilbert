@@ -209,14 +209,17 @@ class AdminController extends Controller
         $user = user::find($id);
         $user->statut = 0;
         $user->save();
-        
-        $message = new message;
-        $message->content = "L'administrateur a supprimé la catégorie ".$category->category.", lorsque vous créérez une nouvelle annonce la catégorie ".$category->category." ne sera plus disponible";
-        $message->user_id = $user->id;
-        $message->admin_id = Auth::user()->id;
-        $message->save();
 
         return redirect()->back()->with('danger', "Le compte de l'utilisateur ".$user->prenom." ".$user->nom." a bien été désactivé");
+    }
+
+    public function activateUser($id)
+    {
+        $user = user::find($id);
+        $user->statut = 1;
+        $user->save();
+
+        return redirect()->back()->with('success', "Le compte de l'utilisateur ".$user->prenom." ".$user->nom." a bien été activé");
     }
 
     public function editHouse($id)

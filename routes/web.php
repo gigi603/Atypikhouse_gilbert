@@ -102,8 +102,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/enable/categorie/{id}', 'AdminController@enableCategory')->name('admin.enable_category');
     Route::get('/disable/categorie/{id}', 'AdminController@disableCategory')->name('admin.disable_category');
 
-    //Désactiver compte utilisateur
+    //Activer Désactiver compte utilisateur
     Route::get('/disable/user/{id}', 'AdminController@disableUser')->name('admin.disable_user');
+    Route::get('/activate/user/{id}', 'AdminController@activateUser')->name('admin.activate_user');
 
     //Propriétés de la catégorie
     Route::get('/proprietes/{id}', 'AdminController@proprietescategory')->name('admin.proprietes_category');

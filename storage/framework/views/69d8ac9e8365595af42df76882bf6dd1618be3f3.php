@@ -8,6 +8,16 @@
                 <tr>
                     <td><a href="<?php echo e(action('AdminController@profilUser', $user['id'])); ?>"><?php echo e($user->nom); ?> <?php echo e($user->prenom); ?></a></td>
                     <td><?php echo e($user->email); ?></td>
+                    <td>Compte activé : <?php echo e($user->statut); ?></td>
+                    <?php if($user->statut ==  1): ?>
+                        <td>
+                            <a href="<?php echo e(route('admin.disable_user', $user->id)); ?>" class="delete-user btn btn-danger">Désactiver le compte</a>
+                        </td>
+                    <?php else: ?>
+                        <td>
+                            <a href="<?php echo e(route('admin.activate_user', $user->id)); ?>" class="btn btn-success">Activer le compte</a>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             </tbody>
         </table>
