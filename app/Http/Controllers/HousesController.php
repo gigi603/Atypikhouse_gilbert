@@ -44,6 +44,7 @@ class HousesController extends Controller
         ->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('statut', 'Validé')
+        ->where('disponible', 'oui')
         ->orderBy('id', 'desc')
         ->get();
         return view('houses.index')->with('houses', $houses)

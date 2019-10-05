@@ -30,6 +30,7 @@ class HomeController extends Controller
         ->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('statut', '=', "Validé")
+        ->where('disponible', '=', "oui")
         ->orderBy('id', 'desc')
         ->get();
         $categories = category::all();
@@ -42,6 +43,7 @@ class HomeController extends Controller
     {
         $today = Date::today()->format('Y-m-d');
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
+        ->where('disponible', 'oui')
         ->orderBy('id', 'desc')
         ->get();
         $categories = category::all();

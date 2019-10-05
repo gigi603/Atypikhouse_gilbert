@@ -48,7 +48,7 @@ class UsersController extends Controller
     {
         if (Auth::check()) {
             $reservation = reservation::all();
-            $house = house::find($id);
+            $house = house::find($id)->where('disponible', "oui");
             $locataire = comment::where('user_id', Auth::user()->id)->get();
             $client_reserved = reservation::where('house_id', $id)->where('user_id', Auth::user()->id)->get();
             
@@ -58,7 +58,7 @@ class UsersController extends Controller
                                     ->with('client_reserved', $client_reserved);
         } else {
             $reservation = reservation::all();
-            $house = house::find($id);
+            $house = house::find($id)->where('disponible', "oui");
             
             return view('user.show')->with('reservation', $reservation)
                                     ->with('house', $house);

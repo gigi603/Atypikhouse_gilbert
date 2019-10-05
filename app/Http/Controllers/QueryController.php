@@ -36,6 +36,7 @@ class QueryController extends Controller
         ->where('end_date', '>=', $end_date)
         ->where('category_id', '=', $request->category_id)
         ->where('nb_personnes', '>=', $request->nb_personnes)
+        ->where('disponible', '=', "oui")
         ->get();
         ($houses);
         return view('houses.index')->with('houses', $houses)

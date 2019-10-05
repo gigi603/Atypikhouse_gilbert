@@ -351,6 +351,15 @@ class AdminController extends Controller
         } 
     }
 
+    public function disableHouse($id)
+    { 
+        $house = house::find($id);
+        $house->disponible = "non";
+        $house->save();
+        return redirect()->back()->with("success", "L'annonce du propriétaire a bien été retiré");
+
+    }
+
     /**
      * Show the profile for the given user.
      *
@@ -409,7 +418,7 @@ class AdminController extends Controller
     public function listannonces($id)
     {
         $users = User::where('id', $id)->get();
-        $houses = House::where('user_id', $id)->get();
+        $houses = House::where('user_id', $id)->where('disponible', "oui")->get();
         return view('admin.listannonces')->with('houses', $houses)
                                          ->with('users', $users);
     }

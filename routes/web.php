@@ -66,7 +66,7 @@ Route::prefix('admin')->group(function () {
 
     //Liste des annonces de l'utilisateur
     Route::get('/listannonces/{id}', 'AdminController@listannonces')->name('admin.listannonces');
-    Route::get('/delete/annonce/{id}', 'AdminController@deleteAnnonce')->name('admin.deleteAnnonce');
+    //Route::get('/delete/annonce/{id}', 'AdminController@disableAnnonce')->name('admin.disableAnnonce');
 
     //Vue de détails de l'annonce de l'utilisateur
     Route::get('/showannonces/{id}', 'AdminController@showannonces')->name('admin.showannonces');
@@ -93,7 +93,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/house/editHouse/{id}', 'AdminController@editHouse')->name('admin.editHouse');
     Route::post('/house/updateHouse/{id}', 'AdminController@updateHouse')->name('admin.updateHouse');
     Route::post('/house/statutHouse/{id}', 'AdminController@statutHouse')->name('admin.statutHouse');
-    Route::get('/houses/deleteHouse/{id}', 'AdminController@deleteHouse')->name('admin.deleteHouse');
+    Route::get('/houses/deleteHouse/{id}', 'AdminController@disableHouse')->name('admin.disableHouse');
     
     //Liste des catégories
     Route::get('/categories', 'AdminController@listcategories')->name('admin.categories');
