@@ -29,7 +29,7 @@ class LoginController extends Controller
 
     use RedirectsUsers, ThrottlesLogins;
     
-    protected $redirectTo = 'http://127.0.0.1:8000/';
+    protected $redirectTo = 'http://www.atypikhouse-projet.ovh/';
         
 
     /**

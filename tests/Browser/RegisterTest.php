@@ -16,7 +16,7 @@ class RegisterTest extends DuskTestCase
     public function testExemple()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('http://127.0.0.1:8000/')
+            $browser->visit('http://www.atypikhouse-projet.ovh/')
                     ->clickLink('Inscription')
                     ->assertSee('Register')
                     ->value('#name', 'Dupond')

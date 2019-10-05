@@ -16,7 +16,7 @@ class MyHouseTest extends DuskTestCase
     public function testBasicExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('http://127.0.0.1:8000')
+            $browser->visit('http://www.atypikhouse-projet.ovh/')
                     ->clickLink('Nos hébergements')
                     ->assertSee('Nos hébergements');
         });
