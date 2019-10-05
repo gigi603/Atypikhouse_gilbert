@@ -16,7 +16,7 @@
                                     <h3 class="price">{{$house->price}}€ / nuit</h3>
                                     <p>Type de bien : {{$house->category->category}}</p>
                                     @foreach($house->valuecatproprietes as $valuecatpropriete)
-                                        @if(count($valuecatpropriete) != 0)
+                                        @if(@count($valuecatpropriete) != 0)
                                             <p>{{$valuecatpropriete->propriete->propriete}}</p> 
                                         @endif                                 
                                     @endforeach
@@ -71,7 +71,7 @@
                                 </div>
                                 <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
                             </form>
-                            @if (count($errors) > 0)
+                            @if (@count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                                     <ul>

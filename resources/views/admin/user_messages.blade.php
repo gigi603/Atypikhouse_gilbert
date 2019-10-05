@@ -31,7 +31,7 @@
                                 <input type="text" name="content" placeholder="Saisir votre message" class="form-control" id="input_comment" style="border-radius: 0;">
                                 <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
                             </form>
-                            @if (count($errors) > 0)
+                            @if (@count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                                     <ul>
