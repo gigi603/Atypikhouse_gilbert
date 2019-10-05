@@ -16,11 +16,11 @@ class AuthTest extends DuskTestCase
     public function testExemple()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('http://127.0.0.1:8000/')
+            $browser->visit('http://www.atypikhouse-projet.ovh/')
                     ->clickLink('Connexion')
                     ->assertSee('Login')
-                    ->value('#email', 'victortaing.pro@gmail.com')
-                    ->value('#password', 'victor1')
+                    ->value('#email', 'gilbert.trinidad1@gmail.com')
+                    ->value('#password', 'kronos603')
                     ->click('.btn-primary')
                     ->assertPathIs('/login');
         });

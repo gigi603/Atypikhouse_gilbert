@@ -16,7 +16,7 @@ use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('sitemap/generate', function () {
-    SitemapGenerator::create('http://127.0.0.1:8000')->writeToFile('sitemap.xml');
+    SitemapGenerator::create('http://www.atypikhouse-projet.ovh/')->writeToFile('sitemap.xml');
     return 'sitemap created';
 });
 Route::get('/houses', 'HousesController@index')->name('houses');
