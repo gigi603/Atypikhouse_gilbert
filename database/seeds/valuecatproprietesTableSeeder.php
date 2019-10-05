@@ -23,6 +23,6 @@ class valuecatproprietesTableSeeder extends Seeder
                 'house_id' => 1
             ]
         ];
-        DB::table('valuecatProprietes')->insert($valuecatproprietes);
+        DB::table('valuecatproprietes')->insert($valuecatproprietes);
     }
 }
