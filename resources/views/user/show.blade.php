@@ -21,14 +21,13 @@
                             <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?> </p>
                             <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>
                             @foreach($house->valuecatproprietes as $valuecatpropriete)
-                                @if(count($valuecatpropriete) != 0)
-                                    <p>{{$valuecatpropriete->propriete->propriete}}</p> 
-                                @endif                                 
+                                @if(@count($valuecatpropriete) != 0)
+                                    <p>{{$valuecatpropriete->propriete->propriete}}</p>
+                   		 @endif
                             @endforeach
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-md-6">
                     <div class="calendar panel panel-default">
                         <h4 class="text-center panel-heading">Réserver vos dates : </h4>

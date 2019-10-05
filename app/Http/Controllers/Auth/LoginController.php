@@ -28,9 +28,8 @@ class LoginController extends Controller
 
 
     use RedirectsUsers, ThrottlesLogins;
-    
+
     protected $redirectTo = 'http://www.atypikhouse-projet.ovh/';
-        
 
     /**
      * Show the application's login form.

@@ -356,12 +356,12 @@ nav.navbar.navbar-default {
 /* Registration */
 .panel, .block {
 	margin: 100px;
-	min-height:500px !important;
 }
 
 .notifications-panel {
 	min-height: 500px !important;
 }
+
 /* Footer */
 footer {
 	background-color: #fff;
