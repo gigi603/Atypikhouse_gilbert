@@ -142,7 +142,7 @@
                                 </div>
                                 <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
                             </form>
-                            <?php if(count($errors) > 0): ?>
+                            <?php if(@count($errors) > 0): ?>
                                 <div class="alert alert-danger">
                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
                                     <ul>

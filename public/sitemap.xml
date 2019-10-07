@@ -4,77 +4,7 @@
         <loc>http://www.atypikhouse-projet.ovh/</loc>
     
     
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/houses</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/register</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/login</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/posts</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/mentions_legales</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/politique_de_confidentialite</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://www.atypikhouse-projet.ovh/cgu</loc>
-    
-    
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
+        <lastmod>2019-10-05T16:37:39+02:00</lastmod>
     
         <changefreq>daily</changefreq>
     
@@ -84,7 +14,107 @@
         <loc>http://www.atypikhouse-projet.ovh/apropos</loc>
     
     
-        <lastmod>2019-05-19T09:06:10+02:00</lastmod>
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/cgu</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/cgv</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/faq</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/houses</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/login</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/mentions_legales</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/politique_de_confidentialite</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/posts</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/register</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.atypikhouse-projet.ovh/user/showHouse/1</loc>
+    
+    
+        <lastmod>2019-10-05T16:37:40+02:00</lastmod>
     
         <changefreq>daily</changefreq>
     
