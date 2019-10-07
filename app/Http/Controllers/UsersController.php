@@ -49,20 +49,20 @@ class UsersController extends Controller
         if (Auth::check()) {
             $reservation = reservation::all();
             $house = house::find($id)->where('disponible', "oui");
-            var_dump($house);
+            // var_dump($house);
             $locataire = comment::where('user_id', Auth::user()->id)->get();
             $client_reserved = reservation::where('house_id', $id)->where('user_id', Auth::user()->id)->get();
             
-            // return view('user.show')->with('reservation', $reservation)
-            //                         ->with('house', $house)
-            //                         ->with('locataire', $locataire)
-            //                         ->with('client_reserved', $client_reserved);
+            return view('user.show')->with('reservation', $reservation)
+                                    ->with('house', $house)
+                                    ->with('locataire', $locataire)
+                                    ->with('client_reserved', $client_reserved);
         } else {
             $reservation = reservation::all();
             $house = house::find($id)->where('disponible', "oui");
-            var_dump($house);
-            //return view('user.show')->with('reservation', $reservation)
-                                    //->with('house', $house);
+            // var_dump($house);
+            return view('user.show')->with('reservation', $reservation)
+                                    ->with('house', $house);
         }
     }
         
