@@ -110,6 +110,7 @@ class RegisterController extends Controller
         $user = User::find($data['id']);
         $user->email_token = $data['email_token'];
         $user->prenom = $data["prenom"];
+        $user->statut = 1;
         //$user->majeur = $request['majeur'];
         $user->save();
         
