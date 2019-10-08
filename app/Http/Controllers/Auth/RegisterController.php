@@ -110,7 +110,6 @@ class RegisterController extends Controller
         $user = User::find($data['id']);
         $user->email_token = $data['email_token'];
         $user->prenom = $data["prenom"];
-        $user->statut = 1;
         //$user->majeur = $request['majeur'];
         $user->save();
         
@@ -128,7 +127,6 @@ class RegisterController extends Controller
         if (!is_null($user)) {
             $user->verified = 1;
             $user->email_token;
-            $user->statut = 1;
             $user->save();
             return redirect(route('login'))->with('status', 'Votre compte a été activé');
         }
@@ -139,8 +137,6 @@ class RegisterController extends Controller
     {
         $user = User::where('email_token', $token)->first();
         $user->verified = 1;
-        $user->statut = 1;
-        var_dump($user->verified);
         if($user->save()){
             return view('emailconfirm',['user'=> $user]);
         }
