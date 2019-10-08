@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nos Réservations')
 @section('content')
-<link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
 <div class="container list-category margin-top" role="reservations">
     <h2 class="h2-title">Mes réservations</h2>
