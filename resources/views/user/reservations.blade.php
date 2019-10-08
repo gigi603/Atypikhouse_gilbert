@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nos Réservations')
 @section('content')
-@section('content')
 <div class="container list-category margin-top" role="reservations">
     <h2 class="h2-title">Mes réservations</h2>
     <div class="row">

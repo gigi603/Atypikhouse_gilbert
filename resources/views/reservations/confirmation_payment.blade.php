@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Confirmation payement')
 @section('link')
-<link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
 @section('content')
     <div class="container list-category">
         <div class="panel panel-default">
