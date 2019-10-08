@@ -135,7 +135,7 @@ class RegisterController extends Controller
     {
         $user = User::where('email_token', $token)->first();
         $user->verified = 1;
-        var_dump($user->verified);
+
         if($user->save()){
             return view('emailconfirm',['user'=> $user]);
         }
