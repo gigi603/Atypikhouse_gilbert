@@ -27,7 +27,6 @@ class HomeController extends Controller
     {
         $today = Date::today()->format('Y-m-d');
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
-        ->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('statut', '=', "Validé")
         ->where('disponible', '=', "oui")
