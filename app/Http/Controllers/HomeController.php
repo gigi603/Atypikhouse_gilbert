@@ -32,11 +32,10 @@ class HomeController extends Controller
         ->where('disponible', '=', "oui")
         ->orderBy('id', 'desc')
         ->get();
-        var_dump($houses);
         $categories = category::all();
 
-        // return view('home')->with('houses', $houses)
-        //                    ->with('categories', $categories);
+        return view('home')->with('houses', $houses)
+                           ->with('categories', $categories);
     }
 
     public function searchHouses(SearchRequest $request)
