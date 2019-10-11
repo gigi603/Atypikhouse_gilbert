@@ -72,3 +72,4 @@
     </div>
 </div>
 @endsection
+<?php echo '<script>alert("coco")</script>';
