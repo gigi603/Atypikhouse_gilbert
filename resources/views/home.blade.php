@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Accueil')
-@section('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de locations tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore')
+@section('meta_description', "Découvrez nos locations atypiques, nous possèdons un vaste choix d'hébergements tels que des cabanes, igloos, yourtes, des maisons sur piloti et bien dautres choses encore")
 @section('content')
     <div class="container-fluid banner">
         <div class="intro-body">
