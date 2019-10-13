@@ -1,6 +1,5 @@
 <?php $__env->startSection('title', 'Mes notifications'); ?>
 <?php $__env->startSection('content'); ?>
-<link href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" rel="stylesheet">
 <?php $__env->startSection('content'); ?>
 <div class="container list-category" role="notifications">
     <div class="panel panel-default notifications-panel">

@@ -1,6 +1,5 @@
 <?php $__env->startSection('title', 'Nos Historiques'); ?>
 <?php $__env->startSection('content'); ?>
-<link href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" rel="stylesheet">
 <?php $__env->startSection('content'); ?>
 <div class="container list-category margin-top" role="historiques">
     <h2 class="h2-title">Mes historiques</h2>

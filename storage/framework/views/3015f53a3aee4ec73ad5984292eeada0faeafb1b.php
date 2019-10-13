@@ -1,6 +1,5 @@
 <?php $__env->startSection('title', 'Nos Hébergements'); ?>
 <?php $__env->startSection('content'); ?>
-<link href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" rel="stylesheet">
 <?php $__env->startSection('content'); ?>
 <div class="container annonces-block" role="annonces">
     <h2 class="text-center h2-title">Mes hébergements</h2>
