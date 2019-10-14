@@ -164,13 +164,20 @@
                         },
                         "button": {
                             "background": "#8ec760",
-                            "text": "#ffffff"
+                            "text": "#ffffff",
+                            "message": "Accepter"
                         }
                     },
                     "content": {
                         "message": "AtypikHouse utilisent des coockies pour assurer votre sécuriter et vous offrire une experiences des plus agréable , vous pouvez accéder a notre politique de confidentialité pour avoir un aperçus précis de l'utilisation de ces dernier",
                         "link": "ici",
                         "href": "{{ route('politique_de_confidentialite') }}"
+                    }
+                    "type": "opt-out",
+                    "content": {
+                        "background": "#ff0000",
+                        "text": "#ffffff",
+                        "message": "Refuser"
                     }
                 })
             });
