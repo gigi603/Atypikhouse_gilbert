@@ -159,14 +159,13 @@
                 window.cookieconsent.initialise({
                     "palette": {
                         "popup": {
-                            "background": "#efefef",
-                            "text": "#404040"
+                        "background": "#efefef",
+                        "text": "#404040"
                         },
                         "button": {
-                            "background": "#8ec760",
-                            "text": "#ffffff",
-                            "message": "Accepter"
-                        },
+                        "background": "#8ec760",
+                        "text": "#ffffff"
+                        }
                     },
                     "type": "opt-in",
                     "content": {
@@ -174,10 +173,9 @@
                         "dismiss": "Got it",
                         "allow": "Accepter les cookies",
                         "deny": "Refuser",
-                        "link": "ici",
-                        "href": "{{ route('politique_de_confidentialite') }}"
+                        "link": "ici"
                     }
-                })
+                });
             });
         </script>
         @yield('script')
