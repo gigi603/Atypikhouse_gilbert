@@ -169,7 +169,7 @@
                     },
                     "type": "opt-in",
                     "content": {
-                        "message": "AtypikHouse utilise des cookies pour assurer votre sécurité et vous offrir une experience des plus agréables , vous pouvez accéder à notre politique de confidentialité pour avoir un aperçu précis de l'utilisation de ces derniers",
+                        "message": "Le respect de votre vie privée est notre priorité. Nos partenaires et nous-mêmes exploitons différentes technologies, telles que celle des cookies, et traitons vos données à caractère personnel, telles que les adresses IP et les identifiants de cookie, afin de personnaliser les publicités et les contenus en fonction de vos centres d’intérêt, d’évaluer la performance de ces publicités et contenus, et de recueillir des informations sur les publics qui les ont visionnés. Cliquez ci-dessous si vous consentez à l’utilisation de cette technologie et au traitement de vos données à caractère personnel en vue de ces objectifs. Vous pouvez changer d’avis et modifier votre consentement à tout moment en revenant sur ce site. Vous pouvez voir notre politique de confidentialité",
                         "dismiss": "Got it",
                         "allow": "Accepter les cookies",
                         "deny": "Refuser",
