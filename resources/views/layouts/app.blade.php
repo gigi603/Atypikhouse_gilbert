@@ -166,17 +166,16 @@
                             "background": "#8ec760",
                             "text": "#ffffff",
                             "message": "Accepter"
-                        }
+                        },
                     },
+                    "type": "opt-in",
                     "content": {
-                        "message": "AtypikHouse utilisent des coockies pour assurer votre sécuriter et vous offrire une experiences des plus agréable , vous pouvez accéder a notre politique de confidentialité pour avoir un aperçus précis de l'utilisation de ces dernier",
+                        "message": "AtypikHouse utilise des cookies pour assurer votre sécurité et vous offrir une experience des plus agréables , vous pouvez accéder à notre politique de confidentialité pour avoir un aperçu précis de l'utilisation de ces derniers",
+                        "dismiss": "Got it",
+                        "allow": "Accepter les cookies",
+                        "deny": "Refuser",
                         "link": "ici",
                         "href": "{{ route('politique_de_confidentialite') }}"
-                    },
-                    "type": "opt-out",
-                    "content": {
-                        "dismiss": "Accepter les cookies",
-                        "deny": "Refuser"
                     }
                 })
             });
