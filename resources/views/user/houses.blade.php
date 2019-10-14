@@ -4,7 +4,7 @@
 @section('content')
 <div class="container annonces-block" role="annonces">
     <h2 class="text-center h2-title">Mes hébergements</h2>
-    <div class="row">
+    <div class="row text-center" style="margin-bottom: 50px;">
         <a href="{{route('house.create_step1')}}" class="btn btn-primary btn-color">Ajouter une annonce</a>
     </div>
     <div class="row">
