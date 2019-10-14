@@ -174,7 +174,8 @@
                         "allow": "Accepter les cookies",
                         "deny": "Refuser",
                         "link": "ici",
-                        "href": "{{ route('politique_de_confidentialite') }}"
+                        "href": "{{ route('politique_de_confidentialite') }}",
+                        "policy": 'Cookies',
                     }
                 });
             });
