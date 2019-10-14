@@ -173,7 +173,11 @@
                         "link": "ici",
                         "href": "{{ route('politique_de_confidentialite') }}"
                     },
-                    "type": "opt-out"
+                    "type": "opt-out",
+                    "content": {
+                        "dismiss": "Accepter les cookies",
+                        "deny": "Refuser"
+                    }
                 })
             });
         </script>
