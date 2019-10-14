@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         @foreach ($breadcrumbs as $breadcrumb)
             @if (!$breadcrumb->last)
-                <li>{{ $breadcrumb->title }}</li>
+                <li><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
             @else
                 <li class="active">{{ $breadcrumb->title }}</li>
             @endif
