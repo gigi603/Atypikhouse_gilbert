@@ -1,6 +1,9 @@
 <?php $__env->startSection('title', 'Accueil'); ?>
-<?php $__env->startSection('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de locations tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore'); ?>
+<?php $__env->startSection('meta_description', "Découvrez nos locations atypiques, nous possèdons un vaste choix d'hébergements tels que des cabanes, igloos, yourtes, des maisons sur piloti et bien dautres choses encore"); ?>
 <?php $__env->startSection('content'); ?>
+<?php $response->headers->set('X-XSS-Protection', '1; mode=block');
+        $response->headers->set('Content-Type','text/html; charset=UTF-8');
+        ?>
     <div class="container-fluid banner">
         <div class="intro-body">
             <div class="container-fluid">

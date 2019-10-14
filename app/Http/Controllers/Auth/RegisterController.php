@@ -80,7 +80,6 @@ class RegisterController extends Controller
             'email_token' => base64_encode($data['email'])
         ]);
     }
-    
     /**
     * Handle a registration request for the application.
      *
@@ -112,7 +111,6 @@ class RegisterController extends Controller
         $user->prenom = $data["prenom"];
         //$user->majeur = $request['majeur'];
         $user->save();
-        
         $message = new message;
         $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
         $message->user_id = $user->id;
@@ -137,6 +135,7 @@ class RegisterController extends Controller
     {
         $user = User::where('email_token', $token)->first();
         $user->verified = 1;
+
         if($user->save()){
             return view('emailconfirm',['user'=> $user]);
         }
