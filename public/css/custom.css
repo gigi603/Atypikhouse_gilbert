@@ -504,6 +504,13 @@ input[type=textarea] {
 	  left:2px;
   }
 
+  /* cookies */
+  .cc-animate.cc-revoke.cc-bottom {
+	transform: translateY(0em);
+	background-color: #8ec760;
+	color: #fff;
+}
+
 /* ====================== */
 /* +++++ RESPONSIVE +++++ */
 /* ====================== */
