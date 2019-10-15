@@ -124,7 +124,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/json_propriete/{id}/{category}', 'AdminController@json_propriete')->name('admin.json.proprietes');
  });
 
-Route::middleware(['auth','XSS'])->group( function () {
+Route::middleware(['auth'])->group( function () {
     Route::get('/profile/{id}', 'UsersController@index');
     Route::get('/messages', 'MessagesController@messages')->name('user.messages');
     // Route::get('/mylocations/{id}', 'HousesController@mylocations')->name('user.annonces');
