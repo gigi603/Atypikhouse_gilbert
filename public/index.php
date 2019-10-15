@@ -21,6 +21,9 @@
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Access-Control-Allow-Headers,Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Access-Control-Allow-Credentials, Access-Control-Allow-Methods, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+header('X-XSS-Protection', '1; mode=block');
+header('Content-Type','text/html; charset=UTF-8');
+header('X-Frame-Options', 'SAMEORIGIN', true);
 
 require __DIR__.'/../bootstrap/autoload.php';
 
