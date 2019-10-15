@@ -233,7 +233,7 @@ class AdminController extends Controller
                                 ->with('proprietes', $proprietes);
     }
 
-    public function validHouse($id) {
+    public function valideHouse($id) {
         $house = house::find($id);
         $house->statut = "Validé";
         $house->save();
