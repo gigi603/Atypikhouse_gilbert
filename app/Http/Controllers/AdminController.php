@@ -233,6 +233,21 @@ class AdminController extends Controller
                                 ->with('proprietes', $proprietes);
     }
 
+    public function validHouse($id) {
+        $house = house::find($id);
+        $house->statut = "Validé";
+        $house->save();
+        return redirect()->back()->with('success', "Vous avez bien validé cette annonce");
+    }
+
+    public function refuseHouse($id) {
+        $house = house::find($id);
+        $house->statut = "Refusé";
+        $house->save();
+        return redirect()->back()->with('success', "Vous avez bien refusé cette annonce");
+
+    }
+
     public function json_propriete($id, $category){
         $house = house::find($id);
         

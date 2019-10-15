@@ -92,7 +92,9 @@ Route::prefix('admin')->group(function () {
     //Gestion des hébergement
     Route::get('/house/editHouse/{id}', 'AdminController@editHouse')->name('admin.editHouse');
     Route::post('/house/updateHouse/{id}', 'AdminController@updateHouse')->name('admin.updateHouse');
-    Route::post('/house/statutHouse/{id}', 'AdminController@statutHouse')->name('admin.statutHouse');
+    //Route::post('/house/statutHouse/{id}', 'AdminController@statutHouse')->name('admin.statutHouse');
+    Route::post('/house/valideHouse/{id}', 'AdminController@validHouse')->name('admin.valideHouse');
+    Route::post('/house/refuseHouse/{id}', 'AdminController@refuseHouse')->name('admin.refuseHouse');
     Route::get('/houses/deleteHouse/{id}', 'AdminController@disableHouse')->name('admin.disableHouse');
     
     //Liste des catégories

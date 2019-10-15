@@ -38,6 +38,8 @@
                                                 <div class="col-md-12 text-center">
                                                     <a href="{{route('admin.editHouse', $house['id']) }}" class="btn btn-primary btn-color">Modifier</a>
                                                     <a href="{{route('admin.disableHouse', $house['id']) }}" class="btn btn-danger delete-annonce">Supprimer</a>
+                                                    <a href="{{route('admin.valideHouse', $house['id']) }}" class="btn btn-primary btn-color">Valider l'annonce</a>
+                                                    <a href="{{route('admin.refuseHouse', $house['id']) }}" class="btn btn-danger delete-annonce">Refuser l'annonce</a>
                                                 </div>
                                             </div>                      
                                         </div>
