@@ -40,7 +40,7 @@ Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
 Route::get('/search', 'QueryController@index');
 
 //Gestion de l'admin
-Route::prefix('admin')->group(function () {
+Route::group(['prefix' => 'admin'], ['middleware' => 'XSS'], function () {
     Route::get('/home', 'HomeController@index')->name('admin.home');
     //Liste des utilisateurs 
     Route::get('/', 'AdminController@listusers')->name('admin.listusers');
@@ -124,7 +124,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/json_propriete/{id}/{category}', 'AdminController@json_propriete')->name('admin.json.proprietes');
  });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'XSS'], function () {
     Route::get('/profile/{id}', 'UsersController@index');
     Route::get('/messages', 'MessagesController@messages')->name('user.messages');
     // Route::get('/mylocations/{id}', 'HousesController@mylocations')->name('user.annonces');

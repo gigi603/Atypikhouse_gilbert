@@ -58,6 +58,7 @@ class Kernel extends HttpKernel
         //'admin' => \App\Http\Middleware\Admin::class, // Lié à l'admin
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'jwt.auth' => \App\Http\Middleware\VerifyJWTToken::class,
-        'cors' => \App\Http\Middleware\Cors::class
+        'cors' => \App\Http\Middleware\Cors::class,
+        'XSS' => \App\Http\Middleware\XSS::class
     ];
 }
