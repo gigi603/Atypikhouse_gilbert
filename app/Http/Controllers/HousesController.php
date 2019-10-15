@@ -28,6 +28,7 @@ use Session;
 use Image;
 use View;
 use GooglePlaces;
+use App\Http\Middleware\XSS;
 
 class HousesController extends Controller
 {
