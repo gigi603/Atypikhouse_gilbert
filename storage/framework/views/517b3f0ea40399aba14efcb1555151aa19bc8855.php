@@ -9,6 +9,9 @@
                     <td><a href="<?php echo e(action('AdminController@profilUser', $user['id'])); ?>"><?php echo e($user->nom); ?> <?php echo e($user->prenom); ?></a></td>
                     <td><?php echo e($user->email); ?></td>
                     <td>Compte activé : <?php echo e($user->statut); ?></td>
+                    <td>
+                        <a href="<?php echo e(action('AdminController@profilUser', $user['id'])); ?>" class="btn btn-success">Voir ses annonces/ autres informations</a>
+                    </td>
                     <?php if($user->statut ==  1): ?>
                         <td>
                             <a href="<?php echo e(route('admin.disable_user', $user->id)); ?>" class="delete-user btn btn-danger">Désactiver le compte</a>
