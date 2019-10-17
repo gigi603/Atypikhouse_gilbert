@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Faq')
-@section('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de loccation tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore')
+@section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne")
 @section('content')
 <div class="container list-category faq" role="faq">
     <h2>FAQ : </h2>

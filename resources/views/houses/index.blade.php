@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Nos hébergements')
-@section('meta_description', 'Venez découvrir nos locations atypique, nous possèdons un vaste choix de locations tels que des cabanes, des yourtes, des maisons sur piloti et bien dautres choses encore')
+@section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne")
 @section('content')
 <div class="container-fluid" role="annonces">
-    <h2 id="hebergements">Nos hébergements</h2>
+    <h2 id="hebergements">Nos espaces</h2>
     <div class="text-center">
         <div class="container-fluid">
             <div class="row">
@@ -12,7 +12,7 @@
                         <form class="form-horizontal" method="get" action="{{url('search')}}" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 cadre">
-                                    <h1 class="title title-intro">Trouvez les meilleurs locations atypique, partout en Europe !</h1>
+                                    <h1 class="title title-intro">Trouvez les meilleurs espaces atypiques, partout en Europe !</h1>
                                     <div class="form-group reservation-search">
                                         @include('search',['url'=>'search','link'=>'search'])
                                     </div>
