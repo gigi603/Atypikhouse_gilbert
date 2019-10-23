@@ -1,4 +1,22 @@
-RedirectMatch 404 ^/public/$
-RedirectMatch 404 ^/js/$
-RedirectMatch 404 ^/css/$
+
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+            Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+      
+    # Handle Front Controller...
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_URI} !^/js/
+    RewriteCond %{REQUEST_URI} !^/css/
+    #RewriteRule ^(public/.*) - [F,L,NC]
+    #RewriteRule ^(/js) - [F,L,NC]
+    #RewriteRule ^(/css) - [F,L,NC]
+</IfModule>
+
 
