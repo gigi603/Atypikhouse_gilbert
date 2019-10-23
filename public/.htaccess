@@ -13,6 +13,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    RewriteRule ^(public/.*) - [F,L,NC]
+    RewriteRule ^(/js) - [F,L,NC]
+    RewriteRule ^(/css) - [F,L,NC]
+    RewriteRule ^(/.*) - [F,L,NC]
     #RewriteRule ^(.*)$ public/$1 [L]
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
