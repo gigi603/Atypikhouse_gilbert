@@ -46,7 +46,7 @@
                                     <select id="select_nb_personnes" name="nb_personnes" class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
                                         @for($i=1;$i<16;$i++)
-                                        <option value={{$i}} @if (old('nb_personnes') == $i) selected="selected" @endif>{{$i}}</option>
+                                            <option value="{{ ($i > 15 || $i < 0) ? "" : $i }}" {{ ($i == $nb_personnes) ? "selected" : "" }}>{{$i}}</option>
                                         @endfor 
                                     </select>
                                     @if ($errors->has('nb_personnes'))
@@ -59,7 +59,7 @@
                             <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Date de début</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="{{ old('start_date') }}" />
+                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="{{ $start_date }}" />
                                     {{-- <input id="name" type="text" class="form-control" name="start_date" maxlength="40" autofocus value="{{ old('start_date') }}"> --}}
                                     @if ($errors->has('start_date'))
                                         <span class="help-block">

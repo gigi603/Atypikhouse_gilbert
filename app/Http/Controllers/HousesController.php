@@ -137,13 +137,45 @@ class HousesController extends Controller
             $category = last($houseCategory);
         }
         $categories = category::where('statut','=', 1)->get();
-        $request->session()->forget('houseProprietes');
-        $request->session()->forget('houseProprietesId');
+
+        $houseNbPersonnes = $request->session()->get('houseNbPersonnes');
+        if($houseNbPersonnes == NULL){
+            $nb_personnes = "";
+        } else {
+            $nb_personnes = last($houseNbPersonnes);
+        }
+
+        $houseStartDate = $request->session()->get('houseStartDate');
+        if($houseStartDate == NULL){
+            $start_date = "";
+        } else {
+            $start_date = last($houseStartDate);
+        }
+
+        $houseEndDate = $request->session()->get('houseEndDate');
+        if($houseEndDate == NULL){
+            $end_date = "";
+        } else {
+            $end_date = last($houseEndDate);
+        }
+
+        $houseDescription = $request->session()->get('houseDescription');
+        if($houseDescription == NULL){
+            $description = "";
+        } else {
+            $description = last($houseDescription);
+        }
+        //$request->session()->forget('houseProprietes');
+        //$request->session()->forget('houseProprietesId');
 
         return view('houses.create_step3', [
             'categories' => $categories,
             'title' => $title,
-            'category' => $category
+            'category' => $category,
+            'nb_personnes' => $nb_personnes,
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'description' => $description
         ]);
     }
 
@@ -151,12 +183,21 @@ class HousesController extends Controller
         $categories = category::where('statut', '=', 1)->get();
         $houseTitle = session('houseTitle', $request->title);
         $request->session()->push('houseTitle', $request->title);
+
         $houseCategory = session('houseCategory', $request->category_id);
         $request->session()->push('houseCategory', $request->category_id);
-        $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
-        $request->session()->push('houseNbPersonnes', $request->nb_personnes);
+
+        
+        if($request->nb_personne > 15 || $request->nb_personne < 0){
+            $request->nb_personne = ""; 
+        } else {
+            $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
+            $request->session()->push('houseNbPersonnes', $request->nb_personnes);
+        }
+
         $houseStartDate = session('houseStartDate', $request->start_date);
         $request->session()->push('houseStartDate', $request->start_date);
+
         $houseEndDate = session('houseEndDate', $request->end_date);
         $request->session()->push('houseEndDate', $request->end_date);
 
@@ -170,11 +211,13 @@ class HousesController extends Controller
         $proprietesChecked = $request->input('propriete');        
 
         $housePropriete = session('houseProprietes', $proprietesChecked);
-        //var_dump($proprietesChecked);
-        $i = 0;
-        for($i=0;$i < count($proprietesChecked); $i++){
-            var_dump($proprietesChecked[$i]);
-            $request->session()->push('houseProprietes', $proprietesChecked[$i]);
+        var_dump($proprietesChecked);
+        if($proprietesChecked != NULL){
+            $i = 0;
+            for($i=0;$i < count($proprietesChecked); $i++){
+                var_dump($proprietesChecked[$i]);
+                $request->session()->push('houseProprietes', $proprietesChecked[$i]);
+            }
         }
         
 

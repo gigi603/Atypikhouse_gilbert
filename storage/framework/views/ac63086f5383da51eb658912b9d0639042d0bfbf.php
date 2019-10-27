@@ -44,10 +44,11 @@
                             <div class="form-group<?php echo e($errors->has('nb_personnes') ? ' has-error' : ''); ?>">
                                 <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
                                 <div class="col-md-6">
+                                    <p> <?php echo e($nb_personnes); ?></p>
                                     <select id="select_nb_personnes" name="nb_personnes" class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
                                         <?php for($i=1;$i<16;$i++): ?>
-                                        <option value=<?php echo e($i); ?> <?php if(old('nb_personnes') == $i): ?> selected="selected" <?php endif; ?>><?php echo e($i); ?></option>
+                                            <option value="<?php echo e(($i > 15 || $i < 0) ? "" : $i); ?>" <?php echo e(($i == $nb_personnes) ? "selected" : ""); ?>><?php echo e($i); ?></option>
                                         <?php endfor; ?> 
                                     </select>
                                     <?php if($errors->has('nb_personnes')): ?>
@@ -60,7 +61,7 @@
                             <div class="form-group<?php echo e($errors->has('start_date') ? ' has-error' : ''); ?>">
                                 <label for="name" class="col-md-4 control-label">Date de début</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="<?php echo e(old('start_date')); ?>" />
+                                    <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="<?php echo e($start_date); ?>" />
                                     
                                     <?php if($errors->has('start_date')): ?>
                                         <span class="help-block">
