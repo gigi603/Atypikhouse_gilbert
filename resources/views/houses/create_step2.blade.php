@@ -14,7 +14,7 @@
                         <div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Téléphone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" autofocus value="{{ last($houseTelephone) }}">
+                                <input type="text" class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" value="{{$telephone}}">
                                 @if ($errors->has('telephone'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('telephone') }}</strong>

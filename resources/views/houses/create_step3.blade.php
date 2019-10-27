@@ -24,11 +24,12 @@
                             </div>
                             <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Categorie</label>
+                                <p><?php echo(last($houseCategory));?></p>
                                 <div class="col-md-6">
                                     <select id="select_category" name="category_id" class="form-control">
                                         <option id="" value="0" autofocus>Choisissez votre categorie</option>
                                         @foreach($categories as $category)
-                                            <option value="<?php echo($category->id);?>" @if (old('category_id') == $category->id) selected="selected" @endif><?php echo($category->category);?></option>
+                                            <option value="{{$category->id}}" {{ (last($houseCategory) == $category->id) ? "selected" : "" }}><?php echo($category->category);?></option>
                                         @endforeach
                                     </select>
                                     @if ($errors->has('category'))
