@@ -14,7 +14,7 @@
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Titre de votre bien</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="title" maxlength="40" value="{{ last($houseTitle) }}">
+                                    <input id="name" type="text" class="form-control" name="title" maxlength="40" value="{{ $title }}">
                                     @if ($errors->has('title'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('title') }}</strong>

@@ -70,7 +70,7 @@ class HousesController extends Controller
     }
 
     public function create_step1(Request $request) { 
-        $houseAdresse = session('houseAdresse', $request->adresse);
+        $houseAdresse = $request->session()->get('houseAdresse');
 
         if($houseAdresse == NULL){
             $adresse = "";
@@ -111,7 +111,7 @@ class HousesController extends Controller
     }
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
-        $houseTitle = session('houseTitle', $request->title);  
+          
         $houseTelephone = session('houseTelephone', $request->telephone);
         $request->session()->push('houseTelephone', $request->telephone);
 
@@ -123,6 +123,12 @@ class HousesController extends Controller
 
     public function create_step3(Category $categories, Request $request) {
         $houseTitle = $request->session()->get('houseTitle');
+        
+        if($houseTitle == NULL){
+            $title = "";
+        } else {
+            $title = last($houseTitle);
+        }
         $houseCategory = $request->session('houseCategory');
         $categories = category::where('statut','=', 1)->get();
         $request->session()->forget('houseProprietes');
@@ -130,7 +136,7 @@ class HousesController extends Controller
 
         return view('houses.create_step3', [
             'categories' => $categories,
-            'houseTitle' => $houseTitle,
+            'title' => $title,
             'houseCategory' => $houseCategory
         ]);
     }

@@ -15,7 +15,7 @@
                             <div class="form-group<?php echo e($errors->has('title') ? ' has-error' : ''); ?>">
                                 <label for="name" class="col-md-4 control-label">Titre de votre bien</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="title" maxlength="40" value="<?php echo e(last($houseTitle)); ?>">
+                                    <input id="name" type="text" class="form-control" name="title" maxlength="40" value="<?php echo e($title); ?>">
                                     <?php if($errors->has('title')): ?>
                                         <span class="help-block">
                                             <strong><?php echo e($errors->first('title')); ?></strong>
