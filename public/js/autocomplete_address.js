@@ -30,14 +30,3 @@ google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
     }
   }
 });
-function validate(){
-  console.log(adresse.value)
-  console.log(place.formatted_address)
-  console.log(place)
-  if(adresse.value != place.formatted_address){
-    adresse.value = ""
-    return true;
-  } else {
-    adresse.value = place.formatted_address
-  }
-}

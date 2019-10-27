@@ -70,7 +70,9 @@ class HousesController extends Controller
     }
 
     public function create_step1(Request $request) {     
-        return view('houses.create_step1');
+        return view('houses.create_step1', [
+            'houseAdresse' => $houseAdresse,
+        ]);
     }
 
     public function postcreate_step1(CreateHouseStep1Request $request) {
