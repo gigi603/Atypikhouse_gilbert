@@ -4,6 +4,8 @@
 /storage/*.key
 /storage/framework/*
 /storage/framework/
+/storage/framework/views/
+/storage/framework/sessions/
 /vendor
 /.idea
 /.vagrant
