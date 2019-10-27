@@ -71,7 +71,7 @@
                             <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Date de fin</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="{{ old('end_date') }}" />
+                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="{{ $end_date }}" />
                                     {{-- <input id="name" type="text" class="form-control" name="end_date" maxlength="40" autofocus value="{{ old('end_date') }}"> --}}
                                     @if ($errors->has('end_date'))
                                         <span class="help-block">
@@ -84,7 +84,7 @@
                                 <label for="email" class="col-md-4 control-label">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea class="form-control" name="description" rows="5" placeholder="Ne pas saisir plus de 500 caractères">{{ old('description') }}</textarea>
+                                    <textarea class="form-control" name="description" rows="5" placeholder="Ne pas saisir plus de 500 caractères">{{ $description }}</textarea>
                                     @if ($errors->has('description'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('description') }}</strong>

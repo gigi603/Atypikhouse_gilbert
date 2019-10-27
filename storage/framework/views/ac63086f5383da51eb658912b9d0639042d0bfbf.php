@@ -44,7 +44,6 @@
                             <div class="form-group<?php echo e($errors->has('nb_personnes') ? ' has-error' : ''); ?>">
                                 <label for="name" class="col-md-4 control-label">Nombre de personnes</label>
                                 <div class="col-md-6">
-                                    <p> <?php echo e($nb_personnes); ?></p>
                                     <select id="select_nb_personnes" name="nb_personnes" class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
                                         <?php for($i=1;$i<16;$i++): ?>
@@ -73,7 +72,7 @@
                             <div class="form-group<?php echo e($errors->has('end_date') ? ' has-error' : ''); ?>">
                                 <label for="name" class="col-md-4 control-label">Date de fin</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="<?php echo e(old('end_date')); ?>" />
+                                    <input type="text" class="form-control" id="to" placeholder="Date de fin" name="end_date" value="<?php echo e($end_date); ?>" />
                                     
                                     <?php if($errors->has('end_date')): ?>
                                         <span class="help-block">
@@ -86,7 +85,7 @@
                                 <label for="email" class="col-md-4 control-label">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea class="form-control" name="description" rows="5" placeholder="Ne pas saisir plus de 500 caractères"><?php echo e(old('description')); ?></textarea>
+                                    <textarea class="form-control" name="description" rows="5" placeholder="Ne pas saisir plus de 500 caractères"><?php echo e($description); ?></textarea>
                                     <?php if($errors->has('description')): ?>
                                         <span class="help-block">
                                             <strong><?php echo e($errors->first('description')); ?></strong>
