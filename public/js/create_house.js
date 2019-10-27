@@ -4,7 +4,7 @@ $(document).ready(function(){
         var category_id = $("#select_category option:checked").val();
         $.ajax({
             type: 'GET',
-            url: "http://www.atypikhouse-projet.ovh/json_propriete/"+house_id+'/'+category_id,
+            url: "http://127.0.0.1:8000/json_propriete/"+house_id+'/'+category_id,
             dataType: "json",
             data: "",
             success: function(data) {
@@ -54,7 +54,7 @@ $(document).ready(function(){
             var house_id = $("#house_id").val();
             $.ajax({
                 type: 'GET',
-                url: "http://www.atypikhouse-projet.ovh/json_propriete/"+house_id+'/'+category_id,
+                url: "http://127.0.0.1:8000/json_propriete/"+house_id+'/'+category_id,
                 dataType: "json",
                 data: "",
                 success: function(data) {

@@ -97,7 +97,7 @@ class HousesController extends Controller
     }
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
-        $houseAdresse = $request->session()->get('houseAdresse');
+        $houseTitle = session('houseTitle', $request->title);  
         $houseTelephone = session('houseTelephone', $request->telephone);
         $request->session()->push('houseTelephone', $request->telephone);
 
@@ -108,18 +108,23 @@ class HousesController extends Controller
     }
 
     public function create_step3(Category $categories, Request $request) {
+        $houseTitle = $request->session()->get('houseTitle');
+        $houseCategory = $request->session('houseCategory');
         $categories = category::where('statut','=', 1)->get();
         $request->session()->forget('houseProprietes');
         $request->session()->forget('houseProprietesId');
 
         return view('houses.create_step3', [
-            'categories' => $categories
+            'categories' => $categories,
+            'houseTitle' => $houseTitle
         ]);
     }
 
     public function postcreate_step3(CreateHouseStep3Request $request) {
-        $ville = $request->old('ville');
+        $houseTitle = $request->session('houseTitle');
+        $request->session()->push('houseTitle', $request->title);
         $categories = category::where('statut', '=', 1)->get();
+        
         $housePropriete = $request->session()->pull('houseProprietes');
         $houseProprieteId = $request->session()->pull('houseProprietesId'); 
 
