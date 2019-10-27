@@ -15,7 +15,7 @@
                         <div class="form-group<?php echo e($errors->has('telephone') ? ' has-error' : ''); ?>">
                             <label for="name" class="col-md-4 control-label">Téléphone</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" autofocus value="<?php echo e(old('telephone')); ?>">
+                                <input type="text" class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" autofocus value="<?php echo e(last($houseTelephone)); ?>">
                                 <?php if($errors->has('telephone')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('telephone')); ?></strong>

@@ -92,6 +92,7 @@ class HousesController extends Controller
         
         return view('houses.create_step2', [
             'houseAdresse' => $houseAdresse,
+            'houseTelephone' => $houseTelephone
         ]);
     }
 
