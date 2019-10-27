@@ -69,7 +69,8 @@ class HousesController extends Controller
         ]);
     }
 
-    public function create_step1(Request $request) {     
+    public function create_step1(Request $request) { 
+        $houseAdresse = session('houseAdresse', $request->adresse);    
         return view('houses.create_step1', [
             'houseAdresse' => $houseAdresse,
         ]);
