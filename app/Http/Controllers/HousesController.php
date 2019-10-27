@@ -129,7 +129,13 @@ class HousesController extends Controller
         } else {
             $title = last($houseTitle);
         }
-        $houseCategory = $request->session('houseCategory');
+
+        $houseCategory = $request->session()->get('houseCategory');
+        if($houseCategory == NULL){
+            $category = "";
+        } else {
+            $category = last($houseCategory);
+        }
         $categories = category::where('statut','=', 1)->get();
         $request->session()->forget('houseProprietes');
         $request->session()->forget('houseProprietesId');
@@ -137,29 +143,12 @@ class HousesController extends Controller
         return view('houses.create_step3', [
             'categories' => $categories,
             'title' => $title,
-            'houseCategory' => $houseCategory
+            'category' => $category
         ]);
     }
 
     public function postcreate_step3(CreateHouseStep3Request $request) {
         $categories = category::where('statut', '=', 1)->get();
-        
-        $housePropriete = $request->session()->pull('houseProprietes');
-        $houseProprieteId = $request->session()->pull('houseProprietesId'); 
-
-        $proprietesChecked = $request->input('propriete');        
-
-        $housePropriete = session('houseProprietes', $proprietesChecked);
-        //var_dump($proprietesChecked);
-        $i = 0;
-        for($i=0;$i < count($proprietesChecked); $i++){
-            var_dump($proprietesChecked[$i]);
-            $request->session()->push('houseProprietes', $proprietesChecked[$i]);
-        }
-
-        $houseAdresse = $request->session()->get('houseAdresse');
-        $houseTelephone = $request->session()->get('houseTelephone');
-
         $houseTitle = session('houseTitle', $request->title);
         $request->session()->push('houseTitle', $request->title);
         $houseCategory = session('houseCategory', $request->category_id);
@@ -173,6 +162,21 @@ class HousesController extends Controller
 
         $houseDescription = session('houseDescription', $request->description);
         $request->session()->push('houseDescription', $request->description);
+        
+        
+        $housePropriete = $request->session()->pull('houseProprietes');
+        $houseProprieteId = $request->session()->pull('houseProprietesId'); 
+
+        $proprietesChecked = $request->input('propriete');        
+
+        $housePropriete = session('houseProprietes', $proprietesChecked);
+        //var_dump($proprietesChecked);
+        $i = 0;
+        for($i=0;$i < count($proprietesChecked); $i++){
+            var_dump($proprietesChecked[$i]);
+            $request->session()->push('houseProprietes', $proprietesChecked[$i]);
+        }
+        
 
         return redirect('/house/create_step4');
     }
