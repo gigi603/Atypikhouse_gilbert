@@ -9,9 +9,9 @@
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="col-md-4 control-label">Email</label>
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    <div class="form-label-group">
+                        <input id="inputEmail" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                        <label for="inputEmail">Email address</label>
                         @if ($errors->has('email'))
                             <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -19,13 +19,10 @@
                         @endif
                     </div>
                 </div>
-
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="col-md-4 control-label">Mot de passe</label>
-
-                    <div class="col-md-6">
-                        <input id="password" type="password" class="form-control" name="password" required>
-
+                    <div class="form-label-group">
+                        <input id="inputPassword" type="password" class="form-control" name="password" required>
+                        <label for="inputPassword">Mot de passe</label>
                         @if ($errors->has('password'))
                             <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -33,13 +30,7 @@
                         @endif
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="col-md-8 col-md-offset-4">
-                        <button type="submit" class="btn btn-primary btn-color">
-                            Connexion
-                        </button>
-                    </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Connexion"/>
                 </div>
             </form>
         </div>
