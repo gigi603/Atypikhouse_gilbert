@@ -10,8 +10,8 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <div class="form-label-group">
-                        <input id="inputEmail" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                        <label for="inputEmail">Email address</label>
+                        <input id="inputEmail" type="email" class="form-control" name="email" required="required" autofocus="autofocus">
+                        <label for="inputEmail">Email</label>
                         @if ($errors->has('email'))
                             <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -36,4 +36,9 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 @endsection
