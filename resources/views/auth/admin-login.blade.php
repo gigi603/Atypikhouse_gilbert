@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin-login')
 @section('title', "Connexion pour l'admin")
 @section('content')
     <div class="container">
@@ -37,7 +37,6 @@
                                     @endif
                                 </div>
                             </div>
-
 
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
