@@ -18,15 +18,17 @@ autocompleteadresse.setComponentRestrictions(
 
 google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
   place = autocompleteadresse.getPlace();
-  for (var i in place.address_components) {    
-    var component = place.address_components[i];    
+  console.log(place);
+  autocompleteadresse.value = place.formatted_address;
+  // for (var i in place.address_components) {    
+  //   var component = place.address_components[i];    
     
-    for (var j in component.types) {  
-      var type_element = document.getElementById(component.types[j]);      
+  //   for (var j in component.types) {  
+  //     var type_element = document.getElementById(component.types[j]);      
       
-      if (type_element) {     
-        type_element.value = component.long_name;
-      }    
-    }
-  }
+  //     if (type_element) {     
+  //       type_element.value = component.long_name;
+  //     }    
+  //   }
+  // }
 });

@@ -16,7 +16,7 @@
                             <label for="name" class="col-md-4 control-label">Photo</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="file" class="form-control" name="photo" required autofocus>
+                                <input id="name" type="file" class="form-control" name="photo" required value=<?php echo e($photo); ?>>
                                 <?php if($errors->has('photo')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('photo')); ?></strong>

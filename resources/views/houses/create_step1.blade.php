@@ -15,7 +15,7 @@
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                            <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" value={{$adresse}}>
+                            <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" value="{{ $adresse }}">
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>

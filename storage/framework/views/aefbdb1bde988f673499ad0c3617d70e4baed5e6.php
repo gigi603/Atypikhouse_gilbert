@@ -1,7 +1,5 @@
 <?php $__env->startSection('title', 'Nos Réservations'); ?>
 <?php $__env->startSection('content'); ?>
-<link href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" rel="stylesheet">
-<?php $__env->startSection('content'); ?>
 <div class="container list-category margin-top" role="reservations">
     <h2 class="h2-title">Mes réservations</h2>
     <div class="row">

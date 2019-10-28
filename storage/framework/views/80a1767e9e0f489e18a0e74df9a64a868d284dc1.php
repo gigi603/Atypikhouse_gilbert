@@ -18,7 +18,7 @@
                             <label for="name" class="col-md-4 control-label">Prix la nuit</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="price" autofocus value="<?php echo e(old('price')); ?>">
+                                <input id="name" type="text" class="form-control" name="price" value="<?php echo e($price); ?>">
                                 <?php if($errors->has('price')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('price')); ?></strong>

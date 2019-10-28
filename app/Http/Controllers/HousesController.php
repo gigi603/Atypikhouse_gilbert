@@ -74,21 +74,17 @@ class HousesController extends Controller
 
         if($houseAdresse == NULL){
             $adresse = "";
-            return view('houses.create_step1', [
-                'adresse' => $adresse
-            ]);
         } else {
             $adresse = last($houseAdresse);
-            return view('houses.create_step1', [
-                'adresse' => $adresse
-            ]);
         }
+        return view('houses.create_step1', [
+            'adresse' => $adresse
+        ]);
     }
 
     public function postcreate_step1(CreateHouseStep1Request $request) {
         $houseAdresse = session('houseAdresse', $request->adresse);
         $request->session()->push('houseAdresse', $request->adresse);
-        
 
         $houseUser = session('houseUser', $request->user_id);
         $request->session()->push('houseUser', $request->user_id);
@@ -165,8 +161,6 @@ class HousesController extends Controller
         } else {
             $description = last($houseDescription);
         }
-        //$request->session()->forget('houseProprietes');
-        //$request->session()->forget('houseProprietesId');
 
         return view('houses.create_step3', [
             'categories' => $categories,
@@ -226,26 +220,34 @@ class HousesController extends Controller
     
 
     public function create_step4(Request $request) {
-        return view('houses.create_step4');
+        $housePrice = $request->session()->get('housePrice');
+        if($housePrice == NULL){
+            $price = "";
+        } else {
+            $price = last($housePrice);
+        }
+        return view('houses.create_step4', [
+            'price' => $price
+        ]);
     }
 
     public function postcreate_step4(CreateHouseStep4Request $request) {
-        $housePrix = session('housePrix', $request->price);
-        $request->session()->push('housePrix', $request->price);
+        $housePrice = session('housePrice', $request->price);
+        $request->session()->push('housePrice', $request->price);
 
-        $houseAdresse = $request->session()->get('houseAdresse');
-        $houseTelephone = $request->session()->get('houseTelephone');
-        $houseTitle = $request->session()->get('houseTitle');
-        $houseNbPersonnes = $request->session()->get('houseNbPersonnes');
-        $houseStartDate = $request->session()->get('houseStartDate');
-        $houseEndDate = $request->session()->get('houseEndDate');
-        $houseDescription = $request->session()->get('houseDescription');
-        $housePrix = $request->session()->get('housePrix');
         return redirect('/house/create_step5');
     }
 
     public function create_step5(Request $request) {
-        return view('houses.create_step5');
+        $housePhoto = $request->session()->get('housePhoto');
+        if($housePhoto == NULL){
+            $photo = "";
+        } else {
+            $photo = last($housePhoto);
+        }
+        return view('houses.create_step5', [
+            'photo' => $photo
+        ]);
     }
 
     public function postcreate_step5(CreateHouseStep5Request $request) {
@@ -258,7 +260,7 @@ class HousesController extends Controller
         $houseStartDate = $request->session()->get('houseStartDate');
         $houseEndDate = $request->session()->get('houseEndDate');
         $houseDescription = $request->session()->get('houseDescription');
-        $housePrix = $request->session()->get('housePrix');
+        $housePrix = $request->session()->get('housePrice');
         
         $housePhoto = session('housePhoto', $request->photo);
         $request->session()->push('housePhoto', $request->photo);
@@ -285,14 +287,14 @@ class HousesController extends Controller
 
         $housePropriete = $request->session()->get('houseProprietes');
 
-        $this->validate($request, [
-            'photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20000',
-        ]);
+        // $this->validate($request, [
+        //     'photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20000|dimensions:min_width=450,min_height=300',
+        // ]);
 
         $picture = $request->file('photo');
         $filename  = time() . '.' . $picture->getClientOriginalExtension();
         $path = public_path('img/houses/' . $filename);
-        Image::make($picture->getRealPath())->resize(450, 300)->save($path);
+        Image::make($picture->getRealPath())->save($path);
         $house->photo = $filename;
         $house->save();
         if($housePropriete == null){
@@ -312,6 +314,20 @@ class HousesController extends Controller
         $message->user_id = $house->user_id;
         $message->admin_id = Auth::user()->id;
         $message->save();
+
+        $request->session()->forget('houseAdresse');
+        $request->session()->forget('houseTelephone');
+        $request->session()->forget('houseTitle');
+        $request->session()->forget('houseCategory');
+        $request->session()->forget('houseProprietes');
+        $request->session()->forget('houseNbPersonnes');
+        $request->session()->forget('houseStartDate');
+        $request->session()->forget('houseEndDate');
+        $request->session()->forget('houseDescription');
+        $request->session()->forget('housePrice');
+        $request->session()->forget('housePhoto');
+        $request->session()->forget('houseUser');
+        
         return redirect('/house/confirmation_create_house')->with('success', "Votre annonce a bien été créé, vous avez reçu un message");
     }
 

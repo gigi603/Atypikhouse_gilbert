@@ -1,9 +1,8 @@
 <?php $__env->startSection('title', 'Mes notifications'); ?>
 <?php $__env->startSection('content'); ?>
-<link href="<?php echo e(asset('css/jquery-ui.min.css')); ?>" rel="stylesheet">
 <?php $__env->startSection('content'); ?>
 <div class="container list-category" role="notifications">
-    <div class="panel panel-default">
+    <div class="panel panel-default notifications-panel">
         <div class="panel-heading">Mes notifications</div>
         <div class="panel-body">
             <div class="row">
@@ -29,4 +28,5 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

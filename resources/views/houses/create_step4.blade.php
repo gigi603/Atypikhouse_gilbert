@@ -17,7 +17,7 @@
                             <label for="name" class="col-md-4 control-label">Prix la nuit</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="price" autofocus value="{{ old('price') }}">
+                                <input id="name" type="text" class="form-control" name="price" value="{{ $price }}">
                                 @if ($errors->has('price'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('price') }}</strong>

@@ -24,7 +24,7 @@ class CreateHouseStep5Request extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'image|mimes:jpg,png,jpeg|max:2048',
+            'photo' => 'image|mimes:jpg,png,jpeg|size:500|dimensions:min_width=450,min_height=300,max_width=1280,max_height=1000',
         ];
     }
 
@@ -37,8 +37,9 @@ class CreateHouseStep5Request extends FormRequest
     {
         return [
             'photo.required' => 'Veuillez mettre une photo de votre hebergement',
-            'photo.image' => 'Veuillez mettre une image',
-            'photo.max' => "L'image ne doit pas dépasser 2mo",
+            'photo.image' => 'Veuillez mettre une image au format jpg,png ou jpeg',
+            'photo.size' => "L'image doit faire minimum 500ko",
+            'photo.dimensions' => 'Votre doit faire minimum 450px de largeur et 300 de hauteur'
         ];
     }
 }
