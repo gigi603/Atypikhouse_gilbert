@@ -15,7 +15,7 @@
   <title>Atypikhouse - Connexion admin</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{ asset('admin/vendor/fontawesome-free/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin/css/sb-admin.css') }}" rel="stylesheet">
 
