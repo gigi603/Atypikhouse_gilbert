@@ -5,7 +5,7 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Administrateurs, connectez-vous</div>
         <div class="card-body">
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.login.submit') }}">
+            <form method="POST" action="{{ route('admin.login.submit') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
