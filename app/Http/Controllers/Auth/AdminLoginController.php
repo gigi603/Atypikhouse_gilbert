@@ -26,9 +26,14 @@ class AdminLoginController extends Controller
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
             //if successful redirect to admin dashboard in list users view
             return redirect()->route('admin.listusers');
+        } else {
+            $errors = [$this->username() => trans('auth.failed')];
         }
         //if unsuccessfull redirect back to the login for with form data
-        return redirect()->back()->withInput($request->only('email','remember'));
+        //return redirect()->back()->withInput($request->only('email','remember'));
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors($errors);
       
     }
     public function logout()
