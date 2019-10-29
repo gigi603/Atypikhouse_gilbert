@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{action('AdminController@listcomments', $user['id'])}}" class="btn btn-primary">Voir ses commentaires</a>
+        <a href="{{action('AdminController@listcomments', $user->id)}}" class="btn btn-primary">Voir ses commentaires</a>
     </div>
 </div>
 @endsection
