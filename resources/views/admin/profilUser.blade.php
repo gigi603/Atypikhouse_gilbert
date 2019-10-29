@@ -38,7 +38,6 @@
                 </div>
             </div>
         </div>
-        <a href="{{route('admin.listcomments', $user->id)}}" class="btn btn-primary">Voir ses commentaires</a>
     </div>
 </div>
 @endsection
