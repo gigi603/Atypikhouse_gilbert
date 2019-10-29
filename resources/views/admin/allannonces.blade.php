@@ -35,6 +35,5 @@
                 </table>         
             </div>
         </div>
-        @endforeach
     </div>
 @endsection
