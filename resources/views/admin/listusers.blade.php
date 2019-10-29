@@ -9,11 +9,15 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Nom / Prénom</th>
               <th>Email</th>
               <th>Compte activé</th>
-              <th>Etat</th>
-              <th> Actions</th>
+              <th> Compte</th>
+              <th>Profil</th>
+              <th>Annonces</th>
+              <th>Réservations</th>
+              <th>Historiques</th>
+              <th> Messages</th>
             </tr>
           </thead>
           @foreach($users as $user)
@@ -22,18 +26,16 @@
                     <td><a href="{{action('AdminController@profilUser', $user['id'])}}">{{$user->nom}} {{$user->prenom}}</a></td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->statut}}</td>
-                    <td>
-                        <a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-success">Voir ses annonces/ autres informations</a>
-                    </td>
                     @if($user->statut ==  1)
-                        <td>
-                            <a href="{{ route('admin.disable_user', $user->id) }}" class="delete-user btn btn-danger">Désactiver le compte</a>
-                        </td>
+                        <td><a href="{{ route('admin.disable_user', $user->id) }}" class="delete-user btn btn-danger">Désactiver le compte</a></td>
                     @else
-                        <td>
-                            <a href="{{ route('admin.activate_user', $user->id) }}" class="btn btn-success">Activer le compte</a>
-                        </td>
+                        <td><a href="{{ route('admin.activate_user', $user->id) }}" class="btn btn-success">Activer le compte</a></td>
                     @endif
+                    <td><a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-primary">Voir son profil</a></td>
+                    <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Voir ses annonces</a></td>
+                    <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-infos">Voir ses réservations</a></td>
+                    <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-infos">Voir ses historiques</a></td>
+                    <td><a href="{{action('AdminController@user_messages', $user['id'])}}" class="btn btn-infos">Voir ses messages</a></td>
                 </tr>
             </tbody>
             @endforeach
