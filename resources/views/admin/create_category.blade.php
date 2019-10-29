@@ -2,6 +2,16 @@
 @section('title', "Ajouter une catégorie d'annonce")
 @section('content')
 <div class="card mb-3">
+    @if ($success = Session::get('success'))
+    <div class="alert alert-success">
+        {{ $success }}
+    </div>
+    @endif
+    @if ($danger = Session::get('danger'))
+        <div class="alert alert-danger">
+            {{ $danger }}
+        </div>
+    @endif
     <div class="card-header">
         <i class="fas fa-table"></i>
         Ajouter une catégorie
@@ -13,11 +23,6 @@
                     <thead>
                         <tr>
                             {{ csrf_field() }}
-                            @if ($danger = Session::get('danger'))
-                                <div class="alert alert-danger">
-                                    {{ $danger }}
-                                </div>
-                            @endif
                             <th>Nom de la catégorie</th>
                             <th>Créér</th>
                         </tr>
