@@ -90,25 +90,25 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('admin.listusers') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.listusers') }}">
           <i class="fas fa-fw fa-folder"></i>
           <span>Utilisateurs</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('admin.listannonces') }}">
             <i class="fas fa-fw fa-folder"></i>
             <span>Annonces</span>
         </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('admin.categories') }}">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Catégories d'annonces</span>
             </a>
