@@ -43,7 +43,7 @@ Route::get('/search', 'QueryController@index');
 Route::prefix('admin')->group(function () {
     Route::get('/home', 'HomeController@index')->name('admin.home');
     //Liste des utilisateurs 
-    Route::get('/', 'AdminController@listusers')->name('admin.listusers');
+    Route::get('/index', 'AdminController@listusers')->name('admin.listusers');
 
     //Commentaires de l'utilisateur
     Route::get('/listcomments/{id}', 'AdminController@listcomments')->name('admin.listcomments');
