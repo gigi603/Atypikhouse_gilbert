@@ -27,14 +27,9 @@ class AdminLoginController extends Controller
             //if successful redirect to admin dashboard in list users view
             return redirect()->route('admin.listusers');
         } else {
-            $errors = trans('auth.failed');
-            return redirect()->back()
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors($errors);
-        }
-        //if unsuccessfull redirect back to the login for with form data
-        //return redirect()->back()->withInput($request->only('email','remember'));
-        
+            //if unsuccessfull redirect back to the login for with form data
+            return redirect()->back()->with('error', "L'email ou le mot de passe est incorrect");
+        }        
       
     }
     public function logout()
