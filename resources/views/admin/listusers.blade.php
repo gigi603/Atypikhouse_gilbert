@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Utilisateurs')
 @section('content')
 <!-- Icon Cards-->
 

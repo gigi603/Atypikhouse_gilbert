@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Dashboard</title>
+  <title>Atypikhouse Admin - @yield('title')</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -89,12 +89,6 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('admin.listusers') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.listusers') }}">
           <i class="fas fa-fw fa-folder"></i>
@@ -124,7 +118,7 @@
                 <li class="breadcrumb-item">
                   <a href="#">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Accueil</li>
+                <li class="breadcrumb-item active">@yield('title')</li>
               </ol>
       
               <!-- Icon Cards-->
