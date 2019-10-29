@@ -36,3 +36,8 @@ label {
     display: inline-block !important;
     margin-bottom: 0.5rem !important;
 }
+
+.btn-tableau {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

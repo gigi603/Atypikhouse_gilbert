@@ -17,7 +17,7 @@
                             <th>Date de fin</th>
                             <th>Annonceur</th>
                             <th>Statut</th>
-                            <th>plus d'infos</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     @foreach ($houses as $house)  
@@ -30,8 +30,8 @@
                                 <td>{{$house->end_date}}</td>
                                 <td>{{$house->user->prenom}} {{$house->user->nom}}</td>
                                 <td>{{$house->statut}}</td>
-                                <td><a href="{{action('AdminController@showannonces', $house->user->id)}}" class="btn btn-primary">voir l'annonce</a><br/>
-                                <a href="{{action('AdminController@disableHouse', $house->user->id)}}" class="btn btn-danger">supprimer l'annonce</a></td>
+                                <td><a href="{{action('AdminController@showannonces', $house->user->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
+                                <a href="{{action('AdminController@disableHouse', $house->user->id)}}" class="btn btn-danger">Supprimer</a></td>
                             </tr>
                         </tbody>
                     @endforeach
