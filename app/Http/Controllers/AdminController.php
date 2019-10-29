@@ -428,7 +428,11 @@ class AdminController extends Controller
                                               ->with('user', $user)
                                               ->with('historique', $historique);
     }
-
+    public function allannonces($id)
+    {
+        $houses = House::orderBy('id', 'desc')->get();
+        return view('admin.allannonces')->with('houses', $houses);
+    }
     //Vue de détails des annonces des utilisateurs
     public function listannonces($id)
     {

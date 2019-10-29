@@ -102,7 +102,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.listannonces') }}">
+        <a class="nav-link" href="{{ route('admin.allannonces') }}">
             <i class="fas fa-fw fa-folder"></i>
             <span>Annonces</span>
         </a>
