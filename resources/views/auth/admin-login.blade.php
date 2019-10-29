@@ -14,7 +14,7 @@
                         <label for="inputEmail">Email</label>
                         @if ($errors->has('email'))
                             <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
+                            <span>{{ $errors->first('email') }}</span>
                         </span>
                         @endif
                     </div>
@@ -25,7 +25,7 @@
                         <label for="inputPassword">Mot de passe</label>
                         @if ($errors->has('password'))
                             <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
+                            <span>{{ $errors->first('password') }}</span>
                         </span>
                         @endif
                     </div>
