@@ -18,8 +18,7 @@
   <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="{{ asset('admin/css/sb-admin.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin/css/custom-admin-login.css') }}" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
