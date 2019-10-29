@@ -41,49 +41,33 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
+              <th>Email</th>
+              <th>Compte activé</th>
+              <th>Etat</th>
+              <th> Actions</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start date</th>
-              <th>Salary</th>
-            </tr>
-          </tfoot>
-          <tbody>
-            <tr>
-              <td>Tiger Nixon</td>
-              <td>System Architect</td>
-              <td>Edinburgh</td>
-              <td>61</td>
-              <td>2011/04/25</td>
-              <td>$320,800</td>
-            </tr>
-            <tr>
-              <td>Garrett Winters</td>
-              <td>Accountant</td>
-              <td>Tokyo</td>
-              <td>63</td>
-              <td>2011/07/25</td>
-              <td>$170,750</td>
-            </tr>
-            <tr>
-              <td>Ashton Cox</td>
-              <td>Junior Technical Author</td>
-              <td>San Francisco</td>
-              <td>66</td>
-              <td>2009/01/12</td>
-              <td>$86,000</td>
-            </tr>
-          </tbody>
+          @foreach($users as $user)
+            <tbody>
+                <tr>
+                    <td><a href="{{action('AdminController@profilUser', $user['id'])}}">{{$user->nom}} {{$user->prenom}}</a></td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->statut}}</td>
+                    <td>
+                        <a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-success">Voir ses annonces/ autres informations</a>
+                    </td>
+                    @if($user->statut ==  1)
+                        <td>
+                            <a href="{{ route('admin.disable_user', $user->id) }}" class="delete-user btn btn-danger">Désactiver le compte</a>
+                        </td>
+                    @else
+                        <td>
+                            <a href="{{ route('admin.activate_user', $user->id) }}" class="btn btn-success">Activer le compte</a>
+                        </td>
+                    @endif
+                </tr>
+            </tbody>
+            @endforeach
         </table>
       </div>
     </div>
