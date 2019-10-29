@@ -35,7 +35,6 @@
                     <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Voir ses annonces</a></td>
                     <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-infos">Voir ses réservations</a></td>
                     <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-infos">Voir ses historiques</a></td>
-                    <td><a href="{{action('AdminController@user_messages', $user['id'])}}" class="btn btn-infos">Voir ses messages</a></td>
                 </tr>
             </tbody>
             @endforeach
