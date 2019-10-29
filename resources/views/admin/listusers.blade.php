@@ -18,7 +18,7 @@
               <th>Annonces</th>
               <th>Réservations</th>
               <th>Historiques</th>
-              <th> Messages</th>
+              <th>Notifications</th>
             </tr>
           </thead>
           @foreach($users as $user)
