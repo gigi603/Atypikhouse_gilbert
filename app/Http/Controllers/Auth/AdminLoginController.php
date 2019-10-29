@@ -27,13 +27,14 @@ class AdminLoginController extends Controller
             //if successful redirect to admin dashboard in list users view
             return redirect()->route('admin.listusers');
         } else {
-            $errors = [$this->username() => trans('auth.failed')];
+            $errors = trans('auth.failed');
+            return redirect()->back()
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors($errors);
         }
         //if unsuccessfull redirect back to the login for with form data
         //return redirect()->back()->withInput($request->only('email','remember'));
-        return redirect()->back()
-            ->withInput($request->only($this->username(), 'remember'))
-            ->withErrors($errors);
+        
       
     }
     public function logout()
