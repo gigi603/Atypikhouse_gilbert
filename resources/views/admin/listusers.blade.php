@@ -31,11 +31,11 @@
                     @else
                         <td><a href="{{ route('admin.activate_user', $user->id) }}" class="btn btn-success">Activer le compte</a></td>
                     @endif
-                    <td><a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-primary">Voir son profil</a></td>
-                    <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Voir ses annonces</a></td>
-                    <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-info">Voir ses réservations</a></td>
-                    <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-info">Voir ses historiques</a></td>
-                    <td><a href="{{action('AdminController@messages', $user['id'])}}" class="btn btn-info">Voir ses messages</a></td>
+                    <td><a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-primary">Profil</a></td>
+                    <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Annonces</a></td>
+                    <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-info">Réservations</a></td>
+                    <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-info">Historiques</a></td>
+                    <td><a href="{{action('AdminController@messages', $user['id'])}}" class="btn btn-info">Notifications</a></td>
                 </tr>
             </tbody>
             @endforeach
