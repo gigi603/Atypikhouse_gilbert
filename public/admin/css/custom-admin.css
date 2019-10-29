@@ -18,3 +18,7 @@
 .card-footer {
     display: none !important;
 }
+
+.photo-size {
+    width: 250px;
+}

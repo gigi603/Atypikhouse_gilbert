@@ -22,7 +22,7 @@
                     @foreach ($houses as $house)  
                         <tbody>
                             <tr>
-                                <td><img src="{{ asset('img/houses/'.$house->photo) }}"/></td>
+                                <td style="width:250px"><img src="{{ asset('img/houses/'.$house->photo) }}" class="photo-size"/></td>
                                 <td>{{$house->title}}</td>
                                 <td>{{$house->category->category}}
                                 <td>{{$house->start_date}}</td>
