@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 @section('content')
+<!-- Icon Cards-->
+
 <div class="card mb-3">
     <div class="card-header">
       <i class="fas fa-table"></i>
@@ -33,7 +35,7 @@
                     <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Voir ses annonces</a></td>
                     <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-info">Voir ses réservations</a></td>
                     <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-info">Voir ses historiques</a></td>
-                    <td><a href="{{action('AdminController@messages', $user['id'])}}" class="btn btn-infos">Voir ses messages</a></td>
+                    <td><a href="{{action('AdminController@messages', $user['id'])}}" class="btn btn-info">Voir ses messages</a></td>
                 </tr>
             </tbody>
             @endforeach
@@ -42,4 +44,6 @@
     </div>
     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
   </div>
+</div>
+</div>
 @endsection
