@@ -28,7 +28,7 @@ class AdminLoginController extends Controller
             return redirect()->route('admin.listusers');
         } else {
             //if unsuccessfull redirect back to the login for with form data
-            return redirect()->back()->with('error', "L'email ou le mot de passe est incorrect");
+            return redirect()->back()->with('errorAdminLogin', "L'email ou le mot de passe est incorrect");
         }        
       
     }

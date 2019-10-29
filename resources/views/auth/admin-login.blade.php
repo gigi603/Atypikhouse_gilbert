@@ -12,9 +12,9 @@
                     <div class="form-label-group">
                         <input id="inputEmail" type="email" class="form-control" name="email" required="required" autofocus="autofocus">
                         <label for="inputEmail">Email</label>
-                        @if (session('error'))
+                        @if(Session::has('errorAdminLogin'))
                             <span class="help-block">
-                                <span>{{ $errors->first('email') }}</span>
+                                <span>{{ Session::get('errorAdminLogin') }}</span>
                             </span>
                         @endif
                     </div>
