@@ -12,10 +12,10 @@
                     <div class="form-label-group">
                         <input id="inputEmail" type="email" class="form-control" name="email" required="required" autofocus="autofocus">
                         <label for="inputEmail">Email</label>
-                        @if ($errors->has('email'))
+                        @if (session('error'))
                             <span class="help-block">
-                            <span>{{ $errors->first('email') }}</span>
-                        </span>
+                                <span>{{ $errors->first('email') }}</span>
+                            </span>
                         @endif
                     </div>
                 </div>
