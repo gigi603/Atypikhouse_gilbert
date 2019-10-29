@@ -10,3 +10,11 @@
 #dataTable_info{
     display: none !important;
 }
+
+.pagination {
+    display: none !important;
+}
+
+.card-footer {
+    display: none !important;
+}
