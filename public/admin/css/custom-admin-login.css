@@ -5,5 +5,5 @@
 
 .help-block {
     color: #ff4136;
-    font-weight: normal;
+    font-weight: normal !important;
 }
