@@ -28,7 +28,7 @@
                                 <td>{{$house->start_date}}</td>
                                 <td>{{$house->end_date}}</td>
                                 <td>{{$house->statut}}</td>
-                                <td><a href="{{action('AdminController@showHouse', $house->user->id)}}" class="btn btn-primary">voir l'annonce</a></td>
+                                <td><a href="{{action('AdminController@showannonces', $house->user->id)}}" class="btn btn-primary">voir l'annonce</a></td>
                             </tr>
                         </tbody>
                     @endforeach
