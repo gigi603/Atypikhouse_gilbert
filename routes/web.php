@@ -45,6 +45,9 @@ Route::prefix('admin')->group(function () {
     //Liste des utilisateurs 
     Route::get('/index', 'AdminController@listusers')->name('admin.listusers');
 
+    //Liste des annonces
+    Route::get('/allannonces/{id}', 'AdminController@allannonces')->name('admin.allannonces');
+
     //Commentaires de l'utilisateur
     Route::get('/listcomments/{id}', 'AdminController@listcomments')->name('admin.listcomments');
     Route::get('/comments/deleteComment/{id}', 'AdminController@deleteComment')->name('admin.deleteComment');
