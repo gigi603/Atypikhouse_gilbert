@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section("Détails de l'annonce")
 @section('content')
     @foreach($users as $user)
         <div class="panel panel-default">
