@@ -29,7 +29,7 @@ class CreateHouseStep3Request extends FormRequest
             'nb_personnes' => 'required|numeric',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
-            'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u|max:1000'
+            'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u|max:1000|min:30'
         ];
     }
 
@@ -54,6 +54,7 @@ class CreateHouseStep3Request extends FormRequest
             'end_date.date' => "Veuillez mettre une date",
             'end_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'description.required' => 'Veuillez saisir une description de votre annonce',
+            'description.min' => 'Votre description ne doit pas faire moins de 30 caractères.',
             'description.max' => 'Votre description ne doit contenir que 1000 caractères max.',
             'description.regex' => 'Les caractères spéciaux permis sont : les ponctuations, apostrophes, accents, parenthèses, tirets et arobases'
         ];
