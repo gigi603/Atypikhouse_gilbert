@@ -98,6 +98,7 @@ class HousesController extends Controller
         } else {
             $telephone = last($houseTelephone);
         }
+        var_dump($telephone);
         return view('houses.create_step2', [
             'telephone' => $telephone
         ]);
