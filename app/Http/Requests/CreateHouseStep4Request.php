@@ -24,7 +24,7 @@ class CreateHouseStep4Request extends FormRequest
     public function rules()
     {
         return [
-            'price' => 'required|regex:/^[0-9]+$/u|max:4'
+            'price' => 'required|regex:/^[0-9]+$/u|max:4|min:2'
         ];
     }
 
