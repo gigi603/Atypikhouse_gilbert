@@ -1,44 +1,44 @@
 
 @extends('layouts.admin')
-@section('title', 'Annonces')
+@section('title', "Ajouter une catégorie d'annonce")
 @section('content')
-    <div class="card mb-3">
-        <div class="card-header">
-            <i class="fas fa-table"></i>
-            Liste des annonces
+<div class="card mb-3">
+    @if ($success = Session::get('success'))
+    <div class="alert alert-success">
+        {{ $success }}
+    </div>
+    @endif
+    @if ($danger = Session::get('danger'))
+        <div class="alert alert-danger">
+            {{ $danger }}
         </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    @endif
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Ajouter une catégorie
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <form class="form-horizontal" method="POST" action="{{route('admin.register_category')}}" enctype="multipart/form-data">
                     <thead>
                         <tr>
-                            <th>Photo</th>
-                            <th>Titre</th>
-                            <th> Type d'annonce</th>
-                            <th>Date de début</th>
-                            <th>Date de fin</th>
-                            <th>Annonceur</th>
-                            <th>Statut</th>
-                            <th>Actions</th>
+                            {{ csrf_field() }}
+                            <th>Nom de la catégorie</th>
+                            <th>Créér</th>
                         </tr>
                     </thead>
-                    @foreach ($houses as $house)  
-                        <tbody>
-                            <tr>
-                                <td style="width:250px"><img src="{{ asset('img/houses/'.$house->photo) }}" class="photo-size"/></td>
-                                <td>{{$house->title}}</td>
-                                <td>{{$house->category->category}}
-                                <td>{{$house->start_date}}</td>
-                                <td>{{$house->end_date}}</td>
-                                <td>{{$house->user->prenom}} {{$house->user->nom}}</td>
-                                <td>{{$house->statut}}</td>
-                                <td><a href="{{action('AdminController@showannonces', $house->user->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
-                                <a href="{{action('AdminController@disableHouse', $house->user->id)}}" class="btn btn-danger">Supprimer</a></td>
-                            </tr>
-                        </tbody>
-                    @endforeach
-                </table>         
-            </div>
+                    <tbody>
+                        <tr>
+                            <input id="name" type="text" class="form-control" name="category" required autofocus value="">
+                        </tr>
+                        <tr>
+                            <input type="submit" class="btn btn-primary btn-color" value="Ajouter"/>
+                        </tr>
+                    </tbody>
+                </form>
+            </table>
         </div>
     </div>
+</div>
 @endsection
