@@ -15,7 +15,6 @@
                         <p>{{$house->title}}</p>
                     </h3>
                     <h3 class="pruice">{{$house->price}}€</h3>
-                    <p class="card-text"><?php echo(substr($house->description, 0, 40));?></p>
                 </div>
                 <div class="note card-footer">
                     <medium class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</medium>
