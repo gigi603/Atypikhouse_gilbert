@@ -315,18 +315,18 @@ class HousesController extends Controller
         $message->admin_id = Auth::user()->id;
         $message->save();
 
-        $request->session()->forget('houseAdresse');
-        $request->session()->forget('houseTelephone');
-        $request->session()->forget('houseTitle');
-        $request->session()->forget('houseCategory');
-        $request->session()->forget('houseProprietes');
-        $request->session()->forget('houseNbPersonnes');
-        $request->session()->forget('houseStartDate');
-        $request->session()->forget('houseEndDate');
-        $request->session()->forget('houseDescription');
-        $request->session()->forget('housePrice');
-        $request->session()->forget('housePhoto');
-        $request->session()->forget('houseUser');
+        // $request->session()->forget('houseAdresse');
+        // $request->session()->forget('houseTelephone');
+        // $request->session()->forget('houseTitle');
+        // $request->session()->forget('houseCategory');
+        // $request->session()->forget('houseProprietes');
+        // $request->session()->forget('houseNbPersonnes');
+        // $request->session()->forget('houseStartDate');
+        // $request->session()->forget('houseEndDate');
+        // $request->session()->forget('houseDescription');
+        // $request->session()->forget('housePrice');
+        // $request->session()->forget('housePhoto');
+        // $request->session()->forget('houseUser');
         
         return redirect('/house/confirmation_create_house')->with('success', "Votre annonce a bien été créé, vous avez reçu un message");
     }
