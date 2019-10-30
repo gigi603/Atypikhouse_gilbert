@@ -24,7 +24,7 @@ class CreateHouseStep3Request extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|regex:/^[\pL\s\-\']+$/u|max:60',
+            'title' => 'required|regex:/^[\pL\s\-\']+$/u|max:60|min:5',
             'category' => 'required_if:category_id,0',
             'nb_personnes' => 'required|numeric',
             'start_date' => 'required|date_format:d/m/Y',
@@ -42,6 +42,7 @@ class CreateHouseStep3Request extends FormRequest
     {
         return [
             'title.required' => 'Veuillez saisir le titre de votre annonce',
+            'title.min'  => 'Votre titre ne doit pas faire moins de 5 caractères',
             'title.max'  => 'Votre titre ne doit pas dépasser 60 caractères',
             'title.regex'  => 'Votre titre peut contenir que des lettres, espaces, tirets et les apostrophes',
             'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
