@@ -38,7 +38,8 @@ class CreateHouseStep4Request extends FormRequest
         return [
             'price.required' => 'Veuillez saisir le prix par nuit',
             'price.regex' => 'Veuillez saisir uniquement des chiffres',
-            'price.max' => 'Vous ne pouvez pas mettre un montant à plus de 9999 euros pour la nuit',
+            'price.min' => 'Le prix ne doit pas dépasser 2 chiffres',
+            'price.max' => 'Le prix ne doit pas dépassé 4 chiffres',
         ];
     }
 }
