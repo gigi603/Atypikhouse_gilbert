@@ -26,7 +26,6 @@
                     <p class="price">{{$house->price}}€ par nuit</p>
                 
                     <p>Type de bien : {{$house->category->category}}</p>     
-                    <p><?php echo(substr($house->description, 0, 40));?></p>   
                     <p>Annulation gratuite !</p>
                     <p> Adresse: {{$house->adresse}}</p>
                     @if($house->statut == "En attente de validation")
