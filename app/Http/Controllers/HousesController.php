@@ -95,15 +95,12 @@ class HousesController extends Controller
         $houseTelephone = $request->session()->get('houseTelephone');
         if($houseTelephone == NULL){
             $telephone = "";
-            return view('houses.create_step2', [
-                'telephone' => $telephone
-            ]);
         } else {
             $telephone = last($houseTelephone);
-            return view('houses.create_step2', [
-                'telephone' => $telephone
-            ]);
         }
+        return view('houses.create_step2', [
+            'telephone' => $telephone
+        ]);
     }
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
