@@ -71,12 +71,12 @@ class HousesController extends Controller
 
     public function create_step1(Request $request) { 
         $houseAdresse = $request->session()->get('houseAdresse');
-        var_dump($adresse);
         if($houseAdresse == NULL){
             $adresse = "";
         } else {
             $adresse = last($houseAdresse);
         }
+        var_dump($adresse);
         return view('houses.create_step1', [
             'adresse' => $adresse
         ]);
