@@ -36,6 +36,7 @@
     color: #333;
     background-color: #fff;
     border-color: #d3e0e9;
+    border: solid 1px #d3e0e9;
 }
 
 .panel-heading {
@@ -43,10 +44,12 @@
     border-bottom: 1px solid transparent;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    border: solid 1px #d3e0e9;
 }
 
 .panel-body {
     padding: 15px;
+    border: solid 1px #d3e0e9;
 }
 
 .rating {
