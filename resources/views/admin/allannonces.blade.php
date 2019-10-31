@@ -2,6 +2,12 @@
 @section('title', 'Annonces')
 @section('content')
     <div class="card mb-3">
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <div class="card-header">
             <i class="fas fa-table"></i>
             Liste des annonces
