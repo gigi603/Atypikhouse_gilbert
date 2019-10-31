@@ -18,7 +18,10 @@
     </div>
     <div class="card-body">
         <div class="col-md-12 text-center">
-            <a href="{{ route('admin.create_category') }}" class="btn btn-primary">Ajouter une catégorie</a>
+            <form class="form-horizontal" method="POST" action="{{route('admin.register_category')}}" enctype="multipart/form-data">
+                <input id="name" type="text" class="form-control" name="category" required autofocus value="">
+                <button class="btn btn-primary">Ajouter une catégorie</button>
+            </form>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
