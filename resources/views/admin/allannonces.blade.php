@@ -31,8 +31,8 @@
                                 <td>{{$house->end_date}}</td>
                                 <td>{{$house->user->prenom}} {{$house->user->nom}}</td>
                                 <td>{{$house->statut}}</td>
-                                <td><a href="{{action('AdminController@showannonces', $house->user->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
-                                <a href="{{action('AdminController@disableHouse', $house->user->id)}}" class="btn btn-danger">Supprimer</a></td>
+                                <td><a href="{{action('AdminController@showannonces', $house->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
+                                <a href="{{action('AdminController@disableHouse', $house->id)}}" class="btn btn-danger">Supprimer</a></td>
                             </tr>
                         </tbody>
                     @endforeach
