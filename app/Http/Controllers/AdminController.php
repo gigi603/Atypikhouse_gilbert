@@ -430,7 +430,7 @@ class AdminController extends Controller
     }
     public function allannonces()
     {
-        $houses = House::where('disponible', "oui");
+        $houses = House::where('disponible', "oui")->get();
         return view('admin.allannonces')->with('houses', $houses);
     }
     //Vue de détails des annonces des utilisateurs
