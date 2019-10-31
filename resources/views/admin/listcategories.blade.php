@@ -20,7 +20,7 @@
         <div class="col-md-12 text-center">
             <form class="form-horizontal" method="POST" action="{{route('admin.register_category')}}" enctype="multipart/form-data">
                 <input id="name" type="text" class="form-control" name="category" required autofocus value="">
-                <button class="btn btn-primary">Ajouter une catégorie</button>
+                <button class="btn btn-primary btn-add-category">Ajouter une catégorie</button>
             </form>
         </div>
         <div class="table-responsive">
