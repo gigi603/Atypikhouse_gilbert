@@ -88,7 +88,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">Se déconnecter</a>
+          <a class="dropdown-item" href="{{ route('admin.logout') }}" data-toggle="modal" data-target="#logoutModal">Se déconnecter</a>
         </div>
       </li>
     </ul>
