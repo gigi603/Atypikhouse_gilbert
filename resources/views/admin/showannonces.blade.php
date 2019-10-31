@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 @section('title', "Détails de l'annonce")
+<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+<link href="../css/sb-admin.css" rel="stylesheet">
+<link href="../css/custom-admin.css" rel="stylesheet">
 @section('content')
 <div class="admin-user-profil">
     <div class="container list-category">

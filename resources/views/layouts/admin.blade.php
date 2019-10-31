@@ -14,21 +14,19 @@
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  
 
   {{-- <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"> --}}
 
 
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   {{-- <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet"> --}}
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   <link href="css/custom-admin.css" rel="stylesheet">
-  <link href="../css/sb-admin.css" rel="stylesheet">
-  <link href="../css/custom-admin.css" rel="stylesheet">
+  
   {{-- <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
   <link href="{{ asset('css/custom-admin.css') }}" rel="stylesheet"> --}}
 
