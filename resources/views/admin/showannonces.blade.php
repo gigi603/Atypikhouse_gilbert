@@ -1,6 +1,4 @@
 @extends('layouts.admin')
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 @section('title', "Détails de l'annonce")
 @section('content')
 <div class="admin-user-profil">

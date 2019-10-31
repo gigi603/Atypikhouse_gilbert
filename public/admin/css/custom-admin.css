@@ -31,3 +31,29 @@
 .btn-add-category {
     margin: 2% 0;
 }
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: #d3e0e9;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.rating {
+    float: left;
+    width: 250px;
+}
+
+#input_comment {
+    height: 43px;
+}
