@@ -1,7 +1,8 @@
-/public/hot
-/public/storage
-/.idea
-/.vagrant
+node_modules
+storage
+vendor
+.idea
+.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
