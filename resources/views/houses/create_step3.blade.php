@@ -109,6 +109,7 @@
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script>let site = "{{env('APP_URL_SITE')}}";</script>
     <script src="{{ asset('js/calendarCreateAnnonce.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
 @endsection

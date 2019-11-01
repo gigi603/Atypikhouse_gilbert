@@ -29,7 +29,14 @@ class LoginController extends Controller
 
     use RedirectsUsers, ThrottlesLogins;
 
-    protected $redirectTo = 'http://www.atypikhouse-projet.ovh/';
+    protected function redirectTo()
+    {
+        if (env('APP_URL_SITE') == 'http://127.0.0.1:8000') {
+            return '/';
+        } else {
+            return 'https://www.atypikhouse-projet.ovh/';
+        }
+    }
 
     /**
      * Show the application's login form.

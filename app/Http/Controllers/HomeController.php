@@ -33,7 +33,6 @@ class HomeController extends Controller
         ->orderBy('id', 'desc')
         ->get();
         $categories = category::all();
-
         return view('home')->with('houses', $houses)
                            ->with('categories', $categories);
     }

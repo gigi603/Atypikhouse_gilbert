@@ -159,6 +159,7 @@
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script>let site = "{{ env('APP_URL_SITE') }}"; </script>
     <script src="{{ asset('js/calendarCreateAnnonce.js') }}"></script>
     <script src="{{ asset('js/admin_create_house.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
