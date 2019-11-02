@@ -249,5 +249,9 @@
  <!-- Demo scripts for this page-->
  <script src="../js/demo/datatables-demo.js"></script>
  <script src="../js/demo/chart-area-demo.js"></script>
+
+ <!--Message de confirmation avant de supprimer quelque chose-->
+ <script src="js/admin.js"></script>
+ <script src="../js/admin.js"></script>
 </body>
 </html>
