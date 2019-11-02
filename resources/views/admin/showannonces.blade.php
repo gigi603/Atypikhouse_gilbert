@@ -30,6 +30,10 @@
                                         <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>        
                                         <p>Téléphone de l'annonceur : {{$house->telephone}}</p>
                                         <p>Adresse mail de l'annonceur : {{$house->user->email}}</p>
+                                        <a href="{{action('AdminController@editHouse', $house->id)}}" class="btn btn-primary">Modifier</a>
+                                        <a href="{{action('AdminController@valideHouse', $house->id)}}" class="btn btn-primary">Valider l'annonce</a>
+                                        <a href="{{action('AdminController@refuseHouse', $house->id)}}" class="btn btn-danger">Refuser l'annonce</a>
+                                        <a href="{{action('AdminController@disableHouse', $house->id)}}" class="btn btn-danger delete-annonce">Supprimer l'annonce</a>
                                     </div>
                                 </div>
                             </div>
