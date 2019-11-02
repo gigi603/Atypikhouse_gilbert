@@ -434,10 +434,10 @@ class AdminController extends Controller
     //Vue de détails des annonces des utilisateurs
     public function listannonces($id)
     {
-        $users = User::where('id', $id)->get();
+        $user = User::find($id);
         $houses = House::where('user_id', $id)->where('disponible', "oui")->get();
         return view('admin.listannonces')->with('houses', $houses)
-                                         ->with('users', $users);
+                                         ->with('user', $user);
     }
 
     public function showannonces($id)
