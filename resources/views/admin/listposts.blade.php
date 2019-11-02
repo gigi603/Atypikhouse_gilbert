@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{$post->name}}</td>
                         <td>{{$post->email}}</td>
-                        <td><a href="{{route('admin.showmessages', $user->id)}}" class="btn btn-primary">Voir</a></td>
+                        <td><a href="{{route('admin.showmessages', $post->id)}}" class="btn btn-primary">Voir</a></td>
                     </tr>
                 </tbody>
                 @endforeach

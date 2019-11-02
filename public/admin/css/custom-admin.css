@@ -110,6 +110,18 @@
     color: #fff;
     text-decoration: none;
 }
+
+#dataTable_previous {
+    display: none;
+}
+
+#dataTable_next {
+    display: none;
+}
+
+td.dataTables_empty {
+    content: 'Pas de données' !important;
+}
 /* .rating > label:active {
     position: relative;
     top: 2px;
