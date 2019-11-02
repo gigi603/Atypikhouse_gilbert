@@ -64,3 +64,45 @@
 .block-description{
     padding: 0 20px;
 }
+
+.rating:not(:checked) > label:before {
+    content: '★';
+    width: 5px;
+    height: 5px;
+}
+
+.rating:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0,0,0,0);
+}
+
+.rating > input:checked ~ label {
+    color: dodgerblue;
+}
+
+.rating:not(:checked) > label {
+    float: right;
+    width: 1em;
+    /* padding: 0 .1em; */
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 150%;
+    /* line-height: 1.2; */
+    color: #ddd;
+}
+
+.rating > input:checked + label:hover, .rating > input:checked + label:hover ~ label, .rating > input:checked ~ label:hover, .rating > input:checked ~ label:hover ~ label, .rating > label:hover ~ input:checked ~ label {
+    color: dodgerblue;
+}
+
+.rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
+    color: dodgerblue;
+}
+
+/* .rating > label:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+} */
