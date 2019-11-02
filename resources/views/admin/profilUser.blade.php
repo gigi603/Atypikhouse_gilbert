@@ -8,35 +8,18 @@
     </div>
     <div class="card-body">    
         <div class="row">                                      
-            <div class="form-group">
-                <label for="name" class="col-md-2 control-label">Nom : </label>
-                <div class="col-md-2">
-                    {{$user->nom}}
-                </div>
+            <div class="col-md-12">
+                <label for="name" class="control-label">Nom : {{$user->nom}}</label>
             </div>
         </div>
         <div class="row">
-            <div class="form-group">
-                <label for="name" class="col-md-2 control-label">Prénom : </label>
-                <div class="col-md-2">
-                    {{$user->prenom}}
-                </div>
+            <div class="col-md-12">
+                <label for="name" class="control-label">Prénom : {{$user->prenom}}</label>
             </div>
         </div>
         <div class="row">
-            <div class="form-group">
-                <label for="name" class="col-md-2 control-label">Email : </label>
-                <div class="col-md-2">
-                    {{$user->email}}
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group">
-                <label for="name" class="col-md-2 control-label">Téléphone : </label>
-                <div class="col-md-2">
-                    {{$user->telephone}}
-                </div>
+            <div class="col-md-12">
+                <label for="name" class="control-label">Email : {{$user->email}}</label>
             </div>
         </div>
     </div>

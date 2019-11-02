@@ -381,10 +381,8 @@ class AdminController extends Controller
      * @return Response
      */
     public function profilUser($id) {  
-        $users = User::where('id', $id)->get();
-        $houses = House::where('user_id', $id)->get();
-        return view('admin.profilUser')->with('houses', $houses)
-                                       ->with('users', $users);
+        $user = User::find($id);
+        return view('admin.profilUser')->with('user', $user);
     }
 
     //Liste des reservations des utilisateurs
