@@ -2,6 +2,12 @@
 @section('title', "Détails de l'annonce")
 @section('content')
 <div class="admin-user-profil">
+    @if (Session::has('success-valide'))
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        {{ Session::get('success-valide') }}
+    </div>
+    @endif
     <div class="container list-category">
         <div class="panel panel-default">
             <div class="panel-heading">Détails de l'annonce</div>

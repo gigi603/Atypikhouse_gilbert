@@ -237,7 +237,7 @@ class AdminController extends Controller
         $house = house::find($id);
         $house->statut = "Validé";
         $house->save();
-        return redirect()->back()->with('success', "Vous avez bien validé cette annonce");
+        return redirect()->back()->with('success-valide', "Vous avez bien validé cette annonce");
     }
 
     public function refuseHouse($id) {
