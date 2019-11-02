@@ -442,10 +442,10 @@ class AdminController extends Controller
 
     public function showannonces($id)
     {
-        $users = User::where('id', $id)->get();
+        $user = User::find($id);
         $house = house::find($id);
         return view('admin.showannonces')->with('house', $house)
-                                         ->with('users', $users);
+                                         ->with('user', $user);
     }
 
     public function deleteAnnonce($id) {
