@@ -244,7 +244,7 @@ class AdminController extends Controller
         $house = house::find($id);
         $house->statut = "Refusé";
         $house->save();
-        return redirect()->back()->with('success', "Vous avez bien refusé cette annonce");
+        return redirect()->back()->with('success-valide', "Vous avez bien refusé cette annonce");
 
     }
 

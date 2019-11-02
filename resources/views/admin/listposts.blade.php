@@ -1,7 +1,6 @@
 @extends('layouts.admin')
+@section('title', "Messages des clients")
 @section('content')
-<div id="categories">
-    <h2>Messages : </h2>
     @if ($success = Session::get('success'))
         <div class="alert alert-success">
             {{ $success }}
@@ -12,19 +11,32 @@
             {{ $danger }}
         </div>
     @endif
-    @foreach($posts as $post)
-    <div class="table-responsive">
-        <table class="table">
-            <tbody>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Liste des messages clients</div>
+        <div class="card-body">
+            <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                 <tr>
-                    <td><a href="{{action('AdminController@showposts', $post['id'])}}">{{$post->name}}</a></td>
-                    <td>
-                        <a href="{{action('AdminController@showposts', $post['id'])}}" class="btn btn-color"> Voir</a>
-                    </td>
+                    <th>Nom / Prénom</th>
+                    <th>Email</th>
+                    <th> Actions</th>
                 </tr>
-            </tbody>
-        </table>
+                </thead>
+                @foreach($posts as $post)
+                <tbody>
+                    <tr>
+                        <td>{{$post->name}}</td>
+                        <td>{{$post->email}}</td>
+                        <td><a href="{{route('admin.showmessages', $user->id)}}" class="btn btn-primary">Voir</a></td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
-    @endforeach
-</div>
 @endsection

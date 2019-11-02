@@ -101,6 +101,15 @@
     color: dodgerblue;
 }
 
+.admin-messages {
+    color: #fff;
+    text-decoration: none;
+}
+
+.admin-messages:hover {
+    color: #fff;
+    text-decoration: none;
+}
 /* .rating > label:active {
     position: relative;
     top: 2px;
