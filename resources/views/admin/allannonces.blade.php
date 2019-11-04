@@ -33,8 +33,8 @@
                                 <td style="width:250px"><img src="{{ asset('img/houses/'.$house->photo) }}" class="photo-size"/></td>
                                 <td>{{$house->title}}</td>
                                 <td>{{$house->category->category}}
-                                <td>{{$house->start_date}}</td>
-                                <td>{{$house->end_date}}</td>
+                                <td><?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?></td>
+                                <td><?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></td>
                                 <td>{{$house->user->prenom}} {{$house->user->nom}}</td>
                                 <td>{{$house->statut}}</td>
                                 <td><a href="{{action('AdminController@showannonces', $house->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
