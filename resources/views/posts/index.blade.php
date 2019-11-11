@@ -16,10 +16,7 @@
                 @yield('content')
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                     {!! Form::label('name', 'Nom : ', array('class' => 'formLabel control-label')) !!} 
-                    {!! Form::text('name', Form::old('name'), array( 
-                        'class' => 'form-control', 
-                        'placeholder' => 'Entrer votre nom',
-                    )) !!} 
+                    <input type="text" readonly name="name" class="form-control" value="{{ Auth::user()->nom }} {{ Auth::user()->prenom }}"/>
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -29,10 +26,7 @@
             </div> 
             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> 
                 {!! Form::label('email', 'Email : ', array('class' => 'formLabel control-label')) !!} 
-                {!! Form::text('email', Form::old('email'), array( 
-                    'class' => 'form-control', 
-                    'placeholder' => 'Entrer votre email',
-                )) !!} 
+                <input type="email" readonly name="email" class="form-control" value="{{ Auth::user()->email }}"/>
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
