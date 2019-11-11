@@ -7,6 +7,7 @@
 @section('content') 
     <div class="container" id="form"> 
         {!! Form::open(['url' => 'posts']) !!} 
+        {{ csrf_field() }}
             <div class="form-group"> 
                 {{-- @if (Form::is('success'))
                     <div class="alert alert-success">Votre formulaire a été envoyé.</div>

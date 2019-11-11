@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Atypikhouse - @yield('title')</title>
         <meta description="@yield('meta_description')">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
         {{-- Logo Navigateur --}}

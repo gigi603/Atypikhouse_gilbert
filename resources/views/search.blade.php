@@ -1,4 +1,5 @@
 {!! Form::open(['method'=>'GET','url'=>$url,'class'=>'form','role'=>'search'])  !!}
+        {{ csrf_field() }}
         <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
                 <select id="select_category_home" name="category_id" class="form-control field-home">
                         <option id="" value="">Type d'hébergement</option>

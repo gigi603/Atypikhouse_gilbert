@@ -10,6 +10,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="input-group reservation-search">
                         <form class="form-horizontal" method="get" action="{{url('search')}}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 cadre">
                                     <h1 class="title title-intro">Trouvez les meilleurs espaces atypiques, partout en Europe !</h1>
