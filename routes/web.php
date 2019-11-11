@@ -173,11 +173,13 @@ Route::middleware(['auth'])->group( function () {
     //Vue de détails de l'historique de l'utilisateur
     Route::get('/showhistoriques/{id}', 'UsersController@showhistoriques')->name('user.showhistoriques');
 
+    //Vue formulaire de contact
+    Route::resource('posts', 'PostsController' , ['only' => ['index', 'store']]);
+
 });
 
 Route::post('/create',    'UserController@create');
 Route::get('/user/{id}',  'UserController@get');
-Route::resource('posts', 'PostsController' , ['only' => ['index', 'store']]); 
 Route::get('/users/confirmation{email_token}', 'Auth\RegisterController@confirmation');
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 Auth::routes();

@@ -63,7 +63,6 @@
                             <li><a href="{{ route('houses') }}">Nos hébergements</a></li>
                             <li><a href="{{ route('register') }}">Inscription</a></li>
                             <li><a href="{{ route('login') }}">Connexion</a></li>
-                            <li><a href="{{ route('posts.index') }}">Contact</a></li>
                             @elseif(Auth::guard('admin')->check())
                             <li><a href="{{ route('admin.home') }}">Accueil</a></li>
                             <li class="dropdown">
@@ -82,6 +81,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li><a href="{{ route('posts.index') }}">Contact</a></li>
                                 </ul>
                             </li>
                             @else
