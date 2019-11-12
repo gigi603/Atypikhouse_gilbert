@@ -60,7 +60,7 @@ class AdminController extends Controller
     //Message des clients (formulaire de contact)
     public function listposts(Post $posts)
     {
-        $posts = post::all();
+        $posts = post::orderBy('id', 'desc')->get();
         return view('admin.listposts')->with('posts', $posts);
     }
 
