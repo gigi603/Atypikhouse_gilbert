@@ -116,6 +116,16 @@ class RegisterController extends Controller
         $message->user_id = $user->id;
         $message->admin_id = "1";
         $message->save();
+
+        $post = new post;
+        $post->name = $request->nom.' '.$request->prenom;
+        $post->email = $request->email;
+        $post->content = "L'utilisateur qui se nomme ".$request->nom." ".$request->prenom;
+        $post->save();
+        $admins = Admin::all();
+        foreach ($admins as $admin) {
+            $admin->notify(new ReplyToUser($post));
+        }
         return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
     }
 

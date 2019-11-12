@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Carbon\Carbon;
 
-class ReplyToThread extends Notification
+class ReplyToMessage extends Notification
 {
     use Queueable;
 

@@ -8,7 +8,7 @@ use App\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
-use App\Notifications\ReplyToThread;
+use App\Notifications\ReplyToMessage;
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
@@ -26,9 +26,6 @@ class PostsController extends Controller
             'content' => 'required|max:3000|min:30|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u' 
         ]); 
 
-        //$user = $request->user();
-        var_dump(Auth::user()->nom);
-
         if($request->name != Auth::user()->nom.' '.Auth::user()->prenom || $request->email != Auth::user()->email){
             return back()->with('danger', "Votre message n'a pas été envoyé");
         } else {
@@ -41,7 +38,7 @@ class PostsController extends Controller
         
             $admins = Admin::all();
             foreach ($admins as $admin) {
-                $admin->notify(new ReplyToThread($post));
+                $admin->notify(new ReplyToMessage($post));
             }
 
             return back()->with('success', 'Votre message a bien été envoyé, nos administrateurs reviendront vers vous !');
