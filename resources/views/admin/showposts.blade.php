@@ -12,9 +12,10 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Message de {{$post->name}}</div>
+                    <div class="panel-heading">Message</div>
                     
                     <div class="panel-body card-message">
+                        <p>Nom / Prénom: {{$post->name}}</p>
                         <p>Email: {{$post->email}}</p>
                         <p>{{$post->content}}</p>                           
                     </div>
