@@ -8,7 +8,7 @@ use App\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
-use App\Notifications\ReplyToThread;
+use App\Notifications\ReplyToMessage;
 
 class PostsController extends Controller
 {
@@ -28,11 +28,12 @@ class PostsController extends Controller
         $post->name = $request->name;
         $post->email = $request->email;
         $post->content = $request->content;
+        $post->type = "message";
         $post->save();
         
         $admins = Admin::all();
         foreach ($admins as $admin) {
-            $admin->notify(new ReplyToThread($post));
+            $admin->notify(new ReplyToMessage($post));
         }
 
         return back()->with('success', 'Votre message a bien été envoyé, nos administrateurs reviendront vers vous !');

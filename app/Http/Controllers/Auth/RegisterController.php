@@ -116,6 +116,15 @@ class RegisterController extends Controller
         $message->user_id = $user->id;
         $message->admin_id = "1";
         $message->save();
+        
+        //Envoyer une notification à l'admin
+        $post = new post;
+        $post->name = $user->nom.' '.$user->prenom;
+        $post->email = $user->email;
+        $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
+        $post->type = "utilisateur";
+        $post->save();
+        
         return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
     }
 
