@@ -125,6 +125,10 @@ class RegisterController extends Controller
         $post->type = "utilisateur";
         $post->save();
         
+        $admins = Admin::all();
+        foreach ($admins as $admin) {
+            $admin->notify(new ReplyToMessage($post));
+        }
         return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
     }
 

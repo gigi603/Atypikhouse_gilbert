@@ -11,7 +11,7 @@
                             <form class="form-horizontal" method="get" action="{{url('search')}}" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-12 cadre">
-                                        <h1 class="title title-intro">Trouvez les meilleurs espaces atypiques, partout en Europe !</h1>
+                                        <h1 class="title title-intro">Atypikhouse offre les meilleurs espaces atypiques, partout en Europe !</h1>
                                         <div class="form-group reservation-search">
                                             @include('search',['url'=>'search','link'=>'search'])
                                         </div>
