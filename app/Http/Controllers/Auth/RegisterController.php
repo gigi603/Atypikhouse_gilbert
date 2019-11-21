@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Jobs\SendVerificationEmail;
 use App\User;
 use App\Message;
+use App\Post;
+use App\Admin;
+use App\Notifications\ReplyToUser;
 use App\Mail\EmailVerification;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -127,7 +130,7 @@ class RegisterController extends Controller
         
         $admins = Admin::all();
         foreach ($admins as $admin) {
-            $admin->notify(new ReplyToMessage($post));
+            $admin->notify(new ReplyToUser($post));
         }
         return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
     }

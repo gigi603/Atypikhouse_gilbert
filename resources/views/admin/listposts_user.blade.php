@@ -14,7 +14,7 @@
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            Liste des messages clients</div>
+            Utilisateur inscrit</div>
         <div class="card-body">
             <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -31,7 +31,7 @@
                             <tr>
                                 <td>{{$post->name}}</td>
                                 <td>{{$post->email}}</td>
-                                <td><a href="{{route('admin.showmessages', $post->id)}}" class="btn btn-primary">Voir</a></td>
+                                <td><a href="{{route('admin.showmessages_user', $post->id)}}" class="btn btn-primary">Voir</a></td>
                             </tr>
                         </tbody>
                     @else
@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{$post->name}}</td>
                                 <td>{{$post->email}}</td>
-                                <td><a href="{{route('admin.showmessages', $post->id)}}" class="btn btn-primary">Voir</a></td>
+                                <td><a href="{{route('admin.showmessages_user', $post->id)}}" class="btn btn-primary">Voir</a></td>
                             </tr>
                         </tbody>
                     @endif

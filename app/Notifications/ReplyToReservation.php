@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Carbon\Carbon;
 
-class ReplyToMessage extends Notification
+class ReplyToReservation extends Notification
 {
     use Queueable;
 
@@ -17,9 +17,9 @@ class ReplyToMessage extends Notification
      *
      * @return void
      */
-    public function __construct($post)
+    public function __construct()
     {
-        $this->post = $post;
+        //
     }
 
     /**
@@ -44,7 +44,6 @@ class ReplyToMessage extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'post_id' => $this->post->id,
             'repliedTime' => Carbon::now()
         ];
     }

@@ -22,22 +22,10 @@ class PostsController extends Controller
     public function store(CreatePostRequest $request)  
     { 
         $this->validate($request, [ 
-            'name' => 'required|max:100|regex:/^[a-zA-Z\s\-]+$/u', 
+            'name' => 'required|max:100|regex:/^[a-zA-Z\s\-]+$/u',
             'email' => 'required|max:50|email', 
             'content' => 'required|max:3000|min:30|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u' 
         ]); 
-
-        $post = new post;
-        $post->name = $request->name;
-        $post->email = $request->email;
-        $post->content = $request->content;
-        $post->type = "message";
-        $post->save();
-        
-        $admins = Admin::all();
-        foreach ($admins as $admin) {
-            $admin->notify(new ReplyToMessage($post));
-        }
 
 
         if($request->name != Auth::user()->nom.' '.Auth::user()->prenom || $request->email != Auth::user()->email){
@@ -48,8 +36,9 @@ class PostsController extends Controller
             $post->name = $request->name;
             $post->email = $request->email;
             $post->content = $request->content;
+            $post->type = "message";
             $post->save();
-        
+            
             $admins = Admin::all();
             foreach ($admins as $admin) {
                 $admin->notify(new ReplyToMessage($post));

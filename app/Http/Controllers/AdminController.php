@@ -61,14 +61,47 @@ class AdminController extends Controller
     public function listposts(Post $posts)
     {
         $posts = post::where('type', 'message')->orderBy('id', 'desc')->get();
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            foreach($posts as $post){
+                if($post->id == $data["post_id"]){
+                    $post["unread"] = true;
+                }
+            }
+        }
         return view('admin.listposts')->with('posts', $posts);
     }
+
 
     //Vue de détails des messages clients
     public function showposts($id)
     {
         $post = post::find($id);
+
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            if($post->id == $data["post_id"]){
+                $userUnreadNotification->markAsRead();
+            }
+        }
         return view('admin.showposts')->with('post', $post);
+    }
+
+    //Message des clients (formulaire de contact)
+    public function listpostsuser(Post $posts)
+    {
+        $posts = post::where('type', 'utilisateur')->orderBy('id', 'desc')->get();
+        return view('admin.listposts_user')->with('posts', $posts);
+    }
+
+    //Vue de détails des messages clients
+    public function showpostsuser($id)
+    {
+        $post = post::find($id);
+        return view('admin.showposts_user')->with('post', $post);
     }
 
     //Categories

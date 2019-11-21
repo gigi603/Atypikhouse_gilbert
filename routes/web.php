@@ -78,8 +78,17 @@ Route::prefix('admin')->group(function () {
     Route::get('/messages', 'AdminController@listposts')->name('admin.messages');
     Route::get('/showmessages/{id}', 'AdminController@showposts')->name('admin.showmessages');
 
+    //Liste des messages lors d'une inscription d'un utilisateur
+    Route::get('/messages_user', 'AdminController@listpostsuser')->name('admin.messages_user');
+    Route::get('/showmessages_user/{id}', 'AdminController@showpostsuser')->name('admin.showmessages_user');
+
     //Liste des messages de l'admin à l'utilisateur
     Route::get('/user_messages/{id}', 'AdminController@messages')->name('admin.user_messages');
+
+    // Mettre les notifications comme lues
+    // Route::get('markAsRead', function(){
+    //     auth()->user()->unreadNotifications->markAsRead();
+    // });
     //Message de l'admin à l'utilisateur
     Route::post('/addMessage', 'AdminController@addMessage')->name('admin.addMessage');
 

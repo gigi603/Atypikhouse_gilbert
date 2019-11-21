@@ -130,8 +130,14 @@
                       <div class="card-body-icon">
                         <i class="fas fa-fw fa-comments"></i>
                       </div>
-                      <div class="mr-5">                
-                      {{ count(auth()->user()->unreadNotifications)}} nouveaux Messages!</div>
+                      <div class="mr-5">
+                        <?php $i = 0; ?>
+                          @foreach (auth()->user()->unreadNotifications as $notification)
+                            @if($notification->type == 'App\Notifications\ReplyToMessage')
+                              <?php $i++; ?>
+                            @endif
+                          @endforeach
+                      {{$i}} nouveau(x) Message(s)!</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
                       <span class="float-left">View Details</span>
@@ -143,12 +149,20 @@
                 </a>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
+                  <a href="{{route('admin.messages_user')}}" class="admin-messages">
                   <div class="card text-white bg-warning o-hidden h-100">
                     <div class="card-body">
                       <div class="card-body-icon">
                         <i class="fas fa-fw fa-list"></i>
                       </div>
-                      <div class="mr-5">nouveaux utilisateurs!</div>
+                      <div class="mr-5">
+                          <?php $j = 0; ?>
+                          @foreach (auth()->user()->unreadNotifications as $notification)
+                            @if($notification->type == 'App\Notifications\ReplyToUser')
+                              <?php $j++;?>
+                            @endif
+                          @endforeach
+                      {{$j}} nouveau(x) utilisateur(s)!</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
                       <span class="float-left">View Details</span>
@@ -157,6 +171,7 @@
                       </span>
                     </a>
                   </div>
+                </a>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
                   <div class="card text-white bg-success o-hidden h-100">
