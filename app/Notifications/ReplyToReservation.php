@@ -17,9 +17,9 @@ class ReplyToReservation extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($post)
     {
-        //
+        $this->post = $post;
     }
 
     /**
@@ -44,6 +44,7 @@ class ReplyToReservation extends Notification
     public function toDatabase($notifiable)
     {
         return [
+            'post_id' => $this->post->id,
             'repliedTime' => Carbon::now()
         ];
     }

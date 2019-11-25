@@ -152,6 +152,37 @@ class AdminController extends Controller
         return view('admin.showposts_annonce')->with('post', $post)->with('house', $house);
     }
 
+    public function listpostsreservation(Post $posts)
+    {
+        $posts = post::where('type', 'reservation')->orderBy('id', 'desc')->get();
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            foreach($posts as $post){
+                if($post->id == $data["post_id"]){
+                    $post["unread"] = true;
+                }
+            }
+        }
+        return view('admin.listposts_reservation')->with('posts', $posts);
+    }
+
+    //Vue de détails des messages clients
+    public function showpostsreservation($id)
+    {
+        $post = post::find($id);
+        $reservation = reservation::find($post->reservation_id);
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            if($post->id == $data["post_id"]){
+                $userUnreadNotification->markAsRead();
+            }
+        }
+        return view('admin.showposts_reservation')->with('post', $post)->with('reservation', $reservation);
+    }
+
     //Categories
 
     public function listcategories(Category $categories)
@@ -464,6 +495,12 @@ class AdminController extends Controller
     public function profilUser($id) {  
         $user = User::find($id);
         return view('admin.profilUser')->with('user', $user);
+    }
+
+    public function allreservations()
+    {
+        $reservations = Reservation::orderBy('id', 'desc')->get();
+        return view('admin.allreservations')->with('reservations', $reservations);
     }
 
     //Liste des reservations des utilisateurs

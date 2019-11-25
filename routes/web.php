@@ -48,6 +48,9 @@ Route::prefix('admin')->group(function () {
     //Liste des annonces
     Route::get('/allannonces', 'AdminController@allannonces')->name('admin.allannonces');
 
+    //Liste des reservations
+    Route::get('admin.allreservations', 'AdminController@allreservations')->name('admin.allreservations');
+
     //Commentaires de l'utilisateur
     Route::get('/listcomments/{id}', 'AdminController@listcomments')->name('admin.listcomments');
     Route::get('/comments/deleteComment/{id}', 'AdminController@deleteComment')->name('admin.deleteComment');
@@ -85,6 +88,10 @@ Route::prefix('admin')->group(function () {
     //Liste des notifications lors d'une nouvelle annonce
     Route::get('/messages_annonce', 'AdminController@listpostsannonce')->name('admin.listpostsannonce');
     Route::get('/showmessages_annonce/{id}', 'AdminController@showpostsannonce')->name('admin.showmessages_annonce');
+
+    //Liste des notifications lors d'une nouvelle annonce
+    Route::get('/messages_reservation', 'AdminController@listpostsreservation')->name('admin.listpostsreservation');
+    Route::get('/showmessages_reservation/{id}', 'AdminController@showpostsreservation')->name('admin.showmessages_reservation');
     
     //Liste des messages de l'admin à l'utilisateur
     Route::get('/user_messages/{id}', 'AdminController@messages')->name('admin.user_messages');

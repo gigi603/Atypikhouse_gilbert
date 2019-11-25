@@ -100,14 +100,19 @@
             <i class="fas fa-fw fa-folder"></i>
             <span>Annonces</span>
         </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.categories') }}">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Catégories d'annonces</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.allreservations') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Réservations</span>
+        </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.categories') }}">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Catégories d'annonces</span>
-            </a>
-        </li>
-      
     </ul>
     <div id="content-wrapper">
 
@@ -198,6 +203,30 @@
                   </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
+                  <a href="{{route('admin.listpostsreservation')}}" class="admin-messages">
+                  <div class="card text-white bg-success o-hidden h-100">
+                    <div class="card-body">
+                      <div class="card-body-icon">
+                        <i class="fas fa-fw fa-shopping-cart"></i>
+                      </div>
+                      <div class="mr-5">
+                      <?php $l = 0; ?>
+                          @foreach (auth()->user()->unreadNotifications as $notification)
+                            @if($notification->type == 'App\Notifications\ReplyToReservation')
+                              <?php $l++;?>
+                            @endif
+                          @endforeach
+                      {{$l}} nouvelle(s) reservation(s)</div>
+                    </div>
+                    <a class="card-footer text-white clearfix small z-1" href="#">
+                      <span class="float-left">View Details</span>
+                      <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                {{-- <div class="col-xl-3 col-sm-6 mb-3">
                   <div class="card text-white bg-danger o-hidden h-100">
                     <div class="card-body">
                       <div class="card-body-icon">
@@ -212,7 +241,7 @@
                       </span>
                     </a>
                   </div>
-                </div>
+                </div> --}}
               </div>
 
         @yield('content')
