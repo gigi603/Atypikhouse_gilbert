@@ -91,7 +91,7 @@
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.listusers') }}">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-fw fFa-folder"></i>
           <span>Utilisateurs</span>
         </a>
       </li>
@@ -174,12 +174,20 @@
                 </a>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
+                  <a href="{{route('admin.listpostsannonce')}}" class="admin-messages">
                   <div class="card text-white bg-success o-hidden h-100">
                     <div class="card-body">
                       <div class="card-body-icon">
                         <i class="fas fa-fw fa-shopping-cart"></i>
                       </div>
-                      <div class="mr-5">123 New Orders!</div>
+                      <div class="mr-5">
+                      <?php $k = 0; ?>
+                          @foreach (auth()->user()->unreadNotifications as $notification)
+                            @if($notification->type == 'App\Notifications\ReplyToAnnonce')
+                              <?php $k++;?>
+                            @endif
+                          @endforeach
+                      {{$k}} nouvelle(s) annonce(s)</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
                       <span class="float-left">View Details</span>

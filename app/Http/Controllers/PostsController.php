@@ -37,6 +37,7 @@ class PostsController extends Controller
             $post->email = $request->email;
             $post->content = $request->content;
             $post->type = "message";
+            $post->house_id = 0;
             $post->save();
             
             $admins = Admin::all();

@@ -141,6 +141,9 @@ class UsersController extends Controller
             $post->name = $user->nom.' '.$user->prenom;
             $post->email = $user->email;
             $post->content = "L'annonce ".$house->title." de ".$user->nom.' '.$user->prenom." a été supprimée";
+            $post->type = "annonce";
+            $post->house_id = $house->id;
+
             $post->save();
             $house->delete();
             return redirect()->back()->with('success', "Votre annonce a bien été supprimée");
@@ -149,6 +152,8 @@ class UsersController extends Controller
             $post->name = $user->nom.' '.$user->prenom;
             $post->email = $user->email;
             $post->content = "L'utilisateur ".$user->nom.' '.$user->prenom." veut supprimer l'annonce ".$house->title;
+            $post->type = "annonce";
+            $post->house_id = $house->id;
             $post->save();
             return redirect()->back()->with('success', "Votre demande a bien été pris en compte, étant donné que votre annonce est en ligne, un message sera envoyé à l'administrateur qui supprimera votre annonce. N'oubliez pas vérifier vos notifications");
         }

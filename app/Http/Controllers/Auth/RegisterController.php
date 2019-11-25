@@ -126,6 +126,7 @@ class RegisterController extends Controller
         $post->email = $user->email;
         $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
         $post->type = "utilisateur";
+        $post->house_id = 0;
         $post->save();
         
         $admins = Admin::all();

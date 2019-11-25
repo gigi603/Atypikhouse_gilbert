@@ -78,10 +78,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/messages', 'AdminController@listposts')->name('admin.messages');
     Route::get('/showmessages/{id}', 'AdminController@showposts')->name('admin.showmessages');
 
-    //Liste des messages lors d'une inscription d'un utilisateur
+    //Liste des notifications lors d'une inscription d'un utilisateur
     Route::get('/messages_user', 'AdminController@listpostsuser')->name('admin.messages_user');
     Route::get('/showmessages_user/{id}', 'AdminController@showpostsuser')->name('admin.showmessages_user');
 
+    //Liste des notifications lors d'une nouvelle annonce
+    Route::get('/messages_annonce', 'AdminController@listpostsannonce')->name('admin.listpostsannonce');
+    Route::get('/showmessages_annonce/{id}', 'AdminController@showpostsannonce')->name('admin.showmessages_annonce');
+    
     //Liste des messages de l'admin à l'utilisateur
     Route::get('/user_messages/{id}', 'AdminController@messages')->name('admin.user_messages');
 

@@ -16,8 +16,8 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function notifications() {
-        return $this->hasMany('App\Notifications\ReplyToMessage');
+    public function house() {
+        return $this->belongsTo('App\House');
     }
 
 } 

@@ -11,6 +11,9 @@ use App\Propriete;
 use App\Valuecatpropriete;
 use App\User;
 use App\Message;
+use App\Post;
+use App\Admin;
+use App\Notifications\ReplyToAnnonce;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateHouseStep1Request;
 use App\Http\Requests\CreateHouseStep2Request;
@@ -310,6 +313,19 @@ class HousesController extends Controller
         $message->user_id = $house->user_id;
         $message->admin_id = Auth::user()->id;
         $message->save();
+
+        $post = new post;
+        $post->name = Auth::user()->nom.' '.Auth::user()->prenom;
+        $post->email = Auth::user()->email;
+        $post->content = 'Une nouvelle annonce '.$house->title.' de '.Auth::user()->nom.' '.Auth::user()->prenom.' a été créé';
+        $post->type = "annonce";
+        $post->type = $house->id;
+        $post->save();
+
+        $admins = Admin::all();
+        foreach ($admins as $admin) {
+            $admin->notify(new ReplyToAnnonce($post));
+        }
 
         $request->session()->forget('houseAdresse');
         $request->session()->forget('houseTelephone');

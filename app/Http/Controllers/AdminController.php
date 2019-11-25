@@ -121,6 +121,36 @@ class AdminController extends Controller
         return view('admin.showposts_user')->with('post', $post);
     }
 
+    public function listpostsannonce(Post $posts)
+    {
+        $posts = post::where('type', 'annonce')->orderBy('id', 'desc')->get();
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            foreach($posts as $post){
+                if($post->id == $data["post_id"]){
+                    $post["unread"] = true;
+                }
+            }
+        }
+        return view('admin.listposts_annonce')->with('posts', $posts);
+    }
+
+    //Vue de détails des messages clients
+    public function showpostsannonce($id)
+    {
+        $post = post::find($id);
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            if($post->id == $data["post_id"]){
+                $userUnreadNotification->markAsRead();
+            }
+        }
+        return view('admin.showposts_annonce')->with('post', $post);
+    }
+
     //Categories
 
     public function listcategories(Category $categories)
@@ -478,7 +508,7 @@ class AdminController extends Controller
     }
     public function allannonces()
     {
-        $houses = House::where('disponible', "oui")->get();
+        $houses = House::where('disponible', "oui")->orderBy('id', 'desc')->get();
         return view('admin.allannonces')->with('houses', $houses);
     }
     //Vue de détails des annonces des utilisateurs
@@ -494,6 +524,13 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         $house = house::find($id);
+        $userUnreadNotifications = auth()->user()->unreadNotifications;
+        foreach($userUnreadNotifications as $userUnreadNotification) {
+            $data = $userUnreadNotification->data;
+            if($post->id == $data["post_id"]){
+                $userUnreadNotification->markAsRead();
+            }
+        }
         return view('admin.showannonces')->with('house', $house)
                                          ->with('user', $user);
     }

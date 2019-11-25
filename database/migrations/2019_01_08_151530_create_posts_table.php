@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('email'); 
             $table->string('content');
             $table->string('type');
+            $table->integer('post_id');
             $table->timestamps(); 
         });
     }
