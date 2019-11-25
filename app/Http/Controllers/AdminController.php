@@ -141,6 +141,7 @@ class AdminController extends Controller
     public function showpostsannonce($id)
     {
         $post = post::find($id);
+        $house = house::find($post->house_id);
         $userUnreadNotifications = auth()->user()->unreadNotifications;
         foreach($userUnreadNotifications as $userUnreadNotification) {
             $data = $userUnreadNotification->data;
@@ -148,7 +149,7 @@ class AdminController extends Controller
                 $userUnreadNotification->markAsRead();
             }
         }
-        return view('admin.showposts_annonce')->with('post', $post);
+        return view('admin.showposts_annonce')->with('post', $post)->with('house', $house);
     }
 
     //Categories
@@ -524,13 +525,6 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         $house = house::find($id);
-        $userUnreadNotifications = auth()->user()->unreadNotifications;
-        foreach($userUnreadNotifications as $userUnreadNotification) {
-            $data = $userUnreadNotification->data;
-            if($post->id == $data["post_id"]){
-                $userUnreadNotification->markAsRead();
-            }
-        }
         return view('admin.showannonces')->with('house', $house)
                                          ->with('user', $user);
     }

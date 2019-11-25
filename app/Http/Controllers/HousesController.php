@@ -319,7 +319,7 @@ class HousesController extends Controller
         $post->email = Auth::user()->email;
         $post->content = 'Une nouvelle annonce '.$house->title.' de '.Auth::user()->nom.' '.Auth::user()->prenom.' a été créé';
         $post->type = "annonce";
-        $post->type = $house->id;
+        $post->house_id = $house->id;
         $post->save();
 
         $admins = Admin::all();

@@ -29,7 +29,7 @@ class CreateHouseStep3Request extends FormRequest
             'nb_personnes' => 'required|numeric',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
-            'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u|max:1000|min:30'
+            'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\^\"\:]+$/u|max:1000|min:30'
         ];
     }
 
