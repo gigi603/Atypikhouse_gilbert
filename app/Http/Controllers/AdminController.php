@@ -499,7 +499,7 @@ class AdminController extends Controller
 
     public function allreservations()
     {
-        $reservations = Reservation::orderBy('id', 'desc')->get();
+        $reservations = Reservation::where('end_date', '>=', Carbon::now())->orderBy('id', 'desc')->get();
         return view('admin.allreservations')->with('reservations', $reservations);
     }
 

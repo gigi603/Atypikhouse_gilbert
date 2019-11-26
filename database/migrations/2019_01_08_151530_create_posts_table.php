@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->string('type');
             $table->integer('house_id');
+            $table->integer('reservation_id');
             $table->timestamps(); 
         });
     }
