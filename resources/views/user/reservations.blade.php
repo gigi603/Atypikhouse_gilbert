@@ -36,6 +36,9 @@
                         @else
                             <p>Statut: <span style="color:green;"><?php echo($reservation->house->statut);?></span></p>
                         @endif
+                        <div class="text-center">
+                            <a href="{{route('user.cancelreservation', $reservation['id']) }}" class="btn btn-danger delete-reservation">Annuler ma réservation</a>
+                        </div>
                     </div>
                 </div> 
             </div>

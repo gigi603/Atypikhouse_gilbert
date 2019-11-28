@@ -35,7 +35,8 @@
                                     'days' => $days,
                                     'total' => $total,
                                     'user_id' => $reservation->user_id,
-                                    'house_id' => $reservation->house_id
+                                    'house_id' => $reservation->house_id,
+                                    'reservation_id' => $reservation->id
                                     ])}}">Aller au paiement</a>
                                 </div>
                             <div>

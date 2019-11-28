@@ -9,7 +9,11 @@ use Session;
 use Redirect;
 use Input;
 use App\User;
+use App\Post;
 use App\Reservation;
+use App\Admin;
+use Illuminate\Support\Facades\Auth;
+use App\Notifications\ReplyToReservation;
 use Stripe\Error\Card;
 use Cartalyst\Stripe\Stripe;
 
@@ -78,6 +82,24 @@ class AddMoneyController extends Controller
             $reservation->days= $days;
             $reservation->reserved = true;
             $reservation->save();
+            
+
+            //Envoyer une notification à l'admin
+            $post = new post;
+            $post->name = Auth::user()->prenom." ".Auth::user()->nom;
+            $post->email = Auth::user()->email;
+            $post->content = "Une nouvelle réservation de ".Auth::user()->prenom." ".Auth::user()->nom." a été effectué";
+            $post->type = "reservation";
+            $post->house_id = 0;
+            $post->reservation_id = $reservation->id;
+            $post->save();
+
+            $admins = Admin::all();
+
+            foreach ($admins as $admin) {
+                $admin->notify(new ReplyToReservation($post));
+            }
+
             return view('reservations.confirmation_payment')->with('reservation', $reservation);
         } else {
             Session::flash('error', 'Il y a une erreur dans votre saisie');

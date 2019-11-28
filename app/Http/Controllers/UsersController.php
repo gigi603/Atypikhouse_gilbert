@@ -165,18 +165,10 @@ class UsersController extends Controller
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
+        ->where('reserved', '=', 1)
         ->orderBy('id', 'desc')
         ->get();
-        //dd($reservations);
-        if(!$reservations){
-            var_dump('c vide');
-        }
         
-        // if(count($reservations) > 0){
-        //     var_dump('hello');
-        // } else {
-        //     var_dump('ya rien');
-        // }
         return view('user.reservations', compact('reservations'));
     }
     
@@ -186,8 +178,24 @@ class UsersController extends Controller
         $houses = House::where('user_id', $id)->get();
         $reservation = reservation::find($id);
         return view('user.showreservations')->with('houses', $houses)
-                                              ->with('users', $users)
-                                              ->with('reservation', $reservation);
+                                            ->with('users', $users)
+                                            ->with('reservation', $reservation);
+    }
+
+    public function cancelreservation($id) {
+        $today = Date::today()->format('Y-m-d');
+        $reservations = reservation::with('house')->where('start_date', '>=', $today)
+        ->where('end_date', '>=', $today)
+        ->where('user_id', '=', Auth::user()->id)
+        ->where('reserved', '=', 1)
+        ->orderBy('id', 'desc')
+        ->get();
+        
+        $reservation = Reservation::find($id);
+        $reservation->reserved = 0;
+        $reservation->save();
+
+        return view('user.reservations', compact('reservations'));
     }
 
     public function historiques(Request $request)

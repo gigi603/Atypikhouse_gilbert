@@ -320,6 +320,7 @@ class HousesController extends Controller
         $post->content = 'Une nouvelle annonce '.$house->title.' de '.Auth::user()->nom.' '.Auth::user()->prenom.' a été créé';
         $post->type = "annonce";
         $post->house_id = $house->id;
+        $post->reservation_id = 0;
         $post->save();
 
         $admins = Admin::all();

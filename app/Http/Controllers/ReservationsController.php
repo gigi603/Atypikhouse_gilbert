@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\House;
 use App\Reservation;
+use App\Post;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -44,21 +46,7 @@ class ReservationsController extends Controller
         $reservation->total = $total;
         $reservation->days = $days;
         $reservation->reserved = true;
-
-        //Envoyer une notification à l'admin
-        $post = new post;
-        $post->name = $user->nom.' '.$user->prenom;
-        $post->email = $user->email;
-        $post->content = "Une nouvelle réservation de ".Auth::user()->prenom." ".Auth::user()->nom." a été effectué";
-        $post->type = "reservation";
-        $post->house_id = 0;
-        $post->reservation_id = $reservation->id;
-        $post->save();
         
-        $admins = Admin::all();
-        foreach ($admins as $admin) {
-            $admin->notify(new ReplyToReservation($post));
-        }
         return view('reservations.recapitulatif_reservation')->with('reservation', $reservation)
                                                              ->with('house', $house)
                                                              ->with('start', $start)
