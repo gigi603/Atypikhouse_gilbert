@@ -96,7 +96,7 @@
                         </div>
                         <div class="form-check{{ $errors->has('majeur') ? ' has-error' : '' }} text-center">
                             <input type="checkbox" class="form-check-input" name="majeur" value="true" {{ !old('majeur') ?: 'checked' }}>
-                            <label class="form-check-label" for="exampleCheck1">Vous avez 18 ans ou plus</label>
+                            <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales</label>
                             @if ($errors->has('majeur'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('majeur') }}</strong>

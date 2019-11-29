@@ -523,7 +523,7 @@ class AdminController extends Controller
     }
 
     //Liste des reservations des utilisateurs
-    public function listhistoriques($id)
+    public function listhistoriques()
     {
         $today = Date::today()->format('Y-m-d');
         $historiques = Reservation::with('house')->where([

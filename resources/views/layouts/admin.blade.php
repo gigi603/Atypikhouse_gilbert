@@ -110,9 +110,21 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.allreservations') }}">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Réservations</span>
+            <span>Réservations en cours</span>
         </a>
-        </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.listhistoriques') }}">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Réservations passées</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.allreservationscancel') }}">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Réservations annulées</span>
+        </a>
+      </li>
     </ul>
     <div id="content-wrapper">
 
