@@ -94,6 +94,9 @@
                         <div class="form-group">
                             <p>Le site accessible par l’url www.atypikhouse.fr est exploité dans le respect de la législation française. L'utilisation de ce site est régie par les présentes conditions générales. En utilisant le site, vous reconnaissez avoir 18 ans ou plus et avoir pris connaissance de ces conditions et les avoir acceptées. Celles-ci pourront êtres modifiées à tout moment et sans préavis par la société Nom de la boite. Eurodev Agency ne saurait être tenu pour responsable en aucune manière d’une mauvaise utilisation du service.</p>
                         </div>
+                        <div class="form-group">
+                            <p>Nous vous enverrons des promotions commerciales, des offres spéciales, des idées de voyage et des informations réglementaires par e-mail.</p>
+                        </div>
                         <div class="form-check{{ $errors->has('majeur') ? ' has-error' : '' }} text-center">
                             <input type="checkbox" class="form-check-input" name="majeur" value="true" {{ !old('majeur') ?: 'checked' }}>
                             <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales</label>
@@ -123,6 +126,10 @@
                                     M'inscrire
                                 </button>
                             </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="newsletter" value="">
+                            <label class="form-check-label" for="exampleCheck1">Je ne souhaite pas recevoir de messages promotionnels d'Atypikhouse.<br/> Je peux également activer/désactiver cette option à tout moment<br/> dans les paramètres de mon compte ou via le lien contenu dans ce message.</label>
                         </div>
                     </form>
                 </div>

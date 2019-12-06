@@ -102,6 +102,7 @@ class RegisterController extends Controller
             'password' => 'required|min:8|max:30',
             'password_confirmation' => 'required|same:password|max:30',
             'majeur' => 'accepted',
+            'newsletter' => 'boolean',
             'g-recaptcha-response'=>'required|captcha'
         ]);
         
