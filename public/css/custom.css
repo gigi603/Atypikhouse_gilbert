@@ -225,6 +225,15 @@ nav.navbar.navbar-default {
     margin-bottom: 50px;
 }
 
+.cgu-title {
+	text-align: center;
+	margin: 10vh 0;
+}
+
+.cgu-content {
+	margin: 10vh 0 28vh 0;
+}
+
 .cgv-size {
 	width: 800px;
 	text-align: center;
