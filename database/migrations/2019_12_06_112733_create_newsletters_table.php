@@ -20,7 +20,7 @@ class CreateNewslettersTable extends Migration
             $table->string('adresse');
             $table->longText('description');
             $table->float('price');
-            $table->float('reduction');
+            $table->integer('reduction');
             $table->boolean('statut');
             $table->timestamps();
         });
