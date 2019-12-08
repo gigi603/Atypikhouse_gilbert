@@ -13,7 +13,7 @@ class HousesTableSeeder extends Seeder
     {
         $houses = [
             [
-                'title' => 'La cabane de sorcière',
+                'title' => 'La cabane dans les arbres',
                 'user_id' => 1,
                 'category_id' => 2,
                 'adresse' => '31 Rue des Peupliers, Paris, France',

@@ -13,7 +13,7 @@ class NewslettersTableSeeder extends Seeder
     {
         $newsletters = [
             [
-                'title' => 'Felicitation, vous êtes inscrit chez nous',
+                'title' => 'Réduction de la cabane dans les arbres',
                 'category_id' => 1,
                 'adresse' => '31 rue des peupliers 75013 Paris France',
                 'description' => 'Voici une promotion de 50% à ne pas rater, cette offre est valide du 1er décembre au 1er janvier',
