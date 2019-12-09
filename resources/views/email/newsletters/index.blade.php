@@ -1,0 +1,1 @@
+<h1>Voici une promotion pour l'annonce</h1>
