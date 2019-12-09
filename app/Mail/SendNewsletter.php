@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Newsletter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -16,9 +17,9 @@ class SendNewsletter extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Newsletter $newsletters)
     {
-        //
+        $this->newsletter = $newsletters;
     }
 
     /**
@@ -29,6 +30,7 @@ class SendNewsletter extends Mailable
     public function build()
     {
         return $this->from('gilbert.trinidad1@gmail.com')
-                ->view('email.newsletters.index');
+            ->subject('Nouvelles promotion sur Atypikhouse')
+            ->view('email.newsletters.index')->with('newsletters', $newsletters);
     }
 }

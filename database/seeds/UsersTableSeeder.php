@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             [
                 'nom' => 'Trinidad',
                 'prenom' => 'Gilbert',
-                'email' => 'gilbert.trinidad1@gmail.com',
+                'email' => 'gilbert.trinidad@gmail.com',
                 'password' => bcrypt('kronos603'),
                 'verified' => 0,
                 'email_token' => null,
