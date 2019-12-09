@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('kronos603'),
                 'verified' => 0,
                 'email_token' => null,
+                'date_birth' => '1980-10-04',
                 'statut' => 1,
                 'newsletter' => true
             ],
@@ -29,6 +30,7 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('kronos603'),
                 'verified' => 0,
                 'email_token' => null,
+                'date_birth' => '1990-12-05',
                 'statut' => 1,
                 'newsletter' => false
             ]

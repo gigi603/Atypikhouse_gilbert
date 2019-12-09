@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
 use Mail;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -81,6 +82,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'email_token' => base64_encode($data['email']),
+            'date_birth' => $data['date_birth'],
             'statut' => 1,
         ]);
     }
@@ -94,7 +96,7 @@ class RegisterController extends Controller
     protected function register(Request $request)
     {
         try {
-            $input = $request->all();
+           $input = $request->all();
 
             $validator = $this->validate($request, [
                 'nom' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
@@ -104,6 +106,7 @@ class RegisterController extends Controller
                 'password' => 'required|min:8|max:30',
                 'password_confirmation' => 'required|same:password|max:30',
                 'majeur' => 'accepted',
+                'date_birth' => 'required|date|before:'.Carbon::now()->subYears(18),
                 'newsletter' => 'boolean',
                 'g-recaptcha-response'=>'required|captcha'
             ]);
@@ -120,30 +123,33 @@ class RegisterController extends Controller
             $user->nom = $data["nom"];
             $user->prenom = $data["prenom"];
             $user->email_token = str_random(25);
-            $user->newsletter = $request->newsletter;
-            $user->newsletter = $request->input('newsletter') ? 1 : 0;
-            $user->save();
+            var_dump($request->dob);
+            // $request->date_birth = $request->dob;
+            // $user->date_birth = $request->date_birth;
+            // $user->newsletter = $request->newsletter;
+            // $user->newsletter = $request->input('newsletter') ? 1 : 0;
+            // $user->save();
 
-            $message = new message;
-            $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
-            $message->user_id = $user->id;
-            $message->save();
+            // $message = new message;
+            // $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
+            // $message->user_id = $user->id;
+            // $message->save();
             
-            //Envoyer une notification à l'admin
-            $post = new post;
-            $post->name = $user->nom.' '.$user->prenom;
-            $post->email = $user->email;
-            $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
-            $post->type = "utilisateur";
-            $post->house_id = 0;
-            $post->reservation_id = 0;
-            $post->save();
+            // //Envoyer une notification à l'admin
+            // $post = new post;
+            // $post->name = $user->nom.' '.$user->prenom;
+            // $post->email = $user->email;
+            // $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
+            // $post->type = "utilisateur";
+            // $post->house_id = 0;
+            // $post->reservation_id = 0;
+            // $post->save();
             
-            $admins = Admin::all();
-            foreach ($admins as $admin) {
-                $admin->notify(new ReplyToUser($post));
-            }
-            return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
+            // $admins = Admin::all();
+            // foreach ($admins as $admin) {
+            //     $admin->notify(new ReplyToUser($post));
+            // }
+            // return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
         } catch (Exception $e) { 
             abort(404);
         }

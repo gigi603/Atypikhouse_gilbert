@@ -91,6 +91,18 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Date de début</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="{{$start_date}}" />
+                                {{-- <input id="name" type="text" class="form-control" name="start_date" maxlength="40" autofocus value="{{ old('start_date') }}"> --}}
+                                @if ($errors->has('start_date'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('start_date') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group">
                             <p>Le site accessible par l’url www.atypikhouse.fr est exploité dans le respect de la législation française. L'utilisation de ce site est régie par les présentes conditions générales. En utilisant le site, vous reconnaissez avoir 18 ans ou plus et avoir pris connaissance de ces conditions et les avoir acceptées. Celles-ci pourront êtres modifiées à tout moment et sans préavis par la société Nom de la boite. Eurodev Agency ne saurait être tenu pour responsable en aucune manière d’une mauvaise utilisation du service.</p>
                         </div>
@@ -136,4 +148,10 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script>let site = "{{env('APP_URL_SITE')}}";</script>
+    <script src="{{ asset('js/calendarSubscribeUser.js') }}"></script>
 @endsection
