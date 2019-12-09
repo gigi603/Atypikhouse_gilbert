@@ -61,6 +61,7 @@ class RegisterController extends Controller
             'prenom' => 'required|alpha|max:50',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'newsletter' => 'boolean',
             'majeur' => 'accepted',
             'g-recaptcha-response' => 'required|captcha'
         ]);
@@ -79,8 +80,8 @@ class RegisterController extends Controller
             'prenom' => $data['prenom'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            //'majeur' => $data['majeur'],
-            'email_token' => base64_encode($data['email'])
+            'email_token' => base64_encode($data['email']),
+            'statut' => 1,
         ]);
     }
     /**
@@ -92,50 +93,67 @@ class RegisterController extends Controller
 
     protected function register(Request $request)
     {
-        $input = $request->all();
+        try {
+            $input = $request->all();
 
-        $validator = $this->validate($request, [
-            'nom' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
-            'prenom' => 'required|min:1|max:30|regex:/^[\pL\s\-]+$/u',
-            'email' => 'required|unique:users|max:30',
-            'email_confirmation' => 'required|same:email|max:30',
-            'password' => 'required|min:8|max:30',
-            'password_confirmation' => 'required|same:password|max:30',
-            'majeur' => 'accepted',
-            'newsletter' => 'boolean',
-            'g-recaptcha-response'=>'required|captcha'
-        ]);
-        
-        $data = $this->create($input)->toArray();
+            $validator = $this->validate($request, [
+                'nom' => 'required|max:30|regex:/^[\pL\s\-]+$/u',
+                'prenom' => 'required|min:1|max:30|regex:/^[\pL\s\-]+$/u',
+                'email' => 'required|unique:users|max:30',
+                'email_confirmation' => 'required|same:email|max:30',
+                'password' => 'required|min:8|max:30',
+                'password_confirmation' => 'required|same:password|max:30',
+                'majeur' => 'accepted',
+                'newsletter' => 'boolean',
+                'g-recaptcha-response'=>'required|captcha'
+            ]);
 
-        $data['email_token'] = str_random(25);
+            // if (isset($request->newsletter)) {
+            //     $request->newsletter = 1;
+            // } else {
+            //     $request->newsletter = 0;
+            // }
+            $data = $this->create($input)->toArray();
+    
+            $user = User::find($data['id']);
+            $user->email_token = $data['email_token'];
+            $user->nom = $data["nom"];
+            $user->prenom = $data["prenom"];
+            $user->email_token = str_random(25);
+            $user->newsletter = $request->newsletter;
+            $user->newsletter = $request->input('newsletter') ? 1 : 0;
+            $user->save();
 
-        $user = User::find($data['id']);
-        $user->email_token = $data['email_token'];
-        $user->prenom = $data["prenom"];
-        //$user->majeur = $request['majeur'];
-        $user->save();
-        $message = new message;
-        $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
-        $message->user_id = $user->id;
-        $message->admin_id = "1";
-        $message->save();
-        
-        //Envoyer une notification à l'admin
-        $post = new post;
-        $post->name = $user->nom.' '.$user->prenom;
-        $post->email = $user->email;
-        $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
-        $post->type = "utilisateur";
-        $post->house_id = 0;
-        $post->save();
-        
-        $admins = Admin::all();
-        foreach ($admins as $admin) {
-            $admin->notify(new ReplyToUser($post));
+            $message = new message;
+            $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
+            $message->user_id = $user->id;
+            $message->save();
+            
+            //Envoyer une notification à l'admin
+            $post = new post;
+            $post->name = $user->nom.' '.$user->prenom;
+            $post->email = $user->email;
+            $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
+            $post->type = "utilisateur";
+            $post->house_id = 0;
+            $post->reservation_id = 0;
+            $post->save();
+            
+            $admins = Admin::all();
+            foreach ($admins as $admin) {
+                $admin->notify(new ReplyToUser($post));
+            }
+            return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
+        } catch (Exception $e) { 
+            abort(404);
         }
+        // 
+        
+        
+        
+       
 
-        return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
+        
     }
 
     public function confirmation($email_token) {

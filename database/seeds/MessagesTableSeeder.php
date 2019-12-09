@@ -14,12 +14,10 @@ class MessagesTableSeeder extends Seeder
         $messages = [
             [
                 'content' => 'Felicitation, vous êtes inscrit chez nous',
-                'admin_id' => 1,
                 'user_id' => 1
             ],
             [
                 'content' => 'L\'administrateur a rajouté une nouvelle propriété à votre annonce',
-                'admin_id' => 1,
                 'user_id' => 2
             ]
         ];
