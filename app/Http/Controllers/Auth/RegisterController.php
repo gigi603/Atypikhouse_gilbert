@@ -62,8 +62,9 @@ class RegisterController extends Controller
             'prenom' => 'required|alpha|max:50',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'date_birth' => 'required|date_format:d/m/Y|before:'.Carbon::now()->subYears(18),
             'newsletter' => 'boolean',
-            'majeur' => 'accepted',
+            'conditions' => 'accepted',
             'g-recaptcha-response' => 'required|captcha'
         ]);
     }
@@ -76,6 +77,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $data['date_birth'] = Carbon::parse($data['date_birth'])->format('Y-m-d');
         return User::create([
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
@@ -105,8 +107,8 @@ class RegisterController extends Controller
                 'email_confirmation' => 'required|same:email|max:30',
                 'password' => 'required|min:8|max:30',
                 'password_confirmation' => 'required|same:password|max:30',
-                'majeur' => 'accepted',
-                'date_birth' => 'required|date|before:'.Carbon::now()->subYears(18),
+                'conditions' => 'accepted',
+                'date_birth' => 'required|date_format:d/m/Y|before:'.Carbon::now()->subYears(18),
                 'newsletter' => 'boolean',
                 'g-recaptcha-response'=>'required|captcha'
             ]);
@@ -122,34 +124,33 @@ class RegisterController extends Controller
             $user->email_token = $data['email_token'];
             $user->nom = $data["nom"];
             $user->prenom = $data["prenom"];
+            $data["date_birth"] = Carbon::parse($request->date_birth)->format('Y-d-m');
+            $user->date_birth = $data["date_birth"];
+            var_dump($user->date_birth);
             $user->email_token = str_random(25);
-            var_dump($request->dob);
-            // $request->date_birth = $request->dob;
-            // $user->date_birth = $request->date_birth;
-            // $user->newsletter = $request->newsletter;
-            // $user->newsletter = $request->input('newsletter') ? 1 : 0;
-            // $user->save();
+            $user->newsletter = $request->input('newsletter') ? 1 : 0;
+            $user->save();
 
-            // $message = new message;
-            // $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
-            // $message->user_id = $user->id;
-            // $message->save();
+            $message = new message;
+            $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
+            $message->user_id = $user->id;
+            $message->save();
             
-            // //Envoyer une notification à l'admin
-            // $post = new post;
-            // $post->name = $user->nom.' '.$user->prenom;
-            // $post->email = $user->email;
-            // $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
-            // $post->type = "utilisateur";
-            // $post->house_id = 0;
-            // $post->reservation_id = 0;
-            // $post->save();
+            //Envoyer une notification à l'admin
+            $post = new post;
+            $post->name = $user->nom.' '.$user->prenom;
+            $post->email = $user->email;
+            $post->content = "Un nouvel utilisateur qui se nomme ".$user->prenom." ".$user->nom." vient de s'inscrire sur le site";
+            $post->type = "utilisateur";
+            $post->house_id = 0;
+            $post->reservation_id = 0;
+            $post->save();
             
-            // $admins = Admin::all();
-            // foreach ($admins as $admin) {
-            //     $admin->notify(new ReplyToUser($post));
-            // }
-            // return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
+            $admins = Admin::all();
+            foreach ($admins as $admin) {
+                $admin->notify(new ReplyToUser($post));
+            }
+            return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
         } catch (Exception $e) { 
             abort(404);
         }

@@ -17,10 +17,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nom', 'prenom', 'email', 'password', 'email_token', 'verified', 'newsletter'
+        'nom', 'prenom', 'email', 'password', 'email_token', 'verified', 'newsletter', 'date_birth'
     ];
 
-    protected $dates = ['start_date'];
+    //protected $dates = ['start_date'];
 
 
     /**

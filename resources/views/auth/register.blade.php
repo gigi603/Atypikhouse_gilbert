@@ -91,14 +91,13 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Date de début</label>
+                        <div class="form-group{{ $errors->has('date_birth') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Date de naissance</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="from" placeholder="Date de début" name="start_date" value="{{$start_date}}" />
-                                {{-- <input id="name" type="text" class="form-control" name="start_date" maxlength="40" autofocus value="{{ old('start_date') }}"> --}}
-                                @if ($errors->has('start_date'))
+                                <input type="text" class="form-control" id="birthday" placeholder="Date de début" name="date_birth" value="{{ old('date_birth') }}" />
+                                @if ($errors->has('date_birth'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('start_date') }}</strong>
+                                        <strong>{{ $errors->first('date_birth') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -109,12 +108,12 @@
                         <div class="form-group">
                             <p>Nous vous enverrons des promotions commerciales, des offres spéciales, des idées de voyage et des informations réglementaires par e-mail à conditions de cocher la case autorisant notre équipe à vous envoyer des newsletters</p>
                         </div>
-                        <div class="form-check{{ $errors->has('majeur') ? ' has-error' : '' }} text-center">
-                            <input type="checkbox" class="form-check-input" name="majeur" value="true" {{ !old('majeur') ?: 'checked' }}>
+                        <div class="form-check{{ $errors->has('conditions') ? ' has-error' : '' }} text-center">
+                            <input type="checkbox" class="form-check-input" name="conditions" value="true" {{ !old('conditions') ?: 'checked' }}>
                             <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales</label>
-                            @if ($errors->has('majeur'))
+                            @if ($errors->has('conditions'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('majeur') }}</strong>
+                                    <strong>{{ $errors->first('conditions') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -152,6 +151,6 @@
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-    <script>let site = "{{env('APP_URL_SITE')}}";</script>
+    {{-- <script>let site = "{{env('APP_URL_SITE')}}";</script> --}}
     <script src="{{ asset('js/calendarSubscribeUser.js') }}"></script>
 @endsection

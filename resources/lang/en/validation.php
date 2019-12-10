@@ -133,8 +133,13 @@ return [
             'required' => 'Vous devez confirmer votre mot de passe',
             'same' => "Votre mot de passe doit être identique"   
         ],
-        'majeur' => [
-            'accepted' => 'Vous devez avoir minimum 18 ans pour vous inscrire'
+        'date_birth' => [
+            'required' => 'Vous devez saisir votre date de naissance',
+            'date_format' => 'Vous devez saisir une date au bon format en cliquant sur le calendrier',
+            'before' => 'Vous devez avoir minimum 18 ans pour vous inscrire'
+        ],
+        'conditions' => [
+            'accepted' => "Vous devez accepter les conditions générales d'utilisation pour pouvoir vous inscrire",
         ],
         'g-recaptcha-response' => [
             'required' => 'Vous devez valider le captcha',
