@@ -1,71 +1,25 @@
 $(function () {
     var disableddates = [];
 
-    // fromTo = $("#from")
-    //         .datepicker({
-    //             defaultDate: null,
-    //             changeMonth: true,
-    //             changeYear: true,
-    //             numberOfMonths: 1,
-    //             dateFormat: 'dd/mm/yy',
-    //             minDate: 0,
-    //             prevText: 'Précédent',
-    //             nextText: 'Suivant',
-    //             currentText: 'Aujourd\'hui',
-    //             monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-    //             monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-    //             dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-    //             dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-    //             dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
-    //             autoclose: true,
-    //             onSelect: function(dateText, inst){
-    //                 let startDateAnnonce = new Date($("#from").datepicker("getDate"));
-    //                 //console.log(startDate);
-    //                 let endDate = new Date($("#from").datepicker("getDate"));
-    //                 endDate.setDate(endDate.getDate() + 1);
-    //                 $("#to").datepicker("option","minDate",
-    //                 endDate);
-    //             }      
-    //         })
-            
-    //     toHome = $("#to").datepicker({
-    //         defaultDate: null,
-    //         changeMonth: true,
-    //         changeYear: true,
-    //         numberOfMonths: 1,
-    //         dateFormat: 'dd/mm/yy',
-    //         minDate: 0,
-    //         prevText: 'Précédent',
-    //         nextText: 'Suivant',
-    //         currentText: 'Aujourd\'hui',
-    //         monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-    //         monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-    //         dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-    //         dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-    //         dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
-    //     })
-    //     .on("change", function () {  
-    //     });
+    birthday = $("#birthday").datepicker({
+        defaultDate: null,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '1980:2019',
+        dateFormat: 'dd/mm/yy',
+        // minDate: 0,
+        prevText: 'Précédent',
+        nextText: 'Suivant',
+        currentText: 'Aujourd\'hui',
+        monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+        dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+        dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+    })
+    .on("change", function () {  
+    });
 
-        birthday = $("#birthday").datepicker({
-            defaultDate: null,
-            changeMonth: true,
-            changeYear: true,
-            yearRange: '1980:2019',
-            dateFormat: 'dd/mm/yy',
-            // minDate: 0,
-            prevText: 'Précédent',
-            nextText: 'Suivant',
-            currentText: 'Aujourd\'hui',
-            monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
-            monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
-            dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
-            dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
-            dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
-        })
-        .on("change", function () {  
-        });
-    
     function getDate(element) {
         var date;
         try {
