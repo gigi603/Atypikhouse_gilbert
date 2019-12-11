@@ -37,18 +37,6 @@ class HomeController extends Controller
                            ->with('categories', $categories);
     }
 
-    public function searchHouses(SearchRequest $request)
-    {
-        $today = Date::today()->format('Y-m-d');
-        $houses = house::with('valuecatproprietes', 'proprietes', 'category')
-        ->where('disponible', 'oui')
-        ->orderBy('id', 'desc')
-        ->get();
-        $categories = category::all();
-        return view('houses.index')
-            ->with('houses', $houses)
-            ->with('categories', $categories);
-    }
     public function apropos() {
         return view('apropos');
     }

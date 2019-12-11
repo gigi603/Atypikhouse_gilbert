@@ -30,15 +30,12 @@ class QueryController extends Controller
         
         $houses = house::with('valuecatproprietes', 'proprietes', 'category')
         ->where('statut', 'Validé')
-        ->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
-        ->where('start_date', '<=', $start_date)
         ->where('end_date', '>=', $end_date)
         ->where('category_id', '=', $request->category_id)
         ->where('nb_personnes', '>=', $request->nb_personnes)
         ->where('disponible', '=', "oui")
         ->get();
-        ($houses);
         return view('houses.index')->with('houses', $houses)
                                    ->with('categories', $categories)
                                    ->with('datas', $datas);
