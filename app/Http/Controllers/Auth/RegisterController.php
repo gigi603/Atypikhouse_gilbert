@@ -131,7 +131,8 @@ class RegisterController extends Controller
             $user->email_token = str_random(25);
             $user->newsletter = $request->input('newsletter') ? 1 : 0;
             $user->save();
-
+            
+            //Après avoir inscrit l'utilisateur, l'utilisateur recoit une notification
             $message = new message;
             $message->content = "Bienvenue ".$user->prenom.", vous pouvez dès à présent créer des annonces en tant que propriétaire ou bien réserver des hébergements, notre équipe vous remercie.";
             $message->user_id = $user->id;

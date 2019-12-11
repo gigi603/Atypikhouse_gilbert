@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="nom" value="{{ old('nom') }}">
+                                <input id="name" type="text" class="form-control" name="nom" placeholder="Nom" value="{{ old('nom') }}">
 
                                 @if ($errors->has('nom'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="name" class="col-md-4 control-label">Prenom</label>
 
                             <div class="col-md-6">
-                                <input id="prenom" type="text" class="form-control" name="prenom" value="{{ old('prenom') }}">
+                                <input id="prenom" type="text" class="form-control" name="prenom" placeholder="Prénom" value="{{ old('prenom') }}">
 
                                 @if ($errors->has('prenom'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@
                             <label for="email-confirm" class="col-md-4 control-label">Confirmer email</label>
 
                             <div class="col-md-6">
-                                <input id="email-confirm" type="email" class="form-control" name="email_confirmation" value="{{ old('email_confirmation') }}">
+                                <input id="email-confirm" type="email" class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
                                 @if ($errors->has('email_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email_confirmation') }}</strong>
@@ -69,7 +69,7 @@
                             <label for="password" class="col-md-4 control-label">Mot de passe</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" class="form-control" placeholder="Mot de passe" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -83,7 +83,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirmer mot de passe</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmez votre mot de passe">
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>

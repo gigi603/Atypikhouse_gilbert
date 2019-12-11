@@ -55,9 +55,9 @@
         </div>
         {!! Form::submit('Rechercher',array('class'=>'btn btn-searchbar')) !!}
                 
-        {!! Form::close() !!}
-        @section('script')
+{!! Form::close() !!}
+@section('script')
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('js/calendarHome.js') }}"></script>
-    @endsection
+@endsection
