@@ -45,33 +45,26 @@ class HomeController extends Controller
         ->orderBy('id', 'desc')
         ->get();
         $categories = category::all();
-        //$datas = $request->flashOnly(['ville', 'category_id', 'start_date', 'end_date', 'nb_personnes']);
-        return view('houses.index')->with('houses', $houses)
-                           ->with('categories', $categories);
-                           //->with('datas', $datas);
+        return view('houses.index')
+            ->with('houses', $houses)
+            ->with('categories', $categories);
     }
     public function apropos() {
-        $categories = category::all();
-        return view('apropos')->with('categories', $categories);
+        return view('apropos');
     }
     public function mentions_legales() {
-        $categories = category::all();
-        return view('mentions_legales')->with('categories', $categories);
+        return view('mentions_legales');
     }
     public function politique_de_confidentialite() {
-        $categories = category::all();
-        return view('politique_de_confidentialite')->with('categories', $categories);
+        return view('politique_de_confidentialite');
     }
     public function cgu() {
-        $categories = category::all();
-        return view('cgu')->with('categories', $categories);
+        return view('cgu');
     }
     public function rgpd() {
-        $categories = category::all();
-        return view('rgpd')->with('categories', $categories);
+        return view('rgpd');
     }
     public function faq() {
-        $categories = category::all();
-        return view('faq')->with('categories', $categories);
+        return view('faq');
     }
 }
