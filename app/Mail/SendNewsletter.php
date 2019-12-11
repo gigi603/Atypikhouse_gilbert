@@ -17,9 +17,13 @@ class SendNewsletter extends Mailable
      *
      * @return void
      */
-    public function __construct(Newsletter $newsletters)
+    public $newsletter;
+
+    public function __construct(Newsletter $newsletter)
     {
-        $this->newsletter = $newsletters;
+        $this->newsletter = newsletter::find(1);
+        $newsletter = $this->newsletter;
+        //var_dump($newsletter);
     }
 
     /**
@@ -31,6 +35,7 @@ class SendNewsletter extends Mailable
     {
         return $this->from('gilbert.trinidad1@gmail.com')
             ->subject('Nouvelles promotion sur Atypikhouse')
-            ->view('email.newsletters.index')->with('newsletters', $newsletters);
+            ->view('email.newsletters.index');
+        //->with('newsletter', $newsletter);
     }
 }

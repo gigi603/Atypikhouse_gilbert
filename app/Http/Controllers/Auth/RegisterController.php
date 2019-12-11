@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Jobs\SendVerificationEmail;
 use App\User;
+use App\Newsletter;
 use App\Message;
 use App\Post;
 use App\Admin;
@@ -14,7 +15,8 @@ use App\Mail\EmailVerification;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Validator;
-use Mail;
+use App\Mail\SendNewsletter;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
 class RegisterController extends Controller
@@ -126,7 +128,6 @@ class RegisterController extends Controller
             $user->prenom = $data["prenom"];
             $data["date_birth"] = Carbon::parse($request->date_birth)->format('Y-d-m');
             $user->date_birth = $data["date_birth"];
-            var_dump($user->date_birth);
             $user->email_token = str_random(25);
             $user->newsletter = $request->input('newsletter') ? 1 : 0;
             $user->save();
@@ -149,6 +150,12 @@ class RegisterController extends Controller
             $admins = Admin::all();
             foreach ($admins as $admin) {
                 $admin->notify(new ReplyToUser($post));
+            }
+            if($user->newsletter == 1) {
+                $newsletters = newsletter::all();
+                foreach($newsletters as $newsletter){
+                    Mail::to($user->email)->send(new SendNewsletter($newsletter));
+                }
             }
             return redirect(route('login'))->with('status', 'Merci pour votre inscription, vous pouvez dès à présent vous connecter sur le site.');
         } catch (Exception $e) { 

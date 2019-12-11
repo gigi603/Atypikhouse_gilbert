@@ -311,7 +311,6 @@ class HousesController extends Controller
         $message = new message;
         $message->content = "Vous avez bien créé l'annonce ".$house->title.", notre équipe va vérifier le contenu et vous enverra un message, une fois votre annonce validée par notre équipe, elle sera consultable sur le site dans nos hébergements";
         $message->user_id = $house->user_id;
-        $message->admin_id = Auth::user()->id;
         $message->save();
 
         $post = new post;

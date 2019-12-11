@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.googlemail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'gilbert.trinidad1@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Gilbert Trinidad'),
+        'name' => env('MAIL_FROM_NAME', 'gilbert'),
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
