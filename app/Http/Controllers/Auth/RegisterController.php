@@ -162,13 +162,14 @@ class RegisterController extends Controller
         } catch (Exception $e) { 
             abort(404);
         }
-        // 
-        
-        
-        
-       
+        //    
+    }
 
-        
+    public function sendmail(){
+        $newsletters = newsletter::all();
+        foreach($newsletters as $newsletter){
+            Mail::to('gilbert.trinidad1@gmail.com')->send(new SendNewsletter($newsletter));
+        }
     }
 
     public function confirmation($email_token) {

@@ -35,6 +35,7 @@ Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/politique_de_confidentialite', 'HomeController@politique_de_confidentialite')->name('politique_de_confidentialite');
 Route::get('/cgu', 'HomeController@cgu')->name('cgu');
 Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
+Route::get('/sendmail', 'Auth\RegisterController@sendmail')->name('user.sendmail');
 
 // admin route for our multi-auth system
 Route::get('/search', 'QueryController@index');
@@ -169,7 +170,7 @@ Route::middleware(['auth'])->group( function () {
     Route::get('/house/create_step5', 'HousesController@create_step5')->name('house.create_step5');
     Route::post('/house/postcreate_step5', 'HousesController@postcreate_step5')->name('house.postcreate_step5');
     Route::get('/house/confirmation_create_house', 'HousesController@confirmation_create_house')->name('house.confirmation_create_house');
-    
+
     
     //User houses
     Route::get('/user/houses', 'UsersController@houses')->name('user.houses');

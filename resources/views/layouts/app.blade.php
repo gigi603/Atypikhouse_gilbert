@@ -17,18 +17,15 @@
         <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
         <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
-        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 
-        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-        
-        {!! NoCaptcha::renderJs() !!}
+        {{-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" /> --}}
     </head>
     <body>
         <div id="app">
@@ -154,33 +151,8 @@
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('js/user.js') }}"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-        <script>
-            window.addEventListener("load", function(){
-                window.cookieconsent.initialise({
-                    "palette": {
-                        "popup": {
-                        "background": "#efefef",
-                        "text": "#404040"
-                        },
-                        "button": {
-                        "background": "#8ec760",
-                        "text": "#ffffff"
-                        }
-                    },
-                    "type": "opt-in",
-                    "content": {
-                        "message": "Atypikhouse utilise des cookies. Nos partenaires et nous-mêmes exploitons différentes technologies, telles que celle des cookies, et traitons vos données à caractère personnel, telles que les adresses IP et les identifiants de cookie, afin de personnaliser les publicités et les contenus en fonction de vos centres d’intérêt, d’évaluer la performance de ces publicités et contenus, et de recueillir des informations sur les publics qui les ont visionnés. Cliquez ci-dessous si vous consentez à l’utilisation de cette technologie et au traitement de vos données à caractère personnel en vue de ces objectifs. Vous pouvez changer d’avis et modifier votre consentement à tout moment en revenant sur ce site. Vous pouvez voir notre politique de confidentialité",
-                        "dismiss": "Got it",
-                        "allow": "Accepter les cookies",
-                        "deny": "Refuser",
-                        "link": "ici",
-                        "href": "{{ route('politique_de_confidentialite') }}",
-                        "policy": 'Cookies',
-                    }
-                });
-            });
-        </script>
+        <script src="{{ asset('js/cookieconsent.min.js') }}"></script>
+        <script src="{{ asset('js/cookie.js') }}"></script>
         @yield('script')
     </body>
 </html>

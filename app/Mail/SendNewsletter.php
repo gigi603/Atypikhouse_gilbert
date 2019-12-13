@@ -17,13 +17,11 @@ class SendNewsletter extends Mailable
      *
      * @return void
      */
-    public $newsletter;
+    protected $newsletter;
 
     public function __construct(Newsletter $newsletter)
     {
-        $this->newsletter = newsletter::find(1);
-        $newsletter = $this->newsletter;
-        //var_dump($newsletter);
+        $this->newsletter = $newsletter;
     }
 
     /**
@@ -33,9 +31,17 @@ class SendNewsletter extends Mailable
      */
     public function build()
     {
+        $newsletter = $this->newsletter;
+        // dd('coco', $newsletter->price);
         return $this->from('gilbert.trinidad1@gmail.com')
             ->subject('Nouvelles promotion sur Atypikhouse')
-            ->view('email.newsletters.index');
-        //->with('newsletter', $newsletter);
+            ->view('email.newsletters.index')
+            ->with([
+                'newsletterTitle' => $newsletter->title,
+                'newsletterReduction' => $newsletter->reduction,
+                'newsletterPrice' => $newsletter->price,
+                'newsletterAdresse' => $newsletter->adresse,
+                'newsletterDescription' => $newsletter->description
+            ]);
     }
 }

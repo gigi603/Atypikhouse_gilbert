@@ -122,7 +122,6 @@
 
                             <div class="col-md-6">
                             {!! NoCaptcha::display() !!}
-
                                 @if ($errors->has('g-recaptcha-response'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
@@ -149,6 +148,7 @@
 </div>
 @endsection
 @section('script')
+    <script src="{{ asset('js/recaptcha.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/calendarSubscribeUser.js') }}"></script>
