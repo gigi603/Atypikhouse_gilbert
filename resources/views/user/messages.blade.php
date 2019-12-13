@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="col-sm-3 text-right">
                                     @if($message->user_id != "0")
-                                        <small>Envoyé par {{ $message->admin->name }}</small><br/>
+                                        <small>Envoyé par un administrateur</small><br/>
                                     @endif
                                 </div>
                             </div>
