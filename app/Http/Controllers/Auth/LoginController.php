@@ -1,7 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Auth;
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -9,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use App;
 // use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // namespace Illuminate\Foundation\Auth;
 //use Illuminate\Support\Facades\Auth;
@@ -31,9 +30,10 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if (env('APP_URL_SITE') == 'http://127.0.0.1:8000') {
-            return '/';
-        } else {
+        if (App::environment() == 'local') {
+            return 'http://127.0.0.1:8000/';
+        }
+        if (App::environment() == 'production') {
             return 'https://www.atypikhouse-projet.ovh/';
         }
     }
