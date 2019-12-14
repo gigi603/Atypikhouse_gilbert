@@ -182,7 +182,7 @@ class HousesController extends Controller
 
         
         if($request->nb_personne > 15 || $request->nb_personne < 0){
-            $request->nb_personne = ""; 
+            $request->nb_personne = "";
         } else {
             $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
             $request->session()->push('houseNbPersonnes', $request->nb_personnes);
@@ -201,10 +201,9 @@ class HousesController extends Controller
         $housePropriete = $request->session()->pull('houseProprietes');
         $houseProprieteId = $request->session()->pull('houseProprietesId'); 
 
-        $proprietesChecked = $request->input('propriete');        
+        $proprietesChecked = $request->input('propriete');
 
         $housePropriete = session('houseProprietes', $proprietesChecked);
-        var_dump($proprietesChecked);
         if($proprietesChecked != NULL){
             $i = 0;
             for($i=0;$i < count($proprietesChecked); $i++){
@@ -213,7 +212,7 @@ class HousesController extends Controller
             }
         }
         
-
+        var_dump($request->nb_personnes);
         return redirect('/house/create_step4');
     }
     

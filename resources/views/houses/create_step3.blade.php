@@ -24,7 +24,6 @@
                             </div>
                             <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Categorie</label>
-                                <p><?php echo($category);?></p>
                                 <div class="col-md-6">
                                     <select id="select_category" name="category_id" class="form-control">
                                         <option id="" value="0" autofocus>Choisissez votre categorie</option>
