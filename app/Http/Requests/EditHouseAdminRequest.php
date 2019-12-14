@@ -24,11 +24,11 @@ class EditHouseAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
+            'title' => 'required|max:50|regex:/^[\pL\s\-\']+$/u',
             'category' => 'required_if:category_id,0',
             'nb_personnes' => 'required',
             'price' => 'required|regex:/^[0-9]+$/u|max:4',
-            'adresse' => 'required|regex:/^[0-9\pL\s\-\,]+$/u|max:80',
+            'adresse' => 'required|regex:/^[0-9\pL\s\-\,\']+$/u|max:80',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',

@@ -118,7 +118,8 @@ class UsersController extends Controller
         $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
         
         $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
-        if(count($request->propriete) > 0){
+        var_dump($request->propriete);
+        if($request->propriete != NULL){
             foreach($request->propriete as $proprietes) {
                 var_dump($proprietes);       
                 $valuecatProprietesHouse = new valuecatPropriete;
