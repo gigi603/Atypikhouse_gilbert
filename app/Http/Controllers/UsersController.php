@@ -119,6 +119,9 @@ class UsersController extends Controller
         
         $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
         var_dump($request->propriete);
+        if($request->nb_personne > 15 || $request->nb_personne < 0){
+            $request->nb_personne = "";
+        }
         if($request->propriete != NULL){
             foreach($request->propriete as $proprietes) {
                 var_dump($proprietes);       
@@ -127,7 +130,7 @@ class UsersController extends Controller
                 $valuecatProprietesHouse->house_id = $house->id;
                 $valuecatProprietesHouse->propriete_id = $proprietes;
                 $valuecatProprietesHouse->save();
-            }   
+            }
         }
         return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
     }
