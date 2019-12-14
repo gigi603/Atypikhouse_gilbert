@@ -45,7 +45,6 @@
 </div>
 @endsection
 @section('script')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 @endsection
