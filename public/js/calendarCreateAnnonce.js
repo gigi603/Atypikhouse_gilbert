@@ -1,14 +1,14 @@
 $(function () {
-    var disableddates = ["05-3-2018", "05-11-2018", "05-25-2018", "05-20-2018"];
+    var disableddates = [];
 
     fromTo = $("#from")
             .datepicker({
                 defaultDate: null,
                 changeMonth: true,
                 changeYear: true,
-                numberOfMonths: 1,
                 dateFormat: 'dd/mm/yy',
                 minDate: 0,
+                yearRange: '2019:2020',
                 prevText: 'Précédent',
                 nextText: 'Suivant',
                 currentText: 'Aujourd\'hui',
@@ -32,9 +32,9 @@ $(function () {
             defaultDate: null,
             changeMonth: true,
             changeYear: true,
-            numberOfMonths: 1,
             dateFormat: 'dd/mm/yy',
             minDate: 0,
+            yearRange: '2019:2020',
             prevText: 'Précédent',
             nextText: 'Suivant',
             currentText: 'Aujourd\'hui',

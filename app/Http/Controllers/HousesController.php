@@ -285,10 +285,6 @@ class HousesController extends Controller
 
         $housePropriete = $request->session()->get('houseProprietes');
 
-        // $this->validate($request, [
-        //     'photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20000|dimensions:min_width=450,min_height=300',
-        // ]);
-
         $picture = $request->file('photo');
         $filename  = time() . '.' . $picture->getClientOriginalExtension();
         $path = public_path('img/houses/' . $filename);
