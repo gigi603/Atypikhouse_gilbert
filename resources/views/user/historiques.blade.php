@@ -3,7 +3,7 @@
 @section('content')
 @section('content')
 <div class="container list-category margin-top" role="historiques">
-    <h2 class="h2-title">Mes historiques</h2>
+    <h2 class="h2-title">Mes réservations passées</h2>
     <div class="row">
     @foreach ($historiques as $historique)
         <div class="col-lg-4 col-md-4">
@@ -32,10 +32,10 @@
                         <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
                         <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                         <p class="card-text"><?php echo(substr($historique->house->description, 0, 40));?></p>
-                        @if($historique->house->statut == "En attente de validation")
-                            <p>Statut: <span style="color:red;"><?php echo($historique->house->statut);?></span></p>
+                        @if($historique->reserved == 1)
+                            <p>Statut: <span style="color:green;">Réservé</span></p>
                         @else
-                            <p>Statut: <span style="color:green;"><?php echo($historique->house->statut);?></span></p>
+                            <p>Statut: <span style="color:red;">Annulée</span></p>
                         @endif
                     </div>
                 </div> 

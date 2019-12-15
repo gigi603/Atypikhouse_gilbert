@@ -30,6 +30,8 @@
                     <p> Adresse: {{$house->adresse}}</p>
                     @if($house->statut == "En attente de validation")
                         <p>Statut: <span style="color:red;"><?php echo($house->statut);?></span></p>
+                    @elseif(($house->statut == "Refusé"))
+                        <p>Statut: <span style="color:red;"><?php echo($house->statut);?></span></p>
                     @else
                         <p>Statut: <span style="color:green;"><?php echo($house->statut);?></span></p>
                     @endif    

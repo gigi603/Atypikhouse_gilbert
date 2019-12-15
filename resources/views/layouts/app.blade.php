@@ -92,7 +92,7 @@
                                     <li><a href="{{route('user.messages')}}">Mes notifications</a></li>
                                     <li><a href="{{route('user.houses')}}">Mes annonces</a></li>
                                     <li><a href="{{route('user.reservations')}}">Mes réservations</a></li>
-                                    <li><a href="{{route('user.historiques')}}">Mes historiques</a></li>
+                                    <li><a href="{{route('user.historiques')}}">Mes réservations passées</a></li>
                                     <li><a href="{{ url('/house/create_step1') }}">Ajouter une annonce</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"

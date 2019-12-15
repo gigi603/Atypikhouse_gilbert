@@ -37,7 +37,7 @@
                                 <a href="{{route('user.cancelreservation', $reservation['id']) }}" class="btn btn-danger delete-reservation">Annuler ma réservation</a>
                             </div>
                         @else
-                            <p>Statut: <span style="color:red;">Annulé</span></p>
+                            <p>Statut: <span style="color:red;">Annulée</span></p>
                         @endif
                     </div>
                 </div> 
