@@ -31,14 +31,14 @@
                         <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
                         <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                         <p class="card-text"><?php echo(substr($reservation->house->description, 0, 40));?></p>
-                        @if($reservation->house->statut == "En attente de validation")
-                            <p>Statut: <span style="color:red;"><?php echo($reservation->house->statut);?></span></p>
+                        @if($reservation->reserved == 1)
+                            <p>Statut: <span style="color:green;">Réservé</span></p>
+                            <div class="text-center">
+                                <a href="{{route('user.cancelreservation', $reservation['id']) }}" class="btn btn-danger delete-reservation">Annuler ma réservation</a>
+                            </div>
                         @else
-                            <p>Statut: <span style="color:green;"><?php echo($reservation->house->statut);?></span></p>
+                            <p>Statut: <span style="color:red;">Annulé</span></p>
                         @endif
-                        <div class="text-center">
-                            <a href="{{route('user.cancelreservation', $reservation['id']) }}" class="btn btn-danger delete-reservation">Annuler ma réservation</a>
-                        </div>
                     </div>
                 </div> 
             </div>
