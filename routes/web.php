@@ -105,7 +105,7 @@ Route::prefix('admin')->group(function () {
     //     auth()->user()->unreadNotifications->markAsRead();
     // });
     //Message de l'admin à l'utilisateur
-    Route::post('/addMessage', 'AdminController@addMessage')->name('admin.addMessage');
+    Route::post('/addMessage/{id}', 'AdminController@addMessage')->name('admin.addMessage');
 
     //Connexion et déconnexion
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

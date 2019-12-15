@@ -25,7 +25,7 @@ class CommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'comment' => 'required|max:255|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u'
+            'comment' => 'required|min:2|max:255|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u'
         ];
     }
 
@@ -39,6 +39,7 @@ class CommentRequest extends FormRequest
         return [
             'comment.required' => 'Veuillez saisir un commentaire',
             'comment.regex' => "Les caractères spéciaux permis sont : les ponctuations, apostrophes, accents, parenthèses, tirets et arobases",
+            'comment.min' => "Votre commentaire doit faire minimum 2 caractères",
             'comment.max' => "Votre commentaire ne doit pas depasser 255 caractères"
         ];
     }

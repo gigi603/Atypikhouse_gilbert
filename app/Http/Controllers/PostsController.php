@@ -39,6 +39,7 @@ class PostsController extends Controller
             $post->type = "message";
             $post->house_id = 0;
             $post->reservation_id = 0;
+            $post->user_id = Auth::user()->id;
             $post->save();
             
             $admins = Admin::all();

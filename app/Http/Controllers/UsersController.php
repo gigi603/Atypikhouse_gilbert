@@ -147,6 +147,8 @@ class UsersController extends Controller
             $post->content = "L'annonce ".$house->title." de ".$user->nom.' '.$user->prenom." a été supprimée";
             $post->type = "annonce";
             $post->house_id = $house->id;
+            $post->reservation_id = 0;
+            $post->user_id = $user->id;
 
             $post->save();
             $house->delete();
@@ -158,6 +160,8 @@ class UsersController extends Controller
             $post->content = "L'utilisateur ".$user->nom.' '.$user->prenom." veut supprimer l'annonce ".$house->title;
             $post->type = "annonce";
             $post->house_id = $house->id;
+            $post->reservation_id = 0;
+            $post->user_id = $user->id;
             $post->save();
             return redirect()->back()->with('success', "Votre demande a bien été pris en compte, étant donné que votre annonce est en ligne, un message sera envoyé à l'administrateur qui supprimera votre annonce. N'oubliez pas vérifier vos notifications");
         }
@@ -187,7 +191,7 @@ class UsersController extends Controller
 
     public function cancelreservation($id) {
         $today = Date::today()->format('Y-m-d');
-        
+
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)

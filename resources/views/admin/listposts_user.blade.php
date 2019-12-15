@@ -27,7 +27,7 @@
                 </thead>
                 @foreach($posts as $post)
                     @if($post["unread"] == true)
-                        <tbody style="background-color:green">
+                        <tbody style="background-color:#dff0d8">
                             <tr>
                                 <td>{{$post->name}}</td>
                                 <td>{{$post->email}}</td>

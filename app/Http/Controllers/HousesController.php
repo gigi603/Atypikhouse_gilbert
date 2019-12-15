@@ -315,6 +315,7 @@ class HousesController extends Controller
         $post->type = "annonce";
         $post->house_id = $house->id;
         $post->reservation_id = 0;
+        $post->user_id = Auth::user()->id;
         $post->save();
 
         $admins = Admin::all();

@@ -146,6 +146,7 @@ class RegisterController extends Controller
             $post->type = "utilisateur";
             $post->house_id = 0;
             $post->reservation_id = 0;
+            $post->user_id = $user->id;
             $post->save();
             
             $admins = Admin::all();

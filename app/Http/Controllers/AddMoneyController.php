@@ -92,6 +92,7 @@ class AddMoneyController extends Controller
             $post->type = "reservation";
             $post->house_id = 0;
             $post->reservation_id = $reservation->id;
+            $post->user_id = Auth::user()->id;
             $post->save();
 
             $admins = Admin::all();

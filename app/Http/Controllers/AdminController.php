@@ -17,6 +17,7 @@ use Auth;
 use Session;
 use Image;
 use App\Http\Requests\EditHouseAdminRequest;
+use App\Http\Requests\MessageRequest;
 use Jenssegers\Date\Date;
 use Carbon\Carbon;
 
@@ -629,11 +630,10 @@ class AdminController extends Controller
         return view('admin.user_messages')->with('messages', $messages)->with('user', $user);
     }
 
-    public function addMessage(Request $request) {
+    public function addMessage(MessageRequest $request, $id) {
         $message = new Message;
         $message->content = $request->content;
-        $message->user_id = $request->user_id;
-        $message->admin_id = Auth::user()->id;
+        $message->user_id = $id;
         $message->save();
         Session::flash('success', 'Votre message a bien été envoyé');
         return redirect()->back();

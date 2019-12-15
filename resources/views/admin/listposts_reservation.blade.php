@@ -26,7 +26,7 @@
                 </thead>
                 @foreach($posts as $post)
                     @if($post["unread"] == true)
-                        <tbody style="background-color:green">
+                        <tbody style="background-color:#dff0d8">
                             <tr>
                                 <td>{{$post->name}}</td>
                                 <td><a href="{{route('admin.showmessages_reservation', $post->id)}}" class="btn btn-primary">Voir la notification</a></td>
