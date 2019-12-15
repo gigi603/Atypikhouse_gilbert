@@ -169,7 +169,6 @@ class UsersController extends Controller
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
-        ->where('reserved', '=', 1)
         ->orderBy('id', 'desc')
         ->get();
         
@@ -188,17 +187,16 @@ class UsersController extends Controller
 
     public function cancelreservation($id) {
         $today = Date::today()->format('Y-m-d');
+        
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
-        ->where('reserved', '=', 1)
         ->orderBy('id', 'desc')
         ->get();
-        
-        $reservation = Reservation::find($id);
+
+        $reservation = reservation::find($id);
         $reservation->reserved = 0;
         $reservation->save();
-
         return view('user.reservations', compact('reservations'));
     }
 
