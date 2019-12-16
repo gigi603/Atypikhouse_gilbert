@@ -500,7 +500,7 @@ class AdminController extends Controller
 
     public function allreservations()
     {
-        $reservations = Reservation::where('end_date', '>=', Carbon::now())->orderBy('id', 'desc')->get();
+        $reservations = Reservation::where('end_date', '>=', Carbon::now())->where('reserved', '=', 1)->orderBy('id', 'desc')->get();
         return view('admin.allreservations')->with('reservations', $reservations);
     }
 
@@ -523,16 +523,31 @@ class AdminController extends Controller
                                               ->with('reservation', $reservation);
     }
 
+    public function allreservationscancel()
+    {
+        $reservations = Reservation::where('reserved', '=', 0)->orderBy('id', 'desc')->get();
+        return view('admin.allreservationscancel')->with('reservations', $reservations);
+    }
+
+    public function showreservationscancel($id)
+    {
+        $users = User::where('id', $id)->get();
+        $houses = House::where('user_id', $id)->get();
+        $reservation = reservation::find($id);
+        return view('admin.showreservationscancel')->with('houses', $houses)
+                                              ->with('users', $users)
+                                              ->with('reservation', $reservation);
+    }
+    
     //Liste des reservations des utilisateurs
-    public function listhistoriques()
+    public function allhistoriques()
     {
         $today = Date::today()->format('Y-m-d');
         $historiques = Reservation::with('house')->where([
-                                                    ['user_id', '=', $id],
                                                     ['start_date', '<', $today],
                                                     ['end_date', '<=', $today]
                                                 ])->get();
-        return view('admin.listhistoriques')->with('historiques', $historiques);
+        return view('admin.allhistoriques')->with('historiques', $historiques);
     }
 
     //Vue de détails des historiques des utilisateurs

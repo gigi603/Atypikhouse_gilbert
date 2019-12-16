@@ -1,19 +1,26 @@
 @extends('layouts.admin')
+@section('title', "Détails de la réservation passée")
 @section('content')
 <div class="admin-user-profil">
-    
-        <div class="container list-category">
-            <div class="panel panel-default">
-                <div class="panel-heading">Détails de l'historique</div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 mb-4">
-                                <div class="card h-100">
-                                    <img class="img-responsive img_house" src="{{ asset('img/houses/'.$historique->house->photo) }}"></a>
-                                    <div class="card-body">
-                                        <h4 class="title card-title text-center">
-                                            {{$historique->house->title}}
-                                        </h4>
+    @if (Session::has('success-valide'))
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        {{ Session::get('success-valide') }}
+    </div>
+    @endif
+    <div class="container list-category">
+        <div class="panel panel-default">
+            <div class="panel-heading">Détails de la réservation passée</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 mb-4">
+                            <div class="text-center">
+                                <img src="{{ asset('img/houses/'.$historique->house->photo) }}">
+                                <div class="card-center">
+                                    <h4 class="title card-title text-center">
+                                        {{$historique->house->title}}
+                                    </h4>
+                                    <div class="block-description">
                                         <h3 class="price">Total payé: {{$historique->total}}€ pour {{$historique->nb_personnes}} personnes</h3>
                                         <p>Type de bien : {{$historique->house->category->category}}</p>
                                         @foreach($historique->house->valuecatproprietes as $valuecatpropriete)
@@ -37,10 +44,10 @@
                 </div>
             </div>
         </div>
-    
+    </div>
 </div>
+@endsection
 @section('script')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 @endsection

@@ -201,7 +201,7 @@ class UsersController extends Controller
         $reservation = reservation::find($id);
         $reservation->reserved = 0;
         $reservation->save();
-        return view('user.reservations', compact('reservations'));
+        return redirect()->back()->with('success', "Votre demande a bien été pris en compte, votre réservation a bien été annulée");
     }
 
     public function historiques(Request $request)

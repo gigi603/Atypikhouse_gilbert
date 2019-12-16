@@ -53,11 +53,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/allreservations', 'AdminController@allreservations')->name('admin.allreservations');
 
     //Liste des historiques de reservations passées
-    Route::get('/listhistoriques', 'AdminController@listhistoriques')->name('admin.listhistoriques');
+    Route::get('/allhistoriques', 'AdminController@allhistoriques')->name('admin.allhistoriques');
 
-    //Liste des historiques de reservations annulées
+    //Liste des reservations annulées
     Route::get('/allreservationscancel', 'AdminController@allreservationscancel')->name('admin.allreservationscancel');
 
+    //Détails de la réservation annulée
+    Route::get('/showreservationscancel/{id}', 'AdminController@showreservationscancel')->name('admin.showreservationscancel');
+    
     //Commentaires de l'utilisateur
     Route::get('/listcomments/{id}', 'AdminController@listcomments')->name('admin.listcomments');
     Route::get('/comments/deleteComment/{id}', 'AdminController@deleteComment')->name('admin.deleteComment');

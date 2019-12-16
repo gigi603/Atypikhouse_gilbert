@@ -114,7 +114,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.listhistoriques') }}">
+        <a class="nav-link" href="{{ route('admin.allhistoriques') }}">
           <i class="fas fa-fw fa-folder"></i>
           <span>Réservations passées</span>
         </a>
