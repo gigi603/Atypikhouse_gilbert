@@ -538,14 +538,25 @@ class AdminController extends Controller
                                               ->with('users', $users)
                                               ->with('reservation', $reservation);
     }
-    
-    //Liste des reservations des utilisateurs
+
     public function allhistoriques()
     {
         $today = Date::today()->format('Y-m-d');
         $historiques = Reservation::with('house')->where([
                                                     ['start_date', '<', $today],
                                                     ['end_date', '<=', $today]
+                                                ])->get();
+        return view('admin.allhistoriques')->with('historiques', $historiques);
+    }
+
+    //Liste des reservations des utilisateurs
+    public function listhistoriques($id)
+    {
+        $today = Date::today()->format('Y-m-d');
+        $historiques = Reservation::with('house')->where([
+                                                    ['start_date', '<', $today],
+                                                    ['end_date', '<=', $today],
+                                                    ['user_id','=', $id]
                                                 ])->get();
         return view('admin.allhistoriques')->with('historiques', $historiques);
     }
@@ -560,6 +571,18 @@ class AdminController extends Controller
                                               ->with('user', $user)
                                               ->with('historique', $historique);
     }
+
+    //Liste des reservations des utilisateurs
+    public function listreservationscancel($id)
+    {
+        $today = Date::today()->format('Y-m-d');
+        $reservations = Reservation::with('house')->where([
+                                                    ['reserved', '=', 0],
+                                                    ['user_id','=', $id]
+                                                ])->get();
+        return view('admin.listreservationscancel')->with('reservations', $reservations);
+    }
+    
     public function allannonces()
     {
         $houses = House::where('disponible', "oui")->orderBy('id', 'desc')->get();

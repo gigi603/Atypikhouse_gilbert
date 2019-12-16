@@ -1,52 +1,45 @@
 @extends('layouts.admin')
+@section('title', 'Reservations')
 @section('content')
-<div class="admin-user-profil">
-    <div class="container list-category">
-        <h2>Réservations</h2>
-        <div class="row">
-        @foreach ($reservations as $reservation)
-            <div class="col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <div class="card h-100">
-                        <a href="{{action('AdminController@showreservations', $reservation['id'])}}"><img class="img-responsive img_house" src="{{ asset('img/houses/'.$reservation->house->photo) }}"></a>
-                        <div>
-                            <h4 class="title card-title text-center">
-                                <a href="{{route('admin.showreservations', $reservation['id']) }}">{{$reservation->house->title}}</a>
-                            </h4>
-                            <p class="price">Total payé: {{$reservation->total}}€ pour {{$reservation->nb_personnes}} personne(s)</p>
-                            <div class="card-infos">
-                                <p>Type de bien : {{$reservation->house->category->category}}</p>
-                                @foreach($reservation->house->valuecatproprietes as $valuecatpropriete)
-                                @if($loop->iteration > 0)
-                                    @if($valuecatpropriete->value == 0)
-                                    @else
-                                        <p>{{$valuecatpropriete->propriete->propriete}}: {{$valuecatpropriete->value}}</p> 
-                                    @endif
-                                @break   
-                                @endif      
-                            @endforeach      
-                                <p><?php echo(substr($reservation->house->description, 0, 40));?></p>   
-                                <p>Annulation gratuite !</p>
-                                <p> Adresse: {{$reservation->house->adresse}}</p>
-                            <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
-                            <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
-                            <p class="card-text"><?php echo(substr($reservation->house->description, 0, 40));?></p>
-                            @if($reservation->house->statut == "En attente de validation")
-                                <p>Statut: <span style="color:red;"><?php echo($reservation->house->statut);?></span></p>
-                            @else
-                                <p>Statut: <span style="color:green;"><?php echo($reservation->house->statut);?></span></p>
-                            @endif
-                        </div>
-                    </div> 
-                </div>
+    <div class="card mb-3">
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                {{ Session::get('success') }}
             </div>
-        
+        @endif
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Liste des réservations
         </div>
-        @endforeach
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Titre</th>
+                            <th>Date de début</th>
+                            <th>Date de fin</th>
+                            <th>Annonceur</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    @foreach ($reservations as $reservation)  
+                        <tbody>
+                            <tr>
+                                <td style="width:250px"><img src="{{ asset('img/houses/'.$reservation->house->photo) }}" class="photo-size"/></td>
+                                <td>{{$reservation->house->title}}</td>
+                                <td><?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?></td>
+                                <td><?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></td>
+                                <td>{{$reservation->user->prenom}} {{$reservation->user->nom}}</td>
+                                <td><a href="{{action('AdminController@showreservations', $reservation->id)}}" class="btn btn-primary btn-tableau">Voir</a><br/>
+                                {{-- <a href="{{action('AdminController@disableHouse', $reservation->id)}}" class="btn btn-danger delete-annonce">Supprimer</a></td> --}}
+                            </tr>
+                        </tbody>
+                    @endforeach
+                </table>         
+            </div>
+        </div>
     </div>
-</div>
-@section('script')
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
 @endsection

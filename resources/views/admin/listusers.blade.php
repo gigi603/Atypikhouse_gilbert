@@ -18,7 +18,8 @@
               <th>Profil</th>
               <th>Annonces</th>
               <th>Réservations</th>
-              <th>Historiques</th>
+              <th>Réservations passées</th>
+              <th>Réservations annulées</th>
               <th>Notifications</th>
             </tr>
           </thead>
@@ -35,7 +36,8 @@
                     <td><a href="{{action('AdminController@profilUser', $user['id'])}}" class="btn btn-primary">Profil</a></td>
                     <td><a href="{{action('AdminController@listannonces', $user['id'])}}" class="btn btn-success">Annonces</a></td>
                     <td><a href="{{action('AdminController@listreservations', $user['id'])}}" class="btn btn-info">Réservations</a></td>
-                    <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-info">Historiques</a></td>
+                    <td><a href="{{action('AdminController@listhistoriques', $user['id'])}}" class="btn btn-info">Réservations passées</a></td>
+                    <td><a href="{{action('AdminController@listreservationscancel', $user['id'])}}" class="btn btn-info">Réservations annulées</a></td>
                     <td><a href="{{action('AdminController@messages', $user['id'])}}" class="btn btn-info">Notifications</a></td>
                 </tr>
             </tbody>

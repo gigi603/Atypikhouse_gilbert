@@ -60,7 +60,7 @@ Route::prefix('admin')->group(function () {
 
     //Détails de la réservation annulée
     Route::get('/showreservationscancel/{id}', 'AdminController@showreservationscancel')->name('admin.showreservationscancel');
-    
+
     //Commentaires de l'utilisateur
     Route::get('/listcomments/{id}', 'AdminController@listcomments')->name('admin.listcomments');
     Route::get('/comments/deleteComment/{id}', 'AdminController@deleteComment')->name('admin.deleteComment');
@@ -74,8 +74,17 @@ Route::prefix('admin')->group(function () {
     //Vue de détails de la reservation de l'utilisateur
     Route::get('/showreservations/{id}', 'AdminController@showreservations')->name('admin.showreservations');
 
+    //Liste des réservations passées de l'utilisateur
+    Route::get('/listhistoriques/{id}', 'AdminController@listhistoriques')->name('admin.listhistoriques');
+
     //Vue de détails de l'historique de l'utilisateur
     Route::get('/showhistoriques/{id}', 'AdminController@showhistoriques')->name('admin.showhistoriques');
+
+    //Liste des réservations passées de l'utilisateur
+    Route::get('/listreservationscancel/{id}', 'AdminController@listreservationscancel')->name('admin.listreservationscancel');
+
+    //Vue de détails de l'historique de l'utilisateur
+    Route::get('/showreservationscancel/{id}', 'AdminController@showreservationscancel')->name('admin.showreservationscancel');
 
     //Liste des annonces de l'utilisateur
     Route::get('/listannonces/{id}', 'AdminController@listannonces')->name('admin.listannonces');
