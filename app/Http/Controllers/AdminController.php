@@ -669,11 +669,17 @@ class AdminController extends Controller
     }
 
     public function addMessage(MessageRequest $request, $id) {
-        $message = new Message;
-        $message->content = $request->content;
-        $message->user_id = $id;
-        $message->save();
-        Session::flash('success', 'Votre message a bien été envoyé');
-        return redirect()->back();
+        $user = user::find($id);
+        if($user != NULL){
+            $message = new Message;
+            $message->content = $request->content;
+            $message->user_id = $id;
+            $message->save();
+            Session::flash('success-valide', 'Votre message a bien été envoyé');
+            return redirect()->back();
+        } else {
+            Session::flash('error', "Votre message n'a bien été envoyé une erreur est survenue");
+            return redirect()->back();
+        }
     } 
 }

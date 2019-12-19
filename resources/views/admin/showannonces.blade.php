@@ -8,14 +8,14 @@
         {{ Session::get('success-valide') }}
     </div>
     @endif
-    <div class="container list-category">
-        <div class="panel panel-default">
-            <div class="panel-heading">Détails de l'annonce</div>
+        <div class="container list-category" role="details-reservation">
+            <div class="panel panel-default">
+                <div class="panel-heading">Détails de l'annonce</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 mb-4">
-                            <div class="text-center">
-                                <img src="{{ asset('img/houses/'.$house->photo) }}">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card-show h-100">
+                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement atypiques - {{$house->title}}">
                                 <div class="card-center">
                                     <h4 class="title card-title text-center">
                                         {{$house->title}}

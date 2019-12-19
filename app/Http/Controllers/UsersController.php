@@ -33,7 +33,8 @@ class UsersController extends Controller
     public function houses(Request $request)
     {
         $user = $request->user();
-        $houses = house::with('valuecatproprietes', 'proprietes', 'category', 'user')->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $houses = house::with('valuecatproprietes', 'proprietes', 'category', 'user')->where('user_id', '=', Auth::user()->id)
+        ->where('disponible', '=', 'oui')->orderBy('id', 'desc')->get();
         
         return view('user.houses', compact('houses'));
     }

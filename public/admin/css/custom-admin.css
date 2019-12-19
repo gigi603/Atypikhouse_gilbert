@@ -52,6 +52,26 @@
     border: solid 1px #d3e0e9;
 }
 
+.card-show {
+    display: block !important;
+    padding: 5px !important;
+    color: #000;
+    word-wrap: break-word;
+}
+
+.img-responsive {
+    display: block !important;
+    height: auto !important;
+}
+
+.img-responsive, .img-thumbnail, .table, label {
+    max-width: 100% !important;
+}
+
+.img_house {
+    margin: 0 auto !important;
+}
+
 .rating {
     float: left;
     width: 250px;

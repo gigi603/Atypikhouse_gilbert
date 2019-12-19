@@ -8,6 +8,12 @@
         {{ Session::get('success-valide') }}
     </div>
     @endif
+    @if (Session::has('error'))
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        {{ Session::get('error') }}
+    </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">

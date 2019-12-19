@@ -8,6 +8,12 @@
         {{ Session::get('success-valide') }}
     </div>
     @endif
+    @if (Session::has('error'))
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        {{ Session::get('error') }}
+    </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -22,14 +28,21 @@
                 </div>
                 <div class="panel panel-default" style="margin: 0; border-radius: 0;">
                     <div class="panel-body">
-                        <form action="{{ route('admin.addMessage') }}" method="POST" style="display: flex;">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="user_id" value="0">
-                            <input type="text" name="comment" placeholder="Saisir un message" class="form-control" id="input_comment" style="border-radius: 0;">
-                            <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
-                        </form>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <form action="{{ route('admin.addMessage', $post->user_id) }}" method="POST" style="display: flex;">
+                                
+                                {{ csrf_field() }}
+                                <input type="text" name="content" placeholder="Saisir un message" class="form-control" id="input_comment" style="border-radius: 0;">
+                                <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
+                            </form>
+                            @if ($errors->has('content'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('content') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>

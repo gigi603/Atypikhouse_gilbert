@@ -2,7 +2,7 @@
 @section('title', "Détail de l'annonce")
 @section('content')
 <div class="admin-user-profil">
-    <div class="container list-category" role="details-reservation">
+    <div class="container list-category" role="details-annonce">
         <div class="panel panel-default">
             <div class="panel-heading">Détails de l'annonce</div>
             <div class="panel-body">
