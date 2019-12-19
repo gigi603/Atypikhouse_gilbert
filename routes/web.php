@@ -210,6 +210,12 @@ Route::middleware(['auth'])->group( function () {
     //Vue de détails de l'historique de l'utilisateur
     Route::get('/showhistoriques/{id}', 'UsersController@showhistoriques')->name('user.showhistoriques');
 
+    //User reservations annulées
+    Route::get('/user/reservationsannulees', 'UsersController@reservationsannulees')->name('user.reservationsannulees');
+
+    //Vue de détails de la reservation annulée de l'utilisateur
+    Route::get('/showreservationsannulees/{id}', 'UsersController@showreservationsannulees')->name('user.showreservationsannulees');
+
     //Vue formulaire de contact
     Route::resource('posts', 'PostsController' , ['only' => ['index', 'store']]);
 

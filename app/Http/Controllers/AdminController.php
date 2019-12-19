@@ -244,7 +244,6 @@ class AdminController extends Controller
             $message = new message;
             $message->content = "L'administrateur a supprimé la catégorie ".$category->category.", lorsque vous créérez une nouvelle annonce la catégorie ".$category->category." ne sera plus disponible";
             $message->user_id = $user->id;
-            $message->admin_id = Auth::user()->id;
             $message->save();
         }
         return redirect()->back()->with('danger', "La catégorie ".$category->category." a bien été désactivé, un message a été envoyé à tous les propriétaires");
@@ -287,7 +286,6 @@ class AdminController extends Controller
                 $message = new message;
                 $message->content = "L'administrateur a ajouté une propriété ".$propriete->propriete." sur vos annonces ayant comme catégorie ".$propriete->category->category;
                 $message->user_id = $house->user_id;
-                $message->admin_id = Auth::user()->id;
                 $message->save();
             }
             
@@ -305,13 +303,13 @@ class AdminController extends Controller
         foreach($values_propriete as $values){
             $values->delete();
         }
-        $propriete->delete();
+        
         $houses = house::where('category_id', '=', $propriete->category_id)->get();
+        $propriete->delete();
         foreach($houses as $house){
             $message = new message;
             $message->content = "L'administrateur a supprimé la propriété ".$propriete->propriete." ainsi que les valeurs attribuées à ".$propriete->propriete;
             $message->user_id = $house->user_id;
-            $message->admin_id = Auth::user()->id;
             $message->save();
         }
         return redirect()->back()->with('danger', "Votre propriété ".$propriete->propriete." a bien été supprimée, un message a été envoyé aux propriétaires ayant dans leur annonce la catégorie ".$propriete->category->category);

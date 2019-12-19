@@ -174,6 +174,7 @@ class UsersController extends Controller
         $reservations = reservation::with('house')->where('start_date', '>=', $today)
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
+        ->where('reserved', '=', 1)
         ->orderBy('id', 'desc')
         ->get();
         
@@ -186,6 +187,27 @@ class UsersController extends Controller
         $houses = House::where('user_id', $id)->get();
         $reservation = reservation::find($id);
         return view('user.showreservations')->with('houses', $houses)
+                                            ->with('users', $users)
+                                            ->with('reservation', $reservation);
+    }
+
+    public function reservationsannulees(Request $request)
+    {
+        $today = Date::today()->format('Y-m-d');
+        $reservations = reservation::with('house')->where('reserved', '=', 0)
+        ->where('user_id', '=', Auth::user()->id)
+        ->orderBy('id', 'desc')
+        ->get();
+        
+        return view('user.reservationsannulees', compact('reservations'));
+    }
+    
+    public function showreservationsannulees($id)
+    {
+        $users = User::where('id', $id)->get();
+        $houses = House::where('user_id', $id)->get();
+        $reservation = reservation::find($id);
+        return view('user.showreservationsannulees')->with('houses', $houses)
                                             ->with('users', $users)
                                             ->with('reservation', $reservation);
     }
@@ -208,7 +230,10 @@ class UsersController extends Controller
     public function historiques(Request $request)
     {
         $today = Date::today()->format('Y-m-d');
-        $historiques = reservation::with('house')->where('start_date', '<=', $today)->where('end_date', '<=', $today)->where('user_id', '=', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $historiques = reservation::with('house')->where('start_date', '<=', $today)
+        ->where('end_date', '<=', $today)
+        ->where('user_id', '=', Auth::user()->id)
+        ->orderBy('id', 'desc')->get();
         return view('user.historiques', compact('historiques'));
     }
 

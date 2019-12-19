@@ -37,6 +37,7 @@
                         @else
                             <p>Statut: <span style="color:red;">Annulée</span></p>
                         @endif
+                        <h4 class="text-center"><a href="{{route('user.showhistoriques', $reservation['id']) }}" class="btn btn-primary btn-color">Voir</a></h4>
                     </div>
                 </div> 
             </div>
