@@ -506,7 +506,8 @@ class AdminController extends Controller
     public function listreservations($id)
     {
         $today = Date::today()->format('Y-m-d');
-        $reservations = reservation::where('user_id','=', $id)->where('start_date', '>=', $today)->get();
+        $reservations = reservation::where('user_id','=', $id)->where('start_date', '>=', $today)
+        ->where('reserved', '=', 1)->get();
         return view('admin.listreservations')->with('reservations', $reservations);
     }
 
