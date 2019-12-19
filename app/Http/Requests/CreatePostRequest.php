@@ -43,7 +43,7 @@ class CreatePostRequest extends FormRequest
             'name.max' => 'Votre nom ne doit pas dépasser 50 caractères',
             'name.regex' => 'Votre nom doit contenir que des lettres et non des chiffres ou caractères spéciaux',
             'email.required' => 'Veuillez saisir votre adresse mail',
-            'email.email' => 'Veuillez mettre une adresse mail',
+            'email.email' => "L'adresse email n'est pas valide",
             'email.max' => 'Votre nom ne doit pas dépasser 50 caractères',
             'content.required' => 'Veuillez saisir votre message',
             'content.min' => "Veuillez saisir un message de minimum 30 caractères",
