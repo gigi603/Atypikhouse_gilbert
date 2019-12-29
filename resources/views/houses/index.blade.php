@@ -34,7 +34,7 @@
                                     @endif 
                                     @empty 
                                         <div class="col-lg-9 col-md-9 col-sm-9">
-                                            <p style="color: #000;">Désolé aucun hébérgements ne correspond à vos critères</p>
+                                            <p style="color: #000;">Désolé aucunes annonces ne correspondent à vos critères</p>
                                         </div>
                                 @endforelse
                             </div>
