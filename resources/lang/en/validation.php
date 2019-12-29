@@ -38,7 +38,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => "Veuillez saisir une adresse email valide",
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
@@ -117,7 +117,8 @@ return [
         'email' => [
             'required' => 'Vous devez saisir votre adresse email',
             'max' => 'Votre email ne doit pas dépasser 50 caractères',
-            'unique' => "L'adresse email que vous avez saisie a déjà été utilisée"
+            'unique' => "L'adresse email que vous avez saisie a déjà été utilisée",
+            "email" => "Vous devez saisir une adresse email valide"
         ],
         'email_confirmation' => [
             'required' => 'Vous devez confirmer votre adresse email',

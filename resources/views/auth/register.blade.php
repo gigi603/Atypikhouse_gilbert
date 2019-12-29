@@ -43,7 +43,7 @@
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@
                             <label for="email-confirm" class="col-md-4 control-label">Confirmer email</label>
 
                             <div class="col-md-6">
-                                <input id="email-confirm" type="email" class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
+                                <input id="email-confirm" type="text" class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
                                 @if ($errors->has('email_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email_confirmation') }}</strong>
