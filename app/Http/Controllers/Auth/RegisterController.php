@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use App\Jobs\SendVerificationEmail;
 use App\User;
 use App\Newsletter;
