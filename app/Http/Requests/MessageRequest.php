@@ -24,7 +24,7 @@ class MessageRequest extends FormRequest
     public function rules()
     {
         return [
-            'content' => 'required|max:1000|min:2||regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u',
+            'content' => 'required|max:1000|min:2|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u',
         ];
     }
 

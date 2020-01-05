@@ -13,10 +13,36 @@
 
 use Spatie\Sitemap\SitemapGenerator;
 
+Route::get('/robots.txt', function() {
+    $robots = new \Robots\Robots;
+    // If on the live server, serve a nice, welcoming robots.txt.
+    if (App::environment() == 'local' || App::environment() == 'production') {
+        $robots->addUserAgent('*');
+        $robots->addAllow('/');
+        $robots->addAllow('/houses');
+        $robots->addAllow('/register');
+        $robots->addAllow('/login');
+        $robots->addAllow('/apropos');
+        $robots->addAllow('/mentions_legales');
+        $robots->addAllow('/faq');
+        $robots->addAllow('/politique_de_confidentialite');
+        $robots->addAllow('/cgu');
+        $robots->addAllow('/rgpd');
+        $robots->addAllow('/faq');
+        $robots->addDisallow('/admin');
+        $robots->addDisallow('/user');
+        $robots->addSitemap('sitemap.xml');
+    }
+    else {
+        // If you're on any other server, tell everyone to go away.
+        $robots->addDisallow('*');
+    }
+    return response($robots->generate(), 200)->header('Content-Type', 'text/plain');
+});
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('sitemap/generate', function () {
-    SitemapGenerator::create('http://www.atypikhouse-projet.ovh/')->writeToFile('sitemap.xml');
+    SitemapGenerator::create('http://127.0.0.1:8000/')->writeToFile('sitemap.xml');
     return 'sitemap created';
 });
 Route::get('/houses', 'HousesController@index')->name('houses');

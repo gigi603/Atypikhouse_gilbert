@@ -18,6 +18,7 @@ use Session;
 use Image;
 use App\Http\Requests\EditHouseAdminRequest;
 use App\Http\Requests\MessageRequest;
+use App\Http\Requests\CommentRequest;
 use Jenssegers\Date\Date;
 use Carbon\Carbon;
 
@@ -627,7 +628,7 @@ class AdminController extends Controller
         return view('admin.listcomments')->with('comments', $comments);
     }
 
-    public function addComment(Request $request)
+    public function addComment(CommentRequest $request)
     {
         // $this->validate($request, [
         //     'house_id' => 'exists:houses,id|numeric',

@@ -1,14 +1,1 @@
-User-agent: *
-Allow: /
-Allow: /houses
-Allow: /register
-Allow: /login
-Allow: /apropos
-Allow: /mentions_legales
-Allow: /faq
-Allow: /politique_de_confidentialite
-Allow: /cgu
-Allow: /rgpd
-Disallow: /admin
-Disallow: /admin/*
-Disallow: /user/*
+ce
