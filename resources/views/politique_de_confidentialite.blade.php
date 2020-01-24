@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Politique de confidentialité')
+@section('meta_description', 'Vous avez accès à nos politique de confidentialité afin de savoir quels sont vos droits et quels sont les notre concernant vos données')
 @section('content')
 <div class="container list-category" role="politique-confidentialite">
-    <h2>Politique de confidentialite</h2>
+    <h1>Politique de confidentialite</h1>
     <div class="row">
         <div class="container">
             <p>

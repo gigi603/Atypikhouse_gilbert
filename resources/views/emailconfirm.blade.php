@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Comfirmation inscription')
+@section('meta_description', "Merci pour votre inscription, veuillez vous connecter afin de pouvoir créer des annonces ou effectuer des réservations")
 @section('content')
 <div class="container">
 	<div class="row">

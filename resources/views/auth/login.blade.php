@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Connexion')
+@section('title', 'Connectez-vous afin de pouvoir reserver des espaces atypiques')
+@section('metadescription', 'Connectez-vous afin de pouvoir reserver des espaces atypiques ou de pouvoir poster vos annonces')
 @section('footer', 'footer_absolute')
 @section('content')
 <div class="container">

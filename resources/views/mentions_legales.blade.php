@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Mentions Légales')
+@section('meta_description', "Voici nos mentions légales que nous vous mettons à disposition")
+
 @section('content')
-<div class="container list-category" role="mentions-legales">
-    <h2>Mentions Légales</h2>
+<div class="container list-category" role="mentions-legales du site atypikhouse">
+    <h1>Mentions Légales</h1>
     <div class="row">
         <div class="container">
 <p>Merci de lire attentivement les présentes modalités d'utilisation du présent site avant de le parcourir. </p>

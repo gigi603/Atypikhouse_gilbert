@@ -358,7 +358,7 @@ nav.navbar.navbar-default {
 	padding: 10px;
 }
 
-#faq h3, #faq h2 {
+h1#faq, #faq h3, #faq h2 {
 	text-align: center;
 }
 

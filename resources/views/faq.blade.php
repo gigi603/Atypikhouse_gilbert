@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Faq')
-@section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne")
+@section('meta_description', "Nous vous mettons à disposition une faq ayant pour but de répondre à vos questions, si la faq ne répond pas à vos attentes, vous pouvez nous contacter via notre formulaire de contact")
 @section('content')
 <div class="container list-category faq" role="faq">
-    <h2>FAQ : </h2>
+    <h1 id="faq">FAQ : </h1>
     <div class="row">
         <div class="container">
             <div id="faq">
-                <h3>Mon paiement est-it sécurisée ?</h3>
+                <h2>Mon paiement est-it sécurisée ?</h2>
                 <p>Nous disposons d’un système de crytpage SSL pour protéger vos données personnelles ainsi que les moyens de paiement utilisés. Nous utilisons le système de paiement sécurisé de Stripe</p>
-                <h3>SERVICE CLIENT 24/7</h3>
+                <h2>SERVICE CLIENT 24/7</h2>
                 <p>Notre équipe est à votre disposition pour toute question sur nos articles, votre commande ou autre question d'ordre générale</p>
-                <h3>Mon paiement est-it sécurisée ?</h3>
+                <h2>Mon paiement est-it sécurisée ?</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id deserunt pariatur praesentium, dolor obcaecati quia qui iste nam? Est nesciunt blanditiis magni ab omnis architecto deserunt maiores, sapiente quaerat quibusdam.</p>
             </div>
         </div>

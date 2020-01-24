@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Paiement')
+@section('title', 'Paiement par stripe')
 <script src="https://js.stripe.com/v3/"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

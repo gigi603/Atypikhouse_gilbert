@@ -3,6 +3,7 @@
 <!--============================--> 
 @extends('layouts.app') 
 @section('title', 'Contact')
+@section('meta_description', "Si vous avez une question quelconque, veuillez nous contacter via notre formulaire de contact, notre équipe fera tout pour vous répondre dans les plus bref délais")
 @section('footer', 'footer_absolute')
 @section('content') 
     <div class="container" id="form"> 

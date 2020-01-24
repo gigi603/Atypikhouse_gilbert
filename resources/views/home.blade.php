@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', "Page d'accueil")
-@section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne")
+@section('title', "Atypikhouse offre les meilleurs espaces atypiques partout en europe, venez reserver")
+@section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne, vous pouvez réserver à tout moment et profitez de nos promotions pouvant aller jusqu'à 60% de réduction à ne pas manquer")
 @section('content')
     <div class="container-fluid banner">
         <div class="intro-body">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="container-fluid" role="annonces">
-        <h2 id="hebergements">Nos hébergements</h2>
+        <h3 id="hebergements">Nos hébergements</h3>
         <div class="row">
             @foreach($houses as $house)
                 @if($house->statut == "Validé")

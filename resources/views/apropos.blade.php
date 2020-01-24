@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'A propos')
+@section('meta_description', "Vous avez accès à une description concernant l'histoire de notre entreprise et de notre équipe, où nous expliquons tout simplement qui nous sommes")
 @section('content')
-<div class="container list-category" role="apropos">
-    <h2>A propos</h2>
+<div class="container list-category" role="apropos du site atypikhouse">
+    <h1>A propos</h1>
     <div class="row">
         <div class="container">
             Atypikhouse est une société à résponsabilité limitée (sarl) au capital de 10000€ composée de trois associés partageant les mêmes passions pour les voyages, l'habitat alternatif et la vie en harmonie avec la nature.<br>
