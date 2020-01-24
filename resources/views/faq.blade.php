@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Faq')
 @section('meta_description', "Nous vous mettons à disposition une faq ayant pour but de répondre à vos questions, si la faq ne répond pas à vos attentes, vous pouvez nous contacter via notre formulaire de contact")
+@section('footer', 'footer_absolute')
+
 @section('content')
 <div class="container list-category faq" role="faq">
     <h1 id="faq">FAQ : </h1>
