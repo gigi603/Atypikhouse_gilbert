@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title', 'CGU')
+@section('title', "Conditions générales de d'utilisation")
+@section('meta_description', "Nous vous mettons à disposition nos conditions générale d'utilisation")
+
 @section('content')
 <div class="container" role="condition générale d'utilisation du site atypikhouse">
     <h1 class="cgu-title">Conditions Générale d'utilisation</h1>

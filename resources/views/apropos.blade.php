@@ -1,6 +1,7 @@
 @extends('layouts.app')
-@section('title', 'A propos')
+@section('title', 'A propos de nous')
 @section('meta_description', "Vous avez accès à une description concernant l'histoire de notre entreprise et de notre équipe, où nous expliquons tout simplement qui nous sommes")
+
 @section('content')
 <div class="container list-category" role="apropos du site atypikhouse">
     <h1>A propos</h1>
