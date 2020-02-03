@@ -25,7 +25,7 @@ $(function () {
                 changeYear: true,
                 numberOfMonths: 1,
                 dateFormat: 'dd/mm/yy',
-                minDate: 0,
+                minDate: startDateAnnonce,
                 maxDate: endDateAnnonce,
                 prevText: 'Précédent',
                 nextText: 'Suivant',
