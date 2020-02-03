@@ -102,11 +102,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group">
-                            <p>Le site accessible par l’url www.atypikhouse.fr est exploité dans le respect de la législation française. L'utilisation de ce site est régie par les présentes conditions générales. En utilisant le site, vous reconnaissez avoir 18 ans ou plus et avoir pris connaissance de ces conditions et les avoir acceptées. Celles-ci pourront êtres modifiées à tout moment et sans préavis par la société Nom de la boite. Eurodev Agency ne saurait être tenu pour responsable en aucune manière d’une mauvaise utilisation du service.</p>
-                        </div>
-                        <div class="form-group">
-                            <p>Nous vous enverrons des promotions commerciales, des offres spéciales, des idées de voyage et des informations réglementaires par e-mail à conditions de cocher la case autorisant notre équipe à vous envoyer des newsletters</p>
+                        <div class="form-group text-center">
+                            <a href="{{ route('cgu') }}" target="_blank">Voir les conditions générales</a>
                         </div>
                         <div class="form-check{{ $errors->has('conditions') ? ' has-error' : '' }} text-center">
                             <input type="checkbox" class="form-check-input" name="conditions" value="true" {{ !old('conditions') ?: 'checked' }}>
@@ -135,6 +132,9 @@
                                     M'inscrire
                                 </button>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <p>Nous vous enverrons des promotions commerciales, des offres spéciales, des idées de voyage et des informations réglementaires par e-mail à conditions de cocher la case autorisant notre équipe à vous envoyer des newsletters</p>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="newsletter" value="1" {{ old('newsletter') ? 'checked="checked"' : '' }}>

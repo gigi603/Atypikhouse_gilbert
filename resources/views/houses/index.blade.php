@@ -7,22 +7,22 @@
     <div class="text-center">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
+                {{-- <div class="col-lg-12 col-md-12 col-sm-12"> --}}
                     <div class="input-group reservation-search">
                         <form class="form-horizontal" method="get" action="{{url('search')}}" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            <div class="row">
+                            {{-- <div class="row"> --}}
                                 <div class="col-lg-3 col-md-3 col-sm-12 cadre">
                                     <h1 class="title title-intro">Atypikhouse offre les meilleurs espaces atypiques, partout en Europe !</h1>
                                     <div class="form-group reservation-search">
                                         @include('search',['url'=>'search','link'=>'search'])
                                     </div>
-                                </div>
+                                </div> 
                                 @forelse($houses as $house)
                                     @if($house->statut == "Validé")
-                                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                             <div class="card-houses h-100">       
-                                                <a href="{{action('UsersController@showHouse', $house['id'])}}"><img class="img-responsive" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
+                                                <a href="{{action('UsersController@showHouse', $house['id'])}}"><img class="img-houses-list" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
                                                 <div class="card-block">
                                                     <div class="card-body">
                                                         <h3 class="card-title"><a href="{{action('UsersController@showHouse', $house->id)}}"> <?php echo(substr($house->title, 0, 30));?> </a><br> {{$house->adresse}}<br></h3> 
@@ -32,16 +32,17 @@
                                             </div>
                                         </div>
                                     @endif 
-                                    @empty 
-                                        <div class="col-lg-9 col-md-9 col-sm-9">
-                                            <p style="color: #000;">Désolé aucunes annonces ne correspondent à vos critères</p>
-                                        </div>
-                                @endforelse
-                            </div>
+                                        @empty 
+                                            <div class="col-lg-9 col-md-9 col-sm-9">
+                                                <p style="color: #000;">Désolé aucunes annonces ne correspondent à vos critères</p>
+                                            </div>
+                                    @endforelse
+                                </div>
+                            {{-- </div> --}}
                         </form>
                     </div>
                     
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
     </div>
