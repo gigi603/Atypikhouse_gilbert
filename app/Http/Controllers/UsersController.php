@@ -61,8 +61,6 @@ class UsersController extends Controller
         } else {
             $reservation = reservation::all();
             $house = house::find($id);
-            $house = house::where('disponible', "oui")->first();
-            
             return view('user.show')->with('reservation', $reservation)
                                     ->with('house', $house);
         }

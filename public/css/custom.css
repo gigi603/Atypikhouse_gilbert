@@ -297,6 +297,11 @@ nav.navbar.navbar-default {
 	height: 300px;
 }
 
+.img-house-detail {
+	width: 100%;
+	height: auto;
+}
+
 .card-show {
 	display: block;
 	padding: 5px;
@@ -426,7 +431,7 @@ footer li a:hover{
 	width: 400px;
 	height: 400px; 
 	/* background-color: #9C0038; */
-	margin: 0 20px;
+	margin: 12px 20px;
 }
 
 /* Mes hébergmeents */

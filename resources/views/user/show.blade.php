@@ -7,27 +7,14 @@
         <div class="panel-heading text-center">Détails de l'annonce</div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card h-100">
-                        <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"/>
-                        <div class="card-show">
-                            <h3 class="title card-title">
-                                <a href="#">{{$house->title}}</a>
-                            </h3>
-                            <h4 class="price">{{$house->price}}€ / la nuit</h4>
-                            <p>Type de bien : {{$house->category->category}}</p>
-                            <p>Disponible du <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> au
-                            <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?> </p>
-                            <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>
-                            @foreach($house->valuecatproprietes as $valuecatpropriete)
-                                @if(@count($valuecatpropriete) != 0)
-                                    <p>{{$valuecatpropriete->propriete->propriete}}</p>
-                   		 @endif
-                            @endforeach
-                        </div>
+                        <img class="img-house-detail" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"/>
                     </div>
                 </div>
-                <div class="col-md-6">
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="calendar panel panel-default">
                         <h4 class="text-center panel-heading">Réserver vos dates : </h4>
                         <form class="form-horizontal" method="POST" action="{{url('reservations')}}" enctype="multipart/form-data">
@@ -86,6 +73,23 @@
                             </form>   
                         </div>
                     </div> 
+                    <div class="col-md-6">
+                        <div class="card-show">
+                            <h3 class="title card-title">
+                                <a href="#">{{$house->title}}</a>
+                            </h3>
+                            <h4 class="price">{{$house->price}}€ / la nuit</h4>
+                            <p>Type de bien : {{$house->category->category}}</p>
+                            <p>Disponible du <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> au
+                            <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?> </p>
+                            <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>
+                            @foreach($house->valuecatproprietes as $valuecatpropriete)
+                                @if(@count($valuecatpropriete) != 0)
+                                    <p>{{$valuecatpropriete->propriete->propriete}}</p>
+                   		 @endif
+                            @endforeach
+                        </div>
+                    </div>
                     <div class="col-md-12 space-top">
                             <p>{{$house->description}}</p>
                             <p>Annulation gratuite !</p>
