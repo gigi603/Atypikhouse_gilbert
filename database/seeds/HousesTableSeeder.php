@@ -41,7 +41,7 @@ class HousesTableSeeder extends Seeder
                 'nb_personnes' => 4,
                 'telephone' => '0623216792',
                 'price' => 110.00,
-                'photo' => 'cabane_trappeur.jpg',
+                'photo' => 'cabane_eau.jpg',
                 'statut' => 'Validé',
                 'disponible' => 'oui'
             ],
