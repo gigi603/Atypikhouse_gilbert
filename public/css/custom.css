@@ -291,6 +291,12 @@ nav.navbar.navbar-default {
 	height: 500px;
 }
 
+.img-houses-list {
+	display: block;
+	width: 450px;
+	height: 300px;
+}
+
 .card-show {
 	display: block;
 	padding: 5px;
