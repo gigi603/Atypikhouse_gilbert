@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         $categories = [
             [
-                'category' => 'Autre',
+                'category' => 'Tous',
                 'statut' => 1
             ],
             [
