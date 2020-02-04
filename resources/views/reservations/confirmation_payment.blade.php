@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Confirmation payement')
 @section('link')
+@section('footer', 'footer_absolute')
 @section('content')
     <div class="container list-category">
         <div class="panel panel-default">

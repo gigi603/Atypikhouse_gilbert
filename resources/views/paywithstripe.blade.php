@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Paiement par stripe')
+@section('footer', 'footer_absolute')
 <script src="https://js.stripe.com/v3/"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
