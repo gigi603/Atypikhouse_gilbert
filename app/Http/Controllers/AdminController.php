@@ -20,6 +20,7 @@ use App\Http\Requests\EditHouseAdminRequest;
 use App\Http\Requests\MessageRequest;
 use App\Http\Requests\CommentRequest;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\ProprieteRequest;
 use Jenssegers\Date\Date;
 use Carbon\Carbon;
 
@@ -266,7 +267,7 @@ class AdminController extends Controller
         return view('admin.create_propriete')->with('category', $category);
     }
 
-    public function registerpropriete(Request $request)
+    public function registerpropriete(ProprieteRequest $request)
     {
         $propriete = new propriete;
         $propriete->propriete = $request->propriete;
