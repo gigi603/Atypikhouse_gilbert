@@ -47,7 +47,13 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .form-control-feedback, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+  color: #a94442 !important;
+}
+.has-error .form-control {
+  border-color: #a94442 !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

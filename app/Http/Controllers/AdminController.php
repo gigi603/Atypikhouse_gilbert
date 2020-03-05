@@ -19,6 +19,7 @@ use Image;
 use App\Http\Requests\EditHouseAdminRequest;
 use App\Http\Requests\MessageRequest;
 use App\Http\Requests\CommentRequest;
+use App\Http\Requests\CategoryRequest;
 use Jenssegers\Date\Date;
 use Carbon\Carbon;
 
@@ -198,7 +199,7 @@ class AdminController extends Controller
         return view('admin.create_category');
     }
 
-    public function registercategory(Request $request)
+    public function registercategory(CategoryRequest $request)
     {
         $categories = category::all();
         $users = user::all();
@@ -213,7 +214,6 @@ class AdminController extends Controller
             $message = new message;
             $message->content = "L'administrateur a rajouté la catégorie ".$category->category." sur les type d'hébergement";
             $message->user_id = $user->id;
-            $message->admin_id = Auth::user()->id;
             $message->save();
         }
         return redirect()->route('admin.categories')->with('success', "La catégorie a bien été ajoutée, un message a été envoyé à tous les propriétaires")->with('categories', $categories);

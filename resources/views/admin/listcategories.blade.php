@@ -18,8 +18,13 @@
     </div>
     <div class="card-body">
         <div class="col-md-12 text-center">
-            <form class="form-horizontal" method="POST" action="{{route('admin.register_category')}}" enctype="multipart/form-data">
-                <input id="name" type="text" class="form-control" name="category" required autofocus value="">
+            <form class="form-group{{ $errors->has('category') ? ' has-error' : '' }}" method="POST" action="{{route('admin.register_category')}}" enctype="multipart/form-data">
+                <input id="name" type="text" class="form-control" name="category" autofocus value="{{ old('category')}}">
+                @if ($errors->has('category'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('category') }}</strong>
+                    </span>
+                @endif
                 <button class="btn btn-primary btn-add-category">Ajouter une catégorie</button>
             </form>
         </div>
