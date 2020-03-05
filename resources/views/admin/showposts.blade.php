@@ -28,7 +28,7 @@
                 </div>
                 <div class="panel panel-default" style="margin: 0; border-radius: 0;">
                     <div class="panel-body">
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
                             <form action="{{ route('admin.addMessage', $post->user_id) }}" method="POST" style="display: flex;">
                                 
                                 {{ csrf_field() }}
