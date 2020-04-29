@@ -25,6 +25,8 @@
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
         <link href="{{ asset('css/jquery-ui.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/cookieconsent.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/base_stripe.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/stripe.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">

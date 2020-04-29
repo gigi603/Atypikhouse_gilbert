@@ -20,7 +20,7 @@
             <div class="thumbnail">
                 <div class="card-hebergement">
                     <a href="{{action('UsersController@showhebergements', $house['id'])}}"><img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}"></a>
-                    <h4 class="title card-title">
+                    <h4 class="title card-title title-houses">
                         <a href="{{route('user.showhebergements', $house['id']) }}">{{$house->title}}</a>
                     </h4>
                     <p class="price">{{$house->price}}€ par nuit</p>
@@ -29,11 +29,11 @@
                     <p>Annulation gratuite !</p>
                     <p> Adresse: {{$house->adresse}}</p>
                     @if($house->statut == "En attente de validation")
-                        <p>Statut: <span style="color:red;"><?php echo($house->statut);?></span></p>
+                        <p>Statut: <span style="color:red;">{{$house->statut}}</span></p>
                     @elseif(($house->statut == "Refusé"))
-                        <p>Statut: <span style="color:red;"><?php echo($house->statut);?></span></p>
+                        <p>Statut: <span style="color:red;">{{$house->statut)}}</span></p>
                     @else
-                        <p>Statut: <span style="color:green;"><?php echo($house->statut);?></span></p>
+                        <p>Statut: <span style="color:green;">{{$house->statut}}</span></p>
                     @endif    
                     <div class="col-md-12 text-center">
                         <a href="{{route('user.editHouse', $house['id']) }}" class="btn btn-primary btn-color">Modifier</a>

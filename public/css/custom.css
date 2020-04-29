@@ -256,11 +256,18 @@ nav.navbar.navbar-default {
 	margin: 22px;
 }
 
+.title-houses {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .card-houses {
 	position: relative;
 	background-color: #fff;
 	transition: transform .2s;
 	margin-bottom: 40px;
+	width:100%;
 }
 
 .card-houses:hover {
@@ -293,8 +300,8 @@ nav.navbar.navbar-default {
 
 .img-houses-list {
 	display: block;
-	width: 450px;
-	height: 300px;
+	width: 100%;
+	height: 250px;
 }
 
 .img-house-detail {

@@ -50,7 +50,7 @@
                             <a href="{{action('UsersController@showHouse', $house['id'])}}"><img class="img-houses-list" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}"></a>
                             <div class="card-block">
                                 <div class="card-body">
-                                    <h3 class="card-title"><a href="{{action('UsersController@showHouse', $house->id)}}"> <?php echo(substr($house->title, 0, 30));?> </a></h3>
+                                    <h3 class="card-title title-houses"><a href="{{action('UsersController@showHouse', $house->id)}}"> {{$house->title}} </a></h3>
                                 </div>
                                 <p class="price"> {{$house->price}}€ / nuit</p>
                             </div>
