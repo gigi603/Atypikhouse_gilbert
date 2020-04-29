@@ -12,7 +12,6 @@ $(function () {
     var startDateAnnonce = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
     var endDateAnnonce = new Date(+dateParts2[2], dateParts2[1] - 1, +dateParts2[0]); 
     
-    console.log(startDateAnnonce);
     var disableddates = ["05-3-2018", "05-11-2018", "05-25-2018", "05-20-2018"];
     //Page d'accueil pour la recherche 
 
@@ -25,7 +24,7 @@ $(function () {
                 changeYear: true,
                 numberOfMonths: 1,
                 dateFormat: 'dd/mm/yy',
-                minDate: startDateAnnonce,
+                minDate: 0,
                 maxDate: endDateAnnonce,
                 prevText: 'Précédent',
                 nextText: 'Suivant',
@@ -81,7 +80,7 @@ $(function () {
             b = $("#datepicker_end").datepicker('getDate').getTime(),
             c = 24*60*60*1000,
             diffDays = Math.round(Math.abs((a - b)/(c)));
-        console.log(diffDays); //show difference
+     //show difference
     }
 
     $("#from").keydown(function(event) { 
