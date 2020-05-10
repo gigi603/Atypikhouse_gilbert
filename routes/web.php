@@ -163,6 +163,7 @@ Route::prefix('admin')->group(function () {
 
     //Profil de l'utilisateur
     Route::get('/profile/{id}', 'AdminController@profilUser')->name('admin.user');
+    Route::post('/profile/{id}', 'UsersController@edit')->name('user.edit');
     Route::get('/delete/user/{id}', 'AdminController@deleteUser')->name('admin.deleteUser');
 
     //Gestion des hébergement

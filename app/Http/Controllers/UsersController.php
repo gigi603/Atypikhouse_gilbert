@@ -12,6 +12,7 @@ use App\Valuecatpropriete;
 use App\Ville;
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\EditUserRequest;
 use App\Http\Requests\EditHouseRequest;
 use App\Http\Requests\ReservationRequest;
 use App\Http\Controllers\Controller;
@@ -28,6 +29,25 @@ class UsersController extends Controller
         ->where('id', $id)
         ->get();
         return view('users.index', compact('userData'))->with('data', Auth::user()->user);
+    }
+
+    public function edit(EditUserRequest $request, $id) {
+        $user = User::find($id);
+        try {
+            //dd('coucou');
+            if($request->newsletter != 1) {
+                //dd('bravo');
+                $user->newsletter = 0;
+                $user->save();
+                return redirect()->back();
+            } else {
+                $user->newsletter = 1;
+                $user->save();
+                return redirect()->back();
+            }
+        } catch(Exception $e){
+
+        }
     }
 
     public function houses(Request $request)
