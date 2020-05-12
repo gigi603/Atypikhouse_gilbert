@@ -11,6 +11,7 @@ use App\Propriete;
 use App\Valuecatpropriete;
 use App\Ville;
 use App\Post;
+use App\Newsletter;
 use Illuminate\Http\Request;
 use App\Http\Requests\EditUserRequest;
 use App\Http\Requests\EditHouseRequest;
@@ -18,6 +19,8 @@ use App\Http\Requests\ReservationRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Mail\SendNewsletter;
+use Illuminate\Support\Facades\Mail;
 use Image;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
@@ -43,6 +46,10 @@ class UsersController extends Controller
             } else {
                 $user->newsletter = 1;
                 $user->save();
+                $newsletters = newsletter::all();
+                foreach($newsletters as $newsletter){
+                    Mail::to('fatboar')->send(new SendNewsletter($newsletter));
+                }
                 return redirect()->back();
             }
         } catch(Exception $e){
@@ -189,7 +196,7 @@ class UsersController extends Controller
     public function reservations(Request $request)
     {
         $today = Date::today()->format('Y-m-d');
-        $reservations = reservation::with('house')->where('start_date', '>=', $today)
+        $reservations = reservation::with('house')
         ->where('end_date', '>=', $today)
         ->where('user_id', '=', Auth::user()->id)
         ->where('reserved', '=', 1)
@@ -249,7 +256,7 @@ class UsersController extends Controller
     {
         $today = Date::today()->format('Y-m-d');
         $historiques = reservation::with('house')->where('start_date', '<=', $today)
-        ->where('end_date', '<=', $today)
+        ->where('end_date', '<', $today)
         ->where('user_id', '=', Auth::user()->id)
         ->orderBy('id', 'desc')->get();
         return view('user.historiques', compact('historiques'));
