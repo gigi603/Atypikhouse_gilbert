@@ -8,7 +8,8 @@
         {{ Session::get('success-valide') }}
     </div>
     @endif
-        <div class="container list-category" role="details-reservation">
+        <div class="container list-category" role="details-annonce">
+            <h1 class="h1-title">Détails de l'annonce</h1>
             <div class="panel panel-default">
                 <div class="panel-heading">Détails de l'annonce</div>
                 <div class="panel-body">
