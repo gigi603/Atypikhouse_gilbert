@@ -23,7 +23,7 @@
                         <td>{{$house->title}}</td>
                         <td><?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?></td>
                         <td><?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></td>
-                        <td><a href="{{action('AdminController@showannonces', $user->id)}}" class="btn btn-primary">Voir</a></td>
+                        <td><a href="{{action('AdminController@showannonces', $house->id)}}" class="btn btn-primary">Voir</a></td>
                     </tr>
                 </tbody>
                 @endforeach
