@@ -26,7 +26,7 @@ class CreateHouseStep3Request extends FormRequest
         return [
             'title' => 'required|regex:/^[\pL\s\-\']+$/u|max:60|min:5',
             'category' => 'required_if:category_id,0',
-            'nb_personnes' => 'required|numeric|between:1,15',
+            'nb_personnes' => 'required|numeric|between:1,16',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
             'description' => 'required|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\^\"\:]+$/u|max:1000|min:30'
@@ -48,7 +48,7 @@ class CreateHouseStep3Request extends FormRequest
             'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'nb_personnes.numeric' => "le nombre de personnes sélectionné doit être un chiffre/nombre",
-            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 15",
+            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 16",
             'start_date.required' => "Veuillez sélectionner une date de départ",
             'start_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'end_date.required' => "Veuillez sélectionner une date de retour",

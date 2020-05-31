@@ -26,7 +26,7 @@ class EditHouseAdminRequest extends FormRequest
         return [
             'title' => 'required|max:50|regex:/^[\pL\s\-\']+$/u',
             'category' => 'required_if:category_id,0',
-            'nb_personnes' => 'required|numeric|between:1,15',
+            'nb_personnes' => 'required|numeric|between:1,16',
             'price' => 'required|regex:/^[0-9]+$/u|max:4',
             'adresse' => 'required|regex:/^[0-9\pL\s\-\,\']+$/u|max:80',
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
@@ -52,7 +52,7 @@ class EditHouseAdminRequest extends FormRequest
             'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'nb_personnes.numeric' => "le nombre de personnes sélectionné doit être un chiffre/nombre",
-            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 15",
+            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 16",
             'adresse.required' => 'Veuillez saisir votre adresse',
             'adresse.max' => 'Votre adresse ne doit pas dépasser 80 caractères',
             'adresse.regex' => 'Votre adresse ne doit pas contenir de caractères spéciaux',

@@ -56,7 +56,7 @@
                             <label for="email-confirm" class="col-md-4 control-label">Confirmer email</label>
 
                             <div class="col-md-6">
-                                <input id="email-confirm" type="text" class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
+                                <input id="email-confirm" type="text" required class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
                                 @if ($errors->has('email_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email_confirmation') }}</strong>
