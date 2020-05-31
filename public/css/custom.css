@@ -7,8 +7,9 @@ html, body {
 	font-size: 16px;
 	max-width: 100%;
     overflow-x: hidden;
-	height: 100%;
+	min-height: 100%;
 	background-color: #F2F2F2;
+	position:relative;
 }
 
 .padding10 {
@@ -404,9 +405,12 @@ h1#faq, #faq h3, #faq h2 {
 footer {
 	background-color: #fff;
 	padding: 20px;
+	position:relative;
 	bottom: 0;
 	width: 100%;
 	margin-top: 80px;
+	height: 10rem;
+	clear: both;
 }
 
 .img-cgv {

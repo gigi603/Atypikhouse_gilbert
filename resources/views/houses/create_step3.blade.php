@@ -26,7 +26,7 @@
                                 <label for="name" class="col-md-4 control-label">Categorie</label>
                                 <div class="col-md-6">
                                     <select id="select_category" required name="category_id" class="form-control">
-                                        <option id="" value="0" autofocus>Choisissez votre categorie</option>
+                                        <option id="" value="" autofocus>Choisissez votre categorie</option>
                                         @foreach($categories as $categorie)
                                             <option value="{{$categorie->id}}" {{ ($category == $categorie->id) ? "selected" : "" }}><?php echo($categorie->category);?></option>
                                         @endforeach
@@ -44,8 +44,8 @@
                                 <div class="col-md-6">
                                     <select id="select_nb_personnes" required name="nb_personnes" class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
-                                        @for($i=1;$i<16;$i++)
-                                            <option value="{{ ($i > 15 || $i < 0) ? "" : $i }}" {{ ($i == $nb_personnes) ? "selected" : "" }}>{{$i}}</option>
+                                        @for($i=1;$i<17;$i++)
+                                            <option value="{{ ($i > 16 || $i < 0) ? "" : $i }}" {{ ($i == $nb_personnes) ? "selected" : "" }}>{{$i}}</option>
                                         @endfor 
                                     </select>
                                     @if ($errors->has('nb_personnes'))
