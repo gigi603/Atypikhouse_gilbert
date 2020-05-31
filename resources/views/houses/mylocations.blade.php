@@ -2,7 +2,7 @@
 @section('title', 'Ma location')
 @section('footer', 'footer_absolute')
 @section('content')
-<div class="container list-category">
+<div class="container list-category margin-top">
     <h2>Mes hébergements</h2>
     <div class="row">
         @foreach($houseProfil as $house)

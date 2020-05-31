@@ -28,6 +28,7 @@
                                     {!! Form::label('from', 'Départ : ', array('class' => 'formLabel control-label')) !!}
                                     {!! Form::text('start_date', Form::old('from'), array( 
                                         'class' => 'form-control',
+                                        'required' => true,
                                         'id' => 'from',
                                     )) !!}
                                     @if ($errors->has('start_date'))
@@ -40,6 +41,7 @@
                                     {!! Form::label('to', 'Arrivée : ', array('class' => 'formLabel control-label')) !!} 
                                     {!! Form::text('end_date', Form::old('to'), array( 
                                         'class' => 'form-control',
+                                        'required' => true,
                                         'id' => 'to',
                                     )) !!}
                                     @if ($errors->has('end_date'))
@@ -52,7 +54,7 @@
                                 <input type="hidden" name="start_date_annonce" id="start_date_annonce" value="{{$house->start_date}}"/>
                                 <input type="hidden" name="end_date_annonce" id="end_date_annonce" value="{{$house->end_date}}"/>
                                 <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
-                                    <select id="select_nb_personnes" name="nb_personnes" class="form-control">
+                                    <select id="select_nb_personnes" name="nb_personnes" required class="form-control">
                                         <option id="" value="" autofocus>Nombre de personnes</option>
                                         @for($i=1;$i<= $house->nb_personnes;$i++)
                                         <option value={{$i}} @if (old('nb_personnes') == $i) selected="selected" @endif>{{$i}}</option>

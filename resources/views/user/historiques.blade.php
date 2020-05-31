@@ -3,7 +3,7 @@
 @section('content')
 @section('content')
 <div class="container-fluid" role="historiques">
-    <h1 class="h1-title">Mes réservations passées</h2>
+    <h1 class="h1-title">Mes réservations passées</h1>
     <div class="row">
         @foreach ($historiques as $historique)
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">         

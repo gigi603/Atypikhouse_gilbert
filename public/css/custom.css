@@ -498,7 +498,7 @@ input[type=textarea] {
   .rating:not(:checked) > label {
 	  float:right;
 	  width:1em;
-	  /* padding:0 .1em; */
+	  padding:0 .2em;
 	  overflow:hidden;
 	  white-space:nowrap;
 	  cursor:pointer;

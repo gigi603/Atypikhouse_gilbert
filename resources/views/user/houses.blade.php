@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Nos Hébergements')
 @section('content')
-@section('content')
 <div class="container-fluid" role="annonces">
     <h1 class="h1-title">Mes hébergements</h1>
     <div class="row text-center" style="margin-bottom: 50px;">

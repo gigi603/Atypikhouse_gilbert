@@ -3,7 +3,7 @@
 @section('metadescription', 'Connectez-vous afin de pouvoir reserver des espaces atypiques ou de pouvoir poster vos annonces')
 @section('footer', 'footer_absolute')
 @section('content')
-<div class="container">
+<div class="container margin-top">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Inscrivez-vous afin de réserver des espaces atypiques')
 @section('content')
-<div class="container">
+<div class="container margin-top">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -135,9 +135,9 @@
                         <div class="form-group">
                             <p>Nous vous enverrons des promotions commerciales, des offres spéciales, des idées de voyage et des informations réglementaires par e-mail à conditions de cocher la case autorisant notre équipe à vous envoyer des newsletters</p>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="newsletter" value="1" {{ old('newsletter') ? 'checked="checked"' : '' }}>
-                            <label class="form-check-label" for="exampleCheck1">Je souhaite recevoir de messages promotionnels d'Atypikhouse.<br/> Je peux également activer/désactiver cette option à tout moment<br/> dans les paramètres de mon compte ou via le lien contenu dans ce message.</label>
+                        <div class="form-group form-check">
+                            
+                            <p class="form-check-label" for="exampleCheck1"> <input type="checkbox" class="form-check-input" name="newsletter" value="1" {{ old('newsletter') ? 'checked="checked"' : '' }}> Je souhaite recevoir de messages promotionnels d'Atypikhouse. Je peux également activer/désactiver cette option à tout momentdans les paramètres de mon compte ou via le lien contenu dans ce message.</p>
                         </div>
                     </form>
                 </div>

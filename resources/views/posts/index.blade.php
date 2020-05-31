@@ -50,15 +50,14 @@
                 @endif
             </div>
             <div class="form-check{{ $errors->has('agree') ? ' has-error' : '' }}">
-                <input type="checkbox" class="form-check-input" required name="agree" value="true" {{ !old('agree') ?: 'checked' }}>
-                <label class="form-check-label" for="exampleCheck1">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre professionnel</label>
+                <p class="form-check-label" for="exampleCheck1"><input type="checkbox" class="form-check-input" required name="agree" value="true" {{ !old('agree') ?: 'checked' }}> En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre professionnel</label>
                 @if ($errors->has('agree'))
                     <span class="help-block">
                         <strong>{{ $errors->first('agree') }}</strong>
                     </span>
                 @endif
             </div>
-            {!! Form::submit('Envoyer !', array('class' => 'btn btn-success btn-color')) !!} 
+            {!! Form::submit('Envoyer', array('class' => 'btn btn-success btn-color')) !!} 
         {!! Form::close() !!} 
     </div> 
 @endsection 
