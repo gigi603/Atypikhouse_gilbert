@@ -2,7 +2,7 @@
 @section('title', 'Nos Historiques')
 @section('content')
 @section('content')
-<div class="container-fluid" role="historiques">
+<div class="container-fluid block-container" role="historiques">
     <h1 class="h1-title">Mes réservations passées</h1>
     <div class="row">
         @foreach ($historiques as $historique)

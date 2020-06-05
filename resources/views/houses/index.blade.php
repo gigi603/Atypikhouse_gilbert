@@ -2,7 +2,7 @@
 @section('title', 'Nos hébergements')
 @section('meta_description', "Atypikhouse contient des espaces atypiques un peu partout en europe notamment en france à grenoble, seine et marne")
 @section('content')
-<div class="container-fluid" role="annonces">
+<div class="container-fluid block-container" role="annonces">
     <h1 class="h1-title">Nos espaces atypiques</h1>
     <div class="text-center">
         <div class="container-fluid">

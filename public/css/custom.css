@@ -10,6 +10,11 @@ html, body {
 	min-height: 100%;
 	background-color: #F2F2F2;
 	position:relative;
+	min-height:100vh;
+}
+
+.block-container {
+	margin-bottom: 20vh;
 }
 
 .padding10 {
@@ -64,6 +69,7 @@ html, body {
 	background-color: #FFF;
 	padding: 20px 0;
 	border-radius: 4px !important;
+	margin: 10vh 0;
 }
 .title-intro {
 	color: #000;
@@ -405,11 +411,9 @@ h1#faq, #faq h3, #faq h2 {
 footer {
 	background-color: #fff;
 	padding: 20px;
-	position:relative;
+	position:absolute;
 	bottom: 0;
 	width: 100%;
-	margin-top: 80px;
-	height: 10rem;
 	clear: both;
 }
 

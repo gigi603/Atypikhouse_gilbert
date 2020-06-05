@@ -206,7 +206,6 @@ Route::prefix('admin')->group(function () {
 Route::middleware(['auth'])->group( function () {
     Route::get('/profile/{id}', 'UsersController@index');
     Route::get('/messages', 'MessagesController@messages')->name('user.messages');
-    // Route::get('/mylocations/{id}', 'HousesController@mylocations')->name('user.annonces');
 
     //Create a house, publish an offer
     Route::get('/house/create_step1', 'HousesController@create_step1')->name('house.create_step1');

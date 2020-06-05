@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Nos Réservations')
 @section('content')
-<div class="container-fluid" role="reservations-annulees">
+<div class="container-fluid block-container" role="reservations-annulees">
     <h1 class="h1-title">Mes réservations annulées</h1>
     <div class="row">
         @foreach ($reservations as $reservation)
