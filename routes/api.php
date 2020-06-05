@@ -52,7 +52,23 @@ Route::get('/mylocations/{id}', function ($id) {
 
 Route::get('/user/reservations/{id}', function ($id) {
 	$today = Date::today()->format('Y-m-d');
-	$reservationProfil = reservation::with('house')->where('user_id', $id)->get()->toJson();
+	$reservationProfil = reservation::with('house')->where('user_id', $id)
+	->where('end_date', '>=', $today)
+	->where('reserved', '=', 1)->get()->toJson();
+ 	return response($reservationProfil,200)->header('Content-Type', 'application/json');
+});
+
+Route::get('/user/reservationspassees/{id}', function ($id) {
+	$today = Date::today()->format('Y-m-d');
+	$reservationProfil = reservation::with('house')->where('user_id', $id)
+	->where('start_date', '<', $today)
+	->where('end_date','<', $today)->get()->toJson();
+ 	return response($reservationProfil,200)->header('Content-Type', 'application/json');
+});
+
+Route::get('/user/reservationsannulees/{id}', function ($id) {
+	$today = Date::today()->format('Y-m-d');
+	$reservationProfil = reservation::with('house')->where('user_id', $id)->where('reserved', 0)->get()->toJson();
  	return response($reservationProfil,200)->header('Content-Type', 'application/json');
 });
 
