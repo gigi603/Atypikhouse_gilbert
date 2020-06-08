@@ -27,7 +27,7 @@ class SearchRequest extends FormRequest
             "category_id" => "required_if:category_id,0|numeric",
             "start_date" => "required|date_format:d/m/Y",
             "end_date" => "required|date_format:d/m/Y",
-            "nb_personnes" => "required|numeric|between:1,15"
+            "nb_personnes" => "required|numeric|between:1,16"
         ];
     }
 
@@ -47,7 +47,7 @@ class SearchRequest extends FormRequest
             "end_date.date_format" => "Veuillez mettre la date au format dd/mm/yyyy",
             "nb_personnes.required" => "Vous devez choisir un nombre de personnes",
             "nb_personnes.numeric" => "le nombre de personnes sélectionné doit être un chiffre/nombre",
-            "nb_personnes.between" => "le nombre de personnes sélectionné doit être compris entre 1 et 15"
+            "nb_personnes.between" => "le nombre de personnes sélectionné doit être compris entre 1 et 16"
         ];
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('footer', 'Etape 4')
 @section('content')
-<div class="container">
+<div class="container margin-top">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -17,7 +17,7 @@
                             <label for="name" class="col-md-4 control-label">Prix la nuit</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="price" value="{{ $price }}">
+                                <input id="name" required type="text" class="form-control" name="price" value="{{ $price }}">
                                 @if ($errors->has('price'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('price') }}</strong>

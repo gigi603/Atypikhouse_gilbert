@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Etape 1')
 @section('content')
-<div class="container">
+<div class="container margin-top">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -15,7 +15,7 @@
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                            <input type="text" class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" value="{{$adresse}}">
+                            <input type="text" required class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" value="{{$adresse}}">
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>

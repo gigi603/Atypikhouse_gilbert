@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
 <div class="admin-user-profil"> 
-@section('content')
 <div class="container list-category">
     <div class="panel panel-default">
         <div class="panel-heading">Messages envoyés à l'utilisateur</div>
@@ -14,17 +13,12 @@
                                 <div class="col-sm-9">
                                     {{ $message->content }}
                                 </div>
-                                <div class="col-sm-3 text-right">
-                                    @if($message->user_id != "0")
-                                        <small>Envoyé par {{ $message->admin->name }}</small><br/>
-                                    @endif
-                                </div>
                             </div>
                         </div>
                     @endforeach
                     <div class="panel panel-default" style="margin: 0; border-radius: 0;">
                         <div class="panel-body">
-                            <form action="{{ route('admin.addMessage') }}" method="POST" style="display: flex;">
+                            <form action="{{ route('admin.addMessage', $user->id) }}" method="POST" style="display: flex;">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="user_id" value="{{$user->id}}">
@@ -54,3 +48,4 @@
         </div>
     </div>
 </div>
+@endsection

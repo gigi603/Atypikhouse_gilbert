@@ -7,8 +7,14 @@ html, body {
 	font-size: 16px;
 	max-width: 100%;
     overflow-x: hidden;
-	height: 100%;
+	min-height: 100%;
 	background-color: #F2F2F2;
+	position:relative;
+	min-height:100vh;
+}
+
+.block-container {
+	margin-bottom: 20vh;
 }
 
 .padding10 {
@@ -55,10 +61,15 @@ html, body {
 	font-size: 18px;
 }
 
+.delete-reservation {
+	margin: 30px 0;
+}
+
 .cadre {
 	background-color: #FFF;
 	padding: 20px 0;
 	border-radius: 4px !important;
+	margin: 10vh 0;
 }
 .title-intro {
 	color: #000;
@@ -221,8 +232,14 @@ nav.navbar.navbar-default {
 	margin-top: 120px;
 	min-height: 500px !important;
 }
+.h1-title {
+	text-align: center;
+	margin: 60px;
+	color:#000;
+}
 .h2-title {
-    margin-bottom: 50px;
+    text-align: center;
+	color: #000;
 }
 
 .cgu-title {
@@ -241,6 +258,7 @@ nav.navbar.navbar-default {
 #hebergements {
 	text-align: center;
 	margin: 60px;
+	color: #000;
 }
 
 .list-category {
@@ -381,7 +399,7 @@ h1#faq, #faq h3, #faq h2 {
 }
 
 /* Registration */
-.panel, .block {
+.block {
 	margin: 100px;
 }
 
@@ -393,9 +411,10 @@ h1#faq, #faq h3, #faq h2 {
 footer {
 	background-color: #fff;
 	padding: 20px;
+	position:absolute;
 	bottom: 0;
 	width: 100%;
-	margin-top: 80px;
+	clear: both;
 }
 
 .img-cgv {
@@ -435,10 +454,7 @@ footer li a:hover{
 
 /* Description produit */
 .calendar {
-	width: 400px;
-	height: 400px; 
-	/* background-color: #9C0038; */
-	margin: 12px 20px;
+	margin: 10px 0;
 }
 
 /* Mes hébergmeents */
@@ -490,7 +506,7 @@ input[type=textarea] {
   .rating:not(:checked) > label {
 	  float:right;
 	  width:1em;
-	  /* padding:0 .1em; */
+	  padding:0 .2em;
 	  overflow:hidden;
 	  white-space:nowrap;
 	  cursor:pointer;

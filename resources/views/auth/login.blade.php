@@ -3,7 +3,7 @@
 @section('metadescription', 'Connectez-vous afin de pouvoir reserver des espaces atypiques ou de pouvoir poster vos annonces')
 @section('footer', 'footer_absolute')
 @section('content')
-<div class="container">
+<div class="container margin-top">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -25,7 +25,7 @@
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" autofocus>
+                                <input id="email" type="text" required class="form-control" name="email" value="{{ old('email') }}" autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -39,7 +39,7 @@
                             <label for="password" class="col-md-4 control-label">Mot de passe</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" required type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

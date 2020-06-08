@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="container-fluid" role="annonces">
-        <h3 id="hebergements">Nos hébergements</h3>
+        <h2 id="hebergements">Nos hébergements</h3>
         <div class="row">
             @foreach($houses as $house)
                 @if($house->statut == "Validé")

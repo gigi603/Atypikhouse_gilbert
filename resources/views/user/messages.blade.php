@@ -2,9 +2,10 @@
 @section('title', 'Mes notifications')
 @section('content')
 @section('content')
-<div class="container list-category" role="notifications">
+<div class="container-fluid" role="notifications">
+    <h1 class="h1-title">Mes notifications</h1>
     <div class="panel panel-default notifications-panel">
-        <div class="panel-heading">Mes notifications</div>
+        <div class="panel-heading">Liste de mes notifications</div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
