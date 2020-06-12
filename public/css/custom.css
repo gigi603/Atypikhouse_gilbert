@@ -17,6 +17,10 @@ html, body {
 	margin-bottom: 20vh;
 }
 
+.block-size {
+	min-height: 68vh !important;
+}
+
 .padding10 {
 	padding: 0 10px;
 }
@@ -411,7 +415,16 @@ h1#faq, #faq h3, #faq h2 {
 footer {
 	background-color: #fff;
 	padding: 20px;
-	position:absolute;
+	position:relative;
+	bottom: 0;
+	width: 100%;
+	clear: both;
+}
+
+.footer-absolute {
+	background-color: #fff;
+	padding: 20px;
+	position:absolute !important;
 	bottom: 0;
 	width: 100%;
 	clear: both;
