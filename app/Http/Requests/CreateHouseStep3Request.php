@@ -25,7 +25,7 @@ class CreateHouseStep3Request extends FormRequest
     {
         return [
             'title' => 'required|regex:/^[\pL\s\-\']+$/u|max:60|min:5',
-            'category' => 'required_if:category_id,0',
+            'category_id' => 'required|required_if:category_id,0|numeric',
             'nb_personnes' => 'required|numeric|between:1,16',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
@@ -45,7 +45,9 @@ class CreateHouseStep3Request extends FormRequest
             'title.min'  => 'Votre titre ne doit pas faire moins de 5 caractères',
             'title.max'  => 'Votre titre ne doit pas dépasser 60 caractères',
             'title.regex'  => 'Votre titre peut contenir que des lettres, espaces, tirets et les apostrophes',
-            'category.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
+            'category_id.required' => "Veuillez choisir le type d'hebergement de votre annonce",
+            'category_id.required_if' => "Veuillez choisir le type d'hebergement de votre annonce",
+            "category_id.numeric" => "Veuillez saisir le bon type d'annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'nb_personnes.numeric' => "le nombre de personnes sélectionné doit être un chiffre/nombre",
             'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 16",

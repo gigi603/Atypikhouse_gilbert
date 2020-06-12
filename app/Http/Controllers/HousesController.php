@@ -126,11 +126,13 @@ class HousesController extends Controller
         }
 
         $houseCategory = $request->session()->get('houseCategory');
-        if($houseCategory == NULL){
-            $category = "";
+        //dd($houseCategory);
+        if($houseCategory == null){
+            $categorySelected = "";
         } else {
-            $category = last($houseCategory);
+            $categorySelected = last($houseCategory);
         }
+        
         $categories = category::where('statut','=', 1)->get();
 
         $houseNbPersonnes = $request->session()->get('houseNbPersonnes');
@@ -160,11 +162,12 @@ class HousesController extends Controller
         } else {
             $description = last($houseDescription);
         }
-
+        
         return view('houses.create_step3', [
             'categories' => $categories,
             'title' => $title,
-            'category' => $category,
+            'houseCategory' => $houseCategory,
+            'categorySelected' => $categorySelected,
             'nb_personnes' => $nb_personnes,
             'start_date' => $start_date,
             'end_date' => $end_date,
@@ -174,19 +177,21 @@ class HousesController extends Controller
 
     public function postcreate_step3(CreateHouseStep3Request $request) {
         $categories = category::where('statut', '=', 1)->get();
+        $lastCategory = category::where('statut', '=', 1)->orderBy('id', 'desc')->first();
         $houseTitle = session('houseTitle', $request->title);
         $request->session()->push('houseTitle', $request->title);
 
         $houseCategory = session('houseCategory', $request->category_id);
         $request->session()->push('houseCategory', $request->category_id);
-
         
-        if($request->nb_personne > 15 || $request->nb_personne < 0){
-            $request->nb_personne = "";
-        } else {
-            $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
-            $request->session()->push('houseNbPersonnes', $request->nb_personnes);
+        if($request->category_id > $lastCategory->id){
+            $request->category_id = "";
+            $houseCategory = null;
+            return redirect()->back();
         }
+        
+        $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
+        $request->session()->push('houseNbPersonnes', $request->nb_personnes);
 
         $houseStartDate = session('houseStartDate', $request->start_date);
         $request->session()->push('houseStartDate', $request->start_date);
@@ -211,8 +216,6 @@ class HousesController extends Controller
                 $request->session()->push('houseProprietes', $proprietesChecked[$i]);
             }
         }
-        
-        var_dump($request->nb_personnes);
         return redirect('/house/create_step4');
     }
     

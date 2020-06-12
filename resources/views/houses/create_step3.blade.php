@@ -22,18 +22,20 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Categorie</label>
                                 <div class="col-md-6">
                                     <select id="select_category" required name="category_id" class="form-control">
-                                        <option id="" value="" autofocus>Choisissez votre categorie</option>
-                                        @foreach($categories as $categorie)
-                                            <option value="{{$categorie->id}}" {{ ($category == $categorie->id) ? "selected" : "" }}><?php echo($categorie->category);?></option>
+                                        <option id="" value="">Choisissez votre categorie</option>
+                                        @foreach($categories as $category)
+                                            @if($category->id > 1)
+                                                <option {{ $categorySelected == $category->id ? "selected" : "" }} value="{{$category->id}}">{{$category->category}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
-                                    @if ($errors->has('category'))
+                                    @if ($errors->has('category_id'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('category') }}</strong>
+                                            <strong>{{ $errors->first('category_id') }}</strong>
                                         </span>
                                     @endif
                                 </div>

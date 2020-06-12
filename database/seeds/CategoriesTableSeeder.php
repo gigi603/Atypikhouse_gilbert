@@ -17,6 +17,10 @@ class CategoriesTableSeeder extends Seeder
                 'statut' => 1
             ],
             [
+                'category' => 'Autre',
+                'statut' => 1
+            ],
+            [
                 'category' => 'Cabane',
                 'statut' => 1
             ],
