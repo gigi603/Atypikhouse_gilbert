@@ -3,7 +3,7 @@
 @section('link')
 @section('footer', 'footer_absolute')
 @section('content')
-    <div class="container list-category">
+    <div class="container margin-top block-size">
         <div class="panel panel-default">
             <div class="panel-heading text-center">Confirmation de votre paiement</div>
             <div class="panel-body">

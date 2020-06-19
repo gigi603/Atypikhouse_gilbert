@@ -95,10 +95,11 @@ class HousesTableSeeder extends Seeder
                 'user_id' => 1,
                 'category_id' => 6,
                 'adresse' => 'Loire-Atlantique, France',
-                'description' => "WAGON DE TRAIN 10 PLACES :
+                'description' => "WAGON DE TRAIN:
 
                 Le wagon de train (voiture ferroviaire) OCEM Talbot date de 1930.
-                Il a été récupéré à l’Association des Chemins de fer de Vendée.
+
+                Il a été récupéré à l'Association des Chemins de fer de Vendée.
                 Il possède 4 chambres, un espace repas, une cuisine, une douche et un WC.
                 Logement pour 10 personnes.
                 
@@ -106,25 +107,6 @@ class HousesTableSeeder extends Seeder
                 Ce Wagon est équipé de :
                 Deux chambres avec un lit double
                 Deux chambres avec trois lits d’une place. Les lits sont superposés. Attention, le lit du haut est interdit aux enfants de moins de 6 ans.
-                Une cuisine avec évier, réfrigérateur, plaque de cuisson, micro-ondes, four, cafetière et vaisselle. Les petits-déjeuners ne sont pas fournis.
-                Douche et WC
-                Oreillers et couvertures fournis. Draps et serviettes de toilette non fournis
-                TV gratuite
-                Terrasse couverte
-                
-                
-                
-                
-                WAGON DE TRAIN 16 PLACES :
-                
-                Le Wagon de train à étage pour 16 personnes : ancienne voiture de banlieue desservant la gare Saint-Lazare, construite en 1933 en Charente. Fin de service en 1982, elle a été entreposée pendant vingt ans à la gare de Richelieu. Nous l’avons sauvée du ferraillage en la rachetant pour la transformer en logement insolite.
-                Nous l’avons aménagée avec des pièces provenant de l’Orient-Express (lavabos, portes de compartiment, tables. Les banquettes proviennent d’une voiture ferroviaire belge K3.
-                Les travaux de restauration ont duré deux ans afin d’aménager 4 chambres et 2 mezzanines pour un total de 16 couchages
-                
-                Ce Wagon est équipé de :
-                Trois chambres avec un lit double
-                Une chambre avec 2 x 3 lits simples superposés – 1 au sol, 1 au milieu et 1 en haut. Attention, le lit du haut est interdit aux enfants de moins de 6 ans.
-                Deux Mezzanines avec 2 lits simples
                 Une cuisine avec évier, réfrigérateur, plaque de cuisson, micro-ondes, four, cafetière et vaisselle. Les petits-déjeuners ne sont pas fournis.
                 Douche et WC
                 Oreillers et couvertures fournis. Draps et serviettes de toilette non fournis

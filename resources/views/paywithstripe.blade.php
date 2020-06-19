@@ -4,7 +4,7 @@
 
  
 @section('content')
-<div class="container list-category">
+<div class="container margin-top block-size">
     <div class="panel panel-default marginTop">
         <div class="panel-heading text-center">Etape du paiement</div>
             <div class="panel-body">
