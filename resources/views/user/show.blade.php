@@ -101,40 +101,38 @@
                         <p> Adresse mail de l'annonceur : {{$house->user->email}}</p>
                     </div>
                 </div>
-                @foreach ($house->comments as $comment)
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-default" style="margin: 0; border-radius: 0;">
-                        <div class="panel-body">
-                            <div class="col-sm-9">
-                                {{ $comment->comment }}
-                            </div>
-                            <div class="col-sm-3 text-right">
-                                @if($comment->user_id != "0")
-                                    <small>Posté par {{ $comment->user->prenom }} {{ $comment->user->nom }}</small><br/>
-                                    @if($comment->note != "0")
-                                        <small>Note: {{$comment->note}}/5</small>
-                                    @endif
-                                @else
-                                    <small>Posté par {{ $comment->admin->name }}</small><br/>
-                                    @if($comment->note != "0")
-                                        <small>Note: {{$comment->note}}/5</small> 
-                                    @endif
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endforeach 
-                @if (Auth::check())
-                    @if($client_reserved->count() > 0 OR $house->user_id == Auth::user()->id)
-                    
+                    @foreach ($house->comments as $comment)
                         <div class="panel panel-default" style="margin: 0; border-radius: 0;">
                             <div class="panel-body">
-                                <form action="{{ url('/comments') }}" method="POST" style="display: flex;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="house_id" value="{{ $house->id }}">
-                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                    <input type="hidden" name="admin_id" value="0">
-                                    
+                                <div class="col-sm-9">
+                                    {{ $comment->comment }}
+                                </div>
+                                <div class="col-sm-3 text-right">
+                                    @if($comment->user_id != "0")
+                                        <small>Posté par {{ $comment->user->prenom }} {{ $comment->user->nom }}</small><br/>
+                                        @if($comment->note != "0")
+                                            <small>Note: {{$comment->note}}/5</small>
+                                        @endif
+                                    @else
+                                        <small>Posté par {{ $comment->admin->name }}</small><br/>
+                                        @if($comment->note != "0")
+                                            <small>Note: {{$comment->note}}/5</small> 
+                                        @endif
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach 
+                    @if (Auth::check())
+                        @if($client_reserved->count() > 0 OR $house->user_id == Auth::user()->id)
+                            <div class="panel panel-default" style="margin: 0; border-radius: 0;">
+                                <div class="panel-body">
+                                    <form action="{{ url('/comments') }}" method="POST" style="display: flex;">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="house_id" value="{{ $house->id }}">
+                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        <input type="hidden" name="admin_id" value="0"> 
                                         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                                             <input type="text" name="comment" placeholder="Saisir un commentaire" class="form-control" id="input_comment" style="border-radius: 0;">
                                         </div>
@@ -148,28 +146,27 @@
                                         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
                                             <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
                                         </div>
+                                    </form>
+                                </div>
+                                @if (@count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                {{ $error }}
+                                            @endforeach
+                                        </ul>
                                     </div>
-                                </form>
+                                @endif
+                                @if (Session::has('success'))
+                                    <div class="alert alert-success">
+                                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
                             </div>
-                            @if (@count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            {{ $error }}
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @if (Session::has('success'))
-                                <div class="alert alert-success">
-                                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                                    {{ Session::get('success') }}
-                                </div>
-                            @endif
                         </div>
-                    </div>
-                @endif
+                    @endif
             @endif
         </div>
     </div>
