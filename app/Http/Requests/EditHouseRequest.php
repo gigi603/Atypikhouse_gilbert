@@ -32,7 +32,7 @@ class EditHouseRequest extends FormRequest
             'photo' => 'image|mimes:jpg,png,jpeg|max:20000',
             'start_date' => 'required|date_format:d/m/Y',
             'end_date' => 'required|date_format:d/m/Y',
-            'description' => 'required|max:3000|regex:/^[0-9\pL\s\d\'\’\-\_\()\.\,\@\?\!\;\"\/\+\=\:\ ]*$/u',
+            'description' => 'required|max:3000|regex:/^[0-9\pL\s\d\'\’\«»\-\_\€²\()\.\,\@\?\!\;\"\/\+\=\:\ ]*$/u',
             // 'propriete' => 'required|max:500'
         ];
     }
