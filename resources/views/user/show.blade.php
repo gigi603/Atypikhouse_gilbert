@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 @foreach ($house->comments as $comment)
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-default" style="margin: 0; border-radius: 0;">
                         <div class="panel-body">
                             <div class="col-sm-9">
