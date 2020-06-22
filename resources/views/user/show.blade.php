@@ -144,7 +144,7 @@
                                             <input type="radio" id="star1" name="note" value="1" /><label for="star1" title="Sucks big time">1 star</label>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                                            <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
+                                            <input type="submit" value="Envoyer" class="btn btn_reserve" style="border-radius: 0;">
                                         </div>
                                     </form>
                                 </div>
