@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /houses
+Allow: /register
+Allow: /login
+Allow: /apropos
+Allow: /mentions_legales
+Allow: /faq
+Allow: /politique_de_confidentialite
+Allow: /cgu
+Allow: /rgpd
+Allow: /faq
+Disallow: /admin
+Disallow: /user
+Sitemap: sitemap.xml
