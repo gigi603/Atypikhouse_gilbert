@@ -339,10 +339,18 @@ class AdminController extends Controller
     { 
         $categories = category::all();
         $house = house::find($id);
+
+        if($house->category_id == null){
+            $categorySelected = "";
+        } else {
+            $categorySelected = $house->category_id;
+        }
+        
         $proprietes = propriete::where('category_id', $house->category->id)->get();
         
         return view('admin.editHouse')->with('house', $house)
                                 ->with('categories', $categories)
+                                ->with('categorySelected', $categorySelected)
                                 ->with('proprietes', $proprietes);
     }
 
@@ -386,12 +394,28 @@ class AdminController extends Controller
     public function updateHouse(EditHouseAdminRequest $request,Category $category, Ville $ville, House $house, $id)
     {
         $house = house::find($id);
+
+        $categories = category::where('statut','=', 1)->get();
+        $houseCategoryEditAdmin = $request->session()->get('houseCategoryEditAdmin');
+        $request->session()->push('houseCategoryEditAdmin', $request->category_id);
+        if($houseCategoryEditAdmin == null){
+            $categorySelected = "";
+        } else {
+            $categorySelected = last($houseCategoryEditAdmin);
+        }
+
         if($house->title != $request->title || $house->category_id != $request->category_id
         || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
         || $house->adresse != $request->adresse || $house->photo != $request->photo
         || $house->description != $request->description || $house->start_date != $request->start_date 
         || $house->end_date != $request->end_date){
             $house->title = $request->title;
+
+            $lastCategory = $categories->last();
+            if($request->category_id > $lastCategory->id){
+                $categorySelected = $request->category_id;
+                return redirect()->back()->with('danger', 'Veuillez selectionner une categorie valide');
+            }
             $house->category_id = $request->category_id;
             $house->nb_personnes = $request->nb_personnes;
             $house->price = $request->price;
@@ -437,18 +461,18 @@ class AdminController extends Controller
                 $message = new message;
                 $message->content = "L'administrateur a mise en attente votre annonce ".$house->title.", il vous enverra un autre message concernant les modifications que vous devez effectuer afin qu'il valide par la suite votre annonce";
                 $message->user_id = $house->user_id;
-                $message->admin_id = Auth::user()->id;
                 $message->save();
-                return redirect()->back()->with('success', "L'hébergement du propriétaire a bien été modifié, vous avez mise en attente l'annonce, un message a été envoyé au propriétaire de cette annonce");
+                $request->session()->forget('houseCategoryEditAdmin');
+                return redirect()->back()->with('categorySelected', $categorySelected)->with('success', "L'hébergement du propriétaire a bien été modifié, vous avez mise en attente l'annonce, un message a été envoyé au propriétaire de cette annonce");
             } else {
                 $house->statut = $request->statut;
                 $house->save();
                 $message = new message;
                 $message->content = "L'administrateur a validé votre annonce ".$house->title;
                 $message->user_id = $house->user_id;
-                $message->admin_id = Auth::user()->id;
                 $message->save();
-                return redirect()->back()->with('success', "L'hébergement du propriétaire a bien été modifié, vous avez validé l'annonce, un message a été envoyé au propriétaire de cette annonce");
+                $request->session()->forget('houseCategoryEditAdmin');
+                return redirect()->back()->with('categorySelected', $categorySelected)->with('success', "L'hébergement du propriétaire a bien été modifié, vous avez validé l'annonce, un message a été envoyé au propriétaire de cette annonce");
             }
         }
     
@@ -459,9 +483,9 @@ class AdminController extends Controller
             $message = new message;
             $message->content = "L'administrateur a modifié des informations sur votre annonce ".$house->title;
             $message->user_id = $house->user_id;
-            $message->admin_id = Auth::user()->id;
             $message->save();
-            return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié, un message a été envoyé au propriétaire de cette annonce");
+            $request->session()->forget('houseCategoryEditAdmin');
+            return redirect()->back()->with('categorySelected', $categorySelected)->with('success', "L'hébergement de l'utilisateur a bien été modifié, un message a été envoyé au propriétaire de cette annonce");
         } else {
             $picture = $request->file('photo');
             $filename  = time() . '.' . $picture->getClientOriginalExtension();
@@ -473,9 +497,9 @@ class AdminController extends Controller
             $message = new message;
             $message->content = "L'administrateur a modifié des informations sur votre annonce ".$house->title;
             $message->user_id = $house->user_id;
-            $message->admin_id = Auth::user()->id;
             $message->save();
-            return redirect()->back()->with('success', "L'hébergement du propriétaire a bien été modifié, un message a été envoyé au propriétaire de cette annonce");
+            $request->session()->forget('houseCategoryEditAdmin');
+            return redirect()->back()->with('categorySelected', $categorySelected)->with('success', "L'hébergement du propriétaire a bien été modifié, un message a été envoyé au propriétaire de cette annonce");
         } 
     }
 

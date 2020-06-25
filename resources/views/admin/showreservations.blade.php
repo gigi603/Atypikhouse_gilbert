@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 mb-4">
                             <div class="text-center">
-                                <img src="{{ asset('img/houses/'.$reservation->house->photo) }}">
+                                <img class="img-responsive img_house" src="{{ asset('img/houses/'.$reservation->house->photo) }}">
                                 <div class="card-center">
                                     <h4 class="title card-title text-center">
                                         {{$reservation->house->title}}

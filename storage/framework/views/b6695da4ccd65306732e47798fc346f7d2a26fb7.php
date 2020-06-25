@@ -1,5 +1,4 @@
 <?php $__env->startSection('title', 'Détail de l"annonce'); ?>
-<?php $__env->startSection('link'); ?>
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <h1 class="h1-title">Détails de l'annonce</h1>
@@ -175,7 +174,8 @@
                             </div>
                         </div>
                     <?php endif; ?>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

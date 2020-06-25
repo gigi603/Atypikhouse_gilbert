@@ -9,7 +9,7 @@ $(document).ready(function(){
             data: "",
             success: function(data) {
                 $('.proprietes').empty();
-                console.log(data)
+                console.log('data = ', data)
                 var idArr = [];
 
                 for (j in data.valArray){
@@ -52,9 +52,11 @@ $(document).ready(function(){
         $("#select_category option:checked").each(function(){
             var category_id = $("#select_category option:checked").val();
             var house_id = $("#house_id").val();
+            console.log('house_id = ', house_id)
+            console.log('category_id = ',category_id)
             $.ajax({
                 type: 'GET',
-                url: site+'admin/json_propriete/'+house_id+'/'+category_id,
+                url: site+'/admin/json_propriete/'+house_id+'/'+category_id,
                 dataType: "json",
                 data: "",
                 success: function(data) {

@@ -14,6 +14,11 @@
                             {{ $success }}
                         </div>
                     @endif
+                    @if ($danger = Session::get('danger'))
+                        <div class="alert alert-danger">
+                            {{ $danger }}
+                        </div>
+                    @endif
                     <form class="form-horizontal" method="POST" action="{{ route('user.updateHouse', $house->id) }}" enctype="multipart/form-data">                      
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -28,14 +33,22 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Categorie</label>
                             <div class="col-md-6">
-                                <select id="select_category" type="text" name="category_id" class="form-control">
+                                <select id="select_category" required name="category_id" class="form-control">
+                                    <option id="" value="">Choisissez votre categorie</option>
                                     @foreach($categories as $category)
-                                        <option value="<?php echo($category->id);?>" @if($house->category->id  == $category->id) selected="selected" @endif><?php echo($category->category);?></option>
+                                        @if($category->id > 1)
+                                            <option {{ $categorySelected == $category->id ? "selected" : "" }} value="{{$category->id}}">{{$category->category}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
+                                @if ($errors->has('category_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category_id') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="proprietes"></div>

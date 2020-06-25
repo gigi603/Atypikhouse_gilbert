@@ -126,7 +126,6 @@ class HousesController extends Controller
         }
 
         $houseCategory = $request->session()->get('houseCategory');
-        //dd($houseCategory);
         if($houseCategory == null){
             $categorySelected = "";
         } else {
@@ -181,14 +180,24 @@ class HousesController extends Controller
         $houseTitle = session('houseTitle', $request->title);
         $request->session()->push('houseTitle', $request->title);
 
-        $houseCategory = session('houseCategory', $request->category_id);
         $request->session()->push('houseCategory', $request->category_id);
-        
-        if($request->category_id > $lastCategory->id){
-            $request->category_id = "";
-            $houseCategory = null;
-            return redirect()->back();
+        $houseCategory = $request->session()->get('houseCategory');
+        $request->session()->push('houseCategory', $request->category_id);
+        if(last($houseCategory) == null){
+            $categorySelected = "";
+        } else {
+            $categorySelected = last($houseCategory);
         }
+        $lastCategory = $categories->last();
+        if($request->category_id > $lastCategory->id){
+            $categorySelected = $request->category_id;
+            return redirect()->back()->with('danger', 'Veuillez selectionner une categorie valide');
+        }
+        // if($request->category_id > $lastCategory->id){
+        //     $request->category_id = "";
+        //     $houseCategory = null;
+        //     return redirect()->back();
+        // }
         
         $houseNbPersonnes = session('houseNbPersonnes', $request->nb_personnes);
         $request->session()->push('houseNbPersonnes', $request->nb_personnes);

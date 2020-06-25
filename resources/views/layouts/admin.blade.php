@@ -247,5 +247,6 @@
  <script src="{{ asset('admin/js/demo/datatables-demo.js') }}"></script>
 
  <script src="{{ asset('js/admin.js') }}"></script>
+ @yield('script')
 </body>
 </html>

@@ -2,7 +2,7 @@
 @section('title', 'Nos Historiques')
 @section('content')
 @section('content')
-<div class="container-fluid block-container" role="historiques">
+<div class="container-fluid block-container block-size" role="historiques">
     <h1 class="h1-title">Mes réservations passées</h1>
     <div class="row">
         @foreach ($historiques as $historique)
@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <h2 class="card-title title-houses"><a href="{{route('user.showhistoriques', $historique->id) }}">{{$historique->house->title}}</a></h2>
                         </div>
-                        <p class="price">Total payé: {{$historique->total}}€ pour {{$historique->nb_personnes}} personne(s)</p>
+                        <p class="price">Total payé: {{$historique->total}}€ <br> pour {{$historique->nb_personnes}} personne(s)</p>
                         <div class="card-infos">
                             <p>Type de bien : {{$historique->house->category->category}}</p>
                             @foreach($historique->house->valuecatproprietes as $valuecatpropriete)

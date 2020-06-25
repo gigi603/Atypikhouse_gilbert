@@ -246,5 +246,6 @@
  <script src="<?php echo e(asset('admin/js/demo/datatables-demo.js')); ?>"></script>
 
  <script src="<?php echo e(asset('js/admin.js')); ?>"></script>
+ <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>

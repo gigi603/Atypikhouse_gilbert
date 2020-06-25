@@ -1,6 +1,6 @@
 <?php $__env->startSection('title', 'Nos Hébergements'); ?>
 <?php $__env->startSection('content'); ?>
-<div class="container-fluid block-container" role="annonces">
+<div class="container-fluid block-container block-size" role="annonces">
     <h1 class="h1-title">Mes hébergements</h1>
     <div class="row text-center" style="margin-bottom: 50px;">
         <a href="<?php echo e(route('house.create_step1')); ?>" class="btn btn-primary btn-color">Ajouter une annonce</a>
@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h2 class="card-title title-houses"><a href="<?php echo e(route('user.showhebergements', $house['id'])); ?>"> <?php echo e($house->title); ?> </a></h2>
                         </div>
-                        <p class="price"><?php echo e($house->price); ?>€ par nuit pour <?php echo e($house->nb_personnes); ?> personne(s)</p>
+                        <p class="price"><?php echo e($house->price); ?>€ par nuit<br> pour <?php echo e($house->nb_personnes); ?> personne(s)</p>
                         <p>Type de bien : <?php echo e($house->category->category); ?></p>
                         <p class="title-houses"> Adresse: <?php echo e($house->adresse); ?></p>
                         <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> </p>

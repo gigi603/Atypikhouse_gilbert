@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Détail de l"annonce')
-@section('link')
 @section('content')
 <div class="container">
     <h1 class="h1-title">Détails de l'annonce</h1>
@@ -167,7 +166,8 @@
                             </div>
                         </div>
                     @endif
-            @endif
+                @endif
+            </div>
         </div>
     </div>
 </div>

@@ -74,7 +74,7 @@
                                 <input type="radio" id="star2" name="note" value="2" /><label for="star2" title="Sucks big tim">2 stars</label>
                                 <input type="radio" id="star1" name="note" value="1" /><label for="star1" title="Sucks big time">1 star</label>
                             </div>
-                            <input type="submit" value="Envoyer" class="btn btn-primary" style="border-radius: 0;">
+                            <input type="submit" value="Envoyer" class="btn btn-primary btn-color" style="border-radius: 0;">
                         </form>
                         <?php if(@count($errors) > 0): ?>
                             <div class="alert alert-danger">

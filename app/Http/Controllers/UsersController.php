@@ -37,9 +37,7 @@ class UsersController extends Controller
     public function edit(EditUserRequest $request, $id) {
         $user = User::find($id);
         try {
-            //dd('coucou');
             if($request->newsletter != 1) {
-                //dd('bravo');
                 $user->newsletter = 0;
                 $user->save();
                 return redirect()->back();
@@ -94,27 +92,46 @@ class UsersController extends Controller
     }
         
 
-    public function editHouse($id)
+    public function editHouse($id, Request $request)
     {
         $categories = category::all();
         $house = house::find($id);
+
+        if($house->category_id == null){
+            $categorySelected = "";
+        } else {
+            $categorySelected = $house->category_id;
+        }
         $proprietes = propriete::where('category_id', $house->category->id)->get();
-        
         return view('user.edit')->with('house', $house)
+                                ->with('categorySelected', $categorySelected)
                                 ->with('categories', $categories)
                                 ->with('proprietes', $proprietes);
     }
 
     public function updateHouse(EditHouseRequest $request, $id)
     {
+        
         $house = house::find($id);
-        // var_dump($request->propriete);
+        $categories = category::where('statut','=', 1)->get();
+        $houseCategoryEdit = $request->session()->get('houseCategoryEdit');
+        $request->session()->push('houseCategoryEdit', $request->category_id);
+        if($houseCategoryEdit == null){
+            $categorySelected = "";
+        } else {
+            $categorySelected = last($houseCategoryEdit);
+        }
         if($house->title != $request->title || $house->category_id != $request->category_id
         || $house->nb_personnes != $request->nb_personnes || $house->price != $request->price 
         || $house->adresse != $request->adresse || $house->photo != $request->photo
         || $house->description != $request->description || $house->start_date != $request->start_date 
         || $house->end_date != $request->end_date){
             $house->title = $request->title;
+            $lastCategory = $categories->last();
+            if($request->category_id > $lastCategory->id){
+                $categorySelected = $request->category_id;
+                return redirect()->back()->with('danger', 'Veuillez selectionner une categorie valide');
+            }
             $house->category_id = $request->category_id;
             $house->nb_personnes = $request->nb_personnes;
             $house->price = $request->price;
@@ -158,7 +175,9 @@ class UsersController extends Controller
                 $valuecatProprietesHouse->save();
             }
         }
-        return redirect()->back()->with('success', "L'hébergement de l'utilisateur a bien été modifié");
+        $request->session()->forget('houseCategoryEdit');
+        return redirect()->back()->with('categorySelected', $categorySelected)
+                                 ->with('success', "L'hébergement de l'utilisateur a bien été modifié");
     }
 
     public function deleteHouse(Request $request, $id)

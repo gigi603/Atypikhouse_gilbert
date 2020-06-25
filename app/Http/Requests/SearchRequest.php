@@ -47,7 +47,7 @@ class SearchRequest extends FormRequest
             "end_date.date_format" => "Veuillez mettre la date au format dd/mm/yyyy",
             "nb_personnes.required" => "Vous devez choisir un nombre de personnes",
             "nb_personnes.numeric" => "le nombre de personnes sélectionné doit être un chiffre/nombre",
-            "nb_personnes.between" => "le nombre de personnes sélectionné doit être compris entre 1 et 16"
+            "nb_personnes.between" => "le nombre de personnes sélectionné doit être compris entre 1 et 15"
         ];
     }
 }

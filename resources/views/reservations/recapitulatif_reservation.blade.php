@@ -2,7 +2,7 @@
 @section('title', 'Recapitulatif réservation')
 @section('link')
 @section('content')
-<div class="container list-category">
+<div class="container margin-top">
     <div class="panel panel-default">
         <div class="panel-heading text-center">Récapitulatif de votre réservation</div>
             <div class="panel-body">

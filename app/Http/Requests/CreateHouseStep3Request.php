@@ -50,7 +50,7 @@ class CreateHouseStep3Request extends FormRequest
             "category_id.numeric" => "Veuillez saisir le bon type d'annonce",
             'nb_personnes.required' => "Veuillez choisir le nombre de personnes",
             'nb_personnes.numeric' => "le nombre de personnes sélectionné doit être un chiffre/nombre",
-            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 16",
+            'nb_personnes.between' => "le nombre de personnes sélectionné doit être compris entre 1 et 15",
             'start_date.required' => "Veuillez sélectionner une date de départ",
             'start_date.date_format' => "Veuillez mettre la date au format dd/mm/yyyy",
             'end_date.required' => "Veuillez sélectionner une date de retour",

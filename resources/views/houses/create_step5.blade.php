@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Etape 5')
 @section('content')
-<div class="container margin-top">
+<div class="container margin-top block-size">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Nos Réservations')
 @section('content')
-<div class="container-fluid block-container" role="reservations">
+<div class="container-fluid block-container block-size" role="reservations">
     <h1 class="h1-title">Mes réservations</h1>
     <div class="row">
         @foreach ($reservations as $reservation)
@@ -13,7 +13,7 @@
                             <div class="card-body">
                                 <h2 class="card-title title-houses"><a href="{{route('user.showreservations', $reservation['id']) }}"> {{$reservation->house->title}} </a></h2>
                             </div>
-                            <p class="price">Total payé: {{$reservation->total}}€ pour {{$reservation->nb_personnes}} personne(s)</p>
+                            <p class="price">Total payé: {{$reservation->total}}€<br> pour {{$reservation->nb_personnes}} personne(s)</p>
                             <p>Type de bien : {{$reservation->house->category->category}}</p>
                             <p class="title-houses"> Adresse: {{$reservation->house->adresse}}</p>
                             <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($reservation->start_date)->format('l j F Y'); echo($startdate);?> </p>
