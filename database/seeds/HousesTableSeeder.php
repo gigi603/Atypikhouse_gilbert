@@ -15,7 +15,7 @@ class HousesTableSeeder extends Seeder
             [
                 'title' => 'Cabane de trappeur',
                 'user_id' => 1,
-                'category_id' => 2,
+                'category_id' => 3,
                 'adresse' => 'Gironde, France',
                 'description' => "Vous vous demandez comment vous mettre dans la peau d’un chasseur, en pleine forêt du Québec / Canada ou des Etats-Unis ? Pas besoin de réserver votre billet d’avion. C’est possible en Gironde, près de Bordeaux !
                 Notre domaine d’hébergement insolite peut en effet vous transporter instantanément vers le continent nord-américain. Il vous suffit pour cela de vous installer confortablement dans notre magnifique cabane de trappeur. Si vous êtes séduit par son look « rustique », vous le serez tout autant par son intérieur, dont le niveau de confort vous permet d’y séjourner en toutes saisons.",
@@ -48,7 +48,7 @@ class HousesTableSeeder extends Seeder
             [
                 'title' => 'La yourte du vigneau',
                 'user_id' => 1,
-                'category_id' => 4,
+                'category_id' => 5,
                 'adresse' => 'Vendée, France',
                 'description' => "Yourte Mongole en plein cœur du domaine à l'abri des regards
                 Vous pourrez profiter d'un séjour en famille dans cette yourte typique de la culture mongole, avec puits de lumière. Calme et tranquillité seront les maîtres mots de votre séjour.
@@ -70,7 +70,7 @@ class HousesTableSeeder extends Seeder
             [
                 'title' => 'La yourte du domaine du chatelet',
                 'user_id' => 1,
-                'category_id' => 4,
+                'category_id' => 5,
                 'adresse' => 'Vosges, France',
                 'description' => "C’est une véritable yourte mongole traditionnelle de qualité supérieure (adaptée aux climats des Hautes Vosges) aménagée de ces meubles d’origine, elle peut accueillie jusqu’à 5 personnes
 
@@ -93,7 +93,7 @@ class HousesTableSeeder extends Seeder
             [
                 'title' => 'Les wagons du camping le haut village',
                 'user_id' => 1,
-                'category_id' => 6,
+                'category_id' => 7,
                 'adresse' => 'Loire-Atlantique, France',
                 'description' => "WAGON DE TRAIN:
 
@@ -124,7 +124,7 @@ class HousesTableSeeder extends Seeder
             [
                 'title' => "Attrap'reves",
                 'user_id' => 1,
-                'category_id' => 3,
+                'category_id' => 2,
                 'adresse' => 'Bouches-du-Rhone, France',
                 'description' => "A Allauch, dans les Bouches-du-Rhône on attrapes vos rêves et on les réalise ! Ils sont 5, comme les doigts d’une main, tous dans la famille, chacun avec sa spécialité, pour vous satisfaire. Depuis presque dix ans, le domaine, une pinède de 15 000 m², offre une palette d’hébergements insolites tous aussi craquants les uns que les autres. Une « Aqua'Room», reposante à souhait avec sa déco planante faite de poissons multicolores qui s’ébattent dans deux aquariums géants, une cabane tahitienne entourée de bambous où ne manque que le yukulele, un Lov'nid, une cabane « écureuil » et des bulles transparentes ou semi-transparentes pour admirer en toute quiétude les nuits étoilées. Chacune a sa « personnalité », à choisir selon votre humeur. Toutes sont équipées confortablement. Vous croiserez peut-être Geoffrey ou Bruno sur le domaine. Ce dernier, professionnel de l’hôtellerie, vous concoctera vos petits déjeuners « maison ». Vous pouvez également commander des plateaux-repas à déguster sur la terrasse à côté de votre bulle ou dans un chalet « ad hoc ». Sur place, piscine (seulement à Allauch) et jacuzzi assorti de massages (sur réservation) sont à la disposition des hôtes.
                 Chaque hébergement dispose de son chemin d’accès propre, afin de préserver l’intimité des hôtes. Une parenthèse à vivre à deux (éventuellement accompagnés d’un enfant de plus de 6 ans). Le site est ouvert toute l’année. La presse et notamment la presse étrangère, ne tarit pas d’éloges sur ce lieu à part, loin du tourisme de masse aseptisé. A tester d’urgence ! La bonne idée : les bons « cadeau » disponibles sur le site.",
