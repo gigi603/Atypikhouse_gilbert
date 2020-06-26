@@ -42,8 +42,8 @@
 @section('footer', 'footer_absolute')
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOt3g2OEb6Br_DmsDwVgciAFiDdE5Qh0E&libraries=places&language=fr"></script>
-    <script src="{{ asset('js/autocomplete_address.js') }}"></script>
+    {{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOt3g2OEb6Br_DmsDwVgciAFiDdE5Qh0E&libraries=places&language=fr"></script>
+    <script src="{{ asset('js/autocomplete_address.js') }}"></script> --}}
     <script src="{{ asset('js/create_house.js') }}"></script>
     <!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
 @endsection
