@@ -23,7 +23,7 @@ class CreateHousesTables extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('nb_personnes');
-            $table->string('telephone');
+            $table->string('phone');
             $table->float('price');
             $table->string('photo');
             $table->string('statut');

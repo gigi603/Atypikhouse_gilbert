@@ -11,13 +11,13 @@
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step2')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <p>2. Numéro de téléphone à contacter pour l'annonce</p>
-                        <div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Téléphone</label>
                             <div class="col-md-6">
-                                <input type="text" required class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" value="{{$telephone}}">
-                                @if ($errors->has('telephone'))
+                                <input type="text" required class="form-control" name="phone" placeholder="Saisir un numéro de téléphone sans espaces" value="{{$telephone}}">
+                                @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('telephone') }}</strong>
+                                        <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
                             </div>

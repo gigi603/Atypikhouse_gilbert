@@ -12,13 +12,13 @@
                         <?php echo e(csrf_field()); ?>
 
                         <p>2. Numéro de téléphone à contacter pour l'annonce</p>
-                        <div class="form-group<?php echo e($errors->has('telephone') ? ' has-error' : ''); ?>">
+                        <div class="form-group<?php echo e($errors->has('phone') ? ' has-error' : ''); ?>">
                             <label for="name" class="col-md-4 control-label">Téléphone</label>
                             <div class="col-md-6">
-                                <input type="text" required class="form-control" name="telephone" placeholder="Saisir un numéro de téléphone sans espaces" value="<?php echo e($telephone); ?>">
-                                <?php if($errors->has('telephone')): ?>
+                                <input type="text" required class="form-control" name="phone" placeholder="Saisir un numéro de téléphone sans espaces" value="<?php echo e($telephone); ?>">
+                                <?php if($errors->has('phone')): ?>
                                     <span class="help-block">
-                                        <strong><?php echo e($errors->first('telephone')); ?></strong>
+                                        <strong><?php echo e($errors->first('phone')); ?></strong>
                                     </span>
                                 <?php endif; ?>
                             </div>
