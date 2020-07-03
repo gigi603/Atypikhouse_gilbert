@@ -20,10 +20,7 @@
                             <h3 class="price">Total payé: {{$historique->total}}€ pour {{$historique->nb_personnes}} personnes</h3>
                             <p>Type de bien : {{$historique->house->category->category}}</p>
                             @foreach($historique->house->valuecatproprietes as $valuecatpropriete)
-                                @if($valuecatpropriete->value == 0)
-                                @else
-                                    <p>{{$valuecatpropriete->propriete->propriete}}: {{$valuecatpropriete->value}}</p> 
-                                @endif                                 
+                                <p>{{$valuecatpropriete->propriete->propriete}}: {{$valuecatpropriete->value}}</p>                               
                             @endforeach
                             <p><i class="fas fa-calendar"></i> Du: <?php \Date::setLocale('fr'); $startdate = Date::parse($historique->start_date)->format('l j F Y'); echo($startdate);?> </p>
                             <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>

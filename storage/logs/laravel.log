@@ -3562,3 +3562,500 @@ Stack trace:
 #49 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/public/index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #50 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/server.php(21): require_once('/Applications/X...')
 #51 {main}  
+[2020-06-26 10:28:31] local.ERROR: ErrorException: Trying to get property 'title' of non-object in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/storage/framework/views/b6695da4ccd65306732e47798fc346f7d2a26fb7.php:7
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/storage/framework/views/b6695da4ccd65306732e47798fc346f7d2a26fb7.php(7): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/Applications/X...', 7, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Applications/X...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Applications/X...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#5 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#6 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#7 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/symfony/http-foundation/Response.php(206): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(615): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(572): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#10 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(533): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(511): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Middleware/Debugbar.php(51): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Barryvdh\Debugbar\Middleware\Debugbar->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#44 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#47 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#48 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#49 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#50 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/public/index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#51 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/server.php(21): require_once('/Applications/X...')
+#52 {main}
+
+Next ErrorException: Trying to get property 'title' of non-object (View: /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/resources/views/user/show.blade.php) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/storage/framework/views/b6695da4ccd65306732e47798fc346f7d2a26fb7.php:7
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(44): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException), 1)
+#1 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\View\Engines\PhpEngine->evaluatePath('/Applications/X...', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(137): Illuminate\View\Engines\CompilerEngine->get('/Applications/X...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(120): Illuminate\View\View->getContents()
+#4 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/View.php(85): Illuminate\View\View->renderContents()
+#5 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Http/Response.php(38): Illuminate\View\View->render()
+#6 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/symfony/http-foundation/Response.php(206): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(615): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(572): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#11 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#12 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#13 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#15 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#16 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#18 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#19 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#20 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#22 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#23 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#24 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#26 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#27 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(533): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#28 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Router.php(511): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#29 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#30 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#31 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Middleware/Debugbar.php(51): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#32 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Barryvdh\Debugbar\Middleware\Debugbar->handle(Object(Illuminate\Http\Request), Object(Closure))
+#33 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#34 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#35 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#36 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#38 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#39 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#40 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#41 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#42 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#43 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#44 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#45 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#46 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#47 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#48 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#49 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/public/index.php(59): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#50 /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/server.php(21): require_once('/Applications/X...')
+#51 {main}  
+[2020-06-26 10:32:01] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 18930448 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:02] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 75596776 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:04] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:05] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 54574568 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:07] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 94433784 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:09] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 113355032 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:11] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 123887624 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:13] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 127982960 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:15] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053864 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:16] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 163840 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:18] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 27272104 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:21] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 79702840 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:23] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 107003568 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:25] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 119552432 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:28] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 125925504 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:30] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053880 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:32] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053888 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:33] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 77824 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:35] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 6321760 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:36] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69222448 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:38] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 27272104 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:39] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 79702824 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:41] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 107003560 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:43] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 119552416 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:45] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 125925488 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:47] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053880 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:49] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053880 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:51] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:53] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 63012864 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:55] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:57] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 18930448 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:58] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 155648 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:32:59] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:01] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 18930480 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:02] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 12618824 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:04] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 73401608 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:06] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 102817488 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:08] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 117570552 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:10] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 125925504 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:11] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053896 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:13] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053896 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:15] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053896 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:17] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053896 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:18] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 130053896 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:20] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 132142856 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:22] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 132142824 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:23] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:25] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 63012864 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:26] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 167936 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:27] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:29] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 60898880 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:30] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:32] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 25197104 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:33] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 79702808 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:35] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 107003536 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:36] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 119552400 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:38] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 125925472 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:53] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:54] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:55] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 176128 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:33:59] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 704512 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:00] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:02] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:03] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:05] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:06] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:08] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:09] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:11] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:12] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:14] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:15] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:17] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 14684144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:19] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 204800 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:20] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 73728 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:22] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 8424336 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:24] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 77824 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:26] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 12618784 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:28] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 200704 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:30] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 172032 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:31] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 81920 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:34] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:36] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 167936 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:38] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 172032 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:39] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 163840 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:40] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 200704 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:41] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:43] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 2111496 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:44] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:45] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 10515488 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:47] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:48] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 10515488 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:49] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:51] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 8424336 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:52] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:53] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 8424336 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:54] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:56] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 8424336 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:57] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 204800 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:34:59] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 73728 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:00] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 6321736 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:01] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:03] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 10515488 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php:867
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:04] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 204800 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:05] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 172032 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:06] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:14] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 159744 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:15] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 167936 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:16] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 167936 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:19] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 200704 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:20] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:21] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 212992 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:22] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:24] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:25] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:26] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:28] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:29] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:30] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:32] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:33] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:35] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:36] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 204800 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:37] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 180224 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:40] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 184320 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:41] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 217088 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:43] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 204800 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:44] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 172032 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php:38
+Stack trace:
+#0 {main}  
+[2020-06-26 10:35:45] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 81920 bytes) in /Applications/XAMPP/xamppfiles/htdocs/Atypikhouse_gilbert/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php:82
+Stack trace:
+#0 {main}  
