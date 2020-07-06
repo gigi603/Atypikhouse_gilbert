@@ -12,6 +12,11 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\House');
     }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
  
     function user(){
         return $this->belongsTo('App\User');
