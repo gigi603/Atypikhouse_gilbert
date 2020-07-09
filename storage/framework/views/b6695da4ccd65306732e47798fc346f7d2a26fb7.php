@@ -100,7 +100,7 @@
                         <p><?php echo e($house->description); ?></p>
                         <p>Annulation gratuite !</p>
                         <p> Adresse: <?php echo e($house->adresse); ?></p>
-                        <p> Téléphone de l'annonceur : <?php echo e($house->telephone); ?></p>
+                        <p> Téléphone de l'annonceur : <?php echo e($house->phone); ?></p>
                         <p> Adresse mail de l'annonceur : <?php echo e($house->user->email); ?></p>
                     </div>
                 </div>

@@ -34,7 +34,7 @@
                                             <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($historique->end_date)->format('l j F Y'); echo($enddate);?></p>
                                         <p class="card-text"><?php echo e($historique->house->description); ?></p>
                                         <p> Adresse: <?php echo e($historique->house->adresse); ?></p>
-                                        <p>Téléphone de l'annonceur : <?php echo e($historique->house->telephone); ?></p>
+                                        <p>Téléphone de l'annonceur : <?php echo e($historique->house->phone); ?></p>
                                         <p>Adresse mail de l'annonceur : <?php echo e($historique->user->email); ?></p>
                                     </div>
                                 </div>

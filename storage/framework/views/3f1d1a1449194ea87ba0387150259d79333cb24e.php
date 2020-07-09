@@ -26,7 +26,7 @@
                             <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> </p>
                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></p>
                         <p>Pour <?php echo e($house->nb_personnes); ?> personne(s) maximum</p>        
-                        <p>Téléphone de l'annonceur : <?php echo e($house->telephone); ?></p>
+                        <p>Téléphone de l'annonceur : <?php echo e($house->phone); ?></p>
                         <p>Adresse mail de l'annonceur : <?php echo e($house->user->email); ?></p>
                             <a href="<?php echo e(route('user.editHouse', $house['id'])); ?>" class="btn btn-primary btn-color">Modifier</a>
                         </div>

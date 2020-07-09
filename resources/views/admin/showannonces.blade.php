@@ -35,7 +35,7 @@
                                         <p><i class="fas fa-calendar"></i> Début: <?php \Date::setLocale('fr'); $startdate = Date::parse($house->start_date)->format('l j F Y'); echo($startdate);?> </p>
                                         <p><i class="fas fa-calendar"></i> Fin:  <?php \Date::setLocale('fr'); $enddate = Date::parse($house->end_date)->format('l j F Y'); echo($enddate);?></p>
                                         <p>Pour {{$house->nb_personnes}} personne(s) maximum</p>        
-                                        <p>Téléphone de l'annonceur : {{$house->telephone}}</p>
+                                        <p>Téléphone de l'annonceur : {{$house->phone}}</p>
                                         <p>Adresse mail de l'annonceur : {{$house->user->email}}</p>
                                         <a href="{{action('AdminController@editHouse', $house->id)}}" class="btn btn-primary">Modifier</a>
                                         <a href="{{action('AdminController@valideHouse', $house->id)}}" class="btn btn-primary">Valider l'annonce</a>

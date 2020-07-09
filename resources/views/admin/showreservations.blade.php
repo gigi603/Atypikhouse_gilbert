@@ -34,7 +34,7 @@
                                         <p class="card-text">{{$reservation->house->description}}</p>
                                         <p>Annulation gratuite !</p>
                                         <p> Adresse: {{$reservation->house->adresse}}</p>
-                                        <p>Téléphone de l'annonceur : {{$reservation->house->telephone}}</p>
+                                        <p>Téléphone de l'annonceur : {{$reservation->house->phone}}</p>
                                         <p>Adresse mail de l'annonceur : {{$reservation->user->email}}</p>
                                     </div>
                                 </div>

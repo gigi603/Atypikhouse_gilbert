@@ -34,7 +34,7 @@
                                             <p><i class="fas fa-calendar"></i> au:  <?php \Date::setLocale('fr'); $enddate = Date::parse($reservation->end_date)->format('l j F Y'); echo($enddate);?></p>
                                         <p class="card-text"><?php echo e($reservation->house->description); ?></p>
                                         <p> Adresse: <?php echo e($reservation->house->adresse); ?></p>
-                                        <p>Téléphone de l'annonceur : <?php echo e($reservation->house->telephone); ?></p>
+                                        <p>Téléphone de l'annonceur : <?php echo e($reservation->house->phone); ?></p>
                                         <p>Adresse mail de l'annonceur : <?php echo e($reservation->user->email); ?></p>
                                     </div>
                                 </div>

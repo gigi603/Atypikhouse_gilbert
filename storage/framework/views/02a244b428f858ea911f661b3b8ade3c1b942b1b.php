@@ -25,7 +25,7 @@
                             <p class="card-text"><?php echo e($reservation->house->description); ?></p>
                             <p>Annulation gratuite !</p>
                             <p> Adresse: <?php echo e($reservation->house->adresse); ?></p>
-                            <p>Téléphone de l'annonceur : <?php echo e($reservation->house->telephone); ?></p>
+                            <p>Téléphone de l'annonceur : <?php echo e($reservation->house->phone); ?></p>
                             <p>Adresse mail de l'annonceur : <?php echo e($reservation->user->email); ?></p>
                         </div>
                     </div>

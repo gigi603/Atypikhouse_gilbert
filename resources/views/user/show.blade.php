@@ -96,7 +96,7 @@
                         <p>{{$house->description}}</p>
                         <p>Annulation gratuite !</p>
                         <p> Adresse: {{$house->adresse}}</p>
-                        <p> Téléphone de l'annonceur : {{$house->telephone}}</p>
+                        <p> Téléphone de l'annonceur : {{$house->phone}}</p>
                         <p> Adresse mail de l'annonceur : {{$house->user->email}}</p>
                     </div>
                 </div>

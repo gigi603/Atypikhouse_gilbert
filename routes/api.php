@@ -53,9 +53,17 @@ Route::get('/mylocations/{id}', function ($id) {
 
 Route::get('/user/reservations/{id}', function ($id) {
 	$today = Date::today()->format('Y-m-d');
-	$reservationProfil = reservation::with('house', 'category')->where('user_id', $id)
+	$reservationProfil = reservation::with('house', 'proprietes', 'valuecatproprietes', 'category', 'user')->where('user_id', $id)
 	->where('end_date', '>=', $today)
 	->where('reserved', '=', 1)->get()->toJson();
+	// $reservationProfil = DB::table('reservations')
+    //             ->join('houses', 'houses.id', '=', 'reservations.house_id')
+	// 			->join('users', 'users.id', '=', 'reservations.user_id')
+	// 			->join('categories', 'categories.id', '=', 'houses.category_id')
+	// 			->select('categories.*','reservations.*','houses.*','users.*')
+	// 			->where('reservations.user_id', $id)
+	// 			->where('reservations.end_date', '>=', $today)
+	// 			->where('reservations.reserved', '=', 1)->get()->toJson();
  	return response($reservationProfil,200)->header('Content-Type', 'application/json');
 });
 

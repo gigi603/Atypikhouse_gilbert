@@ -27,7 +27,7 @@
                             <p class="card-text">{{$historique->house->description}}</p>
                             <p>Annulation gratuite !</p>
                             <p> Adresse: {{$historique->house->adresse}}</p>
-                            <p>Téléphone de l'annonceur : {{$historique->house->telephone}}</p>
+                            <p>Téléphone de l'annonceur : {{$historique->house->phone}}</p>
                             <p>Adresse mail de l'annonceur : {{$historique->user->email}}</p>
                         </div>
                     </div>
