@@ -15,6 +15,7 @@ class ReservationsTableSeeder extends Seeder
             [
                 'user_id' => 1,
                 'house_id' => 1,
+                'category_id' => 3,
                 'price' => 400,
                 'total' => 1200,
                 'days' => 3,
@@ -26,6 +27,7 @@ class ReservationsTableSeeder extends Seeder
             [
                 'user_id' => 2,
                 'house_id' => 1,
+                'category_id' => 3,
                 'price' => 400,
                 'total' => 1200,
                 'days' => 3,

@@ -43,6 +43,7 @@ class ReservationsController extends Controller
         $reservation->nb_personnes = $request->nb_personnes;
         $reservation->user_id = Auth::user()->id;
         $reservation->house_id = $house_id;
+        $reservation->category_id = $house->category_id;
         $reservation->total = $total;
         $reservation->days = $days;
         $reservation->reserved = true;
