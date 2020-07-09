@@ -169,6 +169,6 @@
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/calendarCreateAnnonce.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBohiwddVUwXAr6a8oVcN59JBkyoB7bCU&libraries=places&language=fr"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOt3g2OEb6Br_DmsDwVgciAFiDdE5Qh0E&libraries=places&language=fr"></script>
     <script src="{{ asset('js/autocomplete_address.js') }}"></script>
 @endsection

@@ -17,6 +17,6 @@ class Valuecatpropriete extends Model
     }
 
     public function propriete() {
-        return $this->belongsTo('App\Propriete');
+        return $this->belongsTo('App\Propriete', 'propriete_id');
     }
 }

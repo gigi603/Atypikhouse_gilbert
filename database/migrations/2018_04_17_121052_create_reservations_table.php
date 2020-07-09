@@ -17,6 +17,7 @@ class CreateReservationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('house_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->integer('price');
             $table->integer('total');
             $table->integer('days');

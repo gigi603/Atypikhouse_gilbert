@@ -53,14 +53,17 @@ Route::get('/mylocations/{id}', function ($id) {
 
 Route::get('/user/reservations/{id}', function ($id) {
 	$today = Date::today()->format('Y-m-d');
-	$reservationProfil = reservation::with('house', 'proprietes', 'valuecatproprietes', 'category', 'user')->where('user_id', $id)
+	$reservationProfil = reservation::with('house', 'proprietes', 'valuecatproprietes', 'category', 'user')
+	->where('user_id', $id)
 	->where('end_date', '>=', $today)
 	->where('reserved', '=', 1)->get()->toJson();
 	// $reservationProfil = DB::table('reservations')
     //             ->join('houses', 'houses.id', '=', 'reservations.house_id')
 	// 			->join('users', 'users.id', '=', 'reservations.user_id')
-	// 			->join('categories', 'categories.id', '=', 'houses.category_id')
-	// 			->select('categories.*','reservations.*','houses.*','users.*')
+	// 			->join('categories', 'categories.id', '=', 'reservations.category_id')
+	// 			->join('valuecatproprietes', 'valuecatproprietes.house_id', '=', 'houses.id')
+	// 			->join('proprietes', 'proprietes.id', '=', 'valuecatproprietes.propriete_id')
+	// 			->select('categories.*','reservations.*','houses.*','users.*', 'proprietes.*')
 	// 			->where('reservations.user_id', $id)
 	// 			->where('reservations.end_date', '>=', $today)
 	// 			->where('reservations.reserved', '=', 1)->get()->toJson();
@@ -93,13 +96,10 @@ Route::get('/user/comments/{id}', function ($id) {
 
 Route::get('/user_messages/{id}', function ($id) {
 	$messageProfil = DB::table('messages')
-    	->select('users.*', 'messages.*', 'admins.*')
+    	->select('users.*', 'messages.*')
 		->join('users', 'users.id', '=', 'messages.user_id')
-		->join('admins', 'admins.id', '=', 'messages.admin_id')
 		->where('users.id', '=', $id)
 		->where('messages.user_id', '=', $id)
-		->where('admins.id', '=', "1")
-		->where('messages.admin_id', '=', "1")
 		->orderBy('messages.id','desc')
 		->get()->toJson();
  	return response($messageProfil,200)->header('Content-Type', 'application/json');

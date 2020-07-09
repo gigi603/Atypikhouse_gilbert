@@ -107,8 +107,8 @@ class HousesController extends Controller
 
     public function postcreate_step2(CreateHouseStep2Request $request) {
           
-        $houseTelephone = session('houseTelephone', $request->telephone);
-        $request->session()->push('houseTelephone', $request->telephone);
+        $houseTelephone = session('houseTelephone', $request->phone);
+        $request->session()->push('houseTelephone', $request->phone);
 
         $houseUser = session('houseUser', $request->user_id);
         $request->session()->push('houseUser', $request->user_id);
@@ -280,7 +280,7 @@ class HousesController extends Controller
         $house->user_id = last($houseUser);
         $house->title = last($houseTitle);
         $house->category_id = last($houseCategory);
-        $house->telephone = last($houseTelephone);
+        $house->phone = last($houseTelephone);
         $house->nb_personnes = last($houseNbPersonnes);
 
         $date = Carbon::createFromFormat('d/m/Y', last($houseStartDate));
