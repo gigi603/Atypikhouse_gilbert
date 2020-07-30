@@ -35,6 +35,7 @@
                                     'total' => $total,
                                     'user_id' => $reservation->user_id,
                                     'house_id' => $reservation->house_id,
+                                    'category_id' => $reservation->category_id,
                                     'reservation_id' => $reservation->id
                                     ])); ?>">Aller au paiement</a>
                                 </div>

@@ -29,6 +29,7 @@ class AddMoneyController extends Controller
         $nb_personnes = $_GET['nb_personnes'];
         $user_id = $_GET['user_id'];
         $house_id = $_GET['house_id'];
+        $category_id = $_GET['category_id'];
 
         return view('paywithstripe')->with('prix', $prix)
                                     ->with('startdate', $startdate)
@@ -37,7 +38,8 @@ class AddMoneyController extends Controller
                                     ->with('total', $total)
                                     ->with('nb_personnes', $nb_personnes)
                                     ->with('user_id', $user_id)
-                                    ->with('house_id', $house_id);
+                                    ->with('house_id', $house_id)
+                                    ->with('category_id', $category_id);
     }
 
     public function cgv()
@@ -55,6 +57,7 @@ class AddMoneyController extends Controller
         $nb_personnes = $_POST['nb_personnes'];
         $user_id = $_POST['user_id'];
         $house_id = $_POST['house_id'];
+        $category_id = $_POST['category_id'];
         $stripe_payment = $total * 100;
         
         \Stripe\Stripe::setApiKey("sk_test_TyJ4IhA3qzhaTaCmv6IhW6Hk");
@@ -76,6 +79,7 @@ class AddMoneyController extends Controller
             $reservation->end_date = $enddate;
             $reservation->user_id = $user_id;
             $reservation->house_id = $house_id;
+            $reservation->category_id = $category_id;
             $reservation->nb_personnes = $nb_personnes;
             $reservation->price= $prix;
             $reservation->total= $total;

@@ -30,6 +30,7 @@
                                 <input type="hidden" value="<?php echo($days);?>" name="days"/>
                                 <input type="hidden" value="<?php echo($house_id);?>" name="house_id"/>
                                 <input type="hidden" value="<?php echo($user_id);?>" name="user_id"/>
+                                <input type="hidden" value="<?php echo($category_id);?>" name="category_id"/>
                                 <li><a href="<?php echo e(route('cgv')); ?>" target="_blank">Voir les conditions générales de ventes</a></li>
                                 <div class="form-check<?php echo e($errors->has('agree') ? ' has-error' : ''); ?>">
                                     <input type="checkbox" class="form-check-input" name="agree" value="true" <?php echo e(!old('agree') ?: 'checked'); ?>>

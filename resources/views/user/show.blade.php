@@ -67,6 +67,7 @@
                                     
                                 </div>
                                 <input type="hidden" name="house_id" value="{{$house->id}}"/>
+                                <input type="hidden" name="category_id" value="{{$house->category_id}}"/>
 
                                 </div>
                                 @if (Auth::check())

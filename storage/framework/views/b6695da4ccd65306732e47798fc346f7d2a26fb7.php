@@ -70,6 +70,7 @@
                                     
                                 </div>
                                 <input type="hidden" name="house_id" value="<?php echo e($house->id); ?>"/>
+                                <input type="hidden" name="category_id" value="<?php echo e($house->category_id); ?>"/>
 
                                 </div>
                                 <?php if(Auth::check()): ?>
