@@ -21,11 +21,6 @@ class PostsController extends Controller
  
     public function store(CreatePostRequest $request)  
     { 
-        $this->validate($request, [ 
-            'name' => 'required|max:100|regex:/^[a-zA-Z\s\-]+$/u',
-            'email' => 'required|max:50|email', 
-            'content' => 'required|max:3000|min:30|regex:/^[0-9\pL\s\'\-\()\.\,\@\?\!\;\"\:]+$/u' 
-        ]); 
 
 
         if($request->name != Auth::user()->nom.' '.Auth::user()->prenom || $request->email != Auth::user()->email){

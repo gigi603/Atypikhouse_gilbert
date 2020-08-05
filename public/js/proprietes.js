@@ -2,7 +2,6 @@ $(document).ready(function(){
     $('#select_category').on('change', function(){
         $("#propriete_category").empty();
         var category_id= $(this).val();
-        console.log("coco");
         // cache the $(this) jQuery object since we're potentially using it twice:
         if($(this).val() != "defaut"){
             $.ajax({ 

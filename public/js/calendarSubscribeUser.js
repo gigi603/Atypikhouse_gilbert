@@ -55,7 +55,6 @@ $(function () {
             b = $("#datepicker_end").datepicker('getDate').getTime(),
             c = 24*60*60*1000,
             diffDays = Math.round(Math.abs((a - b)/(c)));
-        console.log(diffDays); //show difference
     }
     $("#from").keydown(function(event) { 
         return false;

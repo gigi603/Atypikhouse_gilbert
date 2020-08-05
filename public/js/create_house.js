@@ -9,17 +9,13 @@ $(document).ready(function(){
             data: "",
             success: function(data) {
                 $('.proprietes').empty();
-                console.log(data)
                 var idArr = [];
 
                 for (j in data.valArray){
-                    console.log(data.valArray[j].propriete_id)
                     idArr.push(data.valArray[j].propriete_id);
                 }                
 
-                console.log(idArr);
                 for (i in data.proprietes) {
-                    console.log(data.proprietes[i].id);
                     if (idArr.indexOf(data.proprietes[i].id) !== -1) {
                         $( ".proprietes" ).append(`
                         <div class="form-group">
@@ -63,15 +59,12 @@ $(document).ready(function(){
                 var idArr = [];
 
                 for (j in data.valArray){
-                    console.log(data.valArray[j].propriete_id)
                     idArr.push(data.valArray[j].propriete_id);
                 }                
 
                 console.log(idArr);
                 for (i in data.proprietes) {
-                    console.log('coucou', data.proprietes[i].id);
                     if (idArr.indexOf(data.proprietes[i].id) !== -1) {
-                        console.log('oui')
                         $( ".proprietes" ).append(`
                         <div class="form-group">
                             <label class="col-md-4 control-label">
@@ -82,7 +75,6 @@ $(document).ready(function(){
                             </div>
                         </div>`);
                     } else {
-                        console.log('no')
        
                         $( ".proprietes" ).append(`
                         <div class="form-group">
@@ -97,7 +89,6 @@ $(document).ready(function(){
                 }
                 },error: function (data){
                     $('.proprietes').empty();
-                    console.log('erreur')
                 }
             });
         })  

@@ -20,7 +20,6 @@
                 autoclose: true,
                 onSelect: function(dateText, inst){
                     let startDateAnnonce = new Date($("#fromHome").datepicker("getDate"));
-                    //console.log(startDate);
                     let endDate = new Date($("#fromHome").datepicker("getDate"));
                     endDate.setDate(endDate.getDate() + 1);
                     $("#toHome").datepicker("option","minDate",
@@ -82,7 +81,6 @@
             b = $("#datepicker_end").datepicker('getDate').getTime(),
             c = 24*60*60*1000,
             diffDays = Math.round(Math.abs((a - b)/(c)));
-        console.log(diffDays); //show difference
     }
     $("#fromHome").keydown(function(event) { 
         return false;

@@ -38,9 +38,4 @@
         </div>
     </div>
 </div>
-<script>
-$(document).ready(function(){
-    console.log("<?php echo(Auth::user()->id)?>");
-});
-</script>
 @endsection

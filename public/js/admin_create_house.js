@@ -9,17 +9,13 @@ $(document).ready(function(){
             data: "",
             success: function(data) {
                 $('.proprietes').empty();
-                console.log('data = ', data)
                 var idArr = [];
 
                 for (j in data.valArray){
-                    console.log(data.valArray[j].propriete_id)
                     idArr.push(data.valArray[j].propriete_id);
                 }                
 
-                console.log(idArr);
                 for (i in data.proprietes) {
-                    console.log(data.proprietes[i].id);
                     if (idArr.indexOf(data.proprietes[i].id) !== -1) {
                         $( ".proprietes" ).append(`
                         <div class="form-group">
@@ -52,8 +48,6 @@ $(document).ready(function(){
         $("#select_category option:checked").each(function(){
             var category_id = $("#select_category option:checked").val();
             var house_id = $("#house_id").val();
-            console.log('house_id = ', house_id)
-            console.log('category_id = ',category_id)
             $.ajax({
                 type: 'GET',
                 url: site+'/admin/json_propriete/'+house_id+'/'+category_id,
@@ -61,19 +55,14 @@ $(document).ready(function(){
                 data: "",
                 success: function(data) {
                     $('.proprietes').empty();
-                    console.log(data)
                 var idArr = [];
 
                 for (j in data.valArray){
-                    console.log(data.valArray[j].propriete_id)
                     idArr.push(data.valArray[j].propriete_id);
                 }                
 
-                console.log(idArr);
                 for (i in data.proprietes) {
-                    console.log('coucou', data.proprietes[i].id);
                     if (idArr.indexOf(data.proprietes[i].id) !== -1) {
-                        console.log('oui')
                         $( ".proprietes" ).append(`
                         <div class="form-group">
                             <label class="col-md-4 control-label">
@@ -83,9 +72,7 @@ $(document).ready(function(){
                                 <input type="checkbox" checked class="checkbox_propertie" name="propriete[]" autofocus value="${data.proprietes[i].id}"/>
                             </div>
                         </div>`);
-                    } else {
-                        console.log('no')
-       
+                    } else {       
                         $( ".proprietes" ).append(`
                         <div class="form-group">
                             <label class="col-md-4 control-label">
@@ -99,20 +86,8 @@ $(document).ready(function(){
                 }
                 },error: function (data){
                     $('.proprietes').empty();
-                    console.log('erreur')
                 }
             });
         })  
     });
 });
-
-// $(document).on("click", "input[name='propriete[]']", function(){
-//     $("input[name='propriete[]']").each(function () {
-//         if( $(this).is(':checked') ){
-//             $(this).val("true");
-//         } else {
-//             $(this).val("false");
-//         }
-//     });
-// });
-/*<input type="hidden" name="propriete_id[]" value="${data.proprietes[i].id}"/>*/

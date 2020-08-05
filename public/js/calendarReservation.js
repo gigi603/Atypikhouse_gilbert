@@ -4,7 +4,6 @@ $(function () {
     let startDate = $('#start_date_annonce').val().split('-').reverse().join('/');
     let endDate = $('#end_date_annonce').val().split('-').reverse().join('/');
     //startDate = new Date(startDate.split("-").reverse().join("-"));
-    // console.log(startDate);
     let dateParts = startDate.split("/");
     let dateParts2 = endDate.split("/");
 
@@ -37,7 +36,6 @@ $(function () {
                 autoclose: true,
                 onSelect: function(dateText, inst){
                     let startDateAnnonce = new Date($("#from").datepicker("getDate"));
-                    //console.log(startDate);
                     let endDate = new Date($("#from").datepicker("getDate"));
                     endDate.setDate(endDate.getDate() + 1);
                     $("#to").datepicker("option","minDate",
