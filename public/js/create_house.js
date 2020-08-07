@@ -55,14 +55,12 @@ $(document).ready(function(){
                 data: "",
                 success: function(data) {
                     $('.proprietes').empty();
-                    console.log(data)
                 var idArr = [];
 
                 for (j in data.valArray){
                     idArr.push(data.valArray[j].propriete_id);
                 }                
 
-                console.log(idArr);
                 for (i in data.proprietes) {
                     if (idArr.indexOf(data.proprietes[i].id) !== -1) {
                         $( ".proprietes" ).append(`
