@@ -18,7 +18,6 @@ autocompleteadresse.setComponentRestrictions(
 
 google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
   place = autocompleteadresse.getPlace();
-  console.log(place);
   autocompleteadresse.value = place.formatted_address;
   // for (var i in place.address_components) {    
   //   var component = place.address_components[i];    
