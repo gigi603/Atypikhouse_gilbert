@@ -1,6 +1,6 @@
-node_modules
-**/node_modules/
-vendor
+/node_modules
+/public/storage
+/vendor
 .idea
 .vagrant
 Homestead.json
