@@ -1,33 +1,41 @@
-  let street_number = document.getElementById('street_number');
-  let route = document.getElementById('route');
-  let locality = document.getElementById('locality');
-  let country = document.getElementById('country');
-  let adresse = document.getElementById('autocompleteadresse');
+let placeSearch;
+let autocomplete;
+const componentForm = {
+  street_number: "short_name",
+  route: "long_name",
+  locality: "long_name",
+  administrative_area_level_1: "short_name",
+  country: "long_name",
+  postal_code: "short_name"
+};
 
-  let optionsAdresse = {
-    types: ['address'],
-    language: 'fr'
-  };
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search predictions to
+  // geographical location types.
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("autocomplete"),
+    { types: ["geocode"] }
+  );
+  // Avoid paying for data that you don't need by restricting the set of
+  // place fields that are returned to just the address components.
+  autocomplete.setFields(["address_component"]);
+}
 
-let place;
 
-autocompleteadresse = new google.maps.places.Autocomplete(adresse, optionsAdresse);
-
-autocompleteadresse.setComponentRestrictions(
-  {'country': ['fr', 'be','es', 'it']});
-
-google.maps.event.addListener(autocompleteadresse, 'place_changed', function() {
-  place = autocompleteadresse.getPlace();
-  autocompleteadresse.value = place.formatted_address;
-  // for (var i in place.address_components) {    
-  //   var component = place.address_components[i];    
-    
-  //   for (var j in component.types) {  
-  //     var type_element = document.getElementById(component.types[j]);      
-      
-  //     if (type_element) {     
-  //       type_element.value = component.long_name;
-  //     }    
-  //   }
-  // }
-});
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      const geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      const circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}

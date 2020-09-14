@@ -14,7 +14,7 @@
                         <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Adresse</label>
                             <div class="col-md-6">
-                            <input type="text" required class="form-control" id="autocompleteadresse" name="adresse" placeholder="Saisir l'adresse" value="{{$adresse}}">
+                            <input type="text" required class="form-control" id="autocomplete" name="adresse" placeholder="Saisir l'adresse" value="{{$adresse}}">
                                 @if ($errors->has('adresse'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('adresse') }}</strong>
@@ -42,8 +42,12 @@
 @section('footer', 'footer_absolute')
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
-    {{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOt3g2OEb6Br_DmsDwVgciAFiDdE5Qh0E&libraries=places&language=fr"></script>
-    <script src="{{ asset('js/autocomplete_address.js') }}"></script> --}}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOt3g2OEb6Br_DmsDwVgciAFiDdE5Qh0E&callback=initAutocomplete&libraries=places&v=weekly&language=fr"
+      defer
+    ></script>
+    <script src="{{ asset('js/autocomplete_address.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
-    <!--<script src="{{ asset('js/proprietes.js') }}"></script>-->
+    <script src="{{ asset('js/proprietes.js') }}"></script>
 @endsection

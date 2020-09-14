@@ -29,7 +29,7 @@
 </IfModule>
 
 #<IfModule mod_headers.c>
-#   <FilesMatch "\.(js|jpe?g|png|css)$">
+#   <FilesMatch "\.(js|jpeg|png|css)$">
 #       Header set X-Content-Type-Options nosniff
 #   </FilesMatch>
 #</IfModule>
