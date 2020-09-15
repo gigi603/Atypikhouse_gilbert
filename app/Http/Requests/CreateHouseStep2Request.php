@@ -25,7 +25,7 @@ class CreateHouseStep2Request extends FormRequest
     public function rules()
     {
         return [
-            'phone' =>'required|phone:FR,BE,IT,ES',
+            'phone' =>'required|phone:FR,BE,IT,ES,DE',
         ];
     }
 

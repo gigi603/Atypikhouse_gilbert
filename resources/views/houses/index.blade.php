@@ -13,7 +13,7 @@
                             {{ csrf_field() }}
                             {{-- <div class="row"> --}}
                                 <div class="col-lg-3 col-md-3 col-sm-12 cadre">
-                                    <h2 class="h2-title">Atypikhouse offre les meilleurs espaces atypiques, partout en Europe !</h2>
+                                    <h2 class="h2-title">Atypikhouse offre les meilleurs espaces atypiques en Europe !</h2>
                                     <div class="form-group reservation-search">
                                         @include('search',['url'=>'search','link'=>'search'])
                                     </div>
