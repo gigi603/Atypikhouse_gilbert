@@ -15,7 +15,7 @@
 
                         <br>Ce fichier est accessible uniquement par les administrateur des services atypikhouse ; aucun employer/administrateur d’atypikhouse ne vous demandera vos information personnel d’identification , connexion ou paiment.<br>
 
-                        <br>Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d’accès aux données vous concernant et les faire rectifier en nous contactant par mail : <br> administration.atypikhouse@gmail.com(cf. §3.1).<br>
+                        <br>Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d’accès aux données vous concernant et les faire rectifier en nous contactant par mail : <br> notre.equipe.atypikhouse@gmail.com(cf. §3.1).<br>
                     </p>
 
                     <p>
@@ -25,7 +25,7 @@
 
                         <br>Un administrateur atypikhouse à vous contacter pour toute raison concernant vos locations ou vos action au sein des services atypikhouse mais également pour vous prévenir de tout changement dans les condition général d’utilisation ou de changement et mise a jours du système et des services. <br>
 
-                        <br>Astuce : vous ne souhaitez pas donner votre consentement ? contactez nous par mail a administration.atypikhouse@gmail.com . Nous répondrons à vos questions le plus rapidement possible en fonction de la disponibilté de nos administrateur.<br>
+                        <br>Astuce : vous ne souhaitez pas donner votre consentement ? contactez nous par mail a notre.equipe.atypikhouse@gmail.com . Nous répondrons à vos questions le plus rapidement possible en fonction de la disponibilté de nos administrateur.<br>
                     </p>
 
                     <p>
@@ -36,7 +36,7 @@
                         <br><b>3.1. Droit d’accès à vos données personnelles</b><br>
                         Vous disposez d’un droit d’accès, de modification et/ou de suppression des données vous concernant à tout moment en contactant nos administrateur:<br>
 
-                        <br>Par mail :  administration.atypikhouse@gmail.com accompagné d’une copie d’une pièce d’identité. Idéalement, avec la raison de votre prise de contact.<br>
+                        <br>Par mail :  notre.equipe.atypikhouse@gmail.com accompagné d’une copie d’une pièce d’identité. Idéalement, avec la raison de votre prise de contact.<br>
 
                         <br>Sur place dans nos locaux : avec présentation d’une pièce d’identité. La CNIL précise : « Il est possible de se faire accompagner par la personne de son choix. La consultation doit durer suffisamment longtemps pour prendre note commodément et complètement. Il est possible de demander une copie des données ».<br>
 

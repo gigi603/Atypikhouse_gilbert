@@ -19,7 +19,7 @@
 
                     <br>Atypikhouse vous permet donc de reserver des logements atypiques en ligne en europe dans 5 pays: FRANCE, ESPAGNE, ITALIE, ALLEMAGNE et BELGIQUE (nous comptons à l'avenir rajouter tous les autres pays européens dans les mises à jours à venir). Atypikhouse permet de gérer vos réservations ou annonces via notre application mobile.<br>
 
-                    <br>Pour toutes question vous pouvez nous contacter par téléphone au 08 55 56 56 56 ou par mail à administration.atypikhouse@gmail.com sinon vous pouvez aussi utiliser le formulaire de contact de notre site mais pour cela vous devez vous connecter sur votre compte.<br>
+                    <br>Pour toutes question vous pouvez nous contacter par téléphone au 08 55 56 56 56 ou par mail à notre.equipe.atypikhouse@gmail.com sinon vous pouvez aussi utiliser le formulaire de contact de notre site mais pour cela vous devez vous connecter sur votre compte.<br>
                 </div>
             </div>
         </div>
