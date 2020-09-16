@@ -20,7 +20,8 @@
 
                     <p>
                         <b>2. Consentement et Traitement de vos données personnelles</b><br>
-                        En cochant la case de consentement obligatoire avant soumission de chaque formulaire du site web www.atypikhouse.com (« J’autorise atypikhouse à me contacter de façon personnalisée à propos de ses services pour assurer ma sécurité et améliorer les services proposer par atypikhouse. Vos données personnelles ne seront jamais communiquées à des tiers. ») vous autorisez explicitement le stockage et le traitement de vos données dans le but de vous fournir la meilleur experience possible. Vous autorisez :<br>
+                        En cochant la case de consentement obligatoire avant soumission de chaque formulaire du site web www.atypikhouse.com 
+                        (« J’autorise atypikhouse à me contacter de façon personnalisée à propos de ses services pour assurer ma sécurité et améliorer les services proposer par atypikhouse. Vos données personnelles ne seront jamais communiquées à des tiers. ») vous autorisez explicitement le stockage et le traitement de vos données dans le but de vous fournir la meilleur experience possible. Vous autorisez :<br>
 
                         <br>Un administrateur atypikhouse à vous contacter pour toute raison concernant vos locations ou vos action au sein des services atypikhouse mais également pour vous prévenir de tout changement dans les condition général d’utilisation ou de changement et mise a jours du système et des services. <br>
 
