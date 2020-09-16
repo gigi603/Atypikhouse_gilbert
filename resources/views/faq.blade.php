@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="block">
                     <h2>Service client </h2>
-                    <p>Notre équipe est à votre disposition pour toute question sur nos annonces, votre reservation et/ou votre annonce ou toute autre question d'ordre générale de 8h à 20h</p>
+                    <p>Notre équipe est à votre disposition pour toute question sur nos annonces, votre reservation et/ou votre annonce ou toute autre question d'ordre générale de 8h à 20h</p><br>
                     <h2>Mon paiement est-it sécurisé ?</h2>
                     <p>Avec le logiciel et API de Stripe qui est utilisé par un bon nombres d'entreprises tels que deliveroo, booking.com ou bien mano mano, nous garantissons un paiement sécurisée afin de combattre la fraude de paiement en ligne.</p>
                 </div>
