@@ -476,12 +476,11 @@ footer li a:hover{
 	margin: 10px 5px;
 }
 
-/* Formulaire */
+/* Formulaire de contact */
  .contact-checkbox {
 	width:50px;
  }
 #form {
-	margin: 100px auto;
 	width: 570px;
 }
 
