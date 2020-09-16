@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" required title="Lütfen işaretli yerleri doldurunuz" class="form-control" name="nom" placeholder="Nom" value="{{ old('nom') }}">
+                                <input id="name" type="text" required class="form-control" name="nom" placeholder="Nom" value="{{ old('nom') }}">
 
                                 @if ($errors->has('nom'))
                                     <span class="help-block">

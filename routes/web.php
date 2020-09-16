@@ -254,7 +254,9 @@ Route::middleware(['auth'])->group( function () {
     Route::get('/showreservationsannulees/{id}', 'UsersController@showreservationsannulees')->name('user.showreservationsannulees');
 
     //Vue formulaire de contact
-    Route::resource('posts', 'PostsController' , ['only' => ['index', 'store']]);
+    // Route::resource('posts', 'PostsController' , ['only' => ['contact', 'sendMessage']]);
+    Route::get('/contact', 'PostsController@contact')->name('user.contact');
+    Route::post('/sendMessage', 'PostsController@sendMessage')->name('user.sendMessage');
 
 });
 

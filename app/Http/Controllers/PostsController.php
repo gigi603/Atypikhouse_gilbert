@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
-    public function index()  
+    public function contact()  
     {
-        return view('posts.index'); 
+        return view('user.contact'); 
     } 
  
-    public function store(CreatePostRequest $request)  
+    public function sendMessage(CreatePostRequest $request)  
     { 
-
-
         if($request->name != Auth::user()->nom.' '.Auth::user()->prenom || $request->email != Auth::user()->email){
             return back()->with('danger', "Votre message n'a pas été envoyé");
         } else {

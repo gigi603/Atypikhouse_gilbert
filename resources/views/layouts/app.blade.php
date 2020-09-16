@@ -109,7 +109,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('posts.index') }}">Contact</a></li>
+                            <li><a href="{{ route('user.contact') }}">Contact</a></li>
                             @endif
                         </ul>
                     </div>
@@ -153,6 +153,7 @@
         <script src="{{ asset('js/user.js') }}"></script>
         <script src="{{ asset('js/cookieconsent.min.js') }}"></script>
         <script src="{{ asset('js/cookie.js') }}"></script>
+        <script src="{{ asset('js/field-empty.js') }}"></script>
         @yield('script')
 
     </body>
