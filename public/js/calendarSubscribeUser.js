@@ -2,7 +2,7 @@ $(function () {
     var disableddates = [];
 
     birthday = $("#birthday").datepicker({
-        defaultDate: null,
+        defaultDate: '01/01/1980',
         changeMonth: true,
         changeYear: true,
         yearRange: '1980:2019',
