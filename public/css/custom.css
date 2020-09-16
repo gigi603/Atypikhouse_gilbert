@@ -21,8 +21,9 @@ html, body {
 	min-height: 68vh !important;
 }
 
-.block * {
+.block {
 	padding: 10px;
+	margin: 10vh;
 }
 
 .block h1, .block h2, .block h3 {
@@ -404,9 +405,7 @@ nav.navbar.navbar-default {
 
 
 /* Registration */
-.block {
-	margin: 100px;
-}
+
 
 .notifications-panel {
 	min-height: 500px !important;
