@@ -146,8 +146,6 @@
             </footer>
         </div>
         <!-- Scripts -->
-
-        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('js/user.js') }}"></script>

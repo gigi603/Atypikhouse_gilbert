@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" required class="form-control" name="nom" placeholder="Nom" value="{{ old('nom') }}">
+                                <input id="name" type="text" required title="Lütfen işaretli yerleri doldurunuz" class="form-control" name="nom" placeholder="Nom" value="{{ old('nom') }}">
 
                                 @if ($errors->has('nom'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" required class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
+                                <input id="email" type="email" required class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@
                             <label for="email-confirm" class="col-md-4 control-label">Confirmer email</label>
 
                             <div class="col-md-6">
-                                <input id="email-confirm" type="text" required class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
+                                <input id="email-confirm" type="email" required class="form-control" name="email_confirmation" placeholder="Confirmez votre email" value="{{ old('email_confirmation') }}">
                                 @if ($errors->has('email_confirmation'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email_confirmation') }}</strong>
@@ -93,7 +93,7 @@
                         <div class="form-group{{ $errors->has('date_birth') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Date de naissance</label>
                             <div class="col-md-6">
-                                <input type="text" required class="form-control" id="birthday" placeholder="Date de début" name="date_birth" value="{{ old('date_birth') }}" />
+                                <input type="text" required class="form-control" id="birthday" placeholder="Date de naissance" name="date_birth" value="{{ old('date_birth') }}" />
                                 @if ($errors->has('date_birth'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('date_birth') }}</strong>
@@ -102,11 +102,11 @@
                             </div>
                         </div>
                         <div class="form-group text-center">
-                            <a href="{{ route('cgu') }}" target="_blank">Voir les conditions générales</a>
+                            <a href="{{ route('cgu') }}" target="_blank">Voir les conditions générales d'utilisation</a>
                         </div>
                         <div class="form-check{{ $errors->has('conditions') ? ' has-error' : '' }} text-center">
                             <input type="checkbox" class="form-check-input" name="conditions" required value="true" {{ !old('conditions') ?: 'checked' }}>
-                            <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales</label>
+                            <label class="form-check-label" for="exampleCheck1">J'accepte les conditions générales d'utilisation</label>
                             @if ($errors->has('conditions'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('conditions') }}</strong>
@@ -146,8 +146,10 @@
     </div>
 </div>
 @endsection
+
 @section('script')
-    <script src="{{ asset('js/recaptcha.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="{{ asset('js/field-empty.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/calendarSubscribeUser.js') }}"></script>
