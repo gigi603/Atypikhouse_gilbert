@@ -27,11 +27,11 @@ use Jenssegers\Date\Date;
 
 class UsersController extends Controller
 {
-    public function index($id) {
+    public function profile($id) {
         $userData = DB::table('users')
         ->where('id', $id)
         ->get();
-        return view('users.index', compact('userData'))->with('data', Auth::user()->user);
+        return view('user.profile', compact('userData'))->with('data', Auth::user()->user);
     }
 
     public function edit(EditUserRequest $request, $id) {

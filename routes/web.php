@@ -204,7 +204,7 @@ Route::prefix('admin')->group(function () {
  });
 
 Route::middleware(['auth'])->group( function () {
-    Route::get('/profile/{id}', 'UsersController@index');
+    Route::get('/profile/{id}', 'UsersController@profile');
     Route::get('/messages', 'MessagesController@messages')->name('user.messages');
 
     //Create a house, publish an offer
