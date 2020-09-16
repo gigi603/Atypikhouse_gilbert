@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Inscrivez-vous afin de réserver des espaces atypiques')
 @section('content')
-<div class="container margin-top">
+<div class="container margin-top block-size">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -149,7 +149,6 @@
 
 @section('script')
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script src="{{ asset('js/field-empty.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/calendarSubscribeUser.js') }}"></script>

@@ -78,7 +78,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    <li><a href="{{ route('posts.index') }}">Contact</a></li>
+                                    <li><a href="{{ route('user.contact') }}">Contact</a></li>
                                 </ul>
                             </li>
                             @else

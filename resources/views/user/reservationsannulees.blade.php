@@ -2,7 +2,7 @@
 @section('title', 'Nos Réservations')
 @section('content')
 <div class="container-fluid block-container block-size" role="reservations-annulees">
-    <h1 class="h1-title">Mes réservations annulées</h1>
+    <h1 class="h1-title" id="hebergements">Mes réservations annulées</h1>
     <div class="row">
         @foreach ($reservations as $reservation)
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">         
