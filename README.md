@@ -17,6 +17,10 @@ git clone https://github.com/gigi603/Atypikhouse_gilbert.git dans le dossier xam
 
 8. Maintenant télécharger visualstudiocode ouvrez-le puis cliquez sur terminal, new terminal ça va créé un terminal en dessous du projet, aller dans le terminal et aller dans le repertoire atypikhouse_gilbert.
 
+9. Faites: composer install
+
+10. Afin d'importer les données dans la base de donnée effectuez la commande : php artisan migrate:refresh --seed
+
 
 Vous pouvez dès à présent lancer le site
 
