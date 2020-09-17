@@ -27,18 +27,20 @@
                                 <h3 class="price">Prix: {{$house->price}} € x {{$days}} jours pour {{$reservation->nb_personnes}} personne(s)</h3>
                                 <h3 class="price">Total à payer : {{$total}} €</h3>
                                 <p> Si vous voulez réserver cet hébergement veuillez continuer en cliquant sur le bouton ci-dessous</p>
-                                <a class="btn btn-success btn_reserve" href="{{action('AddMoneyController@payWithStripe', 
-                                    ['prix' => $house->price,
-                                    'start' => $reservation->start_date,
-                                    'end' => $reservation->end_date,
-                                    'nb_personnes' => $reservation->nb_personnes,
-                                    'days' => $days,
-                                    'total' => $total,
-                                    'user_id' => $reservation->user_id,
-                                    'house_id' => $reservation->house_id,
-                                    'category_id' => $reservation->category_id,
-                                    'reservation_id' => $reservation->id
-                                    ])}}">Aller au paiement</a>
+                                <a class="btn btn-success btn_reserve" href="{{action('ReservationsController@payWithStripe'
+                                    // [
+                                    //     'prix' => $house->price,
+                                    //     'start' => $reservation->start_date,
+                                    //     'end' => $reservation->end_date,
+                                    //     'nb_personnes' => $reservation->nb_personnes,
+                                    //     'days' => $days,
+                                    //     'total' => $total,
+                                    //     'user_id' => $reservation->user_id,
+                                    //     'house_id' => $reservation->house_id,
+                                    //     'category_id' => $reservation->category_id,
+                                    //     'reservation_id' => $reservation->id
+                                    // ]
+                                    )}}">Aller au paiement</a>
                                 </div>
                             <div>
                         </div>

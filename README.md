@@ -28,3 +28,5 @@ Une fois dans le repertoire atypikhouse_gilbert dans le terminal lancer la comma
 Pour vous connecter en admin c'est http://www.atypikhouse-projet.ovh/admin
 un profil utilisateur gilbert.trinidad1@gmail.com et en mot de passe kronos603
 un profil admin admin@gmail.com et en mot de passe kronos603
+
+Les mails de promotions liés au newsletters si vous avez cocher la case sont envoyés à l'adresse mail notre.equipe.atypikhouse@gmail.com

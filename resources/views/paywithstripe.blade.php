@@ -23,15 +23,7 @@
                                 <!-- Used to display form errors. -->
                                 <div id="card-errors" role="alert"></div>
                             </div>
-                                <input type="hidden" value="<?php echo($prix);?>" name="price"/>
-                                <input type="hidden" value="<?php echo($startdate);?>" name="start"/>
-                                <input type="hidden" value="<?php echo($enddate);?>" name="end"/>
-                                <input type="hidden" value="<?php echo($total);?>" name="total"/>
-                                <input type="hidden" value="<?php echo($nb_personnes);?>" name="nb_personnes"/>
-                                <input type="hidden" value="<?php echo($days);?>" name="days"/>
-                                <input type="hidden" value="<?php echo($house_id);?>" name="house_id"/>
-                                <input type="hidden" value="<?php echo($user_id);?>" name="user_id"/>
-                                <input type="hidden" value="<?php echo($category_id);?>" name="category_id"/>
+                               
                                 <li><a href="{{ route('cgv') }}" target="_blank">Voir les conditions générales de ventes</a></li>
                                 <div class="form-check{{ $errors->has('agree') ? ' has-error' : '' }}">
                                     <input type="checkbox" class="form-check-input" name="agree" value="true" {{ !old('agree') ?: 'checked' }}>
