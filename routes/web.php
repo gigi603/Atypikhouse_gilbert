@@ -30,7 +30,7 @@ Route::get('/robots.txt', function() {
         $robots->addAllow('/cgu');
         $robots->addAllow('/rgpd');
         $robots->addAllow('/faq');
-        $robots->addDisallow('/admin');
+        //$robots->addDisallow('/admin');
         $robots->addDisallow('/user');
         $robots->addSitemap('sitemap.xml');
     }

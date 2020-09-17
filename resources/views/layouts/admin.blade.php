@@ -16,15 +16,15 @@
   {{-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> --}}
 
-  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
 
   <!-- Page level plugin CSS-->
-  <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{ asset('admin/css/sb-admin.css') }}" rel="stylesheet">
-  <link href="{{ asset('admin/css/custom-admin.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/css/sb-admin.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/css/custom-admin.css') }}" rel="stylesheet">
 
 </head>
 

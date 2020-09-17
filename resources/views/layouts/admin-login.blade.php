@@ -15,16 +15,16 @@
   <title>Atypikhouse - Connexion admin</title>
 
   <!-- Custom fonts for this template-->
-  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('admin-component/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="{{ asset('admin/css/sb-admin.css') }}" rel="stylesheet">
-  <link href="{{ asset('admin/css/custom-admin-login.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/css/sb-admin.css') }}" rel="stylesheet">
+  <link href="{{ asset('admin-component/css/custom-admin-login.css') }}" rel="stylesheet">
 </head>
 
 <body class="bg-dark">
     @yield('content')
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('admin-component/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin-component/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin-component/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 </body>
 </html>
