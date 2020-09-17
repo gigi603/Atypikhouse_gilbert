@@ -24,9 +24,9 @@ Vous pouvez dès à présent lancer le site
 Une fois dans le repertoire atypikhouse_gilbert dans le terminal lancer la commande
 1. php artisan serve
 2. (Si problème) Si après avoir fait toutes les manipulations décrite au-dessus php artisan serve ne marche pas faites un composer install puis composer update puis refaites un php artisan serve
-3. Aller sur le lien : http://www.atypikhouse-projet.ovh/ de votre navigateur
-Pour vous connecter en admin c'est http://www.atypikhouse-projet.ovh/admin
-un profil utilisateur gilbert.trinidad1@gmail.com et en mot de passe kronos603
+3. Aller sur le lien : http://127.0.0.1:8000/ de votre navigateur
+Pour vous connecter en admin c'est http://127.0.0.1:8000/admin/login
+un profil utilisateur gilbert.trinidad@gmail.com et en mot de passe kronos603
 un profil admin admin@gmail.com et en mot de passe kronos603
 
-Les mails de promotions liés au newsletters si vous avez cocher la case sont envoyés à l'adresse mail notre.equipe.atypikhouse@gmail.com
+Les mails de promotions liés au newsletters si vous avez cocher la case sont envoyés à l'adresse mail notre.equipe.atypikhouse@gmail.com sur mailtrap
