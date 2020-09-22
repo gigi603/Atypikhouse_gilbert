@@ -71,7 +71,7 @@ Route::get('/mentions_legales', 'HomeController@mentions_legales')->name('mentio
 Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/politique_de_confidentialite', 'HomeController@politique_de_confidentialite')->name('politique_de_confidentialite');
 Route::get('/cgu', 'HomeController@cgu')->name('cgu');
-Route::get('cgv', 'AddMoneyController@cgv')->name('cgv');
+Route::get('/cgv', 'HomeController@cgv')->name('cgv');
 Route::get('/sendmail', 'Auth\RegisterController@sendmail')->name('user.sendmail');
 
 // admin route for our multi-auth system

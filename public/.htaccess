@@ -26,10 +26,7 @@
 </IfModule>
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options nosniff
+    <FilesMatch "\.(js|jpeg|png|css)$">
+       Header always set X-Content-Type-Options nosniff
+    </FilesMatch>
 </IfModule>
-
-#<IfModule mod_headers.c>
-#   <FilesMatch "\.(js|jpeg|png|css)$">
-#       Header set X-Content-Type-Options nosniff
-#   </FilesMatch>
-#</IfModule>

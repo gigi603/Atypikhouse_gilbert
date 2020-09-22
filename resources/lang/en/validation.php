@@ -128,11 +128,13 @@ return [
         'password' => [
             'required' => 'Vous devez saisir votre mot de passe',
             'min' => "Votre mot de passe doit contenir au moins 8 caractères",
-            'max' => "Votre mot de passe doit contenir pas plus de  20 caractères"        
+            'max' => "Votre mot de passe doit contenir pas plus de  20 caractères",
+            'regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, arobathes, tirets, apostrophes, parentheses et les guillemets"    
         ],
         'password_confirmation' => [
             'required' => 'Vous devez confirmer votre mot de passe',
-            'same' => "Votre mot de passe doit être identique"   
+            'same' => "Votre mot de passe doit être identique",
+            'regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, arobathes, tirets, apostrophes, parentheses et les guillemets"
         ],
         'date_birth' => [
             'required' => 'Vous devez saisir votre date de naissance',

@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             "email" => "required|email",
-            "password" => "required"
+            "password" => "required|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\@\?\!\;\^\"\:]+$/u"
         ];
     }
 
@@ -39,7 +39,8 @@ class LoginRequest extends FormRequest
         return [
             'email.required' => 'Veuillez saisir une adresse email',
             'email.email' => 'Veuillez saisir une adresse email valide',
-            'password.required' => "Un mot de passe est requis"
+            'password.required' => "Un mot de passe est requis",
+            'password.regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, arobathes, tirets, apostrophes, parentheses et les guillemets"
         ];
     }
 }

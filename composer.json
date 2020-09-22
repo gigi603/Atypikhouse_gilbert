@@ -9,6 +9,7 @@
         "anhskohbo/no-captcha": "^3.0",
         "arcanedev/robots": "~2.0",
         "barryvdh/laravel-debugbar": "~2.4",
+        "bepsvpt/secure-headers": "^6.3",
         "cartalyst/stripe-laravel": "6.0.*",
         "components/jquery": "^3.3",
         "davejamesmiller/laravel-breadcrumbs": "3.x",
