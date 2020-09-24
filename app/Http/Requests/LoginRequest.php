@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
     {
         return [
             "email" => "required|email|max:30",
-            "password" => "required|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\@\?\!\;\^\"\:]+$/u|min:8|max:30"
+            "password" => "required|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\?\!\;\^\"\:]+$/u|min:8|max:30"
         ];
     }
 
@@ -43,7 +43,7 @@ class LoginRequest extends FormRequest
             'password.required' => "Un mot de passe est requis",
             'password.min' => "Votre mot de passe doit contenir minimum 8 caractères",
             'password.max' => "Votre mot de passe doit contenir maximum 30 caractères",
-            'password.regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, arobathes, tirets, apostrophes, parentheses et les guillemets"
+            'password.regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, tirets, apostrophes, parentheses et les guillemets"
         ];
     }
 }
