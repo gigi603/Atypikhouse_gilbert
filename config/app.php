@@ -193,7 +193,6 @@ return [
         SKAgarwal\GoogleApi\ServiceProvider::class,
         //JWT TOKEN
         'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
-        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -251,7 +250,6 @@ return [
         'Date' => Jenssegers\Date\Date::class,
         'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
         'GooglePlaces' => SKAgarwal\GoogleApi\Facade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

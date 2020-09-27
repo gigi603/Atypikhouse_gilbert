@@ -38,7 +38,6 @@
     34 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
     35 => 'SKAgarwal\\GoogleApi\\ServiceProvider',
     36 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
-    37 => 'Barryvdh\\Debugbar\\ServiceProvider',
   ),
   'eager' => 
   array (
@@ -65,7 +64,6 @@
     20 => 'Propaganistas\\LaravelPhone\\PhoneServiceProvider',
     21 => 'SKAgarwal\\GoogleApi\\ServiceProvider',
     22 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
-    23 => 'Barryvdh\\Debugbar\\ServiceProvider',
   ),
   'deferred' => 
   array (

@@ -116,11 +116,6 @@ class RegisterController extends Controller
                 'g-recaptcha-response'=>'required|captcha'
             ]);
 
-            // if (isset($request->newsletter)) {
-            //     $request->newsletter = 1;
-            // } else {
-            //     $request->newsletter = 0;
-            // }
             $data = $this->create($input)->toArray();
     
             $user = User::find($data['id']);
