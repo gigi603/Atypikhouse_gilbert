@@ -31,8 +31,7 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        return env('APP_URL');
-        //return 'https://www.atypikhouse-projet.ovh/';
+        return 'https://www.atypikhouse-projet.ovh/';
     }
 
     /**
