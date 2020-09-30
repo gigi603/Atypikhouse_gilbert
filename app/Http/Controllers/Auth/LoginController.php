@@ -31,12 +31,8 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if (App::environment() == 'local') {
-            return 'http://127.0.0.1:8000/';
-        }
-        if (App::environment() == 'production') {
-            return 'https://www.atypikhouse-projet.ovh/';
-        }
+        return env('APP_URL');
+        //return 'https://www.atypikhouse-projet.ovh/';
     }
 
     /**
