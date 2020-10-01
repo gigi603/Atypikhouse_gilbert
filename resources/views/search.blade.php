@@ -1,5 +1,6 @@
 {!! Form::open(['method'=>'GET','url'=>$url,'class'=>'form-horizontal','role'=>'search'])  !!}
         <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
+                <p>Type d'annonces </p>
                 <select id="select_category_home" name="category_id" required class="form-control field-home">
                         <option id="" value="">Type d'annonce</option>
                         @foreach($categories as $category)
@@ -13,6 +14,7 @@
                 @endif
         </div>
         <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}{{ $errors->has('end_date') ? ' has-error' : '' }}">
+                <p>Date de départ / Date de retour</p>
                 <input type="text" class="form-control date-field-home" required id="fromHome" placeholder="Date de départ" name="start_date" value="{{ old('start_date') }}" />
                 <input type="text" class="form-control date-field-home" required id="toHome" placeholder="Date de retour" name="end_date" value="{{ old('end_date') }}" />
                 @if ($errors->has('start_date'))
@@ -27,6 +29,7 @@
                 @endif
         </div>
         <div class="form-group{{ $errors->has('nb_personnes') ? ' has-error' : '' }}">
+                <p>Nombre de personnes</p>
                 <select id="" name="nb_personnes" required class="form-control field-home">
                         <option id="" value="">Nombre de personnes</option>
                         <option value="1" @if(old('nb_personnes') == "1") selected="selected" @endif>1</option>
