@@ -61,7 +61,7 @@ return [
             ],
             'servers' => [
                 [
-                    'host' => env('MEMCACHED_HOST', 'atypikhouse-project.ovh'),
+                    'host' => env('MEMCACHED_HOST', 'atypikhouse-projet.ovh'),
                     'port' => env('MEMCACHED_PORT', 11211),
                     'weight' => 100,
                 ],
