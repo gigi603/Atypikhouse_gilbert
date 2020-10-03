@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step2')}}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <p>2. Numéro de téléphone à contacter pour l'annonce</p>
+                        <p>2. Numéro de téléphone à contacter pour l'annonce (format de pays acceptés: france, belgique, italie, allemagne et l'espagne </p>
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Téléphone</label>
                             <div class="col-md-6">

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Créer un hébergement</div>
+                <div class="panel-heading"><h1 style="font-size:30px;">Créer un hébergement</h1></div>
                 {!! Breadcrumbs::render('page1') !!}
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{route('house.postcreate_step1')}}" enctype="multipart/form-data">

@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', 'Comfirmation création')
+@section('title', "Comfirmation création de l'annonce")
 @section('content')
 <div class="container margin-top">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Confirmation de la création de votre annonce</div>
+                <div class="panel-heading"><h1 style="font-size:30px;">Confirmation de la création de votre annonce</h1></div>
                 
                 <div class="panel-body">
                     <p>Votre annonce a bien été prise en compte!</p>   
@@ -21,6 +21,7 @@
     </div>
 </div>
 @endsection
+@section('footer', 'footer_absolute')
 @section('script')
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/create_house.js') }}"></script>
