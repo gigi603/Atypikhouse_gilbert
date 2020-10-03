@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Utilisateur')
+@section('title', 'Mon profil')
 @section('content')
 
 <div class="container margin-top">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Modifier</div>
+                <div class="panel-heading"><h1 style="font-size:30px;">Mon profil</h1></div>
                 {{-- @foreach($houses as $house) --}}
                 <div class="panel-body">
                     @if ($success = Session::get('success'))

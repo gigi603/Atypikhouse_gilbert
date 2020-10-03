@@ -4,7 +4,7 @@
 @section('content')
 <div class="container margin-top">
     <div class="panel panel-default">
-        <div class="panel-heading text-center">Récapitulatif de votre réservation</div>
+        <div class="panel-heading text-center"><h1 style="font-size:30px;">Récapitulatif de votre réservation</h1></div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -14,9 +14,9 @@
                             <p class="card-text">Voici le récapitulatif de l'hebergement que vous avez choisi : </p>
                             <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}"></a>
                             <div class="card-show">
-                                <h4 class="title card-title">
+                                <h2 class="title card-title" style="font-size:25px">
                                     <a href="#">{{$house->title}}</a>
-                                </h4>
+                                </h2>
                                 <p>Type de bien : {{$house->category->category}}</p>
                                 @foreach($house->valuecatproprietes as $valuecatpropriete)                                  
                                     <p>{{$valuecatpropriete->propriete->propriete}}</p>                     

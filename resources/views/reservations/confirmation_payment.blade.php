@@ -5,7 +5,7 @@
 @section('content')
     <div class="container margin-top block-size">
         <div class="panel panel-default">
-            <div class="panel-heading text-center">Confirmation de votre paiement</div>
+            <div class="panel-heading text-center"><h1 style="font-size:30px;">Confirmation de votre paiement</h1></div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">

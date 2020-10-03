@@ -13,9 +13,9 @@
                     <div class="card-show h-100">
                         <img class="img-responsive img_house" src="{{ asset('img/houses/'.$house->photo) }}" alt="Hébergement insolite - {{$house->title}}">
                         <div class="card-center">
-                            <h4 class="title card-title text-center">
+                            <h3 class="title card-title text-center">
                                 <a href="#">{{$house->title}}</a>
-                            </h4>
+                            </h3>
                             <h3 class="price">{{$house->price}}€ / nuit</h3>
                             <p>Type de bien : {{$house->category->category}}</p>
                             @foreach($house->valuecatproprietes as $valuecatpropriete)
