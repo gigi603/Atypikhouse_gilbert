@@ -24,7 +24,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            "email" => "required|email|max:30",
+            "email" => "required|email|max:100",
             "password" => "required|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\?\!\;\^\"\:]+$/u|min:8|max:30"
         ];
     }
@@ -38,7 +38,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email.required' => 'Veuillez saisir une adresse email',
-            'email.max' => 'Votre adresse peut contenir maximum 30 caractères',
+            'email.max' => 'Votre adresse peut contenir maximum 100 caractères',
             'email.email' => 'Veuillez saisir une adresse email valide',
             'password.required' => "Un mot de passe est requis",
             'password.min' => "Votre mot de passe doit contenir minimum 8 caractères",

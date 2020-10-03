@@ -106,23 +106,25 @@ return [
         ],
         'nom' => [
             'required' => 'Vous devez saisir votre nom',
-            'max' => 'Votre nom ne doit pas dépasser 30 caractères',
-            'regex' => 'Votre nom ne doit pas contenir de chiffres ou caractère speciaux',
+            'min' => "Votre nom ne doit pas faire moins d'une caractère",
+            'max' => 'Votre nom ne doit pas dépasser 100 caractères',
+            'regex' => 'Votre nom ne doit pas contenir de chiffres ou caractère speciaux sauf apostrophe et tiret du milieu',
         ],
         'prenom' => [
             'required' => 'Vous devez saisir votre prenom',
-            'max' => 'Votre prénom ne doit pas dépasser 30 caractères',
-            'regex' => 'Votre prénom ne doit pas contenir de chiffres ou caractère speciaux'
+            'min' => "Votre prénom ne doit pas faire moins d'une caractère",
+            'max' => 'Votre prénom ne doit pas dépasser 100 caractères',
+            'regex' => 'Votre prénom ne doit pas contenir de chiffres ou caractère speciaux sauf apostrophe et tiret du milieu'
         ],
         'email' => [
             'required' => 'Vous devez saisir votre adresse email',
-            'max' => 'Votre email ne doit pas dépasser 50 caractères',
+            'max' => 'Votre email ne doit pas dépasser 100 caractères',
             'unique' => "L'adresse email que vous avez saisie a déjà été utilisée",
             "email" => "Vous devez saisir une adresse email valide"
         ],
         'email_confirmation' => [
             'required' => 'Vous devez confirmer votre adresse email',
-            'max' => 'Votre email ne doit pas dépasser 50 caractères',
+            'max' => 'Votre email ne doit pas dépasser 100 caractères',
             'same' => "L'adresse email doit être identique"    
         ],
         'password' => [

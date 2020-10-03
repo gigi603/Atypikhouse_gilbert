@@ -104,10 +104,10 @@ class RegisterController extends Controller
            $input = $request->all();
 
             $validator = $this->validate($request, [
-                'nom' => 'required|max:30|regex:/^[\pL\s\-\']+$/u',
-                'prenom' => 'required|min:1|max:30|regex:/^[\pL\s\-\']+$/u',
-                'email' => 'required|unique:users|max:30|email',
-                'email_confirmation' => 'required|same:email|max:30',
+                'nom' => 'required|min:1|max:100|regex:/^[\pL\s\-\']+$/u',
+                'prenom' => 'required|min:1|max:100|regex:/^[\pL\s\-\']+$/u',
+                'email' => 'required|unique:users|max:100|email',
+                'email_confirmation' => 'required|same:email|max:100',
                 'password' => 'required|min:8|max:30|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\?\!\;\^\"\:]+$/u',
                 'password_confirmation' => 'required|same:password|max:30|regex:/^[0-9\pL\s\d\'\’\-\(\)\.\,\?\!\;\^\"\:]+$/u',
                 'conditions' => 'accepted',
