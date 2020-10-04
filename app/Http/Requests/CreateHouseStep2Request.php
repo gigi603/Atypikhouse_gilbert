@@ -30,7 +30,7 @@ class CreateHouseStep2Request extends FormRequest
     }
 
     /**
-     * Get the error messages for the defined validation rules.
+     * Get the error messages for the defined vaàç! ko    lidation rules.
      *
      * @return array
      */
