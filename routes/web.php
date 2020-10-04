@@ -45,14 +45,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('sitemap', function () {
     SitemapGenerator::create('http://127.0.0.1:8000/')
     ->getSitemap()
-    ->add(Url::create('http://127.0.0.1:8000/register')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/login')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/faq')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/houses')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/apropos')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/mentions_legales')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/politique_de_confidentialite')->setPriority(0.5))
-    ->add(Url::create('http://127.0.0.1:8000/cgu')->setPriority(0.5))
     ->writeToFile('public/sitemap.xml');
     return 'sitemap created';
 });
