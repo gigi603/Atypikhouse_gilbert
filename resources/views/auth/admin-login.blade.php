@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Administrateurs, connectez-vous</div>
+        <div class="card-header"><h1 style="font-size:30px;">Administrateurs, connectez-vous</h1></div>
         <div class="card-body">
             <form method="POST" action="{{ route('admin.login.submit') }}">
                 {{ csrf_field() }}
