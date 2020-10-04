@@ -45,7 +45,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('sitemap', function () {
     SitemapGenerator::create('http://127.0.0.1:8000/')
     ->getSitemap()
-    ->writeToFile('public/sitemap.xml');
+    ->writeToFile('sitemap.xml');
     return 'sitemap created';
 });
 Route::get('/houses', 'HousesController@index')->name('houses');

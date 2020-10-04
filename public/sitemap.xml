@@ -4,90 +4,10 @@
         <loc>http://127.0.0.1:8000/</loc>
     
     
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
+        <lastmod>2020-10-04T18:22:00+02:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/apropos</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/cgu</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/faq</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/houses</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/login</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/mentions_legales</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/politique_de_confidentialite</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>http://127.0.0.1:8000/register</loc>
-    
-    
-        <lastmod>2020-01-19T19:56:33+01:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.5</priority>
     </url>
 </urlset>
