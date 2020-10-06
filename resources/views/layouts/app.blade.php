@@ -62,7 +62,7 @@
                             <li class="link-position"><a href="{{ route('login') }}">Connexion</a></li>
                             @elseif(Auth::guard('admin')->check())
                             <li class="link-position"><a href="{{ route('admin.home') }}">Accueil</a></li>
-                            <li class="dropdown">
+                            <li class="dropdown link-position">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->prenom }} <span class="caret"></span>
                                 </a>
