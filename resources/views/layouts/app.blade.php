@@ -56,12 +56,12 @@
                             <!-- Authentication/Visitors Links -->
                             @if (Auth::guest())
                             
-                            <li><a href="{{ route('home') }}">Accueil</a></li>
-                            <li><a href="{{ route('houses') }}">Nos hébergements</a></li>
-                            <li><a href="{{ route('register') }}">Inscription</a></li>
-                            <li><a href="{{ route('login') }}">Connexion</a></li>
+                            <li class="link-position"><a href="{{ route('home') }}">Accueil</a></li>
+                            <li class="link-position"><a href="{{ route('houses') }}">Nos hébergements</a></li>
+                            <li class="link-position"><a href="{{ route('register') }}">Inscription</a></li>
+                            <li class="link-position"><a href="{{ route('login') }}">Connexion</a></li>
                             @elseif(Auth::guard('admin')->check())
-                            <li><a href="{{ route('admin.home') }}">Accueil</a></li>
+                            <li class="link-position"><a href="{{ route('admin.home') }}">Accueil</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->prenom }} <span class="caret"></span>
@@ -78,12 +78,12 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    <li><a href="{{ route('user.contact') }}">Contact</a></li>
+                                    <li class="link-position"><a href="{{ route('user.contact') }}">Contact</a></li>
                                 </ul>
                             </li>
                             @else
-                            <li><a href="{{ route('home') }}">Accueil</a></li>
-                            <li><a href="{{ route('houses') }}">Nos hébergements</a></li>
+                            <li class="link-position"><a href="{{ route('home') }}">Accueil</a></li>
+                            <li class="link-position"><a href="{{ route('houses') }}">Nos hébergements</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->prenom }} <span class="caret"></span>
@@ -109,7 +109,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('user.contact') }}">Contact</a></li>
+                            <li class="link-position"><a href="{{ route('user.contact') }}">Contact</a></li>
                             @endif
                         </ul>
                     </div>
