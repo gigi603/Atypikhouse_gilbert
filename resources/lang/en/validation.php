@@ -127,6 +127,7 @@ return [
         ],
         'password' => [
             'required' => 'Vous devez saisir votre mot de passe',
+            'confirmed' => 'Votre mot de passe doit être identique',
             'min' => "Votre mot de passe doit contenir au moins 8 caractères",
             'max' => "Votre mot de passe doit contenir pas plus de  30 caractères",
             'regex' => "Les caractères spéciaux autorisés sont : les ponctuations, slash, tirets, apostrophes, parentheses et les guillemets"    

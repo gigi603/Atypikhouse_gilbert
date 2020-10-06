@@ -50,6 +50,7 @@
                                     <button type="submit" class="btn btn-primary btn-color">
                                         Connexion
                                     </button>
+                                    <a href="{{route('password.request')}}">Mot de passe oubli&eacute; ?</a>
                                 </div>
                             </div>
                         </form>
