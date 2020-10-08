@@ -161,7 +161,6 @@ class UsersController extends Controller
         $proprietes_category = propriete::where('category_id', '=', $request->category_id)->get();
         
         $valueproprietesdelete = valuecatpropriete::where('house_id','=', $id)->delete();
-        var_dump($request->propriete);
         if($request->nb_personne > 15 || $request->nb_personne < 0){
             $request->nb_personne = "";
         }

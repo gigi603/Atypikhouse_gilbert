@@ -185,6 +185,7 @@ return [
         //Html Forms Views
         Collective\Html\HtmlServiceProvider::class,
         Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
+        //Sitemap Generator
         Spatie\Sitemap\SitemapServiceProvider::class,
 
         //Telephone

@@ -24,7 +24,7 @@
         "nesbot/carbon": "1.22.*",
         "propaganistas/laravel-phone": "^4.2",
         "skagarwal/google-places-api": "^1.4",
-        "spatie/laravel-sitemap": "2.4.0",
+        "spatie/laravel-sitemap": "^5.8",
         "stripe/stripe-php": "^6.28",
         "tymon/jwt-auth": "^0.5.12"
     },

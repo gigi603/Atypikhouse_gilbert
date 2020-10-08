@@ -4,10 +4,770 @@
         <loc>http://127.0.0.1:8000/</loc>
     
     
-        <lastmod>2020-10-04T18:22:00+02:00</lastmod>
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
     
         <changefreq>daily</changefreq>
     
-        <priority>0.8</priority>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/addmoney/stripe</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/addmoney/stripe</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/apropos</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/cgu</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/cgv</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/comments</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/confirmpaymentStripe</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/contact</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/create</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/faq</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/confirmation_create_house</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/create_step1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/create_step2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/create_step3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/create_step4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/create_step5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/postcreate_step1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/postcreate_step2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/postcreate_step3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/postcreate_step4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/house/postcreate_step5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/houses</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/list-users</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/login</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/login</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/logout</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/mentions_legales</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/messages</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/note</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/password/email</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/password/reset</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/password/reset</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/politique_de_confidentialite</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/profile/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/profile/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/register</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/register</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/reservations</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/search</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/sendMessage</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/sendmail</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/showhistoriques/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/showhistoriques/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/showreservations/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/showreservationsannulees/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/editHouse/6</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/historiques</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/houses</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/reservations</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/reservationsannulees</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showHouse/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showHouse/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showHouse/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/user/showhebergement/6</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/deleteHouse/6</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/1</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/2</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/3</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/4</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/5</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/users/updateHouse/6</loc>
+    
+    
+        <lastmod>2020-10-09T01:33:40+02:00</lastmod>
+    
+        <changefreq>daily</changefreq>
+    
+        <priority>1</priority>
     </url>
 </urlset>
