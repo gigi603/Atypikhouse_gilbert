@@ -139,19 +139,6 @@ class GenerateSitemap extends Command
                 $sitemap->add(Url::create('http://127.0.0.1:8000/'. $uri)->setPriority(0.5));
             }
         }
-        //     $isShowable = !strpos($uri, '_dusk') || !strpos($uri, 'api') || !strpos($uri, 'admin');
-            
-        //     if($isShowable && strpos($uri, '/reservations') && strpos($uri, '{id}')){
-        //         $reservations = Reservation::all();
-        //         foreach($reservations as $reservation){
-        //             $sitemap->add(Url::create('http://127.0.0.1:8000/' . $uri . $reservation->id ));
-        //         }
-        //     } elseif($isShowable) {
-        //         $sitemap->add(Url::create('http://127.0.0.1:8000/'. $uri));
-        //     } else {
-        //         $sitemap->add(Url::create('http://127.0.0.1:8000/'. $uri));
-        //     }
-        // }
         $sitemap->writeToFile(public_path('sitemap.xml'));
     }
 }
