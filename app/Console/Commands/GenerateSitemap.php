@@ -58,6 +58,11 @@ class GenerateSitemap extends Command
 
         $routeCollection = Route::getRoutes()->get();
         $id = "{id}";
+        $annonces = House::all();
+        $reservations = Reservation::all();
+        $users = user::all();
+        $today = Carbon::now()->format('Y-m-d');
+
         foreach ($routeCollection as $value) {
             $uri = $value->uri();
             $isShowable = strpos($uri, '_dusk') === false && strpos($uri, 'api') === false 
@@ -68,17 +73,15 @@ class GenerateSitemap extends Command
             if($isShowable && $uri == '/') {
                 $sitemap->add(Url::create('http://127.0.0.1:8000/')->setPriority(1.0));
             } elseif($isShowable && strpos($uri, 'user/showHouse/') !== false){
-                $reservations = Reservation::all();
+                
                 foreach($reservations as $reservation){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $reservation->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'user/showhebergement/') !== false){
-                $annonces = House::all();
                 foreach($annonces as $annonce){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $annonce->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'showreservations/') !== false){
-                $today = Carbon::now()->format('Y-m-d');
 
                 $reservations = reservation::with('house')->where('start_date', '>=', $today)
                 ->where('end_date', '>=', $today)
@@ -89,7 +92,6 @@ class GenerateSitemap extends Command
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $reservation->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'showhistoriques/') !== false){
-                $today = Carbon::now()->format('Y-m-d');
                 $historiques = reservation::with('house')->where('start_date', '<=', $today)
                 ->where('end_date', '<', $today)
                 ->orderBy('id', 'asc')->get();
@@ -98,8 +100,6 @@ class GenerateSitemap extends Command
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $historique->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'showreservationsannulees/') !== false){
-                $today = Carbon::now()->format('Y-m-d');
-
                 $reservationsCanceled = reservation::with('house')->where('reserved', '=', 0)
                 ->orderBy('id', 'asc')
                 ->get();
@@ -108,30 +108,18 @@ class GenerateSitemap extends Command
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $reservationCanceled->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'profile/') !== false){
-
-                $users = user::all();
-
                 foreach($users as $user){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $user->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'user/editHouse/') !== false){
-
-                $annonces = House::all();
-
                 foreach($annonces as $annonce){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $annonce->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'users/deleteHouse/') !== false){
-
-                $annonces = House::all();
-
                 foreach($annonces as $annonce){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $annonce->id, $uri))->setPriority(1.0));
                 }
             } elseif($isShowable && strpos($uri, 'users/updateHouse/') !== false){
-
-                $annonces = House::all();
-
                 foreach($annonces as $annonce){
                     $sitemap->add(Url::create('http://127.0.0.1:8000/' . str_replace($id, $annonce->id, $uri))->setPriority(1.0));
                 }

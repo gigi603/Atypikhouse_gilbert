@@ -61,8 +61,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nom' => 'required|alpha|max:50',
-            'prenom' => 'required|alpha|max:50',
+            'nom' => 'required|alpha|min:1|max:100',
+            'prenom' => 'required|alpha|min:1|max:100',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'date_birth' => 'required|date_format:d/m/Y|before:'.Carbon::now()->subYears(18),
