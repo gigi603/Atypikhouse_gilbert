@@ -10,10 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/houses', 'HousesController@index')->name('houses');
 Route::get('/register', 'RegistersController@create');
