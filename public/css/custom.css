@@ -44,6 +44,17 @@ html, body {
 	margin-bottom: 20vh;
 }
 
+.link-color {
+	color: #3f4b30;
+}
+
+.link-color:hover {
+	color: #3f4b30;
+}
+
+.link-color:active {
+	color: #3f4b30;
+}
 
 .link-position {
 	padding-top: 10px;
@@ -134,6 +145,13 @@ a {
 }
 
 p {
+	color: black;
+	line-height: 1.4;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.label-home {
 	color: black;
 	line-height: 1.4;
 	letter-spacing: 1px;

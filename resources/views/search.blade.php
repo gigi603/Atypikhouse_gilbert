@@ -14,7 +14,7 @@
                 @endif
         </div>
         <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}{{ $errors->has('end_date') ? ' has-error' : '' }}">
-                <p>Date de départ / Date de retour</p>
+                <label  class="label-home" for="fromHome">Date de départ / </label> <label class="label-home" for="toHome">Date de retour</label><br>
                 <input type="text" class="form-control date-field-home" required id="fromHome" placeholder="Date de départ" name="start_date" value="{{ old('start_date') }}" />
                 <input type="text" class="form-control date-field-home" required id="toHome" placeholder="Date de retour" name="end_date" value="{{ old('end_date') }}" />
                 @if ($errors->has('start_date'))

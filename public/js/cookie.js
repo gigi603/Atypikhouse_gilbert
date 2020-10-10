@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
             "text": "#404040"
             },
             "button": {
-            "background": "#8ec760",
+            "background": "#000",
             "text": "#ffffff"
             }
         },

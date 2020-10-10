@@ -135,10 +135,10 @@
                         </div>
                         <div class="col-md-3">
                             <ul id="reseaux">
-                                <div><li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></li></div>
-                                <div><li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li></div>
-                                <div><li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></li></div>
-                                <div><li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square fa-2x"></i></a></li></div>
+                                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i><span class="sr-only">Facebook</span></i></a></li></div>
+                                <div><li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square fa-2x" aria-hidden="true"><span class="sr-only">Twitter</span></i></a></li></div>
+                                <div><li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"><span class="sr-only">Instagram</span></i></a></li></div>
+                                <div><li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square fa-2x" aria-hidden="true"><span class="sr-only">Youtube</span></i></a></li></div>
                             </ul>
                         </div>
                     </div>
