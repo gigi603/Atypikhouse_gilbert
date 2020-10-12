@@ -393,12 +393,13 @@ nav.navbar.navbar-default {
 	padding:20px 20px;
 }
 .breadcrumb a {
-	color: #3f4b30 !important;
+	color: #ededeb !important;
 	font-weight: bold;
 }
 
 .breadcrumb>.active {
-	color: #A9A9A9 !important;
+	color: #3f4b30 !important;
+	font-weight: bold;
 }
 /* #3f4b30 */
 #block_home_2 {
